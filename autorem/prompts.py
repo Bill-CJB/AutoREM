@@ -298,4 +298,3 @@ def make_reflector_prompt(
         _inject_json_format_rules(_R_OUTPUT_FORMAT),
     ])
     return prompt
-

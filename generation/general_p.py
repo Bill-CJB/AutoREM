@@ -33,13 +33,13 @@ import numpy as np
 from tqdm import tqdm
 
 try:
-    
+
     from .synthetic import (
         generate_random_params as generate_random_backbone,
     )
 except ImportError:
-    
-    from generation.synthetic import (  
+
+    from generation.synthetic import (
         generate_random_params as generate_random_backbone,
     )
 
@@ -131,9 +131,9 @@ def _generate_dense_active_block(
         raise ValueError("All active loading row scales must be positive.")
 
     for _ in range(200):
-        
-        
-        
+
+
+
         rho = float(np.random.uniform(0.25, 0.45))
         random_mixing = np.random.uniform(
             0.2,

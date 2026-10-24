@@ -209,4 +209,3 @@ class ReformulationExperienceMemory:
 
     def all(self) -> Dict[int, ReformulationExperience]:
         return dict(self._experiences)
-

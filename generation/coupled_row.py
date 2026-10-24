@@ -66,7 +66,7 @@ class SharedUncertaintySpec:
 class CoupledRandomSpec:
     sample_id: str
     params: dict[str, Any]
-    coupled_units: tuple[int, int]  
+    coupled_units: tuple[int, int]
     shared: SharedUncertaintySpec
     original_rhs: np.ndarray
     backbone_uncertainty_types: tuple[int, ...]
@@ -380,8 +380,8 @@ def solve_spec(spec: CoupledRandomSpec) -> dict[str, Any]:
     model = ro.Model()
     x = model.dvar(n_vars)
 
-    
-    
+
+
     xi_shared, shared_set = _build_shared_set(model, spec)
 
     coupled = set(spec.coupled_units)
@@ -435,7 +435,7 @@ def solve_spec(spec: CoupledRandomSpec) -> dict[str, Any]:
         direction = int(constraint["direction"])
 
         if unit_id in coupled:
-            
+
             expression = sum(
                 (float(nominal[index]) + xi_shared[index]) * x[index]
                 for index in range(n_vars)
@@ -493,7 +493,7 @@ def solve_spec(spec: CoupledRandomSpec) -> dict[str, Any]:
             "solution": solution.tolist(),
             "optimal_value": optimal_value,
         }
-    except Exception as exc:  
+    except Exception as exc:
         message = str(exc)
         lowered = message.lower()
         if "unbounded" in lowered or "status: 3" in lowered:
