@@ -1,0 +1,36 @@
+cff-version: 1.2.0
+message: "Please cite our NeurIPS 2026 paper when using AutoREM."
+type: software
+title: AutoREM
+authors:
+  - family-names: Chen
+    given-names: Jinbiao
+  - family-names: Jin
+    given-names: Shuang
+  - family-names: Zhang
+    given-names: Guoyun
+  - family-names: Zhang
+    given-names: Junyu
+  - family-names: Wang
+    given-names: Guanyi
+  - family-names: Qin
+    given-names: Hanzhang
+repository-code: "https://github.com/Bill-CJB/AutoREM"
+preferred-citation:
+  type: conference-paper
+  title: "Automated Reformulation of Robust Optimization via Memory-Augmented Large Language Models"
+  authors:
+    - family-names: Chen
+      given-names: Jinbiao
+    - family-names: Jin
+      given-names: Shuang
+    - family-names: Zhang
+      given-names: Guoyun
+    - family-names: Zhang
+      given-names: Junyu
+    - family-names: Wang
+      given-names: Guanyi
+    - family-names: Qin
+      given-names: Hanzhang
+  collection-title: "Advances in Neural Information Processing Systems (NeurIPS 2026)"
+  year: 2026

@@ -1,0 +1,1282 @@
+[
+  {
+    "id": "coupled_001_n3_budget_T111",
+    "n_vars": 3,
+    "n_constraints": 3,
+    "template_param": [
+      1,
+      1,
+      1
+    ],
+    "setting": "random_backbone_coupled_row_shared_primitive",
+    "description": "\\begin{align*}\n& \\text{Minimize}\\quad \\max_{\\boldsymbol{\\xi}_{\\mathrm{shared}}\\in\\mathcal{U}_{\\mathrm{shared}}}(\\bar{\\mathbf{c}}+\\mathbf{I}_{3}\\boldsymbol{\\xi}_{\\mathrm{shared}})^\\top\\mathbf{x} && \\text{(Shared-factor Budgeted Uncertainty Objective)} \\\\\n& \\text{subject to} \\\\\n& \\bar{\\mathbf{a}}_{1}^\\top\\mathbf{x} \\ge -18.01 && \\text{(Deterministic Constraint)} \\\\\n& \\min_{\\boldsymbol{\\xi}_{a2}\\in\\mathcal{U}_{a2,Box}}(\\bar{\\mathbf{a}}_{2}+\\operatorname{diag}(\\hat{\\mathbf{a}}_{2})\\boldsymbol{\\xi}_{a2})^\\top\\mathbf{x} \\ge -51.65 && \\text{(Box Uncertainty Constraint)} \\\\\n& \\max_{\\boldsymbol{\\xi}_{\\mathrm{shared}}\\in\\mathcal{U}_{\\mathrm{shared}}}(\\bar{\\mathbf{a}}_{3}+\\mathbf{I}_{3}\\boldsymbol{\\xi}_{\\mathrm{shared}})^\\top\\mathbf{x} \\le 57.65 && \\text{(Shared-factor Budgeted Uncertainty Constraint)} \\\\\n& \\text{where the same primitive vector }\\boldsymbol{\\xi}_{\\mathrm{shared}}\\text{ drives the objective row and constraint row 3}. \\\\\n& \\mathbf{x}\\in\\mathbb{R}^{3},\\quad-9.2\\le x_j\\le0,\\quad j=1,\\ldots,3. \\\\\n& \\bar{\\mathbf{c}}=\\begin{bmatrix}-8 \\\\ 3.9 \\\\ 2.8\\end{bmatrix}. \\\\\n& \\mathbf{P}_c=\\mathbf{I}_{3}. \\\\\n& \\bar{\\mathbf{a}}_{1}=\\begin{bmatrix}6.1 \\\\ -0.1 \\\\ 0\\end{bmatrix},\\quad b_{1}=-18.01. \\\\\n& \\bar{\\mathbf{a}}_{2}=\\begin{bmatrix}0 \\\\ -2.4 \\\\ 5.5\\end{bmatrix},\\quad b_{2}=-51.65. \\\\\n& \\hat{\\mathbf{a}}_{2}=\\begin{bmatrix}0 \\\\ 0.3 \\\\ 0.6\\end{bmatrix}. \\\\\n& \\bar{\\mathbf{a}}_{3}=\\begin{bmatrix}0 \\\\ -8.8 \\\\ 1.1\\end{bmatrix},\\quad b_{3}=57.65. \\\\\n& \\mathbf{P}_{a3}=\\mathbf{I}_{3}. \\\\\n& \\mathcal{U}_{\\mathrm{shared}}=\\{\\boldsymbol{\\xi}_{\\mathrm{shared}}\\in\\mathbb{R}^{3}:\\|\\boldsymbol{\\xi}_{\\mathrm{shared}}\\|_\\infty\\le1,\\|\\boldsymbol{\\xi}_{\\mathrm{shared}}\\|_1\\le1.2\\}. \\\\\n& \\mathcal{U}_{a2,Box}=\\{\\boldsymbol{\\xi}_{a2}\\in\\mathbb{R}^{3}:\\|\\boldsymbol{\\xi}_{a2}\\|_\\infty\\le1\\}. \\\\\n\\end{align*}",
+    "uncertainty_type": [
+      2,
+      0,
+      1,
+      2
+    ],
+    "solution": [
+      0.0,
+      -6.507777777777777,
+      -9.2
+    ],
+    "optimal_value": -40.638777777777776,
+    "coupled_rows": [
+      0,
+      3
+    ],
+    "coupled_unit_ids": [
+      0,
+      3
+    ],
+    "coupled_unit_labels": [
+      "objective",
+      "constraint_3"
+    ],
+    "row_indexing": "0=objective, 1..n=constraint rows",
+    "shared_uncertainty": true,
+    "uncertainty_family": "budget"
+  },
+  {
+    "id": "coupled_002_n5_poly_T111",
+    "n_vars": 5,
+    "n_constraints": 5,
+    "template_param": [
+      1,
+      1,
+      1
+    ],
+    "setting": "random_backbone_coupled_row_shared_primitive",
+    "description": "\\begin{align*}\n& \\text{Minimize}\\quad \\max_{\\boldsymbol{\\xi}_{c}\\in\\mathcal{U}_{c,Box}}(\\bar{\\mathbf{c}}+\\operatorname{diag}(\\hat{\\mathbf{c}})\\boldsymbol{\\xi}_{c})^\\top\\mathbf{x} && \\text{(Box Uncertainty Objective)} \\\\\n& \\text{subject to} \\\\\n& \\min_{\\boldsymbol{\\xi}_{\\mathrm{shared}}\\in\\mathcal{U}_{\\mathrm{shared}}}(\\bar{\\mathbf{a}}_{1}+\\mathbf{I}_{5}\\boldsymbol{\\xi}_{\\mathrm{shared}})^\\top\\mathbf{x} \\ge -2.36 && \\text{(Shared-factor Polyhedral Uncertainty Constraint)} \\\\\n& \\max_{\\boldsymbol{\\xi}_{a2}\\in\\mathcal{U}_{a2,Box}}(\\bar{\\mathbf{a}}_{2}+\\operatorname{diag}(\\hat{\\mathbf{a}}_{2})\\boldsymbol{\\xi}_{a2})^\\top\\mathbf{x} \\le 4.77 && \\text{(Box Uncertainty Constraint)} \\\\\n& \\max_{\\boldsymbol{\\xi}_{a3}\\in\\mathcal{U}_{a3,Box}}(\\bar{\\mathbf{a}}_{3}+\\operatorname{diag}(\\hat{\\mathbf{a}}_{3})\\boldsymbol{\\xi}_{a3})^\\top\\mathbf{x} \\le 3.25 && \\text{(Box Uncertainty Constraint)} \\\\\n& \\max_{\\boldsymbol{\\xi}_{\\mathrm{shared}}\\in\\mathcal{U}_{\\mathrm{shared}}}(\\bar{\\mathbf{a}}_{4}+\\mathbf{I}_{5}\\boldsymbol{\\xi}_{\\mathrm{shared}})^\\top\\mathbf{x} \\le 7.82 && \\text{(Shared-factor Polyhedral Uncertainty Constraint)} \\\\\n& \\bar{\\mathbf{a}}_{5}^\\top\\mathbf{x} \\ge -1.65 && \\text{(Deterministic Constraint)} \\\\\n& \\text{where the same primitive vector }\\boldsymbol{\\xi}_{\\mathrm{shared}}\\text{ drives constraint row 1 and constraint row 4}. \\\\\n& \\mathbf{x}\\in\\mathbb{R}^{5},\\quad-2.5\\le x_j\\le2.5,\\quad j=1,\\ldots,5. \\\\\n& \\bar{\\mathbf{c}}=\\begin{bmatrix}-8.9 \\\\ 0.5 \\\\ -7 \\\\ 7.8 \\\\ -6.8\\end{bmatrix}. \\\\\n& \\hat{\\mathbf{c}}=\\begin{bmatrix}1.3 \\\\ 0.1 \\\\ 0 \\\\ 0 \\\\ 0.8\\end{bmatrix}. \\\\\n& \\bar{\\mathbf{a}}_{1}=\\begin{bmatrix}-0.3 \\\\ 0 \\\\ 1.6 \\\\ 0 \\\\ -1.8\\end{bmatrix},\\quad b_{1}=-2.36. \\\\\n& \\mathbf{P}_{a1}=\\mathbf{I}_{5}. \\\\\n& \\bar{\\mathbf{a}}_{2}=\\begin{bmatrix}-0.3 \\\\ -1.9 \\\\ 0 \\\\ 0 \\\\ 1.5\\end{bmatrix},\\quad b_{2}=4.77. \\\\\n& \\hat{\\mathbf{a}}_{2}=\\begin{bmatrix}0 \\\\ 0.3 \\\\ 0 \\\\ 0 \\\\ 0.2\\end{bmatrix}. \\\\\n& \\bar{\\mathbf{a}}_{3}=\\begin{bmatrix}-0.6 \\\\ 0 \\\\ 0 \\\\ 1.4 \\\\ 0.2\\end{bmatrix},\\quad b_{3}=3.25. \\\\\n& \\hat{\\mathbf{a}}_{3}=\\begin{bmatrix}0.1 \\\\ 0 \\\\ 0 \\\\ 0.2 \\\\ 0.1\\end{bmatrix}. \\\\\n& \\bar{\\mathbf{a}}_{4}=\\begin{bmatrix}-1.5 \\\\ 0.7 \\\\ 0 \\\\ 0 \\\\ -1\\end{bmatrix},\\quad b_{4}=7.82. \\\\\n& \\mathbf{P}_{a4}=\\mathbf{I}_{5}. \\\\\n& \\bar{\\mathbf{a}}_{5}=\\begin{bmatrix}0 \\\\ 1.2 \\\\ 0.8 \\\\ 0.7 \\\\ -1\\end{bmatrix},\\quad b_{5}=-1.65. \\\\\n& \\mathcal{U}_{\\mathrm{shared}}=\\{\\boldsymbol{\\xi}_{\\mathrm{shared}}\\in\\mathbb{R}^{5}:\\mathbf{D}_{s}\\boldsymbol{\\xi}_{\\mathrm{shared}}\\le\\mathbf{d}_{s},\\ 0\\mathbf{1}\\le\\boldsymbol{\\xi}_{\\mathrm{shared}}\\le0.2\\mathbf{1}\\}. \\\\\n& \\mathbf{D}_s=\\begin{bmatrix}0.2 & -0.1 & 0.1 & 0.1 & 0.1 \\\\ 0 & 0 & 0.1 & 0.1 & -0.1 \\\\ -0.1 & 0 & 0 & 0.1 & 0 \\\\ 0 & -0.1 & -0.2 & -0.2 & 0.1\\end{bmatrix},\\quad\\mathbf{d}_s=\\begin{bmatrix}0.06 \\\\ 0.05 \\\\ 0 \\\\ -0.02\\end{bmatrix}. \\\\\n& \\mathcal{U}_{c,Box}=\\{\\boldsymbol{\\xi}_{c}\\in\\mathbb{R}^{5}:\\|\\boldsymbol{\\xi}_{c}\\|_\\infty\\le1\\}. \\\\\n& \\mathcal{U}_{a2,Box}=\\{\\boldsymbol{\\xi}_{a2}\\in\\mathbb{R}^{5}:\\|\\boldsymbol{\\xi}_{a2}\\|_\\infty\\le1\\}. \\\\\n& \\mathcal{U}_{a3,Box}=\\{\\boldsymbol{\\xi}_{a3}\\in\\mathbb{R}^{5}:\\|\\boldsymbol{\\xi}_{a3}\\|_\\infty\\le1\\}. \\\\\n\\end{align*}",
+    "uncertainty_type": [
+      1,
+      3,
+      1,
+      1,
+      3,
+      0
+    ],
+    "solution": [
+      2.5,
+      0.5000000000000001,
+      2.5,
+      -2.5,
+      2.5
+    ],
+    "optimal_value": -70.7,
+    "coupled_rows": [
+      1,
+      4
+    ],
+    "coupled_unit_ids": [
+      1,
+      4
+    ],
+    "coupled_unit_labels": [
+      "constraint_1",
+      "constraint_4"
+    ],
+    "row_indexing": "0=objective, 1..n=constraint rows",
+    "shared_uncertainty": true,
+    "uncertainty_family": "poly"
+  },
+  {
+    "id": "coupled_003_n2_box_T111",
+    "n_vars": 2,
+    "n_constraints": 2,
+    "template_param": [
+      1,
+      1,
+      1
+    ],
+    "setting": "random_backbone_coupled_row_shared_primitive",
+    "description": "\\begin{align*}\n& \\text{Maximize}\\quad \\min_{\\boldsymbol{\\xi}_{\\mathrm{shared}}\\in\\mathcal{U}_{\\mathrm{shared}}}(\\bar{\\mathbf{c}}+\\mathbf{I}_{2}\\boldsymbol{\\xi}_{\\mathrm{shared}})^\\top\\mathbf{x} && \\text{(Shared-factor Box Uncertainty Objective)} \\\\\n& \\text{subject to} \\\\\n& \\bar{\\mathbf{a}}_{1}^\\top\\mathbf{x} \\ge -23.89 && \\text{(Deterministic Constraint)} \\\\\n& \\min_{\\boldsymbol{\\xi}_{\\mathrm{shared}}\\in\\mathcal{U}_{\\mathrm{shared}}}(\\bar{\\mathbf{a}}_{2}+\\mathbf{I}_{2}\\boldsymbol{\\xi}_{\\mathrm{shared}})^\\top\\mathbf{x} \\ge 9.97 && \\text{(Shared-factor Box Uncertainty Constraint)} \\\\\n& \\text{where the same primitive vector }\\boldsymbol{\\xi}_{\\mathrm{shared}}\\text{ drives the objective row and constraint row 2}. \\\\\n& \\mathbf{x}\\in\\mathbb{R}^{2},\\quad-6.4\\le x_j\\le0,\\quad j=1,\\ldots,2. \\\\\n& \\bar{\\mathbf{c}}=\\begin{bmatrix}-1.4 \\\\ -9.6\\end{bmatrix}. \\\\\n& \\mathbf{P}_c=\\mathbf{I}_{2}. \\\\\n& \\bar{\\mathbf{a}}_{1}=\\begin{bmatrix}0.1 \\\\ 3.8\\end{bmatrix},\\quad b_{1}=-23.89. \\\\\n& \\bar{\\mathbf{a}}_{2}=\\begin{bmatrix}0.1 \\\\ -5.2\\end{bmatrix},\\quad b_{2}=9.97. \\\\\n& \\mathbf{P}_{a2}=\\mathbf{I}_{2}. \\\\\n& \\mathcal{U}_{\\mathrm{shared}}=\\{\\boldsymbol{\\xi}_{\\mathrm{shared}}\\in\\mathbb{R}^{2}:\\|\\boldsymbol{\\xi}_{\\mathrm{shared}}\\|_\\infty\\le1\\}. \\\\\n\\end{align*}",
+    "uncertainty_type": [
+      1,
+      0,
+      1
+    ],
+    "solution": [
+      -6.4,
+      -6.11842105263158
+    ],
+    "optimal_value": 55.178421052631585,
+    "coupled_rows": [
+      0,
+      2
+    ],
+    "coupled_unit_ids": [
+      0,
+      2
+    ],
+    "coupled_unit_labels": [
+      "objective",
+      "constraint_2"
+    ],
+    "row_indexing": "0=objective, 1..n=constraint rows",
+    "shared_uncertainty": true,
+    "uncertainty_family": "box"
+  },
+  {
+    "id": "coupled_004_n5_poly_T111",
+    "n_vars": 5,
+    "n_constraints": 5,
+    "template_param": [
+      1,
+      1,
+      1
+    ],
+    "setting": "random_backbone_coupled_row_shared_primitive",
+    "description": "\\begin{align*}\n& \\text{Maximize}\\quad \\min_{\\boldsymbol{\\xi}_{\\mathrm{shared}}\\in\\mathcal{U}_{\\mathrm{shared}}}(\\bar{\\mathbf{c}}+\\mathbf{I}_{5}\\boldsymbol{\\xi}_{\\mathrm{shared}})^\\top\\mathbf{x} && \\text{(Shared-factor Polyhedral Uncertainty Objective)} \\\\\n& \\text{subject to} \\\\\n& \\max_{\\boldsymbol{\\xi}_{a1}\\in\\mathcal{U}_{a1,Bud}}(\\bar{\\mathbf{a}}_{1}+\\operatorname{diag}(\\hat{\\mathbf{a}}_{1})\\boldsymbol{\\xi}_{a1})^\\top\\mathbf{x} \\le 0.62 && \\text{(Budgeted Uncertainty Constraint)} \\\\\n& \\max_{\\boldsymbol{\\delta}_{a2}\\in\\mathcal{U}_{a2,P}}(\\bar{\\mathbf{a}}_{2}+\\boldsymbol{\\delta}_{a2})^\\top\\mathbf{x} \\le 0.5 && \\text{(Polyhedral Uncertainty Constraint)} \\\\\n& \\max_{\\boldsymbol{\\xi}_{\\mathrm{shared}}\\in\\mathcal{U}_{\\mathrm{shared}}}(\\bar{\\mathbf{a}}_{3}+\\mathbf{I}_{5}\\boldsymbol{\\xi}_{\\mathrm{shared}})^\\top\\mathbf{x} \\le 0.25 && \\text{(Shared-factor Polyhedral Uncertainty Constraint)} \\\\\n& \\bar{\\mathbf{a}}_{4}^\\top\\mathbf{x} \\ge -0.21 && \\text{(Deterministic Constraint)} \\\\\n& \\max_{\\boldsymbol{\\xi}_{a5}\\in\\mathcal{U}_{a5,Box}}(\\bar{\\mathbf{a}}_{5}+\\operatorname{diag}(\\hat{\\mathbf{a}}_{5})\\boldsymbol{\\xi}_{a5})^\\top\\mathbf{x} \\le 0.2 && \\text{(Box Uncertainty Constraint)} \\\\\n& \\text{where the same primitive vector }\\boldsymbol{\\xi}_{\\mathrm{shared}}\\text{ drives the objective row and constraint row 3}. \\\\\n& \\mathbf{x}\\in\\mathbb{R}^{5},\\quad-1\\le x_j\\le0,\\quad j=1,\\ldots,5. \\\\\n& \\bar{\\mathbf{c}}=\\begin{bmatrix}-4.2 \\\\ -9.1 \\\\ -8.8 \\\\ -9.2 \\\\ 7\\end{bmatrix}. \\\\\n& \\mathbf{P}_c=\\mathbf{I}_{5}. \\\\\n& \\bar{\\mathbf{a}}_{1}=\\begin{bmatrix}0 \\\\ -0.3 \\\\ 0.4 \\\\ 0 \\\\ 0\\end{bmatrix},\\quad b_{1}=0.62. \\\\\n& \\hat{\\mathbf{a}}_{1}=\\begin{bmatrix}0 \\\\ 0.1 \\\\ 0.1 \\\\ 0 \\\\ 0\\end{bmatrix}. \\\\\n& \\bar{\\mathbf{a}}_{2}=\\begin{bmatrix}0.5 \\\\ 0 \\\\ 0 \\\\ 0.8 \\\\ -0.2\\end{bmatrix},\\quad b_{2}=0.5. \\\\\n& \\bar{\\mathbf{a}}_{3}=\\begin{bmatrix}0 \\\\ -0.1 \\\\ 0 \\\\ 1 \\\\ -0.1\\end{bmatrix},\\quad b_{3}=0.25. \\\\\n& \\mathbf{P}_{a3}=\\mathbf{I}_{5}. \\\\\n& \\bar{\\mathbf{a}}_{4}=\\begin{bmatrix}0 \\\\ 0 \\\\ 0 \\\\ 0.9 \\\\ -0.5\\end{bmatrix},\\quad b_{4}=-0.21. \\\\\n& \\bar{\\mathbf{a}}_{5}=\\begin{bmatrix}0 \\\\ 0.4 \\\\ 0 \\\\ 0 \\\\ 0.3\\end{bmatrix},\\quad b_{5}=0.2. \\\\\n& \\hat{\\mathbf{a}}_{5}=\\begin{bmatrix}0 \\\\ 0.1 \\\\ 0 \\\\ 0 \\\\ 0.1\\end{bmatrix}. \\\\\n& \\mathcal{U}_{\\mathrm{shared}}=\\{\\boldsymbol{\\xi}_{\\mathrm{shared}}\\in\\mathbb{R}^{5}:\\mathbf{D}_{s}\\boldsymbol{\\xi}_{\\mathrm{shared}}\\le\\mathbf{d}_{s},\\ -0.1\\mathbf{1}\\le\\boldsymbol{\\xi}_{\\mathrm{shared}}\\le0\\mathbf{1}\\}. \\\\\n& \\mathbf{D}_s=\\begin{bmatrix}0.1 & 0 & -0.1 & -0.1 & 0 \\\\ -0.1 & -0.1 & 0 & 0 & 0 \\\\ 0 & 0.1 & 0 & -0.1 & 0 \\\\ 0 & 0 & 0.1 & 0.1 & 0\\end{bmatrix},\\quad\\mathbf{d}_s=\\begin{bmatrix}0.03 \\\\ 0.02 \\\\ 0.02 \\\\ 0.01\\end{bmatrix}. \\\\\n& \\mathcal{U}_{a1,Bud}=\\{\\boldsymbol{\\xi}_{a1}\\in\\mathbb{R}^{5}:\\|\\boldsymbol{\\xi}_{a1}\\|_\\infty\\le1,\\|\\boldsymbol{\\xi}_{a1}\\|_1\\le1.4\\}. \\\\\n& \\mathcal{U}_{a2,P}=\\{\\boldsymbol{\\delta}_{a2}\\in\\mathbb{R}^{5}:\\mathbf{D}_{a2}\\boldsymbol{\\delta}_{a2}\\le\\mathbf{d}_{a2},\\ \\mathbf{E}_{a2}\\boldsymbol{\\delta}_{a2}=\\mathbf{e}_{a2}\\}. \\\\\n& \\mathbf{D}_{a2}=\\begin{bmatrix}0 & 0 & 0 & 0.1 & 0.1 \\\\ 1 & 0 & 0 & 0 & 0 \\\\ -1 & 0 & 0 & 0 & 0 \\\\ 0 & 0 & 0 & 1 & 0 \\\\ 0 & 0 & 0 & -1 & 0 \\\\ 0 & 0 & 0 & 0 & 1 \\\\ 0 & 0 & 0 & 0 & -1\\end{bmatrix},\\quad\\mathbf{d}_{a2}=\\begin{bmatrix}0 \\\\ 0 \\\\ 0.1 \\\\ 0 \\\\ 0.1 \\\\ 0 \\\\ 0.1\\end{bmatrix}. \\\\\n& \\mathbf{E}_{a2}=\\begin{bmatrix}-0.1 & 0 & 0 & -0.1 & -0.1 \\\\ 0 & 1 & 0 & 0 & 0 \\\\ 0 & 0 & 1 & 0 & 0\\end{bmatrix},\\quad\\mathbf{e}_{a2}=\\begin{bmatrix}0.02 \\\\ 0 \\\\ 0\\end{bmatrix}. \\\\\n& \\mathcal{U}_{a5,Box}=\\{\\boldsymbol{\\xi}_{a5}\\in\\mathbb{R}^{5}:\\|\\boldsymbol{\\xi}_{a5}\\|_\\infty\\le1\\}. \\\\\n\\end{align*}",
+    "uncertainty_type": [
+      3,
+      2,
+      3,
+      3,
+      0,
+      1
+    ],
+    "solution": [
+      -1.0,
+      -1.0,
+      -1.0,
+      -0.2333333333333333,
+      0.0
+    ],
+    "optimal_value": 24.24666666666667,
+    "coupled_rows": [
+      0,
+      3
+    ],
+    "coupled_unit_ids": [
+      0,
+      3
+    ],
+    "coupled_unit_labels": [
+      "objective",
+      "constraint_3"
+    ],
+    "row_indexing": "0=objective, 1..n=constraint rows",
+    "shared_uncertainty": true,
+    "uncertainty_family": "poly"
+  },
+  {
+    "id": "coupled_005_n3_poly_T111",
+    "n_vars": 3,
+    "n_constraints": 3,
+    "template_param": [
+      1,
+      1,
+      1
+    ],
+    "setting": "random_backbone_coupled_row_shared_primitive",
+    "description": "\\begin{align*}\n& \\text{Minimize}\\quad \\max_{\\boldsymbol{\\xi}_{c}\\in\\mathcal{U}_{c,Bud}}(\\bar{\\mathbf{c}}+\\operatorname{diag}(\\hat{\\mathbf{c}})\\boldsymbol{\\xi}_{c})^\\top\\mathbf{x} && \\text{(Budgeted Uncertainty Objective)} \\\\\n& \\text{subject to} \\\\\n& \\bar{\\mathbf{a}}_{1}^\\top\\mathbf{x} \\ge -3.66 && \\text{(Deterministic Constraint)} \\\\\n& \\max_{\\boldsymbol{\\xi}_{\\mathrm{shared}}\\in\\mathcal{U}_{\\mathrm{shared}}}(\\bar{\\mathbf{a}}_{2}+\\mathbf{I}_{3}\\boldsymbol{\\xi}_{\\mathrm{shared}})^\\top\\mathbf{x} \\le 23.05 && \\text{(Shared-factor Polyhedral Uncertainty Constraint)} \\\\\n& \\min_{\\boldsymbol{\\xi}_{\\mathrm{shared}}\\in\\mathcal{U}_{\\mathrm{shared}}}(\\bar{\\mathbf{a}}_{3}+\\mathbf{I}_{3}\\boldsymbol{\\xi}_{\\mathrm{shared}})^\\top\\mathbf{x} \\ge -11.89 && \\text{(Shared-factor Polyhedral Uncertainty Constraint)} \\\\\n& \\text{where the same primitive vector }\\boldsymbol{\\xi}_{\\mathrm{shared}}\\text{ drives constraint row 2 and constraint row 3}. \\\\\n& \\mathbf{x}\\in\\mathbb{R}^{3},\\quad-4.1\\le x_j\\le0,\\quad j=1,\\ldots,3. \\\\\n& \\bar{\\mathbf{c}}=\\begin{bmatrix}0.1 \\\\ -9.7 \\\\ 0.3\\end{bmatrix}. \\\\\n& \\hat{\\mathbf{c}}=\\begin{bmatrix}0.1 \\\\ 0 \\\\ 0.1\\end{bmatrix}. \\\\\n& \\bar{\\mathbf{a}}_{1}=\\begin{bmatrix}-4 \\\\ -2.9 \\\\ 0\\end{bmatrix},\\quad b_{1}=-3.66. \\\\\n& \\bar{\\mathbf{a}}_{2}=\\begin{bmatrix}-3.4 \\\\ 0 \\\\ -3.2\\end{bmatrix},\\quad b_{2}=23.05. \\\\\n& \\mathbf{P}_{a2}=\\mathbf{I}_{3}. \\\\\n& \\bar{\\mathbf{a}}_{3}=\\begin{bmatrix}0 \\\\ 2.6 \\\\ -2.9\\end{bmatrix},\\quad b_{3}=-11.89. \\\\\n& \\mathbf{P}_{a3}=\\mathbf{I}_{3}. \\\\\n& \\mathcal{U}_{\\mathrm{shared}}=\\{\\boldsymbol{\\xi}_{\\mathrm{shared}}\\in\\mathbb{R}^{3}:\\mathbf{D}_{s}\\boldsymbol{\\xi}_{\\mathrm{shared}}\\le\\mathbf{d}_{s},\\ 0\\mathbf{1}\\le\\boldsymbol{\\xi}_{\\mathrm{shared}}\\le0.4\\mathbf{1}\\}. \\\\\n& \\mathbf{D}_s=\\begin{bmatrix}-0.2 & -0.1 & 0 \\\\ -0.1 & 0.2 & 0\\end{bmatrix},\\quad\\mathbf{d}_s=\\begin{bmatrix}0.03 \\\\ 0.12\\end{bmatrix}. \\\\\n& \\mathcal{U}_{c,Bud}=\\{\\boldsymbol{\\xi}_{c}\\in\\mathbb{R}^{3}:\\|\\boldsymbol{\\xi}_{c}\\|_\\infty\\le1,\\|\\boldsymbol{\\xi}_{c}\\|_1\\le0.5\\}. \\\\\n\\end{align*}",
+    "uncertainty_type": [
+      2,
+      0,
+      3,
+      3
+    ],
+    "solution": [
+      -2.9205882352941184,
+      0.0,
+      -4.1
+    ],
+    "optimal_value": -1.3170588235294116,
+    "coupled_rows": [
+      2,
+      3
+    ],
+    "coupled_unit_ids": [
+      2,
+      3
+    ],
+    "coupled_unit_labels": [
+      "constraint_2",
+      "constraint_3"
+    ],
+    "row_indexing": "0=objective, 1..n=constraint rows",
+    "shared_uncertainty": true,
+    "uncertainty_family": "poly"
+  },
+  {
+    "id": "coupled_006_n4_poly_T111",
+    "n_vars": 4,
+    "n_constraints": 4,
+    "template_param": [
+      1,
+      1,
+      1
+    ],
+    "setting": "random_backbone_coupled_row_shared_primitive",
+    "description": "\\begin{align*}\n& \\text{Minimize}\\quad \\max_{\\boldsymbol{\\xi}_{c}\\in\\mathcal{U}_{c,Box}}(\\bar{\\mathbf{c}}+\\operatorname{diag}(\\hat{\\mathbf{c}})\\boldsymbol{\\xi}_{c})^\\top\\mathbf{x} && \\text{(Box Uncertainty Objective)} \\\\\n& \\text{subject to} \\\\\n& \\max_{\\boldsymbol{\\xi}_{\\mathrm{shared}}\\in\\mathcal{U}_{\\mathrm{shared}}}(\\bar{\\mathbf{a}}_{1}+\\mathbf{I}_{4}\\boldsymbol{\\xi}_{\\mathrm{shared}})^\\top\\mathbf{x} \\le 130.28 && \\text{(Shared-factor Polyhedral Uncertainty Constraint)} \\\\\n& \\mathbf{a}_{2}^\\top\\mathbf{x} = -1.28 && \\text{(Deterministic Equality Constraint)} \\\\\n& \\max_{\\boldsymbol{\\delta}_{a3}\\in\\mathcal{U}_{a3,P}}(\\bar{\\mathbf{a}}_{3}+\\boldsymbol{\\delta}_{a3})^\\top\\mathbf{x} \\le 76.79 && \\text{(Polyhedral Uncertainty Constraint)} \\\\\n& \\min_{\\boldsymbol{\\xi}_{\\mathrm{shared}}\\in\\mathcal{U}_{\\mathrm{shared}}}(\\bar{\\mathbf{a}}_{4}+\\mathbf{I}_{4}\\boldsymbol{\\xi}_{\\mathrm{shared}})^\\top\\mathbf{x} \\ge -71.05 && \\text{(Shared-factor Polyhedral Uncertainty Constraint)} \\\\\n& \\text{where the same primitive vector }\\boldsymbol{\\xi}_{\\mathrm{shared}}\\text{ drives constraint row 1 and constraint row 4}. \\\\\n& \\mathbf{x}\\in\\mathbb{R}^{4},\\quad0\\le x_j\\le7.9,\\quad j=1,\\ldots,4. \\\\\n& \\bar{\\mathbf{c}}=\\begin{bmatrix}4.7 \\\\ 7.3 \\\\ 0.2 \\\\ 2.2\\end{bmatrix}. \\\\\n& \\hat{\\mathbf{c}}=\\begin{bmatrix}0.9 \\\\ 1.3 \\\\ 0.1 \\\\ 0.3\\end{bmatrix}. \\\\\n& \\bar{\\mathbf{a}}_{1}=\\begin{bmatrix}1.6 \\\\ 3.1 \\\\ -7.5 \\\\ -7.5\\end{bmatrix},\\quad b_{1}=130.28. \\\\\n& \\mathbf{P}_{a1}=\\mathbf{I}_{4}. \\\\\n& \\mathbf{a}_{2}=\\begin{bmatrix}-2.8 \\\\ 0 \\\\ 7.6 \\\\ 0\\end{bmatrix},\\quad b_{2}=-1.28. \\\\\n& \\bar{\\mathbf{a}}_{3}=\\begin{bmatrix}7.3 \\\\ 0.1 \\\\ 0 \\\\ 4.3\\end{bmatrix},\\quad b_{3}=76.79. \\\\\n& \\bar{\\mathbf{a}}_{4}=\\begin{bmatrix}3.7 \\\\ 0 \\\\ 4.6 \\\\ -0.9\\end{bmatrix},\\quad b_{4}=-71.05. \\\\\n& \\mathbf{P}_{a4}=\\mathbf{I}_{4}. \\\\\n& \\mathcal{U}_{\\mathrm{shared}}=\\{\\boldsymbol{\\xi}_{\\mathrm{shared}}\\in\\mathbb{R}^{4}:\\mathbf{D}_{s}\\boldsymbol{\\xi}_{\\mathrm{shared}}\\le\\mathbf{d}_{s},\\ \\mathbf{E}_{s}\\boldsymbol{\\xi}_{\\mathrm{shared}}=\\mathbf{e}_{s},\\ -0.8\\mathbf{1}\\le\\boldsymbol{\\xi}_{\\mathrm{shared}}\\le0.8\\mathbf{1}\\}. \\\\\n& \\mathbf{D}_s=\\begin{bmatrix}0.6 & 0 & 0 & -0.6 \\\\ 0.4 & 0.2 & -0.6 & 0.4\\end{bmatrix},\\quad\\mathbf{d}_s=\\begin{bmatrix}0.92 \\\\ 0.93\\end{bmatrix}. \\\\\n& \\mathbf{E}_s=\\begin{bmatrix}-0.4 & 0 & 0 & -0.5\\end{bmatrix},\\quad\\mathbf{e}_s=\\begin{bmatrix}0.72\\end{bmatrix}. \\\\\n& \\mathcal{U}_{c,Box}=\\{\\boldsymbol{\\xi}_{c}\\in\\mathbb{R}^{4}:\\|\\boldsymbol{\\xi}_{c}\\|_\\infty\\le1\\}. \\\\\n& \\mathcal{U}_{a3,P}=\\{\\boldsymbol{\\delta}_{a3}\\in\\mathbb{R}^{4}:\\mathbf{D}_{a3}\\boldsymbol{\\delta}_{a3}\\le\\mathbf{d}_{a3},\\ \\mathbf{E}_{a3}\\boldsymbol{\\delta}_{a3}=\\mathbf{e}_{a3}\\}. \\\\\n& \\mathbf{D}_{a3}=\\begin{bmatrix}0.8 & 0 & 0 & 0.7 \\\\ -0.1 & 0.3 & 0 & 0 \\\\ 1 & 0 & 0 & 0 \\\\ -1 & 0 & 0 & 0 \\\\ 0 & 1 & 0 & 0 \\\\ 0 & -1 & 0 & 0 \\\\ 0 & 0 & 0 & 1 \\\\ 0 & 0 & 0 & -1\\end{bmatrix},\\quad\\mathbf{d}_{a3}=\\begin{bmatrix}0.95 \\\\ -0.11 \\\\ 0.8 \\\\ 0.8 \\\\ 0.8 \\\\ 0.8 \\\\ 0.8 \\\\ 0.8\\end{bmatrix}. \\\\\n& \\mathbf{E}_{a3}=\\begin{bmatrix}0 & 0 & 1 & 0\\end{bmatrix},\\quad\\mathbf{e}_{a3}=\\begin{bmatrix}0\\end{bmatrix}. \\\\\n\\end{align*}",
+    "uncertainty_type": [
+      1,
+      3,
+      0,
+      3,
+      3
+    ],
+    "solution": [
+      0.4571428571428572,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "optimal_value": 2.5600000000000005,
+    "coupled_rows": [
+      1,
+      4
+    ],
+    "coupled_unit_ids": [
+      1,
+      4
+    ],
+    "coupled_unit_labels": [
+      "constraint_1",
+      "constraint_4"
+    ],
+    "row_indexing": "0=objective, 1..n=constraint rows",
+    "shared_uncertainty": true,
+    "uncertainty_family": "poly"
+  },
+  {
+    "id": "coupled_007_n4_poly_T111",
+    "n_vars": 4,
+    "n_constraints": 4,
+    "template_param": [
+      1,
+      1,
+      1
+    ],
+    "setting": "random_backbone_coupled_row_shared_primitive",
+    "description": "\\begin{align*}\n& \\text{Minimize}\\quad \\max_{\\boldsymbol{\\xi}_{\\mathrm{shared}}\\in\\mathcal{U}_{\\mathrm{shared}}}(\\bar{\\mathbf{c}}+\\mathbf{I}_{4}\\boldsymbol{\\xi}_{\\mathrm{shared}})^\\top\\mathbf{x} && \\text{(Shared-factor Polyhedral Uncertainty Objective)} \\\\\n& \\text{subject to} \\\\\n& \\max_{\\boldsymbol{\\xi}_{\\mathrm{shared}}\\in\\mathcal{U}_{\\mathrm{shared}}}(\\bar{\\mathbf{a}}_{1}+\\mathbf{I}_{4}\\boldsymbol{\\xi}_{\\mathrm{shared}})^\\top\\mathbf{x} \\le 5.16 && \\text{(Shared-factor Polyhedral Uncertainty Constraint)} \\\\\n& \\min_{\\boldsymbol{\\xi}_{a2}\\in\\mathcal{U}_{a2,Box}}(\\bar{\\mathbf{a}}_{2}+\\operatorname{diag}(\\hat{\\mathbf{a}}_{2})\\boldsymbol{\\xi}_{a2})^\\top\\mathbf{x} \\ge -29.32 && \\text{(Box Uncertainty Constraint)} \\\\\n& \\min_{\\boldsymbol{\\xi}_{a3}\\in\\mathcal{U}_{a3,Bud}}(\\bar{\\mathbf{a}}_{3}+\\operatorname{diag}(\\hat{\\mathbf{a}}_{3})\\boldsymbol{\\xi}_{a3})^\\top\\mathbf{x} \\ge -39.25 && \\text{(Budgeted Uncertainty Constraint)} \\\\\n& \\bar{\\mathbf{a}}_{4}^\\top\\mathbf{x} \\ge 3.11 && \\text{(Deterministic Constraint)} \\\\\n& \\text{where the same primitive vector }\\boldsymbol{\\xi}_{\\mathrm{shared}}\\text{ drives the objective row and constraint row 1}. \\\\\n& \\mathbf{x}\\in\\mathbb{R}^{4},\\quad-5.8\\le x_j\\le0,\\quad j=1,\\ldots,4. \\\\\n& \\bar{\\mathbf{c}}=\\begin{bmatrix}-0.7 \\\\ 6.7 \\\\ 7.8 \\\\ -9.9\\end{bmatrix}. \\\\\n& \\mathbf{P}_c=\\mathbf{I}_{4}. \\\\\n& \\bar{\\mathbf{a}}_{1}=\\begin{bmatrix}0 \\\\ -3.1 \\\\ -0.3 \\\\ 5.1\\end{bmatrix},\\quad b_{1}=5.16. \\\\\n& \\mathbf{P}_{a1}=\\mathbf{I}_{4}. \\\\\n& \\bar{\\mathbf{a}}_{2}=\\begin{bmatrix}5.4 \\\\ 0 \\\\ 0.6 \\\\ 0\\end{bmatrix},\\quad b_{2}=-29.32. \\\\\n& \\hat{\\mathbf{a}}_{2}=\\begin{bmatrix}0.3 \\\\ 0 \\\\ 0.1 \\\\ 0\\end{bmatrix}. \\\\\n& \\bar{\\mathbf{a}}_{3}=\\begin{bmatrix}0 \\\\ 0 \\\\ -4 \\\\ 2.8\\end{bmatrix},\\quad b_{3}=-39.25. \\\\\n& \\hat{\\mathbf{a}}_{3}=\\begin{bmatrix}0 \\\\ 0 \\\\ 0.6 \\\\ 0.2\\end{bmatrix}. \\\\\n& \\bar{\\mathbf{a}}_{4}=\\begin{bmatrix}0 \\\\ 1.1 \\\\ -2 \\\\ -3.1\\end{bmatrix},\\quad b_{4}=3.11. \\\\\n& \\mathcal{U}_{\\mathrm{shared}}=\\{\\boldsymbol{\\xi}_{\\mathrm{shared}}\\in\\mathbb{R}^{4}:\\mathbf{D}_{s}\\boldsymbol{\\xi}_{\\mathrm{shared}}\\le\\mathbf{d}_{s},\\ \\mathbf{E}_{s}\\boldsymbol{\\xi}_{\\mathrm{shared}}=\\mathbf{e}_{s},\\ 0\\mathbf{1}\\le\\boldsymbol{\\xi}_{\\mathrm{shared}}\\le0.6\\mathbf{1}\\}. \\\\\n& \\mathbf{D}_s=\\begin{bmatrix}0.5 & 0.5 & 0.5 & 0 \\\\ 0 & -0.1 & 0.2 & 0\\end{bmatrix},\\quad\\mathbf{d}_s=\\begin{bmatrix}0.75 \\\\ 0.17\\end{bmatrix}. \\\\\n& \\mathbf{E}_s=\\begin{bmatrix}0.4 & -0.2 & -0.1 & 0\\end{bmatrix},\\quad\\mathbf{e}_s=\\begin{bmatrix}0.08\\end{bmatrix}. \\\\\n& \\mathcal{U}_{a2,Box}=\\{\\boldsymbol{\\xi}_{a2}\\in\\mathbb{R}^{4}:\\|\\boldsymbol{\\xi}_{a2}\\|_\\infty\\le1\\}. \\\\\n& \\mathcal{U}_{a3,Bud}=\\{\\boldsymbol{\\xi}_{a3}\\in\\mathbb{R}^{4}:\\|\\boldsymbol{\\xi}_{a3}\\|_\\infty\\le1,\\|\\boldsymbol{\\xi}_{a3}\\|_1\\le0.2\\}. \\\\\n\\end{align*}",
+    "uncertainty_type": [
+      3,
+      3,
+      1,
+      2,
+      0
+    ],
+    "solution": [
+      0.0,
+      -5.8,
+      -5.8,
+      -2.854901960784314
+    ],
+    "optimal_value": -55.83647058823529,
+    "coupled_rows": [
+      0,
+      1
+    ],
+    "coupled_unit_ids": [
+      0,
+      1
+    ],
+    "coupled_unit_labels": [
+      "objective",
+      "constraint_1"
+    ],
+    "row_indexing": "0=objective, 1..n=constraint rows",
+    "shared_uncertainty": true,
+    "uncertainty_family": "poly"
+  },
+  {
+    "id": "coupled_008_n5_poly_T111",
+    "n_vars": 5,
+    "n_constraints": 5,
+    "template_param": [
+      1,
+      1,
+      1
+    ],
+    "setting": "random_backbone_coupled_row_shared_primitive",
+    "description": "\\begin{align*}\n& \\text{Maximize}\\quad \\min_{\\boldsymbol{\\xi}_{\\mathrm{shared}}\\in\\mathcal{U}_{\\mathrm{shared}}}(\\bar{\\mathbf{c}}+\\mathbf{I}_{5}\\boldsymbol{\\xi}_{\\mathrm{shared}})^\\top\\mathbf{x} && \\text{(Shared-factor Polyhedral Uncertainty Objective)} \\\\\n& \\text{subject to} \\\\\n& \\bar{\\mathbf{a}}_{1}^\\top\\mathbf{x} \\le 2.79 && \\text{(Deterministic Constraint)} \\\\\n& \\max_{\\boldsymbol{\\xi}_{\\mathrm{shared}}\\in\\mathcal{U}_{\\mathrm{shared}}}(\\bar{\\mathbf{a}}_{2}+\\mathbf{I}_{5}\\boldsymbol{\\xi}_{\\mathrm{shared}})^\\top\\mathbf{x} \\le 3.58 && \\text{(Shared-factor Polyhedral Uncertainty Constraint)} \\\\\n& \\min_{\\boldsymbol{\\delta}_{a3}\\in\\mathcal{U}_{a3,P}}(\\bar{\\mathbf{a}}_{3}+\\boldsymbol{\\delta}_{a3})^\\top\\mathbf{x} \\ge -2.73 && \\text{(Polyhedral Uncertainty Constraint)} \\\\\n& \\max_{\\boldsymbol{\\xi}_{a4}\\in\\mathcal{U}_{a4,Box}}(\\bar{\\mathbf{a}}_{4}+\\operatorname{diag}(\\hat{\\mathbf{a}}_{4})\\boldsymbol{\\xi}_{a4})^\\top\\mathbf{x} \\le 2.18 && \\text{(Box Uncertainty Constraint)} \\\\\n& \\min_{\\boldsymbol{\\xi}_{a5}\\in\\mathcal{U}_{a5,Bud}}(\\bar{\\mathbf{a}}_{5}+\\operatorname{diag}(\\hat{\\mathbf{a}}_{5})\\boldsymbol{\\xi}_{a5})^\\top\\mathbf{x} \\ge -0.13 && \\text{(Budgeted Uncertainty Constraint)} \\\\\n& \\text{where the same primitive vector }\\boldsymbol{\\xi}_{\\mathrm{shared}}\\text{ drives the objective row and constraint row 2}. \\\\\n& \\mathbf{x}\\in\\mathbb{R}^{5},\\quad-1.7\\le x_j\\le1.7,\\quad j=1,\\ldots,5. \\\\\n& \\bar{\\mathbf{c}}=\\begin{bmatrix}-9.2 \\\\ -0.6 \\\\ 4.6 \\\\ 0 \\\\ -3.8\\end{bmatrix}. \\\\\n& \\mathbf{P}_c=\\mathbf{I}_{5}. \\\\\n& \\bar{\\mathbf{a}}_{1}=\\begin{bmatrix}0.2 \\\\ 0 \\\\ 0.3 \\\\ -1.3 \\\\ -0.9\\end{bmatrix},\\quad b_{1}=2.79. \\\\\n& \\bar{\\mathbf{a}}_{2}=\\begin{bmatrix}-0.3 \\\\ 1.5 \\\\ 0 \\\\ 0 \\\\ 1.1\\end{bmatrix},\\quad b_{2}=3.58. \\\\\n& \\mathbf{P}_{a2}=\\mathbf{I}_{5}. \\\\\n& \\bar{\\mathbf{a}}_{3}=\\begin{bmatrix}-0.8 \\\\ 0.6 \\\\ 0.1 \\\\ -0.5 \\\\ 0.2\\end{bmatrix},\\quad b_{3}=-2.73. \\\\\n& \\bar{\\mathbf{a}}_{4}=\\begin{bmatrix}-1.2 \\\\ 1.4 \\\\ 0 \\\\ 0 \\\\ 1.4\\end{bmatrix},\\quad b_{4}=2.18. \\\\\n& \\hat{\\mathbf{a}}_{4}=\\begin{bmatrix}0 \\\\ 0.2 \\\\ 0 \\\\ 0 \\\\ 0.3\\end{bmatrix}. \\\\\n& \\bar{\\mathbf{a}}_{5}=\\begin{bmatrix}0 \\\\ 0.2 \\\\ 0 \\\\ 0 \\\\ 0.1\\end{bmatrix},\\quad b_{5}=-0.13. \\\\\n& \\hat{\\mathbf{a}}_{5}=\\begin{bmatrix}0 \\\\ 0.1 \\\\ 0 \\\\ 0 \\\\ 0.1\\end{bmatrix}. \\\\\n& \\mathcal{U}_{\\mathrm{shared}}=\\{\\boldsymbol{\\xi}_{\\mathrm{shared}}\\in\\mathbb{R}^{5}:\\mathbf{D}_{s}\\boldsymbol{\\xi}_{\\mathrm{shared}}\\le\\mathbf{d}_{s},\\ 0\\mathbf{1}\\le\\boldsymbol{\\xi}_{\\mathrm{shared}}\\le0.2\\mathbf{1}\\}. \\\\\n& \\mathbf{D}_s=\\begin{bmatrix}0 & 0 & 0.2 & -0.1 & 0.1 \\\\ -0.1 & -0.1 & 0.2 & -0.2 & 0 \\\\ 0 & -0.1 & 0.1 & 0.1 & 0 \\\\ -0.1 & 0 & 0.1 & 0 & 0\\end{bmatrix},\\quad\\mathbf{d}_s=\\begin{bmatrix}0.06 \\\\ 0.05 \\\\ 0.04 \\\\ 0.02\\end{bmatrix}. \\\\\n& \\mathcal{U}_{a3,P}=\\{\\boldsymbol{\\delta}_{a3}\\in\\mathbb{R}^{5}:\\mathbf{D}_{a3}\\boldsymbol{\\delta}_{a3}\\le\\mathbf{d}_{a3},\\ \\mathbf{E}_{a3}\\boldsymbol{\\delta}_{a3}=\\mathbf{e}_{a3}\\}. \\\\\n& \\mathbf{D}_{a3}=\\begin{bmatrix}-0.1 & 0 & 0.1 & 0 & 0 \\\\ 0 & 0 & -0.1 & 0.1 & 0 \\\\ 1 & 0 & 0 & 0 & 0 \\\\ -1 & 0 & 0 & 0 & 0 \\\\ 0 & 0 & 1 & 0 & 0 \\\\ 0 & 0 & -1 & 0 & 0 \\\\ 0 & 0 & 0 & 1 & 0 \\\\ 0 & 0 & 0 & -1 & 0\\end{bmatrix},\\quad\\mathbf{d}_{a3}=\\begin{bmatrix}0.01 \\\\ 0.01 \\\\ 0.2 \\\\ 0 \\\\ 0.2 \\\\ 0 \\\\ 0.2 \\\\ 0\\end{bmatrix}. \\\\\n& \\mathbf{E}_{a3}=\\begin{bmatrix}0 & 1 & 0 & 0 & 0 \\\\ 0 & 0 & 0 & 0 & 1\\end{bmatrix},\\quad\\mathbf{e}_{a3}=\\begin{bmatrix}0 \\\\ 0\\end{bmatrix}. \\\\\n& \\mathcal{U}_{a4,Box}=\\{\\boldsymbol{\\xi}_{a4}\\in\\mathbb{R}^{5}:\\|\\boldsymbol{\\xi}_{a4}\\|_\\infty\\le1\\}. \\\\\n& \\mathcal{U}_{a5,Bud}=\\{\\boldsymbol{\\xi}_{a5}\\in\\mathbb{R}^{5}:\\|\\boldsymbol{\\xi}_{a5}\\|_\\infty\\le1,\\|\\boldsymbol{\\xi}_{a5}\\|_1\\le0.1\\}. \\\\\n\\end{align*}",
+    "uncertainty_type": [
+      3,
+      0,
+      3,
+      3,
+      1,
+      2
+    ],
+    "solution": [
+      -1.7,
+      0.28500000000000003,
+      1.7,
+      -0.0,
+      -1.7
+    ],
+    "optimal_value": 29.069,
+    "coupled_rows": [
+      0,
+      2
+    ],
+    "coupled_unit_ids": [
+      0,
+      2
+    ],
+    "coupled_unit_labels": [
+      "objective",
+      "constraint_2"
+    ],
+    "row_indexing": "0=objective, 1..n=constraint rows",
+    "shared_uncertainty": true,
+    "uncertainty_family": "poly"
+  },
+  {
+    "id": "coupled_009_n4_box_T111",
+    "n_vars": 4,
+    "n_constraints": 4,
+    "template_param": [
+      1,
+      1,
+      1
+    ],
+    "setting": "random_backbone_coupled_row_shared_primitive",
+    "description": "\\begin{align*}\n& \\text{Minimize}\\quad \\max_{\\boldsymbol{\\xi}_{\\mathrm{shared}}\\in\\mathcal{U}_{\\mathrm{shared}}}(\\bar{\\mathbf{c}}+\\mathbf{I}_{4}\\boldsymbol{\\xi}_{\\mathrm{shared}})^\\top\\mathbf{x} && \\text{(Shared-factor Box Uncertainty Objective)} \\\\\n& \\text{subject to} \\\\\n& \\min_{\\boldsymbol{\\delta}_{a1}\\in\\mathcal{U}_{a1,P}}(\\bar{\\mathbf{a}}_{1}+\\boldsymbol{\\delta}_{a1})^\\top\\mathbf{x} \\ge -52.52 && \\text{(Polyhedral Uncertainty Constraint)} \\\\\n& \\max_{\\boldsymbol{\\xi}_{\\mathrm{shared}}\\in\\mathcal{U}_{\\mathrm{shared}}}(\\bar{\\mathbf{a}}_{2}+\\mathbf{I}_{4}\\boldsymbol{\\xi}_{\\mathrm{shared}})^\\top\\mathbf{x} \\le 63.36 && \\text{(Shared-factor Box Uncertainty Constraint)} \\\\\n& \\min_{\\boldsymbol{\\delta}_{a3}\\in\\mathcal{U}_{a3,P}}(\\bar{\\mathbf{a}}_{3}+\\boldsymbol{\\delta}_{a3})^\\top\\mathbf{x} \\ge -100.91 && \\text{(Polyhedral Uncertainty Constraint)} \\\\\n& \\bar{\\mathbf{a}}_{4}^\\top\\mathbf{x} \\le 87.34 && \\text{(Deterministic Constraint)} \\\\\n& \\text{where the same primitive vector }\\boldsymbol{\\xi}_{\\mathrm{shared}}\\text{ drives the objective row and constraint row 2}. \\\\\n& \\mathbf{x}\\in\\mathbb{R}^{4},\\quad-8.1\\le x_j\\le0,\\quad j=1,\\ldots,4. \\\\\n& \\bar{\\mathbf{c}}=\\begin{bmatrix}9.9 \\\\ 6.3 \\\\ -8.8 \\\\ 0.6\\end{bmatrix}. \\\\\n& \\mathbf{P}_c=\\mathbf{I}_{4}. \\\\\n& \\bar{\\mathbf{a}}_{1}=\\begin{bmatrix}6.2 \\\\ -4.7 \\\\ -3.9 \\\\ 0\\end{bmatrix},\\quad b_{1}=-52.52. \\\\\n& \\bar{\\mathbf{a}}_{2}=\\begin{bmatrix}-7.6 \\\\ -1.5 \\\\ 0 \\\\ -4.4\\end{bmatrix},\\quad b_{2}=63.36. \\\\\n& \\mathbf{P}_{a2}=\\mathbf{I}_{4}. \\\\\n& \\bar{\\mathbf{a}}_{3}=\\begin{bmatrix}0 \\\\ -7 \\\\ 5.1 \\\\ 4\\end{bmatrix},\\quad b_{3}=-100.91. \\\\\n& \\bar{\\mathbf{a}}_{4}=\\begin{bmatrix}5.6 \\\\ 0 \\\\ -3.3 \\\\ -3.6\\end{bmatrix},\\quad b_{4}=87.34. \\\\\n& \\mathcal{U}_{\\mathrm{shared}}=\\{\\boldsymbol{\\xi}_{\\mathrm{shared}}\\in\\mathbb{R}^{4}:\\|\\boldsymbol{\\xi}_{\\mathrm{shared}}\\|_\\infty\\le1\\}. \\\\\n& \\mathcal{U}_{a1,P}=\\{\\boldsymbol{\\delta}_{a1}\\in\\mathbb{R}^{4}:\\mathbf{D}_{a1}\\boldsymbol{\\delta}_{a1}\\le\\mathbf{d}_{a1},\\ \\mathbf{E}_{a1}\\boldsymbol{\\delta}_{a1}=\\mathbf{e}_{a1}\\}. \\\\\n& \\mathbf{D}_{a1}=\\begin{bmatrix}0 & 0.2 & -0.1 & 0 \\\\ 0 & 1 & 0 & 0 \\\\ 0 & -1 & 0 & 0 \\\\ 0 & 0 & 1 & 0 \\\\ 0 & 0 & -1 & 0\\end{bmatrix},\\quad\\mathbf{d}_{a1}=\\begin{bmatrix}0.1 \\\\ 0 \\\\ 0.8 \\\\ 0 \\\\ 0.8\\end{bmatrix}. \\\\\n& \\mathbf{E}_{a1}=\\begin{bmatrix}1 & 0 & 0 & 0 \\\\ 0 & 0 & 0 & 1\\end{bmatrix},\\quad\\mathbf{e}_{a1}=\\begin{bmatrix}0 \\\\ 0\\end{bmatrix}. \\\\\n& \\mathcal{U}_{a3,P}=\\{\\boldsymbol{\\delta}_{a3}\\in\\mathbb{R}^{4}:\\mathbf{D}_{a3}\\boldsymbol{\\delta}_{a3}\\le\\mathbf{d}_{a3},\\ \\mathbf{E}_{a3}\\boldsymbol{\\delta}_{a3}=\\mathbf{e}_{a3}\\}. \\\\\n& \\mathbf{D}_{a3}=\\begin{bmatrix}0 & 0 & 0.3 & 0.3 \\\\ 0 & 0 & 1 & 0 \\\\ 0 & 0 & -1 & 0 \\\\ 0 & 0 & 0 & 1 \\\\ 0 & 0 & 0 & -1\\end{bmatrix},\\quad\\mathbf{d}_{a3}=\\begin{bmatrix}0.24 \\\\ 0 \\\\ 0.8 \\\\ 0 \\\\ 0.8\\end{bmatrix}. \\\\\n& \\mathbf{E}_{a3}=\\begin{bmatrix}1 & 0 & 0 & 0 \\\\ 0 & 1 & 0 & 0\\end{bmatrix},\\quad\\mathbf{e}_{a3}=\\begin{bmatrix}0 \\\\ 0\\end{bmatrix}. \\\\\n\\end{align*}",
+    "uncertainty_type": [
+      1,
+      3,
+      1,
+      3,
+      0
+    ],
+    "solution": [
+      -5.0127906976744185,
+      -8.1,
+      0.0,
+      0.0
+    ],
+    "optimal_value": -87.54383720930232,
+    "coupled_rows": [
+      0,
+      2
+    ],
+    "coupled_unit_ids": [
+      0,
+      2
+    ],
+    "coupled_unit_labels": [
+      "objective",
+      "constraint_2"
+    ],
+    "row_indexing": "0=objective, 1..n=constraint rows",
+    "shared_uncertainty": true,
+    "uncertainty_family": "box"
+  },
+  {
+    "id": "coupled_010_n3_poly_T111",
+    "n_vars": 3,
+    "n_constraints": 3,
+    "template_param": [
+      1,
+      1,
+      1
+    ],
+    "setting": "random_backbone_coupled_row_shared_primitive",
+    "description": "\\begin{align*}\n& \\text{Minimize}\\quad \\max_{\\boldsymbol{\\xi}_{\\mathrm{shared}}\\in\\mathcal{U}_{\\mathrm{shared}}}(\\bar{\\mathbf{c}}+\\mathbf{I}_{3}\\boldsymbol{\\xi}_{\\mathrm{shared}})^\\top\\mathbf{x} && \\text{(Shared-factor Polyhedral Uncertainty Objective)} \\\\\n& \\text{subject to} \\\\\n& \\min_{\\boldsymbol{\\xi}_{\\mathrm{shared}}\\in\\mathcal{U}_{\\mathrm{shared}}}(\\bar{\\mathbf{a}}_{1}+\\mathbf{I}_{3}\\boldsymbol{\\xi}_{\\mathrm{shared}})^\\top\\mathbf{x} \\ge 28.73 && \\text{(Shared-factor Polyhedral Uncertainty Constraint)} \\\\\n& \\mathbf{a}_{2}^\\top\\mathbf{x} = -112.7 && \\text{(Deterministic Equality Constraint)} \\\\\n& \\max_{\\boldsymbol{\\delta}_{a3}\\in\\mathcal{U}_{a3,P}}(\\bar{\\mathbf{a}}_{3}+\\boldsymbol{\\delta}_{a3})^\\top\\mathbf{x} \\le 104.34 && \\text{(Polyhedral Uncertainty Constraint)} \\\\\n& \\text{where the same primitive vector }\\boldsymbol{\\xi}_{\\mathrm{shared}}\\text{ drives the objective row and constraint row 1}. \\\\\n& \\mathbf{x}\\in\\mathbb{R}^{3},\\quad-9.4\\le x_j\\le9.4,\\quad j=1,\\ldots,3. \\\\\n& \\bar{\\mathbf{c}}=\\begin{bmatrix}3.5 \\\\ -5 \\\\ -2.5\\end{bmatrix}. \\\\\n& \\mathbf{P}_c=\\mathbf{I}_{3}. \\\\\n& \\bar{\\mathbf{a}}_{1}=\\begin{bmatrix}-7.4 \\\\ -3.7 \\\\ 0\\end{bmatrix},\\quad b_{1}=28.73. \\\\\n& \\mathbf{P}_{a1}=\\mathbf{I}_{3}. \\\\\n& \\mathbf{a}_{2}=\\begin{bmatrix}7.3 \\\\ -4.6 \\\\ -7.4\\end{bmatrix},\\quad b_{2}=-112.7. \\\\\n& \\bar{\\mathbf{a}}_{3}=\\begin{bmatrix}5.3 \\\\ 0 \\\\ 8.3\\end{bmatrix},\\quad b_{3}=104.34. \\\\\n& \\mathcal{U}_{\\mathrm{shared}}=\\{\\boldsymbol{\\xi}_{\\mathrm{shared}}\\in\\mathbb{R}^{3}:\\mathbf{D}_{s}\\boldsymbol{\\xi}_{\\mathrm{shared}}\\le\\mathbf{d}_{s},\\ \\mathbf{E}_{s}\\boldsymbol{\\xi}_{\\mathrm{shared}}=\\mathbf{e}_{s},\\ -0.9\\mathbf{1}\\le\\boldsymbol{\\xi}_{\\mathrm{shared}}\\le0\\mathbf{1}\\}. \\\\\n& \\mathbf{D}_s=\\begin{bmatrix}0.1 & -0.1 & -0.5\\end{bmatrix},\\quad\\mathbf{d}_s=\\begin{bmatrix}0.21\\end{bmatrix}. \\\\\n& \\mathbf{E}_s=\\begin{bmatrix}0 & -0.8 & 0.2\\end{bmatrix},\\quad\\mathbf{e}_s=\\begin{bmatrix}0.6\\end{bmatrix}. \\\\\n& \\mathcal{U}_{a3,P}=\\{\\boldsymbol{\\delta}_{a3}\\in\\mathbb{R}^{3}:\\mathbf{D}_{a3}\\boldsymbol{\\delta}_{a3}\\le\\mathbf{d}_{a3},\\ \\mathbf{E}_{a3}\\boldsymbol{\\delta}_{a3}=\\mathbf{e}_{a3}\\}. \\\\\n& \\mathbf{D}_{a3}=\\begin{bmatrix}0.7 & 0 & 0.8 \\\\ 1 & 0 & 0 \\\\ -1 & 0 & 0 \\\\ 0 & 0 & 1 \\\\ 0 & 0 & -1\\end{bmatrix},\\quad\\mathbf{d}_{a3}=\\begin{bmatrix}0.42 \\\\ 0 \\\\ 0.9 \\\\ 0 \\\\ 0.9\\end{bmatrix}. \\\\\n& \\mathbf{E}_{a3}=\\begin{bmatrix}0 & 1 & 0\\end{bmatrix},\\quad\\mathbf{e}_{a3}=\\begin{bmatrix}0\\end{bmatrix}. \\\\\n\\end{align*}",
+    "uncertainty_type": [
+      3,
+      3,
+      0,
+      3
+    ],
+    "solution": [
+      -9.4,
+      9.024871431104804,
+      0.3467015428267438
+    ],
+    "optimal_value": -77.1997645859195,
+    "coupled_rows": [
+      0,
+      1
+    ],
+    "coupled_unit_ids": [
+      0,
+      1
+    ],
+    "coupled_unit_labels": [
+      "objective",
+      "constraint_1"
+    ],
+    "row_indexing": "0=objective, 1..n=constraint rows",
+    "shared_uncertainty": true,
+    "uncertainty_family": "poly"
+  },
+  {
+    "id": "coupled_011_n4_box_T111",
+    "n_vars": 4,
+    "n_constraints": 4,
+    "template_param": [
+      1,
+      1,
+      1
+    ],
+    "setting": "random_backbone_coupled_row_shared_primitive",
+    "description": "\\begin{align*}\n& \\text{Minimize}\\quad \\bar{\\mathbf{c}}^\\top\\mathbf{x} && \\text{(Deterministic Objective)} \\\\\n& \\text{subject to} \\\\\n& \\max_{\\boldsymbol{\\xi}_{a1}\\in\\mathcal{U}_{a1,Bud}}(\\bar{\\mathbf{a}}_{1}+\\operatorname{diag}(\\hat{\\mathbf{a}}_{1})\\boldsymbol{\\xi}_{a1})^\\top\\mathbf{x} \\le 69.9 && \\text{(Budgeted Uncertainty Constraint)} \\\\\n& \\max_{\\boldsymbol{\\xi}_{\\mathrm{shared}}\\in\\mathcal{U}_{\\mathrm{shared}}}(\\bar{\\mathbf{a}}_{2}+\\mathbf{I}_{4}\\boldsymbol{\\xi}_{\\mathrm{shared}})^\\top\\mathbf{x} \\le 56.18 && \\text{(Shared-factor Box Uncertainty Constraint)} \\\\\n& \\max_{\\boldsymbol{\\xi}_{a3}\\in\\mathcal{U}_{a3,Bud}}(\\bar{\\mathbf{a}}_{3}+\\operatorname{diag}(\\hat{\\mathbf{a}}_{3})\\boldsymbol{\\xi}_{a3})^\\top\\mathbf{x} \\le 12.92 && \\text{(Budgeted Uncertainty Constraint)} \\\\\n& \\max_{\\boldsymbol{\\xi}_{\\mathrm{shared}}\\in\\mathcal{U}_{\\mathrm{shared}}}(\\bar{\\mathbf{a}}_{4}+\\mathbf{I}_{4}\\boldsymbol{\\xi}_{\\mathrm{shared}})^\\top\\mathbf{x} \\le 15.27 && \\text{(Shared-factor Box Uncertainty Constraint)} \\\\\n& \\text{where the same primitive vector }\\boldsymbol{\\xi}_{\\mathrm{shared}}\\text{ drives constraint row 2 and constraint row 4}. \\\\\n& \\mathbf{x}\\in\\mathbb{R}^{4},\\quad-7.4\\le x_j\\le7.4,\\quad j=1,\\ldots,4. \\\\\n& \\bar{\\mathbf{c}}=\\begin{bmatrix}-8.2 \\\\ 4.8 \\\\ -2 \\\\ -5.5\\end{bmatrix}. \\\\\n& \\bar{\\mathbf{a}}_{1}=\\begin{bmatrix}4.8 \\\\ -6.3 \\\\ -3.4 \\\\ 0\\end{bmatrix},\\quad b_{1}=69.9. \\\\\n& \\hat{\\mathbf{a}}_{1}=\\begin{bmatrix}0.6 \\\\ 0.3 \\\\ 0 \\\\ 0\\end{bmatrix}. \\\\\n& \\bar{\\mathbf{a}}_{2}=\\begin{bmatrix}0 \\\\ 2.6 \\\\ 6.6 \\\\ -6.6\\end{bmatrix},\\quad b_{2}=56.18. \\\\\n& \\mathbf{P}_{a2}=\\mathbf{I}_{4}. \\\\\n& \\bar{\\mathbf{a}}_{3}=\\begin{bmatrix}0 \\\\ 0 \\\\ 2.5 \\\\ 1.2\\end{bmatrix},\\quad b_{3}=12.92. \\\\\n& \\hat{\\mathbf{a}}_{3}=\\begin{bmatrix}0 \\\\ 0 \\\\ 0.1 \\\\ 0.1\\end{bmatrix}. \\\\\n& \\bar{\\mathbf{a}}_{4}=\\begin{bmatrix}-5.1 \\\\ 0 \\\\ 0 \\\\ -4.3\\end{bmatrix},\\quad b_{4}=15.27. \\\\\n& \\mathbf{P}_{a4}=\\mathbf{I}_{4}. \\\\\n& \\mathcal{U}_{\\mathrm{shared}}=\\{\\boldsymbol{\\xi}_{\\mathrm{shared}}\\in\\mathbb{R}^{4}:\\|\\boldsymbol{\\xi}_{\\mathrm{shared}}\\|_\\infty\\le1\\}. \\\\\n& \\mathcal{U}_{a1,Bud}=\\{\\boldsymbol{\\xi}_{a1}\\in\\mathbb{R}^{4}:\\|\\boldsymbol{\\xi}_{a1}\\|_\\infty\\le1,\\|\\boldsymbol{\\xi}_{a1}\\|_1\\le0.7\\}. \\\\\n& \\mathcal{U}_{a3,Bud}=\\{\\boldsymbol{\\xi}_{a3}\\in\\mathbb{R}^{4}:\\|\\boldsymbol{\\xi}_{a3}\\|_\\infty\\le1,\\|\\boldsymbol{\\xi}_{a3}\\|_1\\le0.2\\}. \\\\\n\\end{align*}",
+    "uncertainty_type": [
+      0,
+      2,
+      1,
+      2,
+      1
+    ],
+    "solution": [
+      7.4,
+      -5.803987301587302,
+      1.5567999999999995,
+      7.4
+    ],
+    "optimal_value": -132.35273904761902,
+    "coupled_rows": [
+      2,
+      4
+    ],
+    "coupled_unit_ids": [
+      2,
+      4
+    ],
+    "coupled_unit_labels": [
+      "constraint_2",
+      "constraint_4"
+    ],
+    "row_indexing": "0=objective, 1..n=constraint rows",
+    "shared_uncertainty": true,
+    "uncertainty_family": "box"
+  },
+  {
+    "id": "coupled_012_n2_box_T111",
+    "n_vars": 2,
+    "n_constraints": 2,
+    "template_param": [
+      1,
+      1,
+      1
+    ],
+    "setting": "random_backbone_coupled_row_shared_primitive",
+    "description": "\\begin{align*}\n& \\text{Maximize}\\quad \\min_{\\boldsymbol{\\xi}_{\\mathrm{shared}}\\in\\mathcal{U}_{\\mathrm{shared}}}(\\bar{\\mathbf{c}}+\\mathbf{I}_{2}\\boldsymbol{\\xi}_{\\mathrm{shared}})^\\top\\mathbf{x} && \\text{(Shared-factor Box Uncertainty Objective)} \\\\\n& \\text{subject to} \\\\\n& \\bar{\\mathbf{a}}_{1}^\\top\\mathbf{x} \\le 3.15 && \\text{(Deterministic Constraint)} \\\\\n& \\max_{\\boldsymbol{\\xi}_{\\mathrm{shared}}\\in\\mathcal{U}_{\\mathrm{shared}}}(\\bar{\\mathbf{a}}_{2}+\\mathbf{I}_{2}\\boldsymbol{\\xi}_{\\mathrm{shared}})^\\top\\mathbf{x} \\le 2.12 && \\text{(Shared-factor Box Uncertainty Constraint)} \\\\\n& \\text{where the same primitive vector }\\boldsymbol{\\xi}_{\\mathrm{shared}}\\text{ drives the objective row and constraint row 2}. \\\\\n& \\mathbf{x}\\in\\mathbb{R}^{2},\\quad0\\le x_j\\le2.5,\\quad j=1,\\ldots,2. \\\\\n& \\bar{\\mathbf{c}}=\\begin{bmatrix}5.4 \\\\ -5.1\\end{bmatrix}. \\\\\n& \\mathbf{P}_c=\\mathbf{I}_{2}. \\\\\n& \\bar{\\mathbf{a}}_{1}=\\begin{bmatrix}0.4 \\\\ 1.8\\end{bmatrix},\\quad b_{1}=3.15. \\\\\n& \\bar{\\mathbf{a}}_{2}=\\begin{bmatrix}0.7 \\\\ 1\\end{bmatrix},\\quad b_{2}=2.12. \\\\\n& \\mathbf{P}_{a2}=\\mathbf{I}_{2}. \\\\\n& \\mathcal{U}_{\\mathrm{shared}}=\\{\\boldsymbol{\\xi}_{\\mathrm{shared}}\\in\\mathbb{R}^{2}:\\|\\boldsymbol{\\xi}_{\\mathrm{shared}}\\|_\\infty\\le1\\}. \\\\\n\\end{align*}",
+    "uncertainty_type": [
+      1,
+      0,
+      1
+    ],
+    "solution": [
+      1.2470588235294118,
+      0.0
+    ],
+    "optimal_value": 5.487058823529412,
+    "coupled_rows": [
+      0,
+      2
+    ],
+    "coupled_unit_ids": [
+      0,
+      2
+    ],
+    "coupled_unit_labels": [
+      "objective",
+      "constraint_2"
+    ],
+    "row_indexing": "0=objective, 1..n=constraint rows",
+    "shared_uncertainty": true,
+    "uncertainty_family": "box"
+  },
+  {
+    "id": "coupled_013_n3_poly_T111",
+    "n_vars": 3,
+    "n_constraints": 3,
+    "template_param": [
+      1,
+      1,
+      1
+    ],
+    "setting": "random_backbone_coupled_row_shared_primitive",
+    "description": "\\begin{align*}\n& \\text{Maximize}\\quad \\min_{\\boldsymbol{\\xi}_{\\mathrm{shared}}\\in\\mathcal{U}_{\\mathrm{shared}}}(\\bar{\\mathbf{c}}+\\mathbf{I}_{3}\\boldsymbol{\\xi}_{\\mathrm{shared}})^\\top\\mathbf{x} && \\text{(Shared-factor Polyhedral Uncertainty Objective)} \\\\\n& \\text{subject to} \\\\\n& \\mathbf{a}_{1}^\\top\\mathbf{x} = 16.62 && \\text{(Deterministic Equality Constraint)} \\\\\n& \\min_{\\boldsymbol{\\xi}_{\\mathrm{shared}}\\in\\mathcal{U}_{\\mathrm{shared}}}(\\bar{\\mathbf{a}}_{2}+\\mathbf{I}_{3}\\boldsymbol{\\xi}_{\\mathrm{shared}})^\\top\\mathbf{x} \\ge -2.51 && \\text{(Shared-factor Polyhedral Uncertainty Constraint)} \\\\\n& \\max_{\\boldsymbol{\\delta}_{a3}\\in\\mathcal{U}_{a3,P}}(\\bar{\\mathbf{a}}_{3}+\\boldsymbol{\\delta}_{a3})^\\top\\mathbf{x} \\le 52.59 && \\text{(Polyhedral Uncertainty Constraint)} \\\\\n& \\text{where the same primitive vector }\\boldsymbol{\\xi}_{\\mathrm{shared}}\\text{ drives the objective row and constraint row 2}. \\\\\n& \\mathbf{x}\\in\\mathbb{R}^{3},\\quad0\\le x_j\\le6,\\quad j=1,\\ldots,3. \\\\\n& \\bar{\\mathbf{c}}=\\begin{bmatrix}7.3 \\\\ -8 \\\\ 4.5\\end{bmatrix}. \\\\\n& \\mathbf{P}_c=\\mathbf{I}_{3}. \\\\\n& \\mathbf{a}_{1}=\\begin{bmatrix}2.4 \\\\ 5.4 \\\\ 0\\end{bmatrix},\\quad b_{1}=16.62. \\\\\n& \\bar{\\mathbf{a}}_{2}=\\begin{bmatrix}-0.9 \\\\ 0.1 \\\\ -0.1\\end{bmatrix},\\quad b_{2}=-2.51. \\\\\n& \\mathbf{P}_{a2}=\\mathbf{I}_{3}. \\\\\n& \\bar{\\mathbf{a}}_{3}=\\begin{bmatrix}4.3 \\\\ 3.4 \\\\ -2\\end{bmatrix},\\quad b_{3}=52.59. \\\\\n& \\mathcal{U}_{\\mathrm{shared}}=\\{\\boldsymbol{\\xi}_{\\mathrm{shared}}\\in\\mathbb{R}^{3}:\\mathbf{D}_{s}\\boldsymbol{\\xi}_{\\mathrm{shared}}\\le\\mathbf{d}_{s},\\ -0.6\\mathbf{1}\\le\\boldsymbol{\\xi}_{\\mathrm{shared}}\\le0\\mathbf{1}\\}. \\\\\n& \\mathbf{D}_s=\\begin{bmatrix}0 & 0.1 & 0.4 \\\\ -0.1 & 0 & -0.2\\end{bmatrix},\\quad\\mathbf{d}_s=\\begin{bmatrix}-0.13 \\\\ 0.14\\end{bmatrix}. \\\\\n& \\mathcal{U}_{a3,P}=\\{\\boldsymbol{\\delta}_{a3}\\in\\mathbb{R}^{3}:\\mathbf{D}_{a3}\\boldsymbol{\\delta}_{a3}\\le\\mathbf{d}_{a3}\\}. \\\\\n& \\mathbf{D}_{a3}=\\begin{bmatrix}-0.6 & -0.6 & -0.2 \\\\ -0.3 & -0.4 & -0.1 \\\\ 1 & 0 & 0 \\\\ -1 & 0 & 0 \\\\ 0 & 1 & 0 \\\\ 0 & -1 & 0 \\\\ 0 & 0 & 1 \\\\ 0 & 0 & -1\\end{bmatrix},\\quad\\mathbf{d}_{a3}=\\begin{bmatrix}0.55 \\\\ 0.16 \\\\ 0 \\\\ 0.6 \\\\ 0 \\\\ 0.6 \\\\ 0 \\\\ 0.6\\end{bmatrix}. \\\\\n\\end{align*}",
+    "uncertainty_type": [
+      3,
+      0,
+      3,
+      3
+    ],
+    "solution": [
+      0.7599999999999998,
+      2.74,
+      -0.0
+    ],
+    "optimal_value": -18.472000000000005,
+    "coupled_rows": [
+      0,
+      2
+    ],
+    "coupled_unit_ids": [
+      0,
+      2
+    ],
+    "coupled_unit_labels": [
+      "objective",
+      "constraint_2"
+    ],
+    "row_indexing": "0=objective, 1..n=constraint rows",
+    "shared_uncertainty": true,
+    "uncertainty_family": "poly"
+  },
+  {
+    "id": "coupled_014_n3_box_T111",
+    "n_vars": 3,
+    "n_constraints": 3,
+    "template_param": [
+      1,
+      1,
+      1
+    ],
+    "setting": "random_backbone_coupled_row_shared_primitive",
+    "description": "\\begin{align*}\n& \\text{Minimize}\\quad \\bar{\\mathbf{c}}^\\top\\mathbf{x} && \\text{(Deterministic Objective)} \\\\\n& \\text{subject to} \\\\\n& \\max_{\\boldsymbol{\\xi}_{\\mathrm{shared}}\\in\\mathcal{U}_{\\mathrm{shared}}}(\\bar{\\mathbf{a}}_{1}+\\mathbf{I}_{3}\\boldsymbol{\\xi}_{\\mathrm{shared}})^\\top\\mathbf{x} \\le 1.78 && \\text{(Shared-factor Box Uncertainty Constraint)} \\\\\n& \\max_{\\boldsymbol{\\xi}_{\\mathrm{shared}}\\in\\mathcal{U}_{\\mathrm{shared}}}(\\bar{\\mathbf{a}}_{2}+\\mathbf{I}_{3}\\boldsymbol{\\xi}_{\\mathrm{shared}})^\\top\\mathbf{x} \\le 5.2 && \\text{(Shared-factor Box Uncertainty Constraint)} \\\\\n& \\max_{\\boldsymbol{\\xi}_{a3}\\in\\mathcal{U}_{a3,Bud}}(\\bar{\\mathbf{a}}_{3}+\\operatorname{diag}(\\hat{\\mathbf{a}}_{3})\\boldsymbol{\\xi}_{a3})^\\top\\mathbf{x} \\le -1.93 && \\text{(Budgeted Uncertainty Constraint)} \\\\\n& \\text{where the same primitive vector }\\boldsymbol{\\xi}_{\\mathrm{shared}}\\text{ drives constraint row 1 and constraint row 2}. \\\\\n& \\mathbf{x}\\in\\mathbb{R}^{3},\\quad-1.8\\le x_j\\le0,\\quad j=1,\\ldots,3. \\\\\n& \\bar{\\mathbf{c}}=\\begin{bmatrix}2.5 \\\\ -9 \\\\ 3.4\\end{bmatrix}. \\\\\n& \\bar{\\mathbf{a}}_{1}=\\begin{bmatrix}-1.6 \\\\ 1.7 \\\\ 0\\end{bmatrix},\\quad b_{1}=1.78. \\\\\n& \\mathbf{P}_{a1}=\\mathbf{I}_{3}. \\\\\n& \\bar{\\mathbf{a}}_{2}=\\begin{bmatrix}0.8 \\\\ -1.3 \\\\ -1.2\\end{bmatrix},\\quad b_{2}=5.2. \\\\\n& \\mathbf{P}_{a2}=\\mathbf{I}_{3}. \\\\\n& \\bar{\\mathbf{a}}_{3}=\\begin{bmatrix}0 \\\\ 1.3 \\\\ 1.6\\end{bmatrix},\\quad b_{3}=-1.93. \\\\\n& \\hat{\\mathbf{a}}_{3}=\\begin{bmatrix}0 \\\\ 0.1 \\\\ 0.1\\end{bmatrix}. \\\\\n& \\mathcal{U}_{\\mathrm{shared}}=\\{\\boldsymbol{\\xi}_{\\mathrm{shared}}\\in\\mathbb{R}^{3}:\\|\\boldsymbol{\\xi}_{\\mathrm{shared}}\\|_\\infty\\le1\\}. \\\\\n& \\mathcal{U}_{a3,Bud}=\\{\\boldsymbol{\\xi}_{a3}\\in\\mathbb{R}^{3}:\\|\\boldsymbol{\\xi}_{a3}\\|_\\infty\\le1,\\|\\boldsymbol{\\xi}_{a3}\\|_1\\le1.6\\}. \\\\\n\\end{align*}",
+    "uncertainty_type": [
+      0,
+      1,
+      1,
+      2
+    ],
+    "solution": [
+      0.0,
+      0.0,
+      -1.78
+    ],
+    "optimal_value": -6.052,
+    "coupled_rows": [
+      1,
+      2
+    ],
+    "coupled_unit_ids": [
+      1,
+      2
+    ],
+    "coupled_unit_labels": [
+      "constraint_1",
+      "constraint_2"
+    ],
+    "row_indexing": "0=objective, 1..n=constraint rows",
+    "shared_uncertainty": true,
+    "uncertainty_family": "box"
+  },
+  {
+    "id": "coupled_015_n5_budget_T111",
+    "n_vars": 5,
+    "n_constraints": 5,
+    "template_param": [
+      1,
+      1,
+      1
+    ],
+    "setting": "random_backbone_coupled_row_shared_primitive",
+    "description": "\\begin{align*}\n& \\text{Minimize}\\quad \\max_{\\boldsymbol{\\xi}_{\\mathrm{shared}}\\in\\mathcal{U}_{\\mathrm{shared}}}(\\bar{\\mathbf{c}}+\\mathbf{I}_{5}\\boldsymbol{\\xi}_{\\mathrm{shared}})^\\top\\mathbf{x} && \\text{(Shared-factor Budgeted Uncertainty Objective)} \\\\\n& \\text{subject to} \\\\\n& \\bar{\\mathbf{a}}_{1}^\\top\\mathbf{x} \\ge -34.56 && \\text{(Deterministic Constraint)} \\\\\n& \\min_{\\boldsymbol{\\xi}_{a2}\\in\\mathcal{U}_{a2,Box}}(\\bar{\\mathbf{a}}_{2}+\\operatorname{diag}(\\hat{\\mathbf{a}}_{2})\\boldsymbol{\\xi}_{a2})^\\top\\mathbf{x} \\ge 7.24 && \\text{(Box Uncertainty Constraint)} \\\\\n& \\min_{\\boldsymbol{\\xi}_{\\mathrm{shared}}\\in\\mathcal{U}_{\\mathrm{shared}}}(\\bar{\\mathbf{a}}_{3}+\\mathbf{I}_{5}\\boldsymbol{\\xi}_{\\mathrm{shared}})^\\top\\mathbf{x} \\ge -5.09 && \\text{(Shared-factor Budgeted Uncertainty Constraint)} \\\\\n& \\max_{\\boldsymbol{\\xi}_{a4}\\in\\mathcal{U}_{a4,Bud}}(\\bar{\\mathbf{a}}_{4}+\\operatorname{diag}(\\hat{\\mathbf{a}}_{4})\\boldsymbol{\\xi}_{a4})^\\top\\mathbf{x} \\le 17.2 && \\text{(Budgeted Uncertainty Constraint)} \\\\\n& \\min_{\\boldsymbol{\\xi}_{a5}\\in\\mathcal{U}_{a5,Box}}(\\bar{\\mathbf{a}}_{5}+\\operatorname{diag}(\\hat{\\mathbf{a}}_{5})\\boldsymbol{\\xi}_{a5})^\\top\\mathbf{x} \\ge -0.45 && \\text{(Box Uncertainty Constraint)} \\\\\n& \\text{where the same primitive vector }\\boldsymbol{\\xi}_{\\mathrm{shared}}\\text{ drives the objective row and constraint row 3}. \\\\\n& \\mathbf{x}\\in\\mathbb{R}^{5},\\quad-8.9\\le x_j\\le8.9,\\quad j=1,\\ldots,5. \\\\\n& \\bar{\\mathbf{c}}=\\begin{bmatrix}2.2 \\\\ 9.8 \\\\ 2 \\\\ -1.3 \\\\ 5.6\\end{bmatrix}. \\\\\n& \\mathbf{P}_c=\\mathbf{I}_{5}. \\\\\n& \\bar{\\mathbf{a}}_{1}=\\begin{bmatrix}0.5 \\\\ -0.1 \\\\ 0 \\\\ 0 \\\\ -5.8\\end{bmatrix},\\quad b_{1}=-34.56. \\\\\n& \\bar{\\mathbf{a}}_{2}=\\begin{bmatrix}0 \\\\ -2.6 \\\\ 3.4 \\\\ 0 \\\\ 2.3\\end{bmatrix},\\quad b_{2}=7.24. \\\\\n& \\hat{\\mathbf{a}}_{2}=\\begin{bmatrix}0 \\\\ 0.2 \\\\ 0.3 \\\\ 0 \\\\ 0.2\\end{bmatrix}. \\\\\n& \\bar{\\mathbf{a}}_{3}=\\begin{bmatrix}-2.5 \\\\ -3 \\\\ 0 \\\\ -2.8 \\\\ 0\\end{bmatrix},\\quad b_{3}=-5.09. \\\\\n& \\mathbf{P}_{a3}=\\mathbf{I}_{5}. \\\\\n& \\bar{\\mathbf{a}}_{4}=\\begin{bmatrix}1.4 \\\\ 0 \\\\ 0 \\\\ -5.1 \\\\ 0\\end{bmatrix},\\quad b_{4}=17.2. \\\\\n& \\hat{\\mathbf{a}}_{4}=\\begin{bmatrix}0.1 \\\\ 0 \\\\ 0 \\\\ 0.8 \\\\ 0\\end{bmatrix}. \\\\\n& \\bar{\\mathbf{a}}_{5}=\\begin{bmatrix}0 \\\\ 4.9 \\\\ 6.9 \\\\ 6.7 \\\\ 2.9\\end{bmatrix},\\quad b_{5}=-0.45. \\\\\n& \\hat{\\mathbf{a}}_{5}=\\begin{bmatrix}0 \\\\ 0 \\\\ 1.1 \\\\ 0.6 \\\\ 0\\end{bmatrix}. \\\\\n& \\mathcal{U}_{\\mathrm{shared}}=\\{\\boldsymbol{\\xi}_{\\mathrm{shared}}\\in\\mathbb{R}^{5}:\\|\\boldsymbol{\\xi}_{\\mathrm{shared}}\\|_\\infty\\le1,\\|\\boldsymbol{\\xi}_{\\mathrm{shared}}\\|_1\\le1.4\\}. \\\\\n& \\mathcal{U}_{a2,Box}=\\{\\boldsymbol{\\xi}_{a2}\\in\\mathbb{R}^{5}:\\|\\boldsymbol{\\xi}_{a2}\\|_\\infty\\le1\\}. \\\\\n& \\mathcal{U}_{a4,Bud}=\\{\\boldsymbol{\\xi}_{a4}\\in\\mathbb{R}^{5}:\\|\\boldsymbol{\\xi}_{a4}\\|_\\infty\\le1,\\|\\boldsymbol{\\xi}_{a4}\\|_1\\le1.6\\}. \\\\\n& \\mathcal{U}_{a5,Box}=\\{\\boldsymbol{\\xi}_{a5}\\in\\mathbb{R}^{5}:\\|\\boldsymbol{\\xi}_{a5}\\|_\\infty\\le1\\}. \\\\\n\\end{align*}",
+    "uncertainty_type": [
+      2,
+      0,
+      1,
+      2,
+      2,
+      1
+    ],
+    "solution": [
+      -8.9,
+      -8.9,
+      2.6225806451612903,
+      8.9,
+      -8.9
+    ],
+    "optimal_value": -150.50483870967741,
+    "coupled_rows": [
+      0,
+      3
+    ],
+    "coupled_unit_ids": [
+      0,
+      3
+    ],
+    "coupled_unit_labels": [
+      "objective",
+      "constraint_3"
+    ],
+    "row_indexing": "0=objective, 1..n=constraint rows",
+    "shared_uncertainty": true,
+    "uncertainty_family": "budget"
+  },
+  {
+    "id": "coupled_016_n2_poly_T111",
+    "n_vars": 2,
+    "n_constraints": 2,
+    "template_param": [
+      1,
+      1,
+      1
+    ],
+    "setting": "random_backbone_coupled_row_shared_primitive",
+    "description": "\\begin{align*}\n& \\text{Maximize}\\quad \\bar{\\mathbf{c}}^\\top\\mathbf{x} && \\text{(Deterministic Objective)} \\\\\n& \\text{subject to} \\\\\n& \\max_{\\boldsymbol{\\xi}_{\\mathrm{shared}}\\in\\mathcal{U}_{\\mathrm{shared}}}(\\bar{\\mathbf{a}}_{1}+\\mathbf{I}_{2}\\boldsymbol{\\xi}_{\\mathrm{shared}})^\\top\\mathbf{x} \\le -0.69 && \\text{(Shared-factor Polyhedral Uncertainty Constraint)} \\\\\n& \\min_{\\boldsymbol{\\xi}_{\\mathrm{shared}}\\in\\mathcal{U}_{\\mathrm{shared}}}(\\bar{\\mathbf{a}}_{2}+\\mathbf{I}_{2}\\boldsymbol{\\xi}_{\\mathrm{shared}})^\\top\\mathbf{x} \\ge -75.03 && \\text{(Shared-factor Polyhedral Uncertainty Constraint)} \\\\\n& \\text{where the same primitive vector }\\boldsymbol{\\xi}_{\\mathrm{shared}}\\text{ drives constraint row 1 and constraint row 2}. \\\\\n& \\mathbf{x}\\in\\mathbb{R}^{2},\\quad0\\le x_j\\le10,\\quad j=1,\\ldots,2. \\\\\n& \\bar{\\mathbf{c}}=\\begin{bmatrix}7.3 \\\\ 7.5\\end{bmatrix}. \\\\\n& \\bar{\\mathbf{a}}_{1}=\\begin{bmatrix}-5.6 \\\\ -9.1\\end{bmatrix},\\quad b_{1}=-0.69. \\\\\n& \\mathbf{P}_{a1}=\\mathbf{I}_{2}. \\\\\n& \\bar{\\mathbf{a}}_{2}=\\begin{bmatrix}-1.3 \\\\ -9.9\\end{bmatrix},\\quad b_{2}=-75.03. \\\\\n& \\mathbf{P}_{a2}=\\mathbf{I}_{2}. \\\\\n& \\mathcal{U}_{\\mathrm{shared}}=\\{\\boldsymbol{\\xi}_{\\mathrm{shared}}\\in\\mathbb{R}^{2}:\\mathbf{D}_{s}\\boldsymbol{\\xi}_{\\mathrm{shared}}\\le\\mathbf{d}_{s},\\ -1\\mathbf{1}\\le\\boldsymbol{\\xi}_{\\mathrm{shared}}\\le1\\mathbf{1}\\}. \\\\\n& \\mathbf{D}_s=\\begin{bmatrix}0.8 & 0.5\\end{bmatrix},\\quad\\mathbf{d}_s=\\begin{bmatrix}1.15\\end{bmatrix}. \\\\\n\\end{align*}",
+    "uncertainty_type": [
+      0,
+      3,
+      3
+    ],
+    "solution": [
+      10.0,
+      4.773394495412844
+    ],
+    "optimal_value": 108.80045871559633,
+    "coupled_rows": [
+      1,
+      2
+    ],
+    "coupled_unit_ids": [
+      1,
+      2
+    ],
+    "coupled_unit_labels": [
+      "constraint_1",
+      "constraint_2"
+    ],
+    "row_indexing": "0=objective, 1..n=constraint rows",
+    "shared_uncertainty": true,
+    "uncertainty_family": "poly"
+  },
+  {
+    "id": "coupled_017_n2_budget_T111",
+    "n_vars": 2,
+    "n_constraints": 2,
+    "template_param": [
+      1,
+      1,
+      1
+    ],
+    "setting": "random_backbone_coupled_row_shared_primitive",
+    "description": "\\begin{align*}\n& \\text{Maximize}\\quad \\min_{\\boldsymbol{\\xi}_{\\mathrm{shared}}\\in\\mathcal{U}_{\\mathrm{shared}}}(\\bar{\\mathbf{c}}+\\mathbf{I}_{2}\\boldsymbol{\\xi}_{\\mathrm{shared}})^\\top\\mathbf{x} && \\text{(Shared-factor Budgeted Uncertainty Objective)} \\\\\n& \\text{subject to} \\\\\n& \\min_{\\boldsymbol{\\xi}_{\\mathrm{shared}}\\in\\mathcal{U}_{\\mathrm{shared}}}(\\bar{\\mathbf{a}}_{1}+\\mathbf{I}_{2}\\boldsymbol{\\xi}_{\\mathrm{shared}})^\\top\\mathbf{x} \\ge -16.18 && \\text{(Shared-factor Budgeted Uncertainty Constraint)} \\\\\n& \\bar{\\mathbf{a}}_{2}^\\top\\mathbf{x} \\ge -14.17 && \\text{(Deterministic Constraint)} \\\\\n& \\text{where the same primitive vector }\\boldsymbol{\\xi}_{\\mathrm{shared}}\\text{ drives the objective row and constraint row 1}. \\\\\n& \\mathbf{x}\\in\\mathbb{R}^{2},\\quad-3.4\\le x_j\\le0,\\quad j=1,\\ldots,2. \\\\\n& \\bar{\\mathbf{c}}=\\begin{bmatrix}-3.8 \\\\ -5.2\\end{bmatrix}. \\\\\n& \\mathbf{P}_c=\\mathbf{I}_{2}. \\\\\n& \\bar{\\mathbf{a}}_{1}=\\begin{bmatrix}-2.1 \\\\ 2.9\\end{bmatrix},\\quad b_{1}=-16.18. \\\\\n& \\mathbf{P}_{a1}=\\mathbf{I}_{2}. \\\\\n& \\bar{\\mathbf{a}}_{2}=\\begin{bmatrix}2 \\\\ 2.4\\end{bmatrix},\\quad b_{2}=-14.17. \\\\\n& \\mathcal{U}_{\\mathrm{shared}}=\\{\\boldsymbol{\\xi}_{\\mathrm{shared}}\\in\\mathbb{R}^{2}:\\|\\boldsymbol{\\xi}_{\\mathrm{shared}}\\|_\\infty\\le1,\\|\\boldsymbol{\\xi}_{\\mathrm{shared}}\\|_1\\le1.4\\}. \\\\\n\\end{align*}",
+    "uncertainty_type": [
+      2,
+      2,
+      0
+    ],
+    "solution": [
+      -3.005,
+      -3.4
+    ],
+    "optimal_value": 24.497,
+    "coupled_rows": [
+      0,
+      1
+    ],
+    "coupled_unit_ids": [
+      0,
+      1
+    ],
+    "coupled_unit_labels": [
+      "objective",
+      "constraint_1"
+    ],
+    "row_indexing": "0=objective, 1..n=constraint rows",
+    "shared_uncertainty": true,
+    "uncertainty_family": "budget"
+  },
+  {
+    "id": "coupled_018_n2_budget_T111",
+    "n_vars": 2,
+    "n_constraints": 2,
+    "template_param": [
+      1,
+      1,
+      1
+    ],
+    "setting": "random_backbone_coupled_row_shared_primitive",
+    "description": "\\begin{align*}\n& \\text{Minimize}\\quad \\max_{\\boldsymbol{\\xi}_{\\mathrm{shared}}\\in\\mathcal{U}_{\\mathrm{shared}}}(\\bar{\\mathbf{c}}+\\mathbf{I}_{2}\\boldsymbol{\\xi}_{\\mathrm{shared}})^\\top\\mathbf{x} && \\text{(Shared-factor Budgeted Uncertainty Objective)} \\\\\n& \\text{subject to} \\\\\n& \\bar{\\mathbf{a}}_{1}^\\top\\mathbf{x} \\ge -97.05 && \\text{(Deterministic Constraint)} \\\\\n& \\max_{\\boldsymbol{\\xi}_{\\mathrm{shared}}\\in\\mathcal{U}_{\\mathrm{shared}}}(\\bar{\\mathbf{a}}_{2}+\\mathbf{I}_{2}\\boldsymbol{\\xi}_{\\mathrm{shared}})^\\top\\mathbf{x} \\le -57.21 && \\text{(Shared-factor Budgeted Uncertainty Constraint)} \\\\\n& \\text{where the same primitive vector }\\boldsymbol{\\xi}_{\\mathrm{shared}}\\text{ drives the objective row and constraint row 2}. \\\\\n& \\mathbf{x}\\in\\mathbb{R}^{2},\\quad-9.8\\le x_j\\le9.8,\\quad j=1,\\ldots,2. \\\\\n& \\bar{\\mathbf{c}}=\\begin{bmatrix}4.4 \\\\ -7.9\\end{bmatrix}. \\\\\n& \\mathbf{P}_c=\\mathbf{I}_{2}. \\\\\n& \\bar{\\mathbf{a}}_{1}=\\begin{bmatrix}-1.9 \\\\ -8.5\\end{bmatrix},\\quad b_{1}=-97.05. \\\\\n& \\bar{\\mathbf{a}}_{2}=\\begin{bmatrix}-7 \\\\ -1\\end{bmatrix},\\quad b_{2}=-57.21. \\\\\n& \\mathbf{P}_{a2}=\\mathbf{I}_{2}. \\\\\n& \\mathcal{U}_{\\mathrm{shared}}=\\{\\boldsymbol{\\xi}_{\\mathrm{shared}}\\in\\mathbb{R}^{2}:\\|\\boldsymbol{\\xi}_{\\mathrm{shared}}\\|_\\infty\\le1,\\|\\boldsymbol{\\xi}_{\\mathrm{shared}}\\|_1\\le1.6\\}. \\\\\n\\end{align*}",
+    "uncertainty_type": [
+      2,
+      0,
+      2
+    ],
+    "solution": [
+      8.9390625,
+      9.419503676470589
+    ],
+    "optimal_value": -20.299262867647062,
+    "coupled_rows": [
+      0,
+      2
+    ],
+    "coupled_unit_ids": [
+      0,
+      2
+    ],
+    "coupled_unit_labels": [
+      "objective",
+      "constraint_2"
+    ],
+    "row_indexing": "0=objective, 1..n=constraint rows",
+    "shared_uncertainty": true,
+    "uncertainty_family": "budget"
+  },
+  {
+    "id": "coupled_019_n5_budget_T111",
+    "n_vars": 5,
+    "n_constraints": 5,
+    "template_param": [
+      1,
+      1,
+      1
+    ],
+    "setting": "random_backbone_coupled_row_shared_primitive",
+    "description": "\\begin{align*}\n& \\text{Minimize}\\quad \\max_{\\boldsymbol{\\delta}_{c}\\in\\mathcal{U}_{c,P}}(\\bar{\\mathbf{c}}+\\boldsymbol{\\delta}_{c})^\\top\\mathbf{x} && \\text{(Polyhedral Uncertainty Objective)} \\\\\n& \\text{subject to} \\\\\n& \\bar{\\mathbf{a}}_{1}^\\top\\mathbf{x} \\ge -81.77 && \\text{(Deterministic Constraint)} \\\\\n& \\max_{\\boldsymbol{\\delta}_{a2}\\in\\mathcal{U}_{a2,P}}(\\bar{\\mathbf{a}}_{2}+\\boldsymbol{\\delta}_{a2})^\\top\\mathbf{x} \\le 49.72 && \\text{(Polyhedral Uncertainty Constraint)} \\\\\n& \\max_{\\boldsymbol{\\xi}_{\\mathrm{shared}}\\in\\mathcal{U}_{\\mathrm{shared}}}(\\bar{\\mathbf{a}}_{3}+\\mathbf{I}_{5}\\boldsymbol{\\xi}_{\\mathrm{shared}})^\\top\\mathbf{x} \\le 48.02 && \\text{(Shared-factor Budgeted Uncertainty Constraint)} \\\\\n& \\max_{\\boldsymbol{\\xi}_{\\mathrm{shared}}\\in\\mathcal{U}_{\\mathrm{shared}}}(\\bar{\\mathbf{a}}_{4}+\\mathbf{I}_{5}\\boldsymbol{\\xi}_{\\mathrm{shared}})^\\top\\mathbf{x} \\le 24.03 && \\text{(Shared-factor Budgeted Uncertainty Constraint)} \\\\\n& \\max_{\\boldsymbol{\\xi}_{a5}\\in\\mathcal{U}_{a5,Bud}}(\\bar{\\mathbf{a}}_{5}+\\operatorname{diag}(\\hat{\\mathbf{a}}_{5})\\boldsymbol{\\xi}_{a5})^\\top\\mathbf{x} \\le 59.07 && \\text{(Budgeted Uncertainty Constraint)} \\\\\n& \\text{where the same primitive vector }\\boldsymbol{\\xi}_{\\mathrm{shared}}\\text{ drives constraint row 3 and constraint row 4}. \\\\\n& \\mathbf{x}\\in\\mathbb{R}^{5},\\quad0\\le x_j\\le8.3,\\quad j=1,\\ldots,5. \\\\\n& \\bar{\\mathbf{c}}=\\begin{bmatrix}-0.6 \\\\ -1.7 \\\\ 4.4 \\\\ -5.4 \\\\ 9.5\\end{bmatrix}. \\\\\n& \\bar{\\mathbf{a}}_{1}=\\begin{bmatrix}5.9 \\\\ 0 \\\\ 0 \\\\ 0 \\\\ 7.6\\end{bmatrix},\\quad b_{1}=-81.77. \\\\\n& \\bar{\\mathbf{a}}_{2}=\\begin{bmatrix}0 \\\\ -2.2 \\\\ 6.2 \\\\ 0 \\\\ 0\\end{bmatrix},\\quad b_{2}=49.72. \\\\\n& \\bar{\\mathbf{a}}_{3}=\\begin{bmatrix}0.2 \\\\ 0 \\\\ 7.2 \\\\ -1.8 \\\\ 0\\end{bmatrix},\\quad b_{3}=48.02. \\\\\n& \\mathbf{P}_{a3}=\\mathbf{I}_{5}. \\\\\n& \\bar{\\mathbf{a}}_{4}=\\begin{bmatrix}0 \\\\ 3.4 \\\\ 0 \\\\ 1.1 \\\\ 0\\end{bmatrix},\\quad b_{4}=24.03. \\\\\n& \\mathbf{P}_{a4}=\\mathbf{I}_{5}. \\\\\n& \\bar{\\mathbf{a}}_{5}=\\begin{bmatrix}0.8 \\\\ 0 \\\\ -4.3 \\\\ 0 \\\\ -5.7\\end{bmatrix},\\quad b_{5}=59.07. \\\\\n& \\hat{\\mathbf{a}}_{5}=\\begin{bmatrix}0 \\\\ 0 \\\\ 0.4 \\\\ 0 \\\\ 0.8\\end{bmatrix}. \\\\\n& \\mathcal{U}_{\\mathrm{shared}}=\\{\\boldsymbol{\\xi}_{\\mathrm{shared}}\\in\\mathbb{R}^{5}:\\|\\boldsymbol{\\xi}_{\\mathrm{shared}}\\|_\\infty\\le1,\\|\\boldsymbol{\\xi}_{\\mathrm{shared}}\\|_1\\le3.2\\}. \\\\\n& \\mathcal{U}_{c,P}=\\{\\boldsymbol{\\delta}_{c}\\in\\mathbb{R}^{5}:\\mathbf{D}_{c}\\boldsymbol{\\delta}_{c}\\le\\mathbf{d}_{c}\\}. \\\\\n& \\mathbf{D}_{c}=\\begin{bmatrix}0.7 & 0 & -0.1 & 0 & 0 \\\\ 0.5 & -0.3 & 0.4 & 0.7 & 0.3 \\\\ -0.2 & 0 & 0 & -0.5 & 0 \\\\ 0 & 0 & -0.2 & 0 & 0.4 \\\\ 1 & 0 & 0 & 0 & 0 \\\\ -1 & 0 & 0 & 0 & 0 \\\\ 0 & 1 & 0 & 0 & 0 \\\\ 0 & -1 & 0 & 0 & 0 \\\\ 0 & 0 & 1 & 0 & 0 \\\\ 0 & 0 & -1 & 0 & 0 \\\\ 0 & 0 & 0 & 1 & 0 \\\\ 0 & 0 & 0 & -1 & 0 \\\\ 0 & 0 & 0 & 0 & 1 \\\\ 0 & 0 & 0 & 0 & -1\\end{bmatrix},\\quad\\mathbf{d}_{c}=\\begin{bmatrix}0.24 \\\\ 1.3 \\\\ 0.39 \\\\ 0.4 \\\\ 0.8 \\\\ 0 \\\\ 0.8 \\\\ 0 \\\\ 0.8 \\\\ 0 \\\\ 0.8 \\\\ 0 \\\\ 0.8 \\\\ 0\\end{bmatrix}. \\\\\n& \\mathcal{U}_{a2,P}=\\{\\boldsymbol{\\delta}_{a2}\\in\\mathbb{R}^{5}:\\mathbf{D}_{a2}\\boldsymbol{\\delta}_{a2}\\le\\mathbf{d}_{a2},\\ \\mathbf{E}_{a2}\\boldsymbol{\\delta}_{a2}=\\mathbf{e}_{a2}\\}. \\\\\n& \\mathbf{D}_{a2}=\\begin{bmatrix}0 & 0.4 & -0.2 & 0 & 0 \\\\ 0 & 1 & 0 & 0 & 0 \\\\ 0 & -1 & 0 & 0 & 0 \\\\ 0 & 0 & 1 & 0 & 0 \\\\ 0 & 0 & -1 & 0 & 0\\end{bmatrix},\\quad\\mathbf{d}_{a2}=\\begin{bmatrix}0.23 \\\\ 0.8 \\\\ 0 \\\\ 0.8 \\\\ 0\\end{bmatrix}. \\\\\n& \\mathbf{E}_{a2}=\\begin{bmatrix}1 & 0 & 0 & 0 & 0 \\\\ 0 & 0 & 0 & 1 & 0 \\\\ 0 & 0 & 0 & 0 & 1\\end{bmatrix},\\quad\\mathbf{e}_{a2}=\\begin{bmatrix}0 \\\\ 0 \\\\ 0\\end{bmatrix}. \\\\\n& \\mathcal{U}_{a5,Bud}=\\{\\boldsymbol{\\xi}_{a5}\\in\\mathbb{R}^{5}:\\|\\boldsymbol{\\xi}_{a5}\\|_\\infty\\le1,\\|\\boldsymbol{\\xi}_{a5}\\|_1\\le0.3\\}. \\\\\n\\end{align*}",
+    "uncertainty_type": [
+      3,
+      0,
+      3,
+      2,
+      2,
+      2
+    ],
+    "solution": [
+      -0.0,
+      1.4999999999999998,
+      0.0,
+      8.3,
+      0.0
+    ],
+    "optimal_value": -39.53,
+    "coupled_rows": [
+      3,
+      4
+    ],
+    "coupled_unit_ids": [
+      3,
+      4
+    ],
+    "coupled_unit_labels": [
+      "constraint_3",
+      "constraint_4"
+    ],
+    "row_indexing": "0=objective, 1..n=constraint rows",
+    "shared_uncertainty": true,
+    "uncertainty_family": "budget"
+  },
+  {
+    "id": "coupled_020_n4_poly_T111",
+    "n_vars": 4,
+    "n_constraints": 4,
+    "template_param": [
+      1,
+      1,
+      1
+    ],
+    "setting": "random_backbone_coupled_row_shared_primitive",
+    "description": "\\begin{align*}\n& \\text{Maximize}\\quad \\min_{\\boldsymbol{\\xi}_{c}\\in\\mathcal{U}_{c,Bud}}(\\bar{\\mathbf{c}}+\\operatorname{diag}(\\hat{\\mathbf{c}})\\boldsymbol{\\xi}_{c})^\\top\\mathbf{x} && \\text{(Budgeted Uncertainty Objective)} \\\\\n& \\text{subject to} \\\\\n& \\max_{\\boldsymbol{\\xi}_{a1}\\in\\mathcal{U}_{a1,Bud}}(\\bar{\\mathbf{a}}_{1}+\\operatorname{diag}(\\hat{\\mathbf{a}}_{1})\\boldsymbol{\\xi}_{a1})^\\top\\mathbf{x} \\le 0.41 && \\text{(Budgeted Uncertainty Constraint)} \\\\\n& \\mathbf{a}_{2}^\\top\\mathbf{x} = 1.38 && \\text{(Deterministic Equality Constraint)} \\\\\n& \\max_{\\boldsymbol{\\xi}_{\\mathrm{shared}}\\in\\mathcal{U}_{\\mathrm{shared}}}(\\bar{\\mathbf{a}}_{3}+\\mathbf{I}_{4}\\boldsymbol{\\xi}_{\\mathrm{shared}})^\\top\\mathbf{x} \\le -2.63 && \\text{(Shared-factor Polyhedral Uncertainty Constraint)} \\\\\n& \\max_{\\boldsymbol{\\xi}_{\\mathrm{shared}}\\in\\mathcal{U}_{\\mathrm{shared}}}(\\bar{\\mathbf{a}}_{4}+\\mathbf{I}_{4}\\boldsymbol{\\xi}_{\\mathrm{shared}})^\\top\\mathbf{x} \\le 2.53 && \\text{(Shared-factor Polyhedral Uncertainty Constraint)} \\\\\n& \\text{where the same primitive vector }\\boldsymbol{\\xi}_{\\mathrm{shared}}\\text{ drives constraint row 3 and constraint row 4}. \\\\\n& \\mathbf{x}\\in\\mathbb{R}^{4},\\quad0\\le x_j\\le2.5,\\quad j=1,\\ldots,4. \\\\\n& \\bar{\\mathbf{c}}=\\begin{bmatrix}6.8 \\\\ 3.9 \\\\ -0.7 \\\\ 5\\end{bmatrix}. \\\\\n& \\hat{\\mathbf{c}}=\\begin{bmatrix}0.5 \\\\ 0.5 \\\\ 0 \\\\ 0\\end{bmatrix}. \\\\\n& \\bar{\\mathbf{a}}_{1}=\\begin{bmatrix}0.1 \\\\ -0.5 \\\\ 0 \\\\ 0\\end{bmatrix},\\quad b_{1}=0.41. \\\\\n& \\hat{\\mathbf{a}}_{1}=\\begin{bmatrix}0.1 \\\\ 0.1 \\\\ 0 \\\\ 0\\end{bmatrix}. \\\\\n& \\mathbf{a}_{2}=\\begin{bmatrix}2.3 \\\\ -2.3 \\\\ 0 \\\\ 0\\end{bmatrix},\\quad b_{2}=1.38. \\\\\n& \\bar{\\mathbf{a}}_{3}=\\begin{bmatrix}0.3 \\\\ 0 \\\\ -2.5 \\\\ -1.3\\end{bmatrix},\\quad b_{3}=-2.63. \\\\\n& \\mathbf{P}_{a3}=\\mathbf{I}_{4}. \\\\\n& \\bar{\\mathbf{a}}_{4}=\\begin{bmatrix}0 \\\\ 0.4 \\\\ 0.6 \\\\ -1.7\\end{bmatrix},\\quad b_{4}=2.53. \\\\\n& \\mathbf{P}_{a4}=\\mathbf{I}_{4}. \\\\\n& \\mathcal{U}_{\\mathrm{shared}}=\\{\\boldsymbol{\\xi}_{\\mathrm{shared}}\\in\\mathbb{R}^{4}:\\mathbf{D}_{s}\\boldsymbol{\\xi}_{\\mathrm{shared}}\\le\\mathbf{d}_{s},\\ \\mathbf{E}_{s}\\boldsymbol{\\xi}_{\\mathrm{shared}}=\\mathbf{e}_{s},\\ 0\\mathbf{1}\\le\\boldsymbol{\\xi}_{\\mathrm{shared}}\\le0.2\\mathbf{1}\\}. \\\\\n& \\mathbf{D}_s=\\begin{bmatrix}-0.1 & 0 & -0.1 & 0 \\\\ 0.1 & 0.1 & 0 & 0\\end{bmatrix},\\quad\\mathbf{d}_s=\\begin{bmatrix}0.02 \\\\ 0.02\\end{bmatrix}. \\\\\n& \\mathbf{E}_s=\\begin{bmatrix}0.2 & 0 & -0.1 & 0\\end{bmatrix},\\quad\\mathbf{e}_s=\\begin{bmatrix}-0.01\\end{bmatrix}. \\\\\n& \\mathcal{U}_{c,Bud}=\\{\\boldsymbol{\\xi}_{c}\\in\\mathbb{R}^{4}:\\|\\boldsymbol{\\xi}_{c}\\|_\\infty\\le1,\\|\\boldsymbol{\\xi}_{c}\\|_1\\le1.3\\}. \\\\\n& \\mathcal{U}_{a1,Bud}=\\{\\boldsymbol{\\xi}_{a1}\\in\\mathbb{R}^{4}:\\|\\boldsymbol{\\xi}_{a1}\\|_\\infty\\le1,\\|\\boldsymbol{\\xi}_{a1}\\|_1\\le1.9\\}. \\\\\n\\end{align*}",
+    "uncertainty_type": [
+      2,
+      2,
+      0,
+      3,
+      3
+    ],
+    "solution": [
+      2.5,
+      1.9000000000000001,
+      0.45217391304347826,
+      2.5
+    ],
+    "optimal_value": 35.05847826086956,
+    "coupled_rows": [
+      3,
+      4
+    ],
+    "coupled_unit_ids": [
+      3,
+      4
+    ],
+    "coupled_unit_labels": [
+      "constraint_3",
+      "constraint_4"
+    ],
+    "row_indexing": "0=objective, 1..n=constraint rows",
+    "shared_uncertainty": true,
+    "uncertainty_family": "poly"
+  },
+  {
+    "id": "coupled_021_n3_budget_T111",
+    "n_vars": 3,
+    "n_constraints": 3,
+    "template_param": [
+      1,
+      1,
+      1
+    ],
+    "setting": "random_backbone_coupled_row_shared_primitive",
+    "description": "\\begin{align*}\n& \\text{Maximize}\\quad \\min_{\\boldsymbol{\\xi}_{c}\\in\\mathcal{U}_{c,Bud}}(\\bar{\\mathbf{c}}+\\operatorname{diag}(\\hat{\\mathbf{c}})\\boldsymbol{\\xi}_{c})^\\top\\mathbf{x} && \\text{(Budgeted Uncertainty Objective)} \\\\\n& \\text{subject to} \\\\\n& \\min_{\\boldsymbol{\\xi}_{\\mathrm{shared}}\\in\\mathcal{U}_{\\mathrm{shared}}}(\\bar{\\mathbf{a}}_{1}+\\mathbf{I}_{3}\\boldsymbol{\\xi}_{\\mathrm{shared}})^\\top\\mathbf{x} \\ge -95.22 && \\text{(Shared-factor Budgeted Uncertainty Constraint)} \\\\\n& \\mathbf{a}_{2}^\\top\\mathbf{x} = 79.29 && \\text{(Deterministic Equality Constraint)} \\\\\n& \\max_{\\boldsymbol{\\xi}_{\\mathrm{shared}}\\in\\mathcal{U}_{\\mathrm{shared}}}(\\bar{\\mathbf{a}}_{3}+\\mathbf{I}_{3}\\boldsymbol{\\xi}_{\\mathrm{shared}})^\\top\\mathbf{x} \\le 84.72 && \\text{(Shared-factor Budgeted Uncertainty Constraint)} \\\\\n& \\text{where the same primitive vector }\\boldsymbol{\\xi}_{\\mathrm{shared}}\\text{ drives constraint row 1 and constraint row 3}. \\\\\n& \\mathbf{x}\\in\\mathbb{R}^{3},\\quad-7.5\\le x_j\\le7.5,\\quad j=1,\\ldots,3. \\\\\n& \\bar{\\mathbf{c}}=\\begin{bmatrix}-5.3 \\\\ -1.4 \\\\ -6.1\\end{bmatrix}. \\\\\n& \\hat{\\mathbf{c}}=\\begin{bmatrix}0.9 \\\\ 0.2 \\\\ 0\\end{bmatrix}. \\\\\n& \\bar{\\mathbf{a}}_{1}=\\begin{bmatrix}-6.3 \\\\ 5.5 \\\\ 2.9\\end{bmatrix},\\quad b_{1}=-95.22. \\\\\n& \\mathbf{P}_{a1}=\\mathbf{I}_{3}. \\\\\n& \\mathbf{a}_{2}=\\begin{bmatrix}5.7 \\\\ -7.4 \\\\ 4.3\\end{bmatrix},\\quad b_{2}=79.29. \\\\\n& \\bar{\\mathbf{a}}_{3}=\\begin{bmatrix}5.2 \\\\ -4.6 \\\\ -1.8\\end{bmatrix},\\quad b_{3}=84.72. \\\\\n& \\mathbf{P}_{a3}=\\mathbf{I}_{3}. \\\\\n& \\mathcal{U}_{\\mathrm{shared}}=\\{\\boldsymbol{\\xi}_{\\mathrm{shared}}\\in\\mathbb{R}^{3}:\\|\\boldsymbol{\\xi}_{\\mathrm{shared}}\\|_\\infty\\le1,\\|\\boldsymbol{\\xi}_{\\mathrm{shared}}\\|_1\\le1.1\\}. \\\\\n& \\mathcal{U}_{c,Bud}=\\{\\boldsymbol{\\xi}_{c}\\in\\mathbb{R}^{3}:\\|\\boldsymbol{\\xi}_{c}\\|_\\infty\\le1,\\|\\boldsymbol{\\xi}_{c}\\|_1\\le1.4\\}. \\\\\n\\end{align*}",
+    "uncertainty_type": [
+      2,
+      2,
+      0,
+      2
+    ],
+    "solution": [
+      6.102429057888763,
+      -7.5,
+      -2.5567082860385915
+    ],
+    "optimal_value": -12.339139614074918,
+    "coupled_rows": [
+      1,
+      3
+    ],
+    "coupled_unit_ids": [
+      1,
+      3
+    ],
+    "coupled_unit_labels": [
+      "constraint_1",
+      "constraint_3"
+    ],
+    "row_indexing": "0=objective, 1..n=constraint rows",
+    "shared_uncertainty": true,
+    "uncertainty_family": "budget"
+  },
+  {
+    "id": "coupled_022_n5_poly_T111",
+    "n_vars": 5,
+    "n_constraints": 5,
+    "template_param": [
+      1,
+      1,
+      1
+    ],
+    "setting": "random_backbone_coupled_row_shared_primitive",
+    "description": "\\begin{align*}\n& \\text{Minimize}\\quad \\max_{\\boldsymbol{\\xi}_{c}\\in\\mathcal{U}_{c,Bud}}(\\bar{\\mathbf{c}}+\\operatorname{diag}(\\hat{\\mathbf{c}})\\boldsymbol{\\xi}_{c})^\\top\\mathbf{x} && \\text{(Budgeted Uncertainty Objective)} \\\\\n& \\text{subject to} \\\\\n& \\max_{\\boldsymbol{\\xi}_{a1}\\in\\mathcal{U}_{a1,Bud}}(\\bar{\\mathbf{a}}_{1}+\\operatorname{diag}(\\hat{\\mathbf{a}}_{1})\\boldsymbol{\\xi}_{a1})^\\top\\mathbf{x} \\le 17.01 && \\text{(Budgeted Uncertainty Constraint)} \\\\\n& \\max_{\\boldsymbol{\\xi}_{\\mathrm{shared}}\\in\\mathcal{U}_{\\mathrm{shared}}}(\\bar{\\mathbf{a}}_{2}+\\mathbf{I}_{5}\\boldsymbol{\\xi}_{\\mathrm{shared}})^\\top\\mathbf{x} \\le 26.28 && \\text{(Shared-factor Polyhedral Uncertainty Constraint)} \\\\\n& \\mathbf{a}_{3}^\\top\\mathbf{x} = 19.04 && \\text{(Deterministic Equality Constraint)} \\\\\n& \\min_{\\boldsymbol{\\xi}_{a4}\\in\\mathcal{U}_{a4,Bud}}(\\bar{\\mathbf{a}}_{4}+\\operatorname{diag}(\\hat{\\mathbf{a}}_{4})\\boldsymbol{\\xi}_{a4})^\\top\\mathbf{x} \\ge 18.41 && \\text{(Budgeted Uncertainty Constraint)} \\\\\n& \\max_{\\boldsymbol{\\xi}_{\\mathrm{shared}}\\in\\mathcal{U}_{\\mathrm{shared}}}(\\bar{\\mathbf{a}}_{5}+\\mathbf{I}_{5}\\boldsymbol{\\xi}_{\\mathrm{shared}})^\\top\\mathbf{x} \\le 24.68 && \\text{(Shared-factor Polyhedral Uncertainty Constraint)} \\\\\n& \\text{where the same primitive vector }\\boldsymbol{\\xi}_{\\mathrm{shared}}\\text{ drives constraint row 2 and constraint row 5}. \\\\\n& \\mathbf{x}\\in\\mathbb{R}^{5},\\quad-7.4\\le x_j\\le7.4,\\quad j=1,\\ldots,5. \\\\\n& \\bar{\\mathbf{c}}=\\begin{bmatrix}-5 \\\\ 7.2 \\\\ -1.5 \\\\ 2.4 \\\\ 7\\end{bmatrix}. \\\\\n& \\hat{\\mathbf{c}}=\\begin{bmatrix}0 \\\\ 0 \\\\ 0.2 \\\\ 0.1 \\\\ 0.7\\end{bmatrix}. \\\\\n& \\bar{\\mathbf{a}}_{1}=\\begin{bmatrix}0 \\\\ -0.3 \\\\ -2 \\\\ 0 \\\\ 0.6\\end{bmatrix},\\quad b_{1}=17.01. \\\\\n& \\hat{\\mathbf{a}}_{1}=\\begin{bmatrix}0 \\\\ 0.1 \\\\ 0.2 \\\\ 0 \\\\ 0.1\\end{bmatrix}. \\\\\n& \\bar{\\mathbf{a}}_{2}=\\begin{bmatrix}-2.1 \\\\ 0 \\\\ -6.7 \\\\ 4.4 \\\\ 7.4\\end{bmatrix},\\quad b_{2}=26.28. \\\\\n& \\mathbf{P}_{a2}=\\mathbf{I}_{5}. \\\\\n& \\mathbf{a}_{3}=\\begin{bmatrix}4.1 \\\\ -0.8 \\\\ 0 \\\\ 0 \\\\ 0\\end{bmatrix},\\quad b_{3}=19.04. \\\\\n& \\bar{\\mathbf{a}}_{4}=\\begin{bmatrix}0 \\\\ 0 \\\\ -4.8 \\\\ 0 \\\\ 0.1\\end{bmatrix},\\quad b_{4}=18.41. \\\\\n& \\hat{\\mathbf{a}}_{4}=\\begin{bmatrix}0 \\\\ 0 \\\\ 0.3 \\\\ 0 \\\\ 0.1\\end{bmatrix}. \\\\\n& \\bar{\\mathbf{a}}_{5}=\\begin{bmatrix}-0.6 \\\\ -7.2 \\\\ 0 \\\\ 0 \\\\ -7.3\\end{bmatrix},\\quad b_{5}=24.68. \\\\\n& \\mathbf{P}_{a5}=\\mathbf{I}_{5}. \\\\\n& \\mathcal{U}_{\\mathrm{shared}}=\\{\\boldsymbol{\\xi}_{\\mathrm{shared}}\\in\\mathbb{R}^{5}:\\mathbf{D}_{s}\\boldsymbol{\\xi}_{\\mathrm{shared}}\\le\\mathbf{d}_{s},\\ -0.7\\mathbf{1}\\le\\boldsymbol{\\xi}_{\\mathrm{shared}}\\le0.7\\mathbf{1}\\}. \\\\\n& \\mathbf{D}_s=\\begin{bmatrix}0 & 0.1 & -0.4 & -0.7 & 0 \\\\ 0.5 & 0 & 0.2 & 0.5 & -0.3 \\\\ 0 & 0.3 & 0 & -0.2 & -0.5 \\\\ 0.6 & 0 & 0 & 0 & 0.1\\end{bmatrix},\\quad\\mathbf{d}_s=\\begin{bmatrix}0.7 \\\\ 0.62 \\\\ 0.15 \\\\ 0.48\\end{bmatrix}. \\\\\n& \\mathcal{U}_{c,Bud}=\\{\\boldsymbol{\\xi}_{c}\\in\\mathbb{R}^{5}:\\|\\boldsymbol{\\xi}_{c}\\|_\\infty\\le1,\\|\\boldsymbol{\\xi}_{c}\\|_1\\le1.6\\}. \\\\\n& \\mathcal{U}_{a1,Bud}=\\{\\boldsymbol{\\xi}_{a1}\\in\\mathbb{R}^{5}:\\|\\boldsymbol{\\xi}_{a1}\\|_\\infty\\le1,\\|\\boldsymbol{\\xi}_{a1}\\|_1\\le1.6\\}. \\\\\n& \\mathcal{U}_{a4,Bud}=\\{\\boldsymbol{\\xi}_{a4}\\in\\mathbb{R}^{5}:\\|\\boldsymbol{\\xi}_{a4}\\|_\\infty\\le1,\\|\\boldsymbol{\\xi}_{a4}\\|_1\\le0.2\\}. \\\\\n\\end{align*}",
+    "uncertainty_type": [
+      2,
+      2,
+      3,
+      0,
+      2,
+      3
+    ],
+    "solution": [
+      5.601085485629908,
+      4.90556311385328,
+      -4.033527325099783,
+      -7.4,
+      -7.089195209729726
+    ],
+    "optimal_value": -48.57298856304156,
+    "coupled_rows": [
+      2,
+      5
+    ],
+    "coupled_unit_ids": [
+      2,
+      5
+    ],
+    "coupled_unit_labels": [
+      "constraint_2",
+      "constraint_5"
+    ],
+    "row_indexing": "0=objective, 1..n=constraint rows",
+    "shared_uncertainty": true,
+    "uncertainty_family": "poly"
+  },
+  {
+    "id": "coupled_023_n4_poly_T111",
+    "n_vars": 4,
+    "n_constraints": 4,
+    "template_param": [
+      1,
+      1,
+      1
+    ],
+    "setting": "random_backbone_coupled_row_shared_primitive",
+    "description": "\\begin{align*}\n& \\text{Maximize}\\quad \\min_{\\boldsymbol{\\xi}_{c}\\in\\mathcal{U}_{c,Bud}}(\\bar{\\mathbf{c}}+\\operatorname{diag}(\\hat{\\mathbf{c}})\\boldsymbol{\\xi}_{c})^\\top\\mathbf{x} && \\text{(Budgeted Uncertainty Objective)} \\\\\n& \\text{subject to} \\\\\n& \\bar{\\mathbf{a}}_{1}^\\top\\mathbf{x} \\le 27.85 && \\text{(Deterministic Constraint)} \\\\\n& \\min_{\\boldsymbol{\\xi}_{\\mathrm{shared}}\\in\\mathcal{U}_{\\mathrm{shared}}}(\\bar{\\mathbf{a}}_{2}+\\mathbf{I}_{4}\\boldsymbol{\\xi}_{\\mathrm{shared}})^\\top\\mathbf{x} \\ge -12.14 && \\text{(Shared-factor Polyhedral Uncertainty Constraint)} \\\\\n& \\max_{\\boldsymbol{\\delta}_{a3}\\in\\mathcal{U}_{a3,P}}(\\bar{\\mathbf{a}}_{3}+\\boldsymbol{\\delta}_{a3})^\\top\\mathbf{x} \\le 34.77 && \\text{(Polyhedral Uncertainty Constraint)} \\\\\n& \\min_{\\boldsymbol{\\xi}_{\\mathrm{shared}}\\in\\mathcal{U}_{\\mathrm{shared}}}(\\bar{\\mathbf{a}}_{4}+\\mathbf{I}_{4}\\boldsymbol{\\xi}_{\\mathrm{shared}})^\\top\\mathbf{x} \\ge -24.43 && \\text{(Shared-factor Polyhedral Uncertainty Constraint)} \\\\\n& \\text{where the same primitive vector }\\boldsymbol{\\xi}_{\\mathrm{shared}}\\text{ drives constraint row 2 and constraint row 4}. \\\\\n& \\mathbf{x}\\in\\mathbb{R}^{4},\\quad-6.3\\le x_j\\le6.3,\\quad j=1,\\ldots,4. \\\\\n& \\bar{\\mathbf{c}}=\\begin{bmatrix}5.5 \\\\ 3.7 \\\\ 3.9 \\\\ 7.5\\end{bmatrix}. \\\\\n& \\hat{\\mathbf{c}}=\\begin{bmatrix}1 \\\\ 0.5 \\\\ 0.7 \\\\ 0.9\\end{bmatrix}. \\\\\n& \\bar{\\mathbf{a}}_{1}=\\begin{bmatrix}3.5 \\\\ 0 \\\\ 1.2 \\\\ -2.5\\end{bmatrix},\\quad b_{1}=27.85. \\\\\n& \\bar{\\mathbf{a}}_{2}=\\begin{bmatrix}-0.8 \\\\ 0 \\\\ 1.9 \\\\ -0.2\\end{bmatrix},\\quad b_{2}=-12.14. \\\\\n& \\mathbf{P}_{a2}=\\mathbf{I}_{4}. \\\\\n& \\bar{\\mathbf{a}}_{3}=\\begin{bmatrix}1.2 \\\\ 0 \\\\ 6.3 \\\\ 0\\end{bmatrix},\\quad b_{3}=34.77. \\\\\n& \\bar{\\mathbf{a}}_{4}=\\begin{bmatrix}0 \\\\ 0 \\\\ 6.2 \\\\ -0.9\\end{bmatrix},\\quad b_{4}=-24.43. \\\\\n& \\mathbf{P}_{a4}=\\mathbf{I}_{4}. \\\\\n& \\mathcal{U}_{\\mathrm{shared}}=\\{\\boldsymbol{\\xi}_{\\mathrm{shared}}\\in\\mathbb{R}^{4}:\\mathbf{D}_{s}\\boldsymbol{\\xi}_{\\mathrm{shared}}\\le\\mathbf{d}_{s},\\ \\mathbf{E}_{s}\\boldsymbol{\\xi}_{\\mathrm{shared}}=\\mathbf{e}_{s},\\ 0\\mathbf{1}\\le\\boldsymbol{\\xi}_{\\mathrm{shared}}\\le0.6\\mathbf{1}\\}. \\\\\n& \\mathbf{D}_s=\\begin{bmatrix}0.2 & 0.1 & 0 & 0.6 \\\\ 0 & -0.1 & -0.2 & -0.5\\end{bmatrix},\\quad\\mathbf{d}_s=\\begin{bmatrix}0.27 \\\\ -0.1\\end{bmatrix}. \\\\\n& \\mathbf{E}_s=\\begin{bmatrix}0.2 & 0 & 0 & 0.4\\end{bmatrix},\\quad\\mathbf{e}_s=\\begin{bmatrix}0.06\\end{bmatrix}. \\\\\n& \\mathcal{U}_{c,Bud}=\\{\\boldsymbol{\\xi}_{c}\\in\\mathbb{R}^{4}:\\|\\boldsymbol{\\xi}_{c}\\|_\\infty\\le1,\\|\\boldsymbol{\\xi}_{c}\\|_1\\le3.3\\}. \\\\\n& \\mathcal{U}_{a3,P}=\\{\\boldsymbol{\\delta}_{a3}\\in\\mathbb{R}^{4}:\\mathbf{D}_{a3}\\boldsymbol{\\delta}_{a3}\\le\\mathbf{d}_{a3},\\ \\mathbf{E}_{a3}\\boldsymbol{\\delta}_{a3}=\\mathbf{e}_{a3}\\}. \\\\\n& \\mathbf{D}_{a3}=\\begin{bmatrix}0.2 & 0 & 0.1 & 0 \\\\ 1 & 0 & 0 & 0 \\\\ -1 & 0 & 0 & 0 \\\\ 0 & 0 & 1 & 0 \\\\ 0 & 0 & -1 & 0\\end{bmatrix},\\quad\\mathbf{d}_{a3}=\\begin{bmatrix}0.14 \\\\ 0.6 \\\\ 0 \\\\ 0.6 \\\\ 0\\end{bmatrix}. \\\\\n& \\mathbf{E}_{a3}=\\begin{bmatrix}0 & 1 & 0 & 0 \\\\ 0 & 0 & 0 & 1\\end{bmatrix},\\quad\\mathbf{e}_{a3}=\\begin{bmatrix}0 \\\\ 0\\end{bmatrix}. \\\\\n\\end{align*}",
+    "uncertainty_type": [
+      2,
+      0,
+      3,
+      3,
+      3
+    ],
+    "solution": [
+      6.3,
+      6.3,
+      3.578260869565218,
+      6.3
+    ],
+    "optimal_value": 103.29378260869565,
+    "coupled_rows": [
+      2,
+      4
+    ],
+    "coupled_unit_ids": [
+      2,
+      4
+    ],
+    "coupled_unit_labels": [
+      "constraint_2",
+      "constraint_4"
+    ],
+    "row_indexing": "0=objective, 1..n=constraint rows",
+    "shared_uncertainty": true,
+    "uncertainty_family": "poly"
+  },
+  {
+    "id": "coupled_024_n5_box_T111",
+    "n_vars": 5,
+    "n_constraints": 5,
+    "template_param": [
+      1,
+      1,
+      1
+    ],
+    "setting": "random_backbone_coupled_row_shared_primitive",
+    "description": "\\begin{align*}\n& \\text{Maximize}\\quad \\min_{\\boldsymbol{\\xi}_{c}\\in\\mathcal{U}_{c,Box}}(\\bar{\\mathbf{c}}+\\operatorname{diag}(\\hat{\\mathbf{c}})\\boldsymbol{\\xi}_{c})^\\top\\mathbf{x} && \\text{(Box Uncertainty Objective)} \\\\\n& \\text{subject to} \\\\\n& \\min_{\\boldsymbol{\\xi}_{\\mathrm{shared}}\\in\\mathcal{U}_{\\mathrm{shared}}}(\\bar{\\mathbf{a}}_{1}+\\mathbf{I}_{5}\\boldsymbol{\\xi}_{\\mathrm{shared}})^\\top\\mathbf{x} \\ge -81.26 && \\text{(Shared-factor Box Uncertainty Constraint)} \\\\\n& \\min_{\\boldsymbol{\\xi}_{\\mathrm{shared}}\\in\\mathcal{U}_{\\mathrm{shared}}}(\\bar{\\mathbf{a}}_{2}+\\mathbf{I}_{5}\\boldsymbol{\\xi}_{\\mathrm{shared}})^\\top\\mathbf{x} \\ge -56.77 && \\text{(Shared-factor Box Uncertainty Constraint)} \\\\\n& \\mathbf{a}_{3}^\\top\\mathbf{x} = -22.1 && \\text{(Deterministic Equality Constraint)} \\\\\n& \\min_{\\boldsymbol{\\xi}_{a4}\\in\\mathcal{U}_{a4,Bud}}(\\bar{\\mathbf{a}}_{4}+\\operatorname{diag}(\\hat{\\mathbf{a}}_{4})\\boldsymbol{\\xi}_{a4})^\\top\\mathbf{x} \\ge -85.81 && \\text{(Budgeted Uncertainty Constraint)} \\\\\n& \\min_{\\boldsymbol{\\delta}_{a5}\\in\\mathcal{U}_{a5,P}}(\\bar{\\mathbf{a}}_{5}+\\boldsymbol{\\delta}_{a5})^\\top\\mathbf{x} \\ge -72.4 && \\text{(Polyhedral Uncertainty Constraint)} \\\\\n& \\text{where the same primitive vector }\\boldsymbol{\\xi}_{\\mathrm{shared}}\\text{ drives constraint row 1 and constraint row 2}. \\\\\n& \\mathbf{x}\\in\\mathbb{R}^{5},\\quad0\\le x_j\\le6.7,\\quad j=1,\\ldots,5. \\\\\n& \\bar{\\mathbf{c}}=\\begin{bmatrix}8.6 \\\\ -0.6 \\\\ 1.8 \\\\ 0.6 \\\\ -5.2\\end{bmatrix}. \\\\\n& \\hat{\\mathbf{c}}=\\begin{bmatrix}0.9 \\\\ 0.1 \\\\ 0 \\\\ 0.1 \\\\ 0.6\\end{bmatrix}. \\\\\n& \\bar{\\mathbf{a}}_{1}=\\begin{bmatrix}0 \\\\ -2.6 \\\\ -6 \\\\ -6.1 \\\\ 0\\end{bmatrix},\\quad b_{1}=-81.26. \\\\\n& \\mathbf{P}_{a1}=\\mathbf{I}_{5}. \\\\\n& \\bar{\\mathbf{a}}_{2}=\\begin{bmatrix}-6 \\\\ -3.2 \\\\ 3.5 \\\\ 0 \\\\ 0\\end{bmatrix},\\quad b_{2}=-56.77. \\\\\n& \\mathbf{P}_{a2}=\\mathbf{I}_{5}. \\\\\n& \\mathbf{a}_{3}=\\begin{bmatrix}-6.5 \\\\ 0 \\\\ 2.9 \\\\ -6 \\\\ 0\\end{bmatrix},\\quad b_{3}=-22.1. \\\\\n& \\bar{\\mathbf{a}}_{4}=\\begin{bmatrix}0 \\\\ 0 \\\\ -6.4 \\\\ -3 \\\\ 6.2\\end{bmatrix},\\quad b_{4}=-85.81. \\\\\n& \\hat{\\mathbf{a}}_{4}=\\begin{bmatrix}0 \\\\ 0 \\\\ 1.1 \\\\ 0 \\\\ 0.8\\end{bmatrix}. \\\\\n& \\bar{\\mathbf{a}}_{5}=\\begin{bmatrix}4.7 \\\\ 3.7 \\\\ -5.2 \\\\ -0.4 \\\\ -5.9\\end{bmatrix},\\quad b_{5}=-72.4. \\\\\n& \\mathcal{U}_{\\mathrm{shared}}=\\{\\boldsymbol{\\xi}_{\\mathrm{shared}}\\in\\mathbb{R}^{5}:\\|\\boldsymbol{\\xi}_{\\mathrm{shared}}\\|_\\infty\\le1\\}. \\\\\n& \\mathcal{U}_{c,Box}=\\{\\boldsymbol{\\xi}_{c}\\in\\mathbb{R}^{5}:\\|\\boldsymbol{\\xi}_{c}\\|_\\infty\\le1\\}. \\\\\n& \\mathcal{U}_{a4,Bud}=\\{\\boldsymbol{\\xi}_{a4}\\in\\mathbb{R}^{5}:\\|\\boldsymbol{\\xi}_{a4}\\|_\\infty\\le1,\\|\\boldsymbol{\\xi}_{a4}\\|_1\\le1.4\\}. \\\\\n& \\mathcal{U}_{a5,P}=\\{\\boldsymbol{\\delta}_{a5}\\in\\mathbb{R}^{5}:\\mathbf{D}_{a5}\\boldsymbol{\\delta}_{a5}\\le\\mathbf{d}_{a5},\\ \\mathbf{E}_{a5}\\boldsymbol{\\delta}_{a5}=\\mathbf{e}_{a5}\\}. \\\\\n& \\mathbf{D}_{a5}=\\begin{bmatrix}0.1 & 0 & -0.3 & 0 & 0 \\\\ 1 & 0 & 0 & 0 & 0 \\\\ -1 & 0 & 0 & 0 & 0 \\\\ 0 & 0 & 1 & 0 & 0 \\\\ 0 & 0 & -1 & 0 & 0\\end{bmatrix},\\quad\\mathbf{d}_{a5}=\\begin{bmatrix}0.07 \\\\ 0.7 \\\\ 0 \\\\ 0.7 \\\\ 0\\end{bmatrix}. \\\\\n& \\mathbf{E}_{a5}=\\begin{bmatrix}0 & 1 & 0 & 0 & 0 \\\\ 0 & 0 & 0 & 1 & 0 \\\\ 0 & 0 & 0 & 0 & 1\\end{bmatrix},\\quad\\mathbf{e}_{a5}=\\begin{bmatrix}0 \\\\ 0 \\\\ 0\\end{bmatrix}. \\\\\n\\end{align*}",
+    "uncertainty_type": [
+      1,
+      1,
+      1,
+      0,
+      2,
+      3
+    ],
+    "solution": [
+      6.389230769230769,
+      0.0,
+      6.7,
+      0.0,
+      0.0
+    ],
+    "optimal_value": 61.25707692307692,
+    "coupled_rows": [
+      1,
+      2
+    ],
+    "coupled_unit_ids": [
+      1,
+      2
+    ],
+    "coupled_unit_labels": [
+      "constraint_1",
+      "constraint_2"
+    ],
+    "row_indexing": "0=objective, 1..n=constraint rows",
+    "shared_uncertainty": true,
+    "uncertainty_family": "box"
+  },
+  {
+    "id": "coupled_025_n4_poly_T111",
+    "n_vars": 4,
+    "n_constraints": 4,
+    "template_param": [
+      1,
+      1,
+      1
+    ],
+    "setting": "random_backbone_coupled_row_shared_primitive",
+    "description": "\\begin{align*}\n& \\text{Maximize}\\quad \\min_{\\boldsymbol{\\xi}_{c}\\in\\mathcal{U}_{c,Bud}}(\\bar{\\mathbf{c}}+\\operatorname{diag}(\\hat{\\mathbf{c}})\\boldsymbol{\\xi}_{c})^\\top\\mathbf{x} && \\text{(Budgeted Uncertainty Objective)} \\\\\n& \\text{subject to} \\\\\n& \\max_{\\boldsymbol{\\xi}_{\\mathrm{shared}}\\in\\mathcal{U}_{\\mathrm{shared}}}(\\bar{\\mathbf{a}}_{1}+\\mathbf{I}_{4}\\boldsymbol{\\xi}_{\\mathrm{shared}})^\\top\\mathbf{x} \\le 23.97 && \\text{(Shared-factor Polyhedral Uncertainty Constraint)} \\\\\n& \\max_{\\boldsymbol{\\delta}_{a2}\\in\\mathcal{U}_{a2,P}}(\\bar{\\mathbf{a}}_{2}+\\boldsymbol{\\delta}_{a2})^\\top\\mathbf{x} \\le -10.39 && \\text{(Polyhedral Uncertainty Constraint)} \\\\\n& \\bar{\\mathbf{a}}_{3}^\\top\\mathbf{x} \\le 0.04 && \\text{(Deterministic Constraint)} \\\\\n& \\max_{\\boldsymbol{\\xi}_{\\mathrm{shared}}\\in\\mathcal{U}_{\\mathrm{shared}}}(\\bar{\\mathbf{a}}_{4}+\\mathbf{I}_{4}\\boldsymbol{\\xi}_{\\mathrm{shared}})^\\top\\mathbf{x} \\le 35.25 && \\text{(Shared-factor Polyhedral Uncertainty Constraint)} \\\\\n& \\text{where the same primitive vector }\\boldsymbol{\\xi}_{\\mathrm{shared}}\\text{ drives constraint row 1 and constraint row 4}. \\\\\n& \\mathbf{x}\\in\\mathbb{R}^{4},\\quad-5.2\\le x_j\\le5.2,\\quad j=1,\\ldots,4. \\\\\n& \\bar{\\mathbf{c}}=\\begin{bmatrix}6.2 \\\\ -0.3 \\\\ -3.4 \\\\ -8.5\\end{bmatrix}. \\\\\n& \\hat{\\mathbf{c}}=\\begin{bmatrix}0 \\\\ 0.1 \\\\ 0.6 \\\\ 0\\end{bmatrix}. \\\\\n& \\bar{\\mathbf{a}}_{1}=\\begin{bmatrix}0 \\\\ 0 \\\\ 4.3 \\\\ 1.9\\end{bmatrix},\\quad b_{1}=23.97. \\\\\n& \\mathbf{P}_{a1}=\\mathbf{I}_{4}. \\\\\n& \\bar{\\mathbf{a}}_{2}=\\begin{bmatrix}2.2 \\\\ 0.8 \\\\ 0 \\\\ 0\\end{bmatrix},\\quad b_{2}=-10.39. \\\\\n& \\bar{\\mathbf{a}}_{3}=\\begin{bmatrix}2 \\\\ 0 \\\\ 0 \\\\ -4.3\\end{bmatrix},\\quad b_{3}=0.04. \\\\\n& \\bar{\\mathbf{a}}_{4}=\\begin{bmatrix}-0.5 \\\\ 0 \\\\ 4.2 \\\\ 2.1\\end{bmatrix},\\quad b_{4}=35.25. \\\\\n& \\mathbf{P}_{a4}=\\mathbf{I}_{4}. \\\\\n& \\mathcal{U}_{\\mathrm{shared}}=\\{\\boldsymbol{\\xi}_{\\mathrm{shared}}\\in\\mathbb{R}^{4}:\\mathbf{D}_{s}\\boldsymbol{\\xi}_{\\mathrm{shared}}\\le\\mathbf{d}_{s},\\ \\mathbf{E}_{s}\\boldsymbol{\\xi}_{\\mathrm{shared}}=\\mathbf{e}_{s},\\ -0.5\\mathbf{1}\\le\\boldsymbol{\\xi}_{\\mathrm{shared}}\\le0\\mathbf{1}\\}. \\\\\n& \\mathbf{D}_s=\\begin{bmatrix}0 & -0.2 & 0.4 & 0.3 \\\\ 0.1 & -0.2 & 0 & -0.3\\end{bmatrix},\\quad\\mathbf{d}_s=\\begin{bmatrix}0.02 \\\\ 0.2\\end{bmatrix}. \\\\\n& \\mathbf{E}_s=\\begin{bmatrix}0.2 & 0.1 & -0.5 & 0\\end{bmatrix},\\quad\\mathbf{e}_s=\\begin{bmatrix}0.01\\end{bmatrix}. \\\\\n& \\mathcal{U}_{c,Bud}=\\{\\boldsymbol{\\xi}_{c}\\in\\mathbb{R}^{4}:\\|\\boldsymbol{\\xi}_{c}\\|_\\infty\\le1,\\|\\boldsymbol{\\xi}_{c}\\|_1\\le1.1\\}. \\\\\n& \\mathcal{U}_{a2,P}=\\{\\boldsymbol{\\delta}_{a2}\\in\\mathbb{R}^{4}:\\mathbf{D}_{a2}\\boldsymbol{\\delta}_{a2}\\le\\mathbf{d}_{a2},\\ \\mathbf{E}_{a2}\\boldsymbol{\\delta}_{a2}=\\mathbf{e}_{a2}\\}. \\\\\n& \\mathbf{D}_{a2}=\\begin{bmatrix}0.4 & -0.3 & 0 & 0 \\\\ 1 & 0 & 0 & 0 \\\\ -1 & 0 & 0 & 0 \\\\ 0 & 1 & 0 & 0 \\\\ 0 & -1 & 0 & 0\\end{bmatrix},\\quad\\mathbf{d}_{a2}=\\begin{bmatrix}-0.11 \\\\ 0 \\\\ 0.5 \\\\ 0 \\\\ 0.5\\end{bmatrix}. \\\\\n& \\mathbf{E}_{a2}=\\begin{bmatrix}0 & 0 & 1 & 0 \\\\ 0 & 0 & 0 & 1\\end{bmatrix},\\quad\\mathbf{e}_{a2}=\\begin{bmatrix}0 \\\\ 0\\end{bmatrix}. \\\\\n\\end{align*}",
+    "uncertainty_type": [
+      2,
+      3,
+      3,
+      0,
+      3
+    ],
+    "solution": [
+      -4.58235294117647,
+      -5.2,
+      -5.2,
+      -2.1406292749658
+    ],
+    "optimal_value": 5.852760601915188,
+    "coupled_rows": [
+      1,
+      4
+    ],
+    "coupled_unit_ids": [
+      1,
+      4
+    ],
+    "coupled_unit_labels": [
+      "constraint_1",
+      "constraint_4"
+    ],
+    "row_indexing": "0=objective, 1..n=constraint rows",
+    "shared_uncertainty": true,
+    "uncertainty_family": "poly"
+  },
+  {
+    "id": "coupled_026_n2_budget_T111",
+    "n_vars": 2,
+    "n_constraints": 2,
+    "template_param": [
+      1,
+      1,
+      1
+    ],
+    "setting": "random_backbone_coupled_row_shared_primitive",
+    "description": "\\begin{align*}\n& \\text{Maximize}\\quad \\min_{\\boldsymbol{\\xi}_{\\mathrm{shared}}\\in\\mathcal{U}_{\\mathrm{shared}}}(\\bar{\\mathbf{c}}+\\mathbf{I}_{2}\\boldsymbol{\\xi}_{\\mathrm{shared}})^\\top\\mathbf{x} && \\text{(Shared-factor Budgeted Uncertainty Objective)} \\\\\n& \\text{subject to} \\\\\n& \\min_{\\boldsymbol{\\xi}_{\\mathrm{shared}}\\in\\mathcal{U}_{\\mathrm{shared}}}(\\bar{\\mathbf{a}}_{1}+\\mathbf{I}_{2}\\boldsymbol{\\xi}_{\\mathrm{shared}})^\\top\\mathbf{x} \\ge -11.74 && \\text{(Shared-factor Budgeted Uncertainty Constraint)} \\\\\n& \\bar{\\mathbf{a}}_{2}^\\top\\mathbf{x} \\ge -0.92 && \\text{(Deterministic Constraint)} \\\\\n& \\text{where the same primitive vector }\\boldsymbol{\\xi}_{\\mathrm{shared}}\\text{ drives the objective row and constraint row 1}. \\\\\n& \\mathbf{x}\\in\\mathbb{R}^{2},\\quad0\\le x_j\\le4.8,\\quad j=1,\\ldots,2. \\\\\n& \\bar{\\mathbf{c}}=\\begin{bmatrix}9.8 \\\\ 4.3\\end{bmatrix}. \\\\\n& \\mathbf{P}_c=\\mathbf{I}_{2}. \\\\\n& \\bar{\\mathbf{a}}_{1}=\\begin{bmatrix}-2 \\\\ 2.7\\end{bmatrix},\\quad b_{1}=-11.74. \\\\\n& \\mathbf{P}_{a1}=\\mathbf{I}_{2}. \\\\\n& \\bar{\\mathbf{a}}_{2}=\\begin{bmatrix}0.8 \\\\ -1.2\\end{bmatrix},\\quad b_{2}=-0.92. \\\\\n& \\mathcal{U}_{\\mathrm{shared}}=\\{\\boldsymbol{\\xi}_{\\mathrm{shared}}\\in\\mathbb{R}^{2}:\\|\\boldsymbol{\\xi}_{\\mathrm{shared}}\\|_\\infty\\le1,\\|\\boldsymbol{\\xi}_{\\mathrm{shared}}\\|_1\\le1.8\\}. \\\\\n\\end{align*}",
+    "uncertainty_type": [
+      2,
+      2,
+      0
+    ],
+    "solution": [
+      4.8,
+      3.966666666666667
+    ],
+    "optimal_value": 56.12333333333333,
+    "coupled_rows": [
+      0,
+      1
+    ],
+    "coupled_unit_ids": [
+      0,
+      1
+    ],
+    "coupled_unit_labels": [
+      "objective",
+      "constraint_1"
+    ],
+    "row_indexing": "0=objective, 1..n=constraint rows",
+    "shared_uncertainty": true,
+    "uncertainty_family": "budget"
+  },
+  {
+    "id": "coupled_027_n2_budget_T111",
+    "n_vars": 2,
+    "n_constraints": 2,
+    "template_param": [
+      1,
+      1,
+      1
+    ],
+    "setting": "random_backbone_coupled_row_shared_primitive",
+    "description": "\\begin{align*}\n& \\text{Minimize}\\quad \\bar{\\mathbf{c}}^\\top\\mathbf{x} && \\text{(Deterministic Objective)} \\\\\n& \\text{subject to} \\\\\n& \\max_{\\boldsymbol{\\xi}_{\\mathrm{shared}}\\in\\mathcal{U}_{\\mathrm{shared}}}(\\bar{\\mathbf{a}}_{1}+\\mathbf{I}_{2}\\boldsymbol{\\xi}_{\\mathrm{shared}})^\\top\\mathbf{x} \\le 2.46 && \\text{(Shared-factor Budgeted Uncertainty Constraint)} \\\\\n& \\min_{\\boldsymbol{\\xi}_{\\mathrm{shared}}\\in\\mathcal{U}_{\\mathrm{shared}}}(\\bar{\\mathbf{a}}_{2}+\\mathbf{I}_{2}\\boldsymbol{\\xi}_{\\mathrm{shared}})^\\top\\mathbf{x} \\ge -0.77 && \\text{(Shared-factor Budgeted Uncertainty Constraint)} \\\\\n& \\text{where the same primitive vector }\\boldsymbol{\\xi}_{\\mathrm{shared}}\\text{ drives constraint row 1 and constraint row 2}. \\\\\n& \\mathbf{x}\\in\\mathbb{R}^{2},\\quad-2.2\\le x_j\\le2.2,\\quad j=1,\\ldots,2. \\\\\n& \\bar{\\mathbf{c}}=\\begin{bmatrix}-2.7 \\\\ -5\\end{bmatrix}. \\\\\n& \\bar{\\mathbf{a}}_{1}=\\begin{bmatrix}-1.5 \\\\ -0.3\\end{bmatrix},\\quad b_{1}=2.46. \\\\\n& \\mathbf{P}_{a1}=\\mathbf{I}_{2}. \\\\\n& \\bar{\\mathbf{a}}_{2}=\\begin{bmatrix}-0.1 \\\\ -0.5\\end{bmatrix},\\quad b_{2}=-0.77. \\\\\n& \\mathbf{P}_{a2}=\\mathbf{I}_{2}. \\\\\n& \\mathcal{U}_{\\mathrm{shared}}=\\{\\boldsymbol{\\xi}_{\\mathrm{shared}}\\in\\mathbb{R}^{2}:\\|\\boldsymbol{\\xi}_{\\mathrm{shared}}\\|_\\infty\\le1,\\|\\boldsymbol{\\xi}_{\\mathrm{shared}}\\|_1\\le0.3\\}. \\\\\n\\end{align*}",
+    "uncertainty_type": [
+      0,
+      2,
+      2
+    ],
+    "solution": [
+      0.8555555555555556,
+      0.8555555555555555
+    ],
+    "optimal_value": -6.587777777777778,
+    "coupled_rows": [
+      1,
+      2
+    ],
+    "coupled_unit_ids": [
+      1,
+      2
+    ],
+    "coupled_unit_labels": [
+      "constraint_1",
+      "constraint_2"
+    ],
+    "row_indexing": "0=objective, 1..n=constraint rows",
+    "shared_uncertainty": true,
+    "uncertainty_family": "budget"
+  },
+  {
+    "id": "coupled_028_n3_poly_T111",
+    "n_vars": 3,
+    "n_constraints": 3,
+    "template_param": [
+      1,
+      1,
+      1
+    ],
+    "setting": "random_backbone_coupled_row_shared_primitive",
+    "description": "\\begin{align*}\n& \\text{Maximize}\\quad \\min_{\\boldsymbol{\\xi}_{\\mathrm{shared}}\\in\\mathcal{U}_{\\mathrm{shared}}}(\\bar{\\mathbf{c}}+\\mathbf{I}_{3}\\boldsymbol{\\xi}_{\\mathrm{shared}})^\\top\\mathbf{x} && \\text{(Shared-factor Polyhedral Uncertainty Objective)} \\\\\n& \\text{subject to} \\\\\n& \\max_{\\boldsymbol{\\delta}_{a1}\\in\\mathcal{U}_{a1,P}}(\\bar{\\mathbf{a}}_{1}+\\boldsymbol{\\delta}_{a1})^\\top\\mathbf{x} \\le -21.73 && \\text{(Polyhedral Uncertainty Constraint)} \\\\\n& \\max_{\\boldsymbol{\\xi}_{\\mathrm{shared}}\\in\\mathcal{U}_{\\mathrm{shared}}}(\\bar{\\mathbf{a}}_{2}+\\mathbf{I}_{3}\\boldsymbol{\\xi}_{\\mathrm{shared}})^\\top\\mathbf{x} \\le 11.59 && \\text{(Shared-factor Polyhedral Uncertainty Constraint)} \\\\\n& \\mathbf{a}_{3}^\\top\\mathbf{x} = -33.8 && \\text{(Deterministic Equality Constraint)} \\\\\n& \\text{where the same primitive vector }\\boldsymbol{\\xi}_{\\mathrm{shared}}\\text{ drives the objective row and constraint row 2}. \\\\\n& \\mathbf{x}\\in\\mathbb{R}^{3},\\quad-9.1\\le x_j\\le9.1,\\quad j=1,\\ldots,3. \\\\\n& \\bar{\\mathbf{c}}=\\begin{bmatrix}9.7 \\\\ -2.2 \\\\ -0.6\\end{bmatrix}. \\\\\n& \\mathbf{P}_c=\\mathbf{I}_{3}. \\\\\n& \\bar{\\mathbf{a}}_{1}=\\begin{bmatrix}0 \\\\ 5.9 \\\\ 8.1\\end{bmatrix},\\quad b_{1}=-21.73. \\\\\n& \\bar{\\mathbf{a}}_{2}=\\begin{bmatrix}2.9 \\\\ 0 \\\\ -0.3\\end{bmatrix},\\quad b_{2}=11.59. \\\\\n& \\mathbf{P}_{a2}=\\mathbf{I}_{3}. \\\\\n& \\mathbf{a}_{3}=\\begin{bmatrix}8.6 \\\\ 0 \\\\ -3.1\\end{bmatrix},\\quad b_{3}=-33.8. \\\\\n& \\mathcal{U}_{\\mathrm{shared}}=\\{\\boldsymbol{\\xi}_{\\mathrm{shared}}\\in\\mathbb{R}^{3}:\\mathbf{D}_{s}\\boldsymbol{\\xi}_{\\mathrm{shared}}\\le\\mathbf{d}_{s},\\ 0\\mathbf{1}\\le\\boldsymbol{\\xi}_{\\mathrm{shared}}\\le0.9\\mathbf{1}\\}. \\\\\n& \\mathbf{D}_s=\\begin{bmatrix}0 & -0.4 & 0.3 \\\\ -0.7 & -0.3 & -0.1\\end{bmatrix},\\quad\\mathbf{d}_s=\\begin{bmatrix}0.39 \\\\ -0.24\\end{bmatrix}. \\\\\n& \\mathcal{U}_{a1,P}=\\{\\boldsymbol{\\delta}_{a1}\\in\\mathbb{R}^{3}:\\mathbf{D}_{a1}\\boldsymbol{\\delta}_{a1}\\le\\mathbf{d}_{a1},\\ \\mathbf{E}_{a1}\\boldsymbol{\\delta}_{a1}=\\mathbf{e}_{a1}\\}. \\\\\n& \\mathbf{D}_{a1}=\\begin{bmatrix}0 & 0.3 & 0.9 \\\\ 0 & 1 & 0 \\\\ 0 & -1 & 0 \\\\ 0 & 0 & 1 \\\\ 0 & 0 & -1\\end{bmatrix},\\quad\\mathbf{d}_{a1}=\\begin{bmatrix}0.99 \\\\ 0.9 \\\\ 0 \\\\ 0.9 \\\\ 0\\end{bmatrix}. \\\\\n& \\mathbf{E}_{a1}=\\begin{bmatrix}1 & 0 & 0\\end{bmatrix},\\quad\\mathbf{e}_{a1}=\\begin{bmatrix}0\\end{bmatrix}. \\\\\n\\end{align*}",
+    "uncertainty_type": [
+      3,
+      3,
+      3,
+      0
+    ],
+    "solution": [
+      -2.6501808785529715,
+      -9.1,
+      3.551111111111111
+    ],
+    "optimal_value": -18.392583979328162,
+    "coupled_rows": [
+      0,
+      2
+    ],
+    "coupled_unit_ids": [
+      0,
+      2
+    ],
+    "coupled_unit_labels": [
+      "objective",
+      "constraint_2"
+    ],
+    "row_indexing": "0=objective, 1..n=constraint rows",
+    "shared_uncertainty": true,
+    "uncertainty_family": "poly"
+  },
+  {
+    "id": "coupled_029_n3_poly_T111",
+    "n_vars": 3,
+    "n_constraints": 3,
+    "template_param": [
+      1,
+      1,
+      1
+    ],
+    "setting": "random_backbone_coupled_row_shared_primitive",
+    "description": "\\begin{align*}\n& \\text{Maximize}\\quad \\min_{\\boldsymbol{\\delta}_{c}\\in\\mathcal{U}_{c,P}}(\\bar{\\mathbf{c}}+\\boldsymbol{\\delta}_{c})^\\top\\mathbf{x} && \\text{(Polyhedral Uncertainty Objective)} \\\\\n& \\text{subject to} \\\\\n& \\bar{\\mathbf{a}}_{1}^\\top\\mathbf{x} \\ge 1.17 && \\text{(Deterministic Constraint)} \\\\\n& \\min_{\\boldsymbol{\\xi}_{\\mathrm{shared}}\\in\\mathcal{U}_{\\mathrm{shared}}}(\\bar{\\mathbf{a}}_{2}+\\mathbf{I}_{3}\\boldsymbol{\\xi}_{\\mathrm{shared}})^\\top\\mathbf{x} \\ge -10.25 && \\text{(Shared-factor Polyhedral Uncertainty Constraint)} \\\\\n& \\max_{\\boldsymbol{\\xi}_{\\mathrm{shared}}\\in\\mathcal{U}_{\\mathrm{shared}}}(\\bar{\\mathbf{a}}_{3}+\\mathbf{I}_{3}\\boldsymbol{\\xi}_{\\mathrm{shared}})^\\top\\mathbf{x} \\le 7.11 && \\text{(Shared-factor Polyhedral Uncertainty Constraint)} \\\\\n& \\text{where the same primitive vector }\\boldsymbol{\\xi}_{\\mathrm{shared}}\\text{ drives constraint row 2 and constraint row 3}. \\\\\n& \\mathbf{x}\\in\\mathbb{R}^{3},\\quad-2.9\\le x_j\\le2.9,\\quad j=1,\\ldots,3. \\\\\n& \\bar{\\mathbf{c}}=\\begin{bmatrix}-6.1 \\\\ -0.5 \\\\ 6.7\\end{bmatrix}. \\\\\n& \\bar{\\mathbf{a}}_{1}=\\begin{bmatrix}0 \\\\ -1.9 \\\\ 2.7\\end{bmatrix},\\quad b_{1}=1.17. \\\\\n& \\bar{\\mathbf{a}}_{2}=\\begin{bmatrix}0 \\\\ 1.8 \\\\ -2.3\\end{bmatrix},\\quad b_{2}=-10.25. \\\\\n& \\mathbf{P}_{a2}=\\mathbf{I}_{3}. \\\\\n& \\bar{\\mathbf{a}}_{3}=\\begin{bmatrix}-2.5 \\\\ 2.4 \\\\ -0.6\\end{bmatrix},\\quad b_{3}=7.11. \\\\\n& \\mathbf{P}_{a3}=\\mathbf{I}_{3}. \\\\\n& \\mathcal{U}_{\\mathrm{shared}}=\\{\\boldsymbol{\\xi}_{\\mathrm{shared}}\\in\\mathbb{R}^{3}:\\mathbf{D}_{s}\\boldsymbol{\\xi}_{\\mathrm{shared}}\\le\\mathbf{d}_{s},\\ 0\\mathbf{1}\\le\\boldsymbol{\\xi}_{\\mathrm{shared}}\\le0.3\\mathbf{1}\\}. \\\\\n& \\mathbf{D}_s=\\begin{bmatrix}-0.2 & 0 & -0.1 \\\\ 0.1 & 0 & 0.1\\end{bmatrix},\\quad\\mathbf{d}_s=\\begin{bmatrix}-0.06 \\\\ 0.05\\end{bmatrix}. \\\\\n& \\mathcal{U}_{c,P}=\\{\\boldsymbol{\\delta}_{c}\\in\\mathbb{R}^{3}:\\mathbf{D}_{c}\\boldsymbol{\\delta}_{c}\\le\\mathbf{d}_{c},\\ \\mathbf{E}_{c}\\boldsymbol{\\delta}_{c}=\\mathbf{e}_{c}\\}. \\\\\n& \\mathbf{D}_{c}=\\begin{bmatrix}0 & -0.2 & -0.1 \\\\ 1 & 0 & 0 \\\\ -1 & 0 & 0 \\\\ 0 & 1 & 0 \\\\ 0 & -1 & 0 \\\\ 0 & 0 & 1 \\\\ 0 & 0 & -1\\end{bmatrix},\\quad\\mathbf{d}_{c}=\\begin{bmatrix}0.05 \\\\ 0.3 \\\\ 0 \\\\ 0.3 \\\\ 0 \\\\ 0.3 \\\\ 0\\end{bmatrix}. \\\\\n& \\mathbf{E}_{c}=\\begin{bmatrix}-0.3 & 0.1 & 0\\end{bmatrix},\\quad\\mathbf{e}_{c}=\\begin{bmatrix}0\\end{bmatrix}. \\\\\n\\end{align*}",
+    "uncertainty_type": [
+      3,
+      0,
+      3,
+      3
+    ],
+    "solution": [
+      -2.9,
+      -1.290476190476191,
+      2.9
+    ],
+    "optimal_value": 37.088095238095235,
+    "coupled_rows": [
+      2,
+      3
+    ],
+    "coupled_unit_ids": [
+      2,
+      3
+    ],
+    "coupled_unit_labels": [
+      "constraint_2",
+      "constraint_3"
+    ],
+    "row_indexing": "0=objective, 1..n=constraint rows",
+    "shared_uncertainty": true,
+    "uncertainty_family": "poly"
+  },
+  {
+    "id": "coupled_030_n5_poly_T111",
+    "n_vars": 5,
+    "n_constraints": 5,
+    "template_param": [
+      1,
+      1,
+      1
+    ],
+    "setting": "random_backbone_coupled_row_shared_primitive",
+    "description": "\\begin{align*}\n& \\text{Minimize}\\quad \\max_{\\boldsymbol{\\xi}_{c}\\in\\mathcal{U}_{c,Bud}}(\\bar{\\mathbf{c}}+\\operatorname{diag}(\\hat{\\mathbf{c}})\\boldsymbol{\\xi}_{c})^\\top\\mathbf{x} && \\text{(Budgeted Uncertainty Objective)} \\\\\n& \\text{subject to} \\\\\n& \\mathbf{a}_{1}^\\top\\mathbf{x} = 31.47 && \\text{(Deterministic Equality Constraint)} \\\\\n& \\max_{\\boldsymbol{\\xi}_{\\mathrm{shared}}\\in\\mathcal{U}_{\\mathrm{shared}}}(\\bar{\\mathbf{a}}_{2}+\\mathbf{I}_{5}\\boldsymbol{\\xi}_{\\mathrm{shared}})^\\top\\mathbf{x} \\le 9.98 && \\text{(Shared-factor Polyhedral Uncertainty Constraint)} \\\\\n& \\max_{\\boldsymbol{\\xi}_{\\mathrm{shared}}\\in\\mathcal{U}_{\\mathrm{shared}}}(\\bar{\\mathbf{a}}_{3}+\\mathbf{I}_{5}\\boldsymbol{\\xi}_{\\mathrm{shared}})^\\top\\mathbf{x} \\le 0.71 && \\text{(Shared-factor Polyhedral Uncertainty Constraint)} \\\\\n& \\max_{\\boldsymbol{\\xi}_{a4}\\in\\mathcal{U}_{a4,Box}}(\\bar{\\mathbf{a}}_{4}+\\operatorname{diag}(\\hat{\\mathbf{a}}_{4})\\boldsymbol{\\xi}_{a4})^\\top\\mathbf{x} \\le 2.98 && \\text{(Box Uncertainty Constraint)} \\\\\n& \\min_{\\boldsymbol{\\xi}_{a5}\\in\\mathcal{U}_{a5,Bud}}(\\bar{\\mathbf{a}}_{5}+\\operatorname{diag}(\\hat{\\mathbf{a}}_{5})\\boldsymbol{\\xi}_{a5})^\\top\\mathbf{x} \\ge -51.24 && \\text{(Budgeted Uncertainty Constraint)} \\\\\n& \\text{where the same primitive vector }\\boldsymbol{\\xi}_{\\mathrm{shared}}\\text{ drives constraint row 2 and constraint row 3}. \\\\\n& \\mathbf{x}\\in\\mathbb{R}^{5},\\quad-6.6\\le x_j\\le6.6,\\quad j=1,\\ldots,5. \\\\\n& \\bar{\\mathbf{c}}=\\begin{bmatrix}-9.3 \\\\ 6.6 \\\\ 9.4 \\\\ 9.2 \\\\ 6.6\\end{bmatrix}. \\\\\n& \\hat{\\mathbf{c}}=\\begin{bmatrix}1 \\\\ 0 \\\\ 1.1 \\\\ 1.1 \\\\ 0.5\\end{bmatrix}. \\\\\n& \\mathbf{a}_{1}=\\begin{bmatrix}4 \\\\ 0 \\\\ 0 \\\\ -4.7 \\\\ 0\\end{bmatrix},\\quad b_{1}=31.47. \\\\\n& \\bar{\\mathbf{a}}_{2}=\\begin{bmatrix}0 \\\\ 5.1 \\\\ 0 \\\\ 0 \\\\ 2\\end{bmatrix},\\quad b_{2}=9.98. \\\\\n& \\mathbf{P}_{a2}=\\mathbf{I}_{5}. \\\\\n& \\bar{\\mathbf{a}}_{3}=\\begin{bmatrix}-1.3 \\\\ 0.8 \\\\ -1.5 \\\\ 0 \\\\ 0\\end{bmatrix},\\quad b_{3}=0.71. \\\\\n& \\mathbf{P}_{a3}=\\mathbf{I}_{5}. \\\\\n& \\bar{\\mathbf{a}}_{4}=\\begin{bmatrix}0 \\\\ 0 \\\\ -2.5 \\\\ 2.2 \\\\ 0\\end{bmatrix},\\quad b_{4}=2.98. \\\\\n& \\hat{\\mathbf{a}}_{4}=\\begin{bmatrix}0 \\\\ 0 \\\\ 0.3 \\\\ 0.2 \\\\ 0\\end{bmatrix}. \\\\\n& \\bar{\\mathbf{a}}_{5}=\\begin{bmatrix}0 \\\\ -6.6 \\\\ 0 \\\\ 0 \\\\ 3.6\\end{bmatrix},\\quad b_{5}=-51.24. \\\\\n& \\hat{\\mathbf{a}}_{5}=\\begin{bmatrix}0 \\\\ 1 \\\\ 0 \\\\ 0 \\\\ 0.3\\end{bmatrix}. \\\\\n& \\mathcal{U}_{\\mathrm{shared}}=\\{\\boldsymbol{\\xi}_{\\mathrm{shared}}\\in\\mathbb{R}^{5}:\\mathbf{D}_{s}\\boldsymbol{\\xi}_{\\mathrm{shared}}\\le\\mathbf{d}_{s},\\ 0\\mathbf{1}\\le\\boldsymbol{\\xi}_{\\mathrm{shared}}\\le0.7\\mathbf{1}\\}. \\\\\n& \\mathbf{D}_s=\\begin{bmatrix}0.1 & 0 & 0 & 0.1 & 0 \\\\ 0 & 0 & -0.2 & -0.3 & 0.3 \\\\ 0.5 & 0 & -0.1 & 0 & 0 \\\\ 0 & -0.1 & -0.4 & 0 & -0.2\\end{bmatrix},\\quad\\mathbf{d}_s=\\begin{bmatrix}0.12 \\\\ 0.2 \\\\ 0.23 \\\\ 0.16\\end{bmatrix}. \\\\\n& \\mathcal{U}_{c,Bud}=\\{\\boldsymbol{\\xi}_{c}\\in\\mathbb{R}^{5}:\\|\\boldsymbol{\\xi}_{c}\\|_\\infty\\le1,\\|\\boldsymbol{\\xi}_{c}\\|_1\\le3.4\\}. \\\\\n& \\mathcal{U}_{a4,Box}=\\{\\boldsymbol{\\xi}_{a4}\\in\\mathbb{R}^{5}:\\|\\boldsymbol{\\xi}_{a4}\\|_\\infty\\le1\\}. \\\\\n& \\mathcal{U}_{a5,Bud}=\\{\\boldsymbol{\\xi}_{a5}\\in\\mathbb{R}^{5}:\\|\\boldsymbol{\\xi}_{a5}\\|_\\infty\\le1,\\|\\boldsymbol{\\xi}_{a5}\\|_1\\le1.1\\}. \\\\\n\\end{align*}",
+    "uncertainty_type": [
+      2,
+      0,
+      3,
+      3,
+      1,
+      2
+    ],
+    "solution": [
+      1.587141716982442,
+      -6.6,
+      -4.882132694843501,
+      -5.344985772780901,
+      -6.6
+    ],
+    "optimal_value": -181.7616474078701,
+    "coupled_rows": [
+      2,
+      3
+    ],
+    "coupled_unit_ids": [
+      2,
+      3
+    ],
+    "coupled_unit_labels": [
+      "constraint_2",
+      "constraint_3"
+    ],
+    "row_indexing": "0=objective, 1..n=constraint rows",
+    "shared_uncertainty": true,
+    "uncertainty_family": "poly"
+  },
+  {
+    "id": "coupled_031_n2_poly_T111",
+    "n_vars": 2,
+    "n_constraints": 2,
+    "template_param": [
+      1,
+      1,
+      1
+    ],
+    "setting": "random_backbone_coupled_row_shared_primitive",
+    "description": "\\begin{align*}\n& \\text{Maximize}\\quad \\bar{\\mathbf{c}}^\\top\\mathbf{x} && \\text{(Deterministic Objective)} \\\\\n& \\text{subject to} \\\\\n& \\min_{\\boldsymbol{\\xi}_{\\mathrm{shared}}\\in\\mathcal{U}_{\\mathrm{shared}}}(\\bar{\\mathbf{a}}_{1}+\\mathbf{I}_{2}\\boldsymbol{\\xi}_{\\mathrm{shared}})^\\top\\mathbf{x} \\ge -11.65 && \\text{(Shared-factor Polyhedral Uncertainty Constraint)} \\\\\n& \\max_{\\boldsymbol{\\xi}_{\\mathrm{shared}}\\in\\mathcal{U}_{\\mathrm{shared}}}(\\bar{\\mathbf{a}}_{2}+\\mathbf{I}_{2}\\boldsymbol{\\xi}_{\\mathrm{shared}})^\\top\\mathbf{x} \\le 7.21 && \\text{(Shared-factor Polyhedral Uncertainty Constraint)} \\\\\n& \\text{where the same primitive vector }\\boldsymbol{\\xi}_{\\mathrm{shared}}\\text{ drives constraint row 1 and constraint row 2}. \\\\\n& \\mathbf{x}\\in\\mathbb{R}^{2},\\quad-3.8\\le x_j\\le0,\\quad j=1,\\ldots,2. \\\\\n& \\bar{\\mathbf{c}}=\\begin{bmatrix}3.7 \\\\ -4.8\\end{bmatrix}. \\\\\n& \\bar{\\mathbf{a}}_{1}=\\begin{bmatrix}-3.6 \\\\ 1.6\\end{bmatrix},\\quad b_{1}=-11.65. \\\\\n& \\mathbf{P}_{a1}=\\mathbf{I}_{2}. \\\\\n& \\bar{\\mathbf{a}}_{2}=\\begin{bmatrix}-3.8 \\\\ -1.9\\end{bmatrix},\\quad b_{2}=7.21. \\\\\n& \\mathbf{P}_{a2}=\\mathbf{I}_{2}. \\\\\n& \\mathcal{U}_{\\mathrm{shared}}=\\{\\boldsymbol{\\xi}_{\\mathrm{shared}}\\in\\mathbb{R}^{2}:\\mathbf{D}_{s}\\boldsymbol{\\xi}_{\\mathrm{shared}}\\le\\mathbf{d}_{s},\\ 0\\mathbf{1}\\le\\boldsymbol{\\xi}_{\\mathrm{shared}}\\le0.4\\mathbf{1}\\}. \\\\\n& \\mathbf{D}_s=\\begin{bmatrix}-0.3 & 0.1\\end{bmatrix},\\quad\\mathbf{d}_s=\\begin{bmatrix}0.09\\end{bmatrix}. \\\\\n\\end{align*}",
+    "uncertainty_type": [
+      0,
+      3,
+      3
+    ],
+    "solution": [
+      0.0,
+      -3.794736842105263
+    ],
+    "optimal_value": 18.214736842105264,
+    "coupled_rows": [
+      1,
+      2
+    ],
+    "coupled_unit_ids": [
+      1,
+      2
+    ],
+    "coupled_unit_labels": [
+      "constraint_1",
+      "constraint_2"
+    ],
+    "row_indexing": "0=objective, 1..n=constraint rows",
+    "shared_uncertainty": true,
+    "uncertainty_family": "poly"
+  },
+  {
+    "id": "coupled_032_n4_budget_T111",
+    "n_vars": 4,
+    "n_constraints": 4,
+    "template_param": [
+      1,
+      1,
+      1
+    ],
+    "setting": "random_backbone_coupled_row_shared_primitive",
+    "description": "\\begin{align*}\n& \\text{Maximize}\\quad \\min_{\\boldsymbol{\\xi}_{c}\\in\\mathcal{U}_{c,Box}}(\\bar{\\mathbf{c}}+\\operatorname{diag}(\\hat{\\mathbf{c}})\\boldsymbol{\\xi}_{c})^\\top\\mathbf{x} && \\text{(Box Uncertainty Objective)} \\\\\n& \\text{subject to} \\\\\n& \\min_{\\boldsymbol{\\xi}_{\\mathrm{shared}}\\in\\mathcal{U}_{\\mathrm{shared}}}(\\bar{\\mathbf{a}}_{1}+\\mathbf{I}_{4}\\boldsymbol{\\xi}_{\\mathrm{shared}})^\\top\\mathbf{x} \\ge -0.83 && \\text{(Shared-factor Budgeted Uncertainty Constraint)} \\\\\n& \\min_{\\boldsymbol{\\xi}_{a2}\\in\\mathcal{U}_{a2,Bud}}(\\bar{\\mathbf{a}}_{2}+\\operatorname{diag}(\\hat{\\mathbf{a}}_{2})\\boldsymbol{\\xi}_{a2})^\\top\\mathbf{x} \\ge -0.05 && \\text{(Budgeted Uncertainty Constraint)} \\\\\n& \\max_{\\boldsymbol{\\xi}_{\\mathrm{shared}}\\in\\mathcal{U}_{\\mathrm{shared}}}(\\bar{\\mathbf{a}}_{3}+\\mathbf{I}_{4}\\boldsymbol{\\xi}_{\\mathrm{shared}})^\\top\\mathbf{x} \\le 0.58 && \\text{(Shared-factor Budgeted Uncertainty Constraint)} \\\\\n& \\bar{\\mathbf{a}}_{4}^\\top\\mathbf{x} \\le 1.6 && \\text{(Deterministic Constraint)} \\\\\n& \\text{where the same primitive vector }\\boldsymbol{\\xi}_{\\mathrm{shared}}\\text{ drives constraint row 1 and constraint row 3}. \\\\\n& \\mathbf{x}\\in\\mathbb{R}^{4},\\quad0\\le x_j\\le1.3,\\quad j=1,\\ldots,4. \\\\\n& \\bar{\\mathbf{c}}=\\begin{bmatrix}9.6 \\\\ 5.4 \\\\ -0.3 \\\\ 4\\end{bmatrix}. \\\\\n& \\hat{\\mathbf{c}}=\\begin{bmatrix}1.1 \\\\ 0.8 \\\\ 0.1 \\\\ 0.6\\end{bmatrix}. \\\\\n& \\bar{\\mathbf{a}}_{1}=\\begin{bmatrix}-1 \\\\ 0 \\\\ 0.1 \\\\ 0\\end{bmatrix},\\quad b_{1}=-0.83. \\\\\n& \\mathbf{P}_{a1}=\\mathbf{I}_{4}. \\\\\n& \\bar{\\mathbf{a}}_{2}=\\begin{bmatrix}0.6 \\\\ 0 \\\\ 0 \\\\ 0.3\\end{bmatrix},\\quad b_{2}=-0.05. \\\\\n& \\hat{\\mathbf{a}}_{2}=\\begin{bmatrix}0.1 \\\\ 0 \\\\ 0 \\\\ 0.1\\end{bmatrix}. \\\\\n& \\bar{\\mathbf{a}}_{3}=\\begin{bmatrix}0 \\\\ -1 \\\\ 0.3 \\\\ 0\\end{bmatrix},\\quad b_{3}=0.58. \\\\\n& \\mathbf{P}_{a3}=\\mathbf{I}_{4}. \\\\\n& \\bar{\\mathbf{a}}_{4}=\\begin{bmatrix}0 \\\\ -0.3 \\\\ 0.7 \\\\ -0.3\\end{bmatrix},\\quad b_{4}=1.6. \\\\\n& \\mathcal{U}_{\\mathrm{shared}}=\\{\\boldsymbol{\\xi}_{\\mathrm{shared}}\\in\\mathbb{R}^{4}:\\|\\boldsymbol{\\xi}_{\\mathrm{shared}}\\|_\\infty\\le1,\\|\\boldsymbol{\\xi}_{\\mathrm{shared}}\\|_1\\le2.9\\}. \\\\\n& \\mathcal{U}_{c,Box}=\\{\\boldsymbol{\\xi}_{c}\\in\\mathbb{R}^{4}:\\|\\boldsymbol{\\xi}_{c}\\|_\\infty\\le1\\}. \\\\\n& \\mathcal{U}_{a2,Bud}=\\{\\boldsymbol{\\xi}_{a2}\\in\\mathbb{R}^{4}:\\|\\boldsymbol{\\xi}_{a2}\\|_\\infty\\le1,\\|\\boldsymbol{\\xi}_{a2}\\|_1\\le1.6\\}. \\\\\n\\end{align*}",
+    "uncertainty_type": [
+      1,
+      2,
+      2,
+      2,
+      0
+    ],
+    "solution": [
+      0.0,
+      0.83,
+      -0.0,
+      -0.0
+    ],
+    "optimal_value": 3.818,
+    "coupled_rows": [
+      1,
+      3
+    ],
+    "coupled_unit_ids": [
+      1,
+      3
+    ],
+    "coupled_unit_labels": [
+      "constraint_1",
+      "constraint_3"
+    ],
+    "row_indexing": "0=objective, 1..n=constraint rows",
+    "shared_uncertainty": true,
+    "uncertainty_family": "budget"
+  }
+]

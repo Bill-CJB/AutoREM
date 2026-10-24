@@ -1,0 +1,37 @@
+{
+  "experiences": {
+    "1": {
+      "experience_id": 1,
+      "content": "For an uncertain objective with box uncertainty: minimize max_{ξ in Box} (c̄ + diag(ĉ)ξ)^T x, where Box = { ξ : ||ξ||∞ ≤ 1 }. Reformulate as: minimize c̄^T x + ∑_j u_j, with constraints u_j ≥ ĉ_j x_j, u_j ≥ -ĉ_j x_j for all j where ĉ_j ≠ 0. The variables u_j are free (they will automatically be nonnegative due to the constraints)."
+    },
+    "2": {
+      "experience_id": 2,
+      "content": "For a constraint with budgeted uncertainty: min_{ξ in Budgeted} (ā + diag(â)ξ)^T x ≥ b, where Budgeted = { ξ : ||ξ||∞ ≤ 1, ||ξ||_1 ≤ Γ }. Reformulate as: ā^T x - Γ p - ∑_j q_j ≥ b, with p ≥ 0, q_j ≥ 0, and p + q_j ≥ â_j x_j, p + q_j ≥ -â_j x_j for each j (these are often written as p + q_j ≥ â_j |x_j|)."
+    },
+    "3": {
+      "experience_id": 3,
+      "content": "For a constraint with polyhedral uncertainty: min_{δ in Poly} (ā + δ)^T x ≥ b, where Poly = { δ : Dδ ≤ d, Eδ = e }. Reformulate using LP duality: ā^T x - d^T λ - e^T μ ≥ b, with D^T λ + E^T μ = -x, λ ≥ 0, μ free."
+    },
+    "4": {
+      "experience_id": 4,
+      "content": "For a constraint with box uncertainty: min_{ξ in Box} (ā + diag(â)ξ)^T x ≥ b, where Box = { ξ : ||ξ||∞ ≤ 1 }. Reformulate as: ā^T x - ∑_j w_j ≥ b, with w_j ≥ 0, w_j ≥ â_j x_j, w_j ≥ -â_j x_j for each j where â_j ≠ 0."
+    },
+    "5": {
+      "experience_id": 5,
+      "content": "For an objective with polyhedral uncertainty: maximize min_{δ in Poly} (c̄+δ)^T x, where Poly = {δ: Dδ≤d, Eδ=e}. Reformulate as: maximize t, subject to t ≤ c̄^T x - d^T λ - e^T μ, D^T λ+E^T μ = -x, λ≥0, μ free."
+    },
+    "6": {
+      "experience_id": 6,
+      "content": "For a constraint with polyhedral uncertainty and max: maximize_{δ in Poly} (ā+δ)^T x ≤ b, where Poly = {δ: Dδ≤d, Eδ=e}. Reformulate as: ā^T x + d^T λ + e^T μ ≤ b, with D^T λ+E^T μ = x, λ≥0, μ free."
+    },
+    "7": {
+      "experience_id": 7,
+      "content": "For a constraint with budgeted uncertainty and max: maximize_{ξ in Budgeted} (ā+diag(â)ξ)^T x ≤ b, where Budgeted = {ξ: ||ξ||∞ ≤ 1, ||ξ||_1 ≤ Γ}. Reformulate as: ā^T x + Γ p + ∑ q_j ≤ b, with p≥0, q_j≥0, and p+q_j ≥ â_j |x_j| for each j."
+    },
+    "8": {
+      "experience_id": 8,
+      "content": "For an objective with polyhedral uncertainty: minimize max_{δ in Poly} (c̄+δ)^T x, where Poly = {δ: Mδ ≤ q, Eδ = e}. Reformulate as: minimize c̄^T x + q^T λ + e^T μ, subject to M^T λ + E^T μ = x, λ ≥ 0, μ free."
+    }
+  },
+  "next_id": 9
+}

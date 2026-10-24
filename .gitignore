@@ -1,0 +1,17 @@
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+build/
+dist/
+.env
+.env.*
+!.env.example
+outputs/
+generated/
+*.log
+gurobi.lic
+*.key
+*.pem
+.DS_Store

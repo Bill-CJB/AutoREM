@@ -1,0 +1,1218 @@
+[
+  {
+    "id": "2_1_GP",
+    "n_vars": 2,
+    "n_constraints": 2,
+    "template_param": [
+      1,
+      1,
+      1
+    ],
+    "setting": "general_support_preserving_all_uncertain_P",
+    "description": "\\begin{align*}\n\\min_{\\mathbf{x}} \\quad & \\max_{\\boldsymbol{\\zeta}^{c} \\in \\mathcal{U}_{c}} \\left(\\bar{\\mathbf{c}} + \\mathbf{P}^{c} \\boldsymbol{\\zeta}^{c}\\right)^\\top \\mathbf{x} && \\text{[Budgeted Support-Preserving General-P Objective]} \\\\\n& \\text{subject to} \\\\\n& \\min_{\\boldsymbol{\\zeta}_{1} \\in \\mathcal{U}_{1}} \\left(\\bar{\\mathbf{a}}_{1} + \\mathbf{P}_{1} \\boldsymbol{\\zeta}_{1}\\right)^\\top \\mathbf{x} \\ge b_{1} && \\text{[Budgeted Support-Preserving General-P Constraint]} \\\\\n& \\bar{\\mathbf{a}}_{2}^\\top \\mathbf{x} \\ge b_{2} && \\text{[Deterministic Constraint]} \\\\\n& 0 \\le x_j \\le 2.1, \\quad j=1,\\ldots,2 \\\\\n& \\text{where} \\\\\n& \\mathcal{U}_{c} = \\{ \\boldsymbol{\\zeta}^{c} \\in \\mathbb{R}^{2} : \\|\\boldsymbol{\\zeta}^{c}\\|_\\infty \\le 1, \\|\\boldsymbol{\\zeta}^{c}\\|_1 \\le \\Gamma_{c} \\} \\\\\n& \\mathcal{U}_{1} = \\{ \\boldsymbol{\\zeta}_{1} \\in \\mathbb{R}^{2} : \\|\\boldsymbol{\\zeta}_{1}\\|_\\infty \\le 1, \\|\\boldsymbol{\\zeta}_{1}\\|_1 \\le \\Gamma_{1} \\} \\\\\n& \\Gamma_{c} = 1.1 \\\\\n& \\bar{\\mathbf{c}} = \\begin{bmatrix} 9.8 \\\\ -3.6 \\end{bmatrix} \\\\\n& \\mathbf{P}^{c} = \\begin{bmatrix} 0.475 & 0.125 \\\\ 0.037 & 0.363 \\end{bmatrix} \\\\\n& \\Gamma_{1} = 1.1 \\\\\n& \\bar{\\mathbf{a}}_{1} = \\begin{bmatrix} 2 \\\\ 1.7 \\end{bmatrix} \\\\\n& \\mathbf{P}_{1} = \\begin{bmatrix} 0.163 & 0.037 \\\\ 0.018 & 0.082 \\end{bmatrix} \\\\\n& b_{1} = 3.99 \\\\\n& \\bar{\\mathbf{a}}_{2} = \\begin{bmatrix} -0.7 \\\\ 0.4 \\end{bmatrix} \\\\\n& b_{2} = -0.7 \\\\\n\\end{align*}",
+    "uncertainty_type": [
+      2,
+      2,
+      0
+    ],
+    "general_p_unit_ids": [
+      0,
+      1
+    ],
+    "general_p_unit_labels": [
+      "objective",
+      "constraint_1"
+    ],
+    "row_indexing": "0=objective, 1..n=constraint rows",
+    "support_mode": "original_random_uncertainty_index",
+    "solution": [
+      0.30614886731391605,
+      2.1
+    ],
+    "optimal_value": -3.736860420711972
+  },
+  {
+    "id": "2_2_GP",
+    "n_vars": 2,
+    "n_constraints": 2,
+    "template_param": [
+      1,
+      1,
+      1
+    ],
+    "setting": "general_support_preserving_all_uncertain_P",
+    "description": "\\begin{align*}\n\\max_{\\mathbf{x}} \\quad & \\bar{\\mathbf{c}}^\\top \\mathbf{x} && \\text{[Deterministic Objective]} \\\\\n& \\text{subject to} \\\\\n& \\min_{\\boldsymbol{\\zeta}_{1} \\in \\mathcal{U}_{1}} \\left(\\bar{\\mathbf{a}}_{1} + \\mathbf{P}_{1} \\boldsymbol{\\zeta}_{1}\\right)^\\top \\mathbf{x} \\ge b_{1} && \\text{[Box Support-Preserving General-P Constraint]} \\\\\n& \\max_{\\boldsymbol{\\zeta}_{2} \\in \\mathcal{U}_{2}} \\left(\\bar{\\mathbf{a}}_{2} + \\mathbf{P}_{2} \\boldsymbol{\\zeta}_{2}\\right)^\\top \\mathbf{x} \\le b_{2} && \\text{[Box Support-Preserving General-P Constraint]} \\\\\n& -1.5 \\le x_j \\le 1.5, \\quad j=1,\\ldots,2 \\\\\n& \\text{where} \\\\\n& \\mathcal{U}_{1} = \\{ \\boldsymbol{\\zeta}_{1} \\in \\mathbb{R}^{2} : \\|\\boldsymbol{\\zeta}_{1}\\|_\\infty \\le 1 \\} \\\\\n& \\mathcal{U}_{2} = \\{ \\boldsymbol{\\zeta}_{2} \\in \\mathbb{R}^{2} : \\|\\boldsymbol{\\zeta}_{2}\\|_\\infty \\le 1 \\} \\\\\n& \\bar{\\mathbf{c}} = \\begin{bmatrix} 6.1 \\\\ -5 \\end{bmatrix} \\\\\n& \\bar{\\mathbf{a}}_{1} = \\begin{bmatrix} 0.2 \\\\ -1 \\end{bmatrix} \\\\\n& \\mathbf{P}_{1} = \\begin{bmatrix} 0.081 & 0.019 \\\\ 0.027 & 0.173 \\end{bmatrix} \\\\\n& b_{1} = -1.74 \\\\\n& \\bar{\\mathbf{a}}_{2} = \\begin{bmatrix} 0.8 \\\\ -0.4 \\end{bmatrix} \\\\\n& \\mathbf{P}_{2} = \\begin{bmatrix} 0.092 & 0.008 \\\\ 0.022 & 0.078 \\end{bmatrix} \\\\\n& b_{2} = -0.03 \\\\\n\\end{align*}",
+    "uncertainty_type": [
+      0,
+      1,
+      1
+    ],
+    "general_p_unit_ids": [
+      1,
+      2
+    ],
+    "general_p_unit_labels": [
+      "constraint_1",
+      "constraint_2"
+    ],
+    "row_indexing": "0=objective, 1..n=constraint rows",
+    "support_mode": "original_random_uncertainty_index",
+    "solution": [
+      -1.1142857142857143,
+      -1.5
+    ],
+    "optimal_value": 0.7028571428571428
+  },
+  {
+    "id": "2_3_GP",
+    "n_vars": 2,
+    "n_constraints": 2,
+    "template_param": [
+      1,
+      1,
+      1
+    ],
+    "setting": "general_support_preserving_all_uncertain_P",
+    "description": "\\begin{align*}\n\\max_{\\mathbf{x}} \\quad & \\min_{\\boldsymbol{\\zeta}^{c} \\in \\mathcal{U}_{c}} \\left(\\bar{\\mathbf{c}} + \\mathbf{P}^{c} \\boldsymbol{\\zeta}^{c}\\right)^\\top \\mathbf{x} && \\text{[Polyhedral Support-Preserving General-P Objective]} \\\\\n& \\text{subject to} \\\\\n& \\bar{\\mathbf{a}}_{1}^\\top \\mathbf{x} \\ge b_{1} && \\text{[Deterministic Constraint]} \\\\\n& \\max_{\\boldsymbol{\\zeta}_{2} \\in \\mathcal{U}_{2}} \\left(\\bar{\\mathbf{a}}_{2} + \\mathbf{P}_{2} \\boldsymbol{\\zeta}_{2}\\right)^\\top \\mathbf{x} \\le b_{2} && \\text{[Budgeted Support-Preserving General-P Constraint]} \\\\\n& 0 \\le x_j \\le 4.2, \\quad j=1,\\ldots,2 \\\\\n& \\text{where} \\\\\n& \\mathcal{U}_{c} = \\{ \\boldsymbol{\\zeta}^{c} \\in \\mathbb{R}^{2} : \\mathbf{H}_{c} \\boldsymbol{\\zeta}^{c} \\le \\mathbf{h}_{c}, 0 \\le \\boldsymbol{\\zeta}^{c}_k \\le 0.4,\\ k=1,\\ldots,2 \\} \\\\\n& \\mathcal{U}_{2} = \\{ \\boldsymbol{\\zeta}_{2} \\in \\mathbb{R}^{2} : \\|\\boldsymbol{\\zeta}_{2}\\|_\\infty \\le 1, \\|\\boldsymbol{\\zeta}_{2}\\|_1 \\le \\Gamma_{2} \\} \\\\\n& \\mathbf{H}_{c} = \\begin{bmatrix} 0.1 & -0.1 \\end{bmatrix} \\\\\n& \\mathbf{h}_{c} = \\begin{bmatrix} 0.07 \\end{bmatrix} \\\\\n& \\bar{\\mathbf{c}} = \\begin{bmatrix} -9.5 \\\\ 6.2 \\end{bmatrix} \\\\\n& \\mathbf{P}^{c} = \\begin{bmatrix} 0.845 & 0.155 \\\\ 0.23 & 0.77 \\end{bmatrix} \\\\\n& \\bar{\\mathbf{a}}_{1} = \\begin{bmatrix} 0.8 \\\\ -0.4 \\end{bmatrix} \\\\\n& b_{1} = -0.02 \\\\\n& \\Gamma_{2} = 0.6 \\\\\n& \\bar{\\mathbf{a}}_{2} = \\begin{bmatrix} -2.4 \\\\ 2.1 \\end{bmatrix} \\\\\n& \\mathbf{P}_{2} = \\begin{bmatrix} 0.349 & 0.051 \\\\ 0.016 & 0.184 \\end{bmatrix} \\\\\n& b_{2} = 3.63 \\\\\n\\end{align*}",
+    "uncertainty_type": [
+      3,
+      0,
+      2
+    ],
+    "general_p_unit_ids": [
+      0,
+      2
+    ],
+    "general_p_unit_labels": [
+      "objective",
+      "constraint_2"
+    ],
+    "row_indexing": "0=objective, 1..n=constraint rows",
+    "support_mode": "original_random_uncertainty_index",
+    "solution": [
+      1.7156478502486106,
+      3.481295700497221
+    ],
+    "optimal_value": 5.285378765720967
+  },
+  {
+    "id": "2_4_GP",
+    "n_vars": 2,
+    "n_constraints": 2,
+    "template_param": [
+      1,
+      1,
+      1
+    ],
+    "setting": "general_support_preserving_all_uncertain_P",
+    "description": "\\begin{align*}\n\\min_{\\mathbf{x}} \\quad & \\max_{\\boldsymbol{\\zeta}^{c} \\in \\mathcal{U}_{c}} \\left(\\bar{\\mathbf{c}} + \\mathbf{P}^{c} \\boldsymbol{\\zeta}^{c}\\right)^\\top \\mathbf{x} && \\text{[Box Support-Preserving General-P Objective]} \\\\\n& \\text{subject to} \\\\\n& \\min_{\\boldsymbol{\\zeta}_{1} \\in \\mathcal{U}_{1}} \\left(\\bar{\\mathbf{a}}_{1} + \\mathbf{P}_{1} \\boldsymbol{\\zeta}_{1}\\right)^\\top \\mathbf{x} \\ge b_{1} && \\text{[Polyhedral Support-Preserving General-P Constraint]} \\\\\n& \\bar{\\mathbf{a}}_{2}^\\top \\mathbf{x} \\ge b_{2} && \\text{[Deterministic Constraint]} \\\\\n& 0 \\le x_j \\le 3.5, \\quad j=1,\\ldots,2 \\\\\n& \\text{where} \\\\\n& \\mathcal{U}_{c} = \\{ \\boldsymbol{\\zeta}^{c} \\in \\mathbb{R}^{2} : \\|\\boldsymbol{\\zeta}^{c}\\|_\\infty \\le 1 \\} \\\\\n& \\mathcal{U}_{1} = \\{ \\boldsymbol{\\zeta}_{1} \\in \\mathbb{R}^{2} : \\mathbf{H}_{1} \\boldsymbol{\\zeta}_{1} \\le \\mathbf{h}_{1}, -0.4 \\le \\boldsymbol{\\zeta}_{1}_k \\le 0,\\ k=1,\\ldots,2 \\} \\\\\n& \\bar{\\mathbf{c}} = \\begin{bmatrix} 3.9 \\\\ 6.3 \\end{bmatrix} \\\\\n& \\mathbf{P}^{c} = \\begin{bmatrix} 0.265 & 0.035 \\\\ 0.115 & 0.985 \\end{bmatrix} \\\\\n& \\mathbf{H}_{1} = \\begin{bmatrix} -0.4 & 0.1 \\end{bmatrix} \\\\\n& \\mathbf{h}_{1} = \\begin{bmatrix} 0.15 \\end{bmatrix} \\\\\n& \\bar{\\mathbf{a}}_{1} = \\begin{bmatrix} -1.3 \\\\ 2.9 \\end{bmatrix} \\\\\n& \\mathbf{P}_{1} = \\begin{bmatrix} 0.871 & 0.129 \\\\ 0.317 & 0.683 \\end{bmatrix} \\\\\n& b_{1} = -7.29 \\\\\n& \\bar{\\mathbf{a}}_{2} = \\begin{bmatrix} 2.1 \\\\ 3 \\end{bmatrix} \\\\\n& b_{2} = 2.78 \\\\\n\\end{align*}",
+    "uncertainty_type": [
+      1,
+      3,
+      0
+    ],
+    "general_p_unit_ids": [
+      0,
+      1
+    ],
+    "general_p_unit_labels": [
+      "objective",
+      "constraint_1"
+    ],
+    "row_indexing": "0=objective, 1..n=constraint rows",
+    "support_mode": "original_random_uncertainty_index",
+    "solution": [
+      1.3238095238095238,
+      0.0
+    ],
+    "optimal_value": 5.56
+  },
+  {
+    "id": "2_5_GP",
+    "n_vars": 2,
+    "n_constraints": 2,
+    "template_param": [
+      1,
+      1,
+      1
+    ],
+    "setting": "general_support_preserving_all_uncertain_P",
+    "description": "\\begin{align*}\n\\min_{\\mathbf{x}} \\quad & \\max_{\\boldsymbol{\\zeta}^{c} \\in \\mathcal{U}_{c}} \\left(\\bar{\\mathbf{c}} + \\mathbf{P}^{c} \\boldsymbol{\\zeta}^{c}\\right)^\\top \\mathbf{x} && \\text{[Box Support-Preserving General-P Objective]} \\\\\n& \\text{subject to} \\\\\n& \\bar{\\mathbf{a}}_{1}^\\top \\mathbf{x} \\le b_{1} && \\text{[Deterministic Constraint]} \\\\\n& \\min_{\\boldsymbol{\\zeta}_{2} \\in \\mathcal{U}_{2}} \\left(\\bar{\\mathbf{a}}_{2} + \\mathbf{P}_{2} \\boldsymbol{\\zeta}_{2}\\right)^\\top \\mathbf{x} \\ge b_{2} && \\text{[Budgeted Support-Preserving General-P Constraint]} \\\\\n& -4.9 \\le x_j \\le 4.9, \\quad j=1,\\ldots,2 \\\\\n& \\text{where} \\\\\n& \\mathcal{U}_{c} = \\{ \\boldsymbol{\\zeta}^{c} \\in \\mathbb{R}^{2} : \\|\\boldsymbol{\\zeta}^{c}\\|_\\infty \\le 1 \\} \\\\\n& \\mathcal{U}_{2} = \\{ \\boldsymbol{\\zeta}_{2} \\in \\mathbb{R}^{2} : \\|\\boldsymbol{\\zeta}_{2}\\|_\\infty \\le 1, \\|\\boldsymbol{\\zeta}_{2}\\|_1 \\le \\Gamma_{2} \\} \\\\\n& \\bar{\\mathbf{c}} = \\begin{bmatrix} 5.8 \\\\ -4.5 \\end{bmatrix} \\\\\n& \\mathbf{P}^{c} = \\begin{bmatrix} 0.899 & 0.201 \\\\ 0.072 & 0.428 \\end{bmatrix} \\\\\n& \\bar{\\mathbf{a}}_{1} = \\begin{bmatrix} -1.3 \\\\ 2.8 \\end{bmatrix} \\\\\n& b_{1} = 16.74 \\\\\n& \\Gamma_{2} = 0.2 \\\\\n& \\bar{\\mathbf{a}}_{2} = \\begin{bmatrix} -1.6 \\\\ 1.6 \\end{bmatrix} \\\\\n& \\mathbf{P}_{2} = \\begin{bmatrix} 0.151 & 0.049 \\\\ 0.028 & 0.172 \\end{bmatrix} \\\\\n& b_{2} = -10.06 \\\\\n\\end{align*}",
+    "uncertainty_type": [
+      1,
+      0,
+      2
+    ],
+    "general_p_unit_ids": [
+      0,
+      2
+    ],
+    "general_p_unit_labels": [
+      "objective",
+      "constraint_2"
+    ],
+    "row_indexing": "0=objective, 1..n=constraint rows",
+    "support_mode": "original_random_uncertainty_index",
+    "solution": [
+      -4.9,
+      3.703571428571428
+    ],
+    "optimal_value": -40.34739999999999
+  },
+  {
+    "id": "2_6_GP",
+    "n_vars": 2,
+    "n_constraints": 2,
+    "template_param": [
+      1,
+      1,
+      1
+    ],
+    "setting": "general_support_preserving_all_uncertain_P",
+    "description": "\\begin{align*}\n\\max_{\\mathbf{x}} \\quad & \\min_{\\boldsymbol{\\zeta}^{c} \\in \\mathcal{U}_{c}} \\left(\\bar{\\mathbf{c}} + \\mathbf{P}^{c} \\boldsymbol{\\zeta}^{c}\\right)^\\top \\mathbf{x} && \\text{[Polyhedral Support-Preserving General-P Objective]} \\\\\n& \\text{subject to} \\\\\n& \\max_{\\boldsymbol{\\zeta}_{1} \\in \\mathcal{U}_{1}} \\left(\\bar{\\mathbf{a}}_{1} + \\mathbf{P}_{1} \\boldsymbol{\\zeta}_{1}\\right)^\\top \\mathbf{x} \\le b_{1} && \\text{[Polyhedral Support-Preserving General-P Constraint]} \\\\\n& \\bar{\\mathbf{a}}_{2}^\\top \\mathbf{x} \\le b_{2} && \\text{[Deterministic Constraint]} \\\\\n& -2.6 \\le x_j \\le 2.6, \\quad j=1,\\ldots,2 \\\\\n& \\text{where} \\\\\n& \\mathcal{U}_{c} = \\{ \\boldsymbol{\\zeta}^{c} \\in \\mathbb{R}^{2} : \\mathbf{H}_{c} \\boldsymbol{\\zeta}^{c} \\le \\mathbf{h}_{c}, -0.3 \\le \\boldsymbol{\\zeta}^{c}_k \\le 0,\\ k=1,\\ldots,2 \\} \\\\\n& \\mathcal{U}_{1} = \\{ \\boldsymbol{\\zeta}_{1} \\in \\mathbb{R}^{2} : \\mathbf{H}_{1} \\boldsymbol{\\zeta}_{1} \\le \\mathbf{h}_{1}, -0.3 \\le \\boldsymbol{\\zeta}_{1}_k \\le 0,\\ k=1,\\ldots,2 \\} \\\\\n& \\mathbf{H}_{c} = \\begin{bmatrix} -0.1 & -0.1 \\end{bmatrix} \\\\\n& \\mathbf{h}_{c} = \\begin{bmatrix} 0.06 \\end{bmatrix} \\\\\n& \\bar{\\mathbf{c}} = \\begin{bmatrix} -2.9 \\\\ -4 \\end{bmatrix} \\\\\n& \\mathbf{P}^{c} = \\begin{bmatrix} 0.918 & 0.082 \\\\ 0.185 & 0.815 \\end{bmatrix} \\\\\n& \\mathbf{H}_{1} = \\begin{bmatrix} -0.1 & 0.1 \\end{bmatrix} \\\\\n& \\mathbf{h}_{1} = \\begin{bmatrix} 0.04 \\end{bmatrix} \\\\\n& \\bar{\\mathbf{a}}_{1} = \\begin{bmatrix} -0.4 \\\\ -1.7 \\end{bmatrix} \\\\\n& \\mathbf{P}_{1} = \\begin{bmatrix} 0.744 & 0.256 \\\\ 0.184 & 0.816 \\end{bmatrix} \\\\\n& b_{1} = 2.91 \\\\\n& \\bar{\\mathbf{a}}_{2} = \\begin{bmatrix} -1.1 \\\\ 1.4 \\end{bmatrix} \\\\\n& b_{2} = 4.65 \\\\\n\\end{align*}",
+    "uncertainty_type": [
+      3,
+      3,
+      0
+    ],
+    "general_p_unit_ids": [
+      0,
+      1
+    ],
+    "general_p_unit_labels": [
+      "objective",
+      "constraint_1"
+    ],
+    "row_indexing": "0=objective, 1..n=constraint rows",
+    "support_mode": "original_random_uncertainty_index",
+    "solution": [
+      -2.6,
+      -0.5449999999999999
+    ],
+    "optimal_value": 9.719999999999999
+  },
+  {
+    "id": "2_7_GP",
+    "n_vars": 2,
+    "n_constraints": 2,
+    "template_param": [
+      1,
+      1,
+      1
+    ],
+    "setting": "general_support_preserving_all_uncertain_P",
+    "description": "\\begin{align*}\n\\max_{\\mathbf{x}} \\quad & \\min_{\\boldsymbol{\\zeta}^{c} \\in \\mathcal{U}_{c}} \\left(\\bar{\\mathbf{c}} + \\mathbf{P}^{c} \\boldsymbol{\\zeta}^{c}\\right)^\\top \\mathbf{x} && \\text{[Box Support-Preserving General-P Objective]} \\\\\n& \\text{subject to} \\\\\n& \\bar{\\mathbf{a}}_{1}^\\top \\mathbf{x} \\ge b_{1} && \\text{[Deterministic Constraint]} \\\\\n& \\min_{\\boldsymbol{\\zeta}_{2} \\in \\mathcal{U}_{2}} \\left(\\bar{\\mathbf{a}}_{2} + \\mathbf{P}_{2} \\boldsymbol{\\zeta}_{2}\\right)^\\top \\mathbf{x} \\ge b_{2} && \\text{[Box Support-Preserving General-P Constraint]} \\\\\n& 0 \\le x_j \\le 6.5, \\quad j=1,\\ldots,2 \\\\\n& \\text{where} \\\\\n& \\mathcal{U}_{c} = \\{ \\boldsymbol{\\zeta}^{c} \\in \\mathbb{R}^{2} : \\|\\boldsymbol{\\zeta}^{c}\\|_\\infty \\le 1 \\} \\\\\n& \\mathcal{U}_{2} = \\{ \\boldsymbol{\\zeta}_{2} \\in \\mathbb{R}^{2} : \\|\\boldsymbol{\\zeta}_{2}\\|_\\infty \\le 1 \\} \\\\\n& \\bar{\\mathbf{c}} = \\begin{bmatrix} 5 \\\\ 0.9 \\end{bmatrix} \\\\\n& \\mathbf{P}^{c} = \\begin{bmatrix} 0.262 & 0.038 \\\\ 0.026 & 0.074 \\end{bmatrix} \\\\\n& \\bar{\\mathbf{a}}_{1} = \\begin{bmatrix} -5.3 \\\\ -6.2 \\end{bmatrix} \\\\\n& b_{1} = -63.64 \\\\\n& \\bar{\\mathbf{a}}_{2} = \\begin{bmatrix} 2.4 \\\\ -0.1 \\end{bmatrix} \\\\\n& \\mathbf{P}_{2} = \\begin{bmatrix} 0.159 & 0.041 \\\\ 0.029 & 0.071 \\end{bmatrix} \\\\\n& b_{2} = -7.55 \\\\\n\\end{align*}",
+    "uncertainty_type": [
+      1,
+      0,
+      1
+    ],
+    "general_p_unit_ids": [
+      0,
+      2
+    ],
+    "general_p_unit_labels": [
+      "objective",
+      "constraint_2"
+    ],
+    "row_indexing": "0=objective, 1..n=constraint rows",
+    "support_mode": "original_random_uncertainty_index",
+    "solution": [
+      6.5,
+      4.708064516129033
+    ],
+    "optimal_value": 34.31645161290322
+  },
+  {
+    "id": "2_8_GP",
+    "n_vars": 2,
+    "n_constraints": 2,
+    "template_param": [
+      1,
+      1,
+      1
+    ],
+    "setting": "general_support_preserving_all_uncertain_P",
+    "description": "\\begin{align*}\n\\min_{\\mathbf{x}} \\quad & \\bar{\\mathbf{c}}^\\top \\mathbf{x} && \\text{[Deterministic Objective]} \\\\\n& \\text{subject to} \\\\\n& \\min_{\\boldsymbol{\\zeta}_{1} \\in \\mathcal{U}_{1}} \\left(\\bar{\\mathbf{a}}_{1} + \\mathbf{P}_{1} \\boldsymbol{\\zeta}_{1}\\right)^\\top \\mathbf{x} \\ge b_{1} && \\text{[Box Support-Preserving General-P Constraint]} \\\\\n& \\max_{\\boldsymbol{\\zeta}_{2} \\in \\mathcal{U}_{2}} \\left(\\bar{\\mathbf{a}}_{2} + \\mathbf{P}_{2} \\boldsymbol{\\zeta}_{2}\\right)^\\top \\mathbf{x} \\le b_{2} && \\text{[Box Support-Preserving General-P Constraint]} \\\\\n& -8 \\le x_j \\le 0, \\quad j=1,\\ldots,2 \\\\\n& \\text{where} \\\\\n& \\mathcal{U}_{1} = \\{ \\boldsymbol{\\zeta}_{1} \\in \\mathbb{R}^{2} : \\|\\boldsymbol{\\zeta}_{1}\\|_\\infty \\le 1 \\} \\\\\n& \\mathcal{U}_{2} = \\{ \\boldsymbol{\\zeta}_{2} \\in \\mathbb{R}^{2} : \\|\\boldsymbol{\\zeta}_{2}\\|_\\infty \\le 1 \\} \\\\\n& \\bar{\\mathbf{c}} = \\begin{bmatrix} -10 \\\\ 9.4 \\end{bmatrix} \\\\\n& \\bar{\\mathbf{a}}_{1} = \\begin{bmatrix} -6.7 \\\\ -0.6 \\end{bmatrix} \\\\\n& \\mathbf{P}_{1} = \\begin{bmatrix} 0.932 & 0.268 \\\\ 0.011 & 0.089 \\end{bmatrix} \\\\\n& b_{1} = 21.19 \\\\\n& \\bar{\\mathbf{a}}_{2} = \\begin{bmatrix} 3.4 \\\\ 0.3 \\end{bmatrix} \\\\\n& \\mathbf{P}_{2} = \\begin{bmatrix} 0.394 & 0.106 \\\\ 0.018 & 0.082 \\end{bmatrix} \\\\\n& b_{2} = -9.23 \\\\\n\\end{align*}",
+    "uncertainty_type": [
+      0,
+      1,
+      1
+    ],
+    "general_p_unit_ids": [
+      1,
+      2
+    ],
+    "general_p_unit_labels": [
+      "constraint_1",
+      "constraint_2"
+    ],
+    "row_indexing": "0=objective, 1..n=constraint rows",
+    "support_mode": "original_random_uncertainty_index",
+    "solution": [
+      -3.1254545454545455,
+      -8.0
+    ],
+    "optimal_value": -43.94545454545455
+  },
+  {
+    "id": "3_1_GP",
+    "n_vars": 3,
+    "n_constraints": 3,
+    "template_param": [
+      1,
+      1,
+      1
+    ],
+    "setting": "general_support_preserving_all_uncertain_P",
+    "description": "\\begin{align*}\n\\min_{\\mathbf{x}} \\quad & \\max_{\\boldsymbol{\\zeta}^{c} \\in \\mathcal{U}_{c}} \\left(\\bar{\\mathbf{c}} + \\mathbf{P}^{c} \\boldsymbol{\\zeta}^{c}\\right)^\\top \\mathbf{x} && \\text{[Budgeted Support-Preserving General-P Objective]} \\\\\n& \\text{subject to} \\\\\n& \\min_{\\boldsymbol{\\zeta}_{1} \\in \\mathcal{U}_{1}} \\left(\\bar{\\mathbf{a}}_{1} + \\mathbf{P}_{1} \\boldsymbol{\\zeta}_{1}\\right)^\\top \\mathbf{x} \\ge b_{1} && \\text{[Budgeted Support-Preserving General-P Constraint]} \\\\\n& \\bar{\\mathbf{a}}_{2}^\\top \\mathbf{x} = b_{2} && \\text{[Deterministic Constraint]} \\\\\n& \\max_{\\boldsymbol{\\zeta}_{3} \\in \\mathcal{U}_{3}} \\left(\\bar{\\mathbf{a}}_{3} + \\mathbf{P}_{3} \\boldsymbol{\\zeta}_{3}\\right)^\\top \\mathbf{x} \\le b_{3} && \\text{[Polyhedral Support-Preserving General-P Constraint]} \\\\\n& -8.3 \\le x_j \\le 8.3, \\quad j=1,\\ldots,3 \\\\\n& \\text{where} \\\\\n& \\mathcal{U}_{c} = \\{ \\boldsymbol{\\zeta}^{c} \\in \\mathbb{R}^{2} : \\|\\boldsymbol{\\zeta}^{c}\\|_\\infty \\le 1, \\|\\boldsymbol{\\zeta}^{c}\\|_1 \\le \\Gamma_{c} \\} \\\\\n& \\mathcal{U}_{1} = \\{ \\boldsymbol{\\zeta}_{1} \\in \\mathbb{R}^{3} : \\|\\boldsymbol{\\zeta}_{1}\\|_\\infty \\le 1, \\|\\boldsymbol{\\zeta}_{1}\\|_1 \\le \\Gamma_{1} \\} \\\\\n& \\mathcal{U}_{3} = \\{ \\boldsymbol{\\zeta}_{3} \\in \\mathbb{R}^{3} : \\mathbf{H}_{3} \\boldsymbol{\\zeta}_{3} \\le \\mathbf{h}_{3}, -0.8 \\le \\boldsymbol{\\zeta}_{3}_k \\le 0.8,\\ k=1,\\ldots,3 \\} \\\\\n& \\Gamma_{c} = 0.7 \\\\\n& \\bar{\\mathbf{c}} = \\begin{bmatrix} -3.4 \\\\ 5 \\\\ 7.3 \\end{bmatrix} \\\\\n& \\mathbf{P}^{c} = \\begin{bmatrix} 0 & 0 \\\\ 0.433 & 0.167 \\\\ 0.1 & 0.5 \\end{bmatrix} \\\\\n& \\Gamma_{1} = 2.1 \\\\\n& \\bar{\\mathbf{a}}_{1} = \\begin{bmatrix} 2.1 \\\\ -6.9 \\\\ 2.1 \\end{bmatrix} \\\\\n& \\mathbf{P}_{1} = \\begin{bmatrix} 0.33 & 0.046 & 0.024 \\\\ 0.075 & 0.382 & 0.043 \\\\ 0.047 & 0.034 & 0.319 \\end{bmatrix} \\\\\n& b_{1} = -40.06 \\\\\n& \\bar{\\mathbf{a}}_{2} = \\begin{bmatrix} 0 \\\\ -7.5 \\\\ 6 \\end{bmatrix} \\\\\n& b_{2} = 46.8 \\\\\n& \\mathbf{H}_{3} = \\begin{bmatrix} 0.4 & -0.1 & 0.1 \\\\ -0.1 & 0 & 0.5 \\end{bmatrix} \\\\\n& \\mathbf{h}_{3} = \\begin{bmatrix} 0.18 \\\\ 0.02 \\end{bmatrix} \\\\\n& \\bar{\\mathbf{a}}_{3} = \\begin{bmatrix} -6.9 \\\\ -6.6 \\\\ 1.7 \\end{bmatrix} \\\\\n& \\mathbf{P}_{3} = \\begin{bmatrix} 0.831 & 0.104 & 0.065 \\\\ 0.114 & 0.784 & 0.102 \\\\ 0.104 & 0.078 & 0.818 \\end{bmatrix} \\\\\n& b_{3} = 8.76 \\\\\n\\end{align*}",
+    "uncertainty_type": [
+      2,
+      2,
+      0,
+      3
+    ],
+    "general_p_unit_ids": [
+      0,
+      1,
+      3
+    ],
+    "general_p_unit_labels": [
+      "objective",
+      "constraint_1",
+      "constraint_3"
+    ],
+    "row_indexing": "0=objective, 1..n=constraint rows",
+    "support_mode": "original_random_uncertainty_index",
+    "solution": [
+      8.3,
+      -8.3,
+      -2.5750000000000015
+    ],
+    "optimal_value": -85.82152
+  },
+  {
+    "id": "3_2_GP",
+    "n_vars": 3,
+    "n_constraints": 3,
+    "template_param": [
+      1,
+      1,
+      1
+    ],
+    "setting": "general_support_preserving_all_uncertain_P",
+    "description": "\\begin{align*}\n\\max_{\\mathbf{x}} \\quad & \\min_{\\boldsymbol{\\zeta}^{c} \\in \\mathcal{U}_{c}} \\left(\\bar{\\mathbf{c}} + \\mathbf{P}^{c} \\boldsymbol{\\zeta}^{c}\\right)^\\top \\mathbf{x} && \\text{[Budgeted Support-Preserving General-P Objective]} \\\\\n& \\text{subject to} \\\\\n& \\max_{\\boldsymbol{\\zeta}_{1} \\in \\mathcal{U}_{1}} \\left(\\bar{\\mathbf{a}}_{1} + \\mathbf{P}_{1} \\boldsymbol{\\zeta}_{1}\\right)^\\top \\mathbf{x} \\le b_{1} && \\text{[Budgeted Support-Preserving General-P Constraint]} \\\\\n& \\bar{\\mathbf{a}}_{2}^\\top \\mathbf{x} \\le b_{2} && \\text{[Deterministic Constraint]} \\\\\n& \\min_{\\boldsymbol{\\zeta}_{3} \\in \\mathcal{U}_{3}} \\left(\\bar{\\mathbf{a}}_{3} + \\mathbf{P}_{3} \\boldsymbol{\\zeta}_{3}\\right)^\\top \\mathbf{x} \\ge b_{3} && \\text{[Box Support-Preserving General-P Constraint]} \\\\\n& -6.3 \\le x_j \\le 6.3, \\quad j=1,\\ldots,3 \\\\\n& \\text{where} \\\\\n& \\mathcal{U}_{c} = \\{ \\boldsymbol{\\zeta}^{c} \\in \\mathbb{R}^{3} : \\|\\boldsymbol{\\zeta}^{c}\\|_\\infty \\le 1, \\|\\boldsymbol{\\zeta}^{c}\\|_1 \\le \\Gamma_{c} \\} \\\\\n& \\mathcal{U}_{1} = \\{ \\boldsymbol{\\zeta}_{1} \\in \\mathbb{R}^{2} : \\|\\boldsymbol{\\zeta}_{1}\\|_\\infty \\le 1, \\|\\boldsymbol{\\zeta}_{1}\\|_1 \\le \\Gamma_{1} \\} \\\\\n& \\mathcal{U}_{3} = \\{ \\boldsymbol{\\zeta}_{3} \\in \\mathbb{R}^{2} : \\|\\boldsymbol{\\zeta}_{3}\\|_\\infty \\le 1 \\} \\\\\n& \\Gamma_{c} = 0.4 \\\\\n& \\bar{\\mathbf{c}} = \\begin{bmatrix} 0.4 \\\\ 4.7 \\\\ -3.3 \\end{bmatrix} \\\\\n& \\mathbf{P}^{c} = \\begin{bmatrix} 0.073 & 0.009 & 0.018 \\\\ 0.082 & 0.524 & 0.094 \\\\ 0.051 & 0.045 & 0.203 \\end{bmatrix} \\\\\n& \\Gamma_{1} = 1 \\\\\n& \\bar{\\mathbf{a}}_{1} = \\begin{bmatrix} 1 \\\\ -1.4 \\\\ 0 \\end{bmatrix} \\\\\n& \\mathbf{P}_{1} = \\begin{bmatrix} 0.082 & 0.018 \\\\ 0.007 & 0.093 \\\\ 0 & 0 \\end{bmatrix} \\\\\n& b_{1} = -3.88 \\\\\n& \\bar{\\mathbf{a}}_{2} = \\begin{bmatrix} -5.1 \\\\ 0 \\\\ 2 \\end{bmatrix} \\\\\n& b_{2} = 9.84 \\\\\n& \\bar{\\mathbf{a}}_{3} = \\begin{bmatrix} -2.4 \\\\ 0 \\\\ -2.4 \\end{bmatrix} \\\\\n& \\mathbf{P}_{3} = \\begin{bmatrix} 0.244 & 0.056 \\\\ 0 & 0 \\\\ 0.123 & 0.277 \\end{bmatrix} \\\\\n& b_{3} = -25.12 \\\\\n\\end{align*}",
+    "uncertainty_type": [
+      2,
+      2,
+      0,
+      1
+    ],
+    "general_p_unit_ids": [
+      0,
+      1,
+      3
+    ],
+    "general_p_unit_labels": [
+      "objective",
+      "constraint_1",
+      "constraint_3"
+    ],
+    "row_indexing": "0=objective, 1..n=constraint rows",
+    "support_mode": "original_random_uncertainty_index",
+    "solution": [
+      4.277111984282906,
+      6.3,
+      -6.3
+    ],
+    "optimal_value": 50.888367190569745
+  },
+  {
+    "id": "3_3_GP",
+    "n_vars": 3,
+    "n_constraints": 3,
+    "template_param": [
+      1,
+      1,
+      1
+    ],
+    "setting": "general_support_preserving_all_uncertain_P",
+    "description": "\\begin{align*}\n\\max_{\\mathbf{x}} \\quad & \\min_{\\boldsymbol{\\zeta}^{c} \\in \\mathcal{U}_{c}} \\left(\\bar{\\mathbf{c}} + \\mathbf{P}^{c} \\boldsymbol{\\zeta}^{c}\\right)^\\top \\mathbf{x} && \\text{[Polyhedral Support-Preserving General-P Objective]} \\\\\n& \\text{subject to} \\\\\n& \\min_{\\boldsymbol{\\zeta}_{1} \\in \\mathcal{U}_{1}} \\left(\\bar{\\mathbf{a}}_{1} + \\mathbf{P}_{1} \\boldsymbol{\\zeta}_{1}\\right)^\\top \\mathbf{x} \\ge b_{1} && \\text{[Box Support-Preserving General-P Constraint]} \\\\\n& \\bar{\\mathbf{a}}_{2}^\\top \\mathbf{x} = b_{2} && \\text{[Deterministic Constraint]} \\\\\n& \\max_{\\boldsymbol{\\zeta}_{3} \\in \\mathcal{U}_{3}} \\left(\\bar{\\mathbf{a}}_{3} + \\mathbf{P}_{3} \\boldsymbol{\\zeta}_{3}\\right)^\\top \\mathbf{x} \\le b_{3} && \\text{[Polyhedral Support-Preserving General-P Constraint]} \\\\\n& -4.5 \\le x_j \\le 4.5, \\quad j=1,\\ldots,3 \\\\\n& \\text{where} \\\\\n& \\mathcal{U}_{c} = \\{ \\boldsymbol{\\zeta}^{c} \\in \\mathbb{R}^{2} : \\mathbf{H}_{c} \\boldsymbol{\\zeta}^{c} \\le \\mathbf{h}_{c}, -0.5 \\le \\boldsymbol{\\zeta}^{c}_k \\le 0.5,\\ k=1,\\ldots,2 \\} \\\\\n& \\mathcal{U}_{1} = \\{ \\boldsymbol{\\zeta}_{1} \\in \\mathbb{R}^{2} : \\|\\boldsymbol{\\zeta}_{1}\\|_\\infty \\le 1 \\} \\\\\n& \\mathcal{U}_{3} = \\{ \\boldsymbol{\\zeta}_{3} \\in \\mathbb{R}^{2} : \\mathbf{H}_{3} \\boldsymbol{\\zeta}_{3} \\le \\mathbf{h}_{3}, -0.5 \\le \\boldsymbol{\\zeta}_{3}_k \\le 0.5,\\ k=1,\\ldots,2 \\} \\\\\n& \\mathbf{H}_{c} = \\begin{bmatrix} -0.2 & -0.5 \\end{bmatrix} \\\\\n& \\mathbf{h}_{c} = \\begin{bmatrix} 0.31 \\end{bmatrix} \\\\\n& \\bar{\\mathbf{c}} = \\begin{bmatrix} -8.7 \\\\ 2.4 \\\\ 7.2 \\end{bmatrix} \\\\\n& \\mathbf{P}^{c} = \\begin{bmatrix} 0.884 & 0.116 \\\\ 0 & 0 \\\\ 0.244 & 0.756 \\end{bmatrix} \\\\\n& \\bar{\\mathbf{a}}_{1} = \\begin{bmatrix} 0.9 \\\\ 0 \\\\ 2.7 \\end{bmatrix} \\\\\n& \\mathbf{P}_{1} = \\begin{bmatrix} 0.165 & 0.035 \\\\ 0 & 0 \\\\ 0.073 & 0.327 \\end{bmatrix} \\\\\n& b_{1} = 6.16 \\\\\n& \\bar{\\mathbf{a}}_{2} = \\begin{bmatrix} 0 \\\\ 3.2 \\\\ 1 \\end{bmatrix} \\\\\n& b_{2} = 6.34 \\\\\n& \\mathbf{H}_{3} = \\begin{bmatrix} 0.5 & -0.1 \\end{bmatrix} \\\\\n& \\mathbf{h}_{3} = \\begin{bmatrix} 0.03 \\end{bmatrix} \\\\\n& \\bar{\\mathbf{a}}_{3} = \\begin{bmatrix} 0.5 \\\\ 0 \\\\ -2.8 \\end{bmatrix} \\\\\n& \\mathbf{P}_{3} = \\begin{bmatrix} 0.895 & 0.105 \\\\ 0 & 0 \\\\ 0.263 & 0.737 \\end{bmatrix} \\\\\n& b_{3} = 0.83 \\\\\n\\end{align*}",
+    "uncertainty_type": [
+      3,
+      1,
+      0,
+      3
+    ],
+    "general_p_unit_ids": [
+      0,
+      1,
+      3
+    ],
+    "general_p_unit_labels": [
+      "objective",
+      "constraint_1",
+      "constraint_3"
+    ],
+    "row_indexing": "0=objective, 1..n=constraint rows",
+    "support_mode": "original_random_uncertainty_index",
+    "solution": [
+      -4.5,
+      0.575,
+      4.5
+    ],
+    "optimal_value": 70.05
+  },
+  {
+    "id": "3_4_GP",
+    "n_vars": 3,
+    "n_constraints": 3,
+    "template_param": [
+      1,
+      1,
+      1
+    ],
+    "setting": "general_support_preserving_all_uncertain_P",
+    "description": "\\begin{align*}\n\\max_{\\mathbf{x}} \\quad & \\min_{\\boldsymbol{\\zeta}^{c} \\in \\mathcal{U}_{c}} \\left(\\bar{\\mathbf{c}} + \\mathbf{P}^{c} \\boldsymbol{\\zeta}^{c}\\right)^\\top \\mathbf{x} && \\text{[Box Support-Preserving General-P Objective]} \\\\\n& \\text{subject to} \\\\\n& \\bar{\\mathbf{a}}_{1}^\\top \\mathbf{x} = b_{1} && \\text{[Deterministic Constraint]} \\\\\n& \\min_{\\boldsymbol{\\zeta}_{2} \\in \\mathcal{U}_{2}} \\left(\\bar{\\mathbf{a}}_{2} + \\mathbf{P}_{2} \\boldsymbol{\\zeta}_{2}\\right)^\\top \\mathbf{x} \\ge b_{2} && \\text{[Box Support-Preserving General-P Constraint]} \\\\\n& \\max_{\\boldsymbol{\\zeta}_{3} \\in \\mathcal{U}_{3}} \\left(\\bar{\\mathbf{a}}_{3} + \\mathbf{P}_{3} \\boldsymbol{\\zeta}_{3}\\right)^\\top \\mathbf{x} \\le b_{3} && \\text{[Box Support-Preserving General-P Constraint]} \\\\\n& -7.8 \\le x_j \\le 0, \\quad j=1,\\ldots,3 \\\\\n& \\text{where} \\\\\n& \\mathcal{U}_{c} = \\{ \\boldsymbol{\\zeta}^{c} \\in \\mathbb{R}^{3} : \\|\\boldsymbol{\\zeta}^{c}\\|_\\infty \\le 1 \\} \\\\\n& \\mathcal{U}_{2} = \\{ \\boldsymbol{\\zeta}_{2} \\in \\mathbb{R}^{2} : \\|\\boldsymbol{\\zeta}_{2}\\|_\\infty \\le 1 \\} \\\\\n& \\mathcal{U}_{3} = \\{ \\boldsymbol{\\zeta}_{3} \\in \\mathbb{R}^{3} : \\|\\boldsymbol{\\zeta}_{3}\\|_\\infty \\le 1 \\} \\\\\n& \\bar{\\mathbf{c}} = \\begin{bmatrix} 8.5 \\\\ -4.1 \\\\ -0.1 \\end{bmatrix} \\\\\n& \\mathbf{P}^{c} = \\begin{bmatrix} 0.848 & 0.075 & 0.178 \\\\ 0.008 & 0.171 & 0.022 \\\\ 0.007 & 0.011 & 0.082 \\end{bmatrix} \\\\\n& \\bar{\\mathbf{a}}_{1} = \\begin{bmatrix} 5.8 \\\\ 0 \\\\ 6.1 \\end{bmatrix} \\\\\n& b_{1} = -36.57 \\\\\n& \\bar{\\mathbf{a}}_{2} = \\begin{bmatrix} -1.6 \\\\ 0 \\\\ -5.1 \\end{bmatrix} \\\\\n& \\mathbf{P}_{2} = \\begin{bmatrix} 0.152 & 0.048 \\\\ 0 & 0 \\\\ 0.026 & 0.274 \\end{bmatrix} \\\\\n& b_{2} = 9.17 \\\\\n& \\bar{\\mathbf{a}}_{3} = \\begin{bmatrix} -0.8 \\\\ -4 \\\\ 4.8 \\end{bmatrix} \\\\\n& \\mathbf{P}_{3} = \\begin{bmatrix} 0.07 & 0.015 & 0.015 \\\\ 0.049 & 0.213 & 0.038 \\\\ 0.069 & 0.124 & 0.407 \\end{bmatrix} \\\\\n& b_{3} = 60.04 \\\\\n\\end{align*}",
+    "uncertainty_type": [
+      1,
+      0,
+      1,
+      1
+    ],
+    "general_p_unit_ids": [
+      0,
+      2,
+      3
+    ],
+    "general_p_unit_labels": [
+      "objective",
+      "constraint_2",
+      "constraint_3"
+    ],
+    "row_indexing": "0=objective, 1..n=constraint rows",
+    "support_mode": "original_random_uncertainty_index",
+    "solution": [
+      0.0,
+      -7.8,
+      -5.995081967213115
+    ],
+    "optimal_value": 30.4122
+  },
+  {
+    "id": "3_5_GP",
+    "n_vars": 3,
+    "n_constraints": 3,
+    "template_param": [
+      1,
+      1,
+      1
+    ],
+    "setting": "general_support_preserving_all_uncertain_P",
+    "description": "\\begin{align*}\n\\max_{\\mathbf{x}} \\quad & \\min_{\\boldsymbol{\\zeta}^{c} \\in \\mathcal{U}_{c}} \\left(\\bar{\\mathbf{c}} + \\mathbf{P}^{c} \\boldsymbol{\\zeta}^{c}\\right)^\\top \\mathbf{x} && \\text{[Polyhedral Support-Preserving General-P Objective]} \\\\\n& \\text{subject to} \\\\\n& \\min_{\\boldsymbol{\\zeta}_{1} \\in \\mathcal{U}_{1}} \\left(\\bar{\\mathbf{a}}_{1} + \\mathbf{P}_{1} \\boldsymbol{\\zeta}_{1}\\right)^\\top \\mathbf{x} \\ge b_{1} && \\text{[Box Support-Preserving General-P Constraint]} \\\\\n& \\bar{\\mathbf{a}}_{2}^\\top \\mathbf{x} \\le b_{2} && \\text{[Deterministic Constraint]} \\\\\n& \\max_{\\boldsymbol{\\zeta}_{3} \\in \\mathcal{U}_{3}} \\left(\\bar{\\mathbf{a}}_{3} + \\mathbf{P}_{3} \\boldsymbol{\\zeta}_{3}\\right)^\\top \\mathbf{x} \\le b_{3} && \\text{[Polyhedral Support-Preserving General-P Constraint]} \\\\\n& 0 \\le x_j \\le 5.8, \\quad j=1,\\ldots,3 \\\\\n& \\text{where} \\\\\n& \\mathcal{U}_{c} = \\{ \\boldsymbol{\\zeta}^{c} \\in \\mathbb{R}^{3} : \\mathbf{H}_{c} \\boldsymbol{\\zeta}^{c} \\le \\mathbf{h}_{c}, \\mathbf{E}_{c} \\boldsymbol{\\zeta}^{c} = \\mathbf{e}_{c}, 0 \\le \\boldsymbol{\\zeta}^{c}_k \\le 0.6,\\ k=1,\\ldots,3 \\} \\\\\n& \\mathcal{U}_{1} = \\{ \\boldsymbol{\\zeta}_{1} \\in \\mathbb{R}^{2} : \\|\\boldsymbol{\\zeta}_{1}\\|_\\infty \\le 1 \\} \\\\\n& \\mathcal{U}_{3} = \\{ \\boldsymbol{\\zeta}_{3} \\in \\mathbb{R}^{2} : \\mathbf{H}_{3} \\boldsymbol{\\zeta}_{3} \\le \\mathbf{h}_{3}, 0 \\le \\boldsymbol{\\zeta}_{3}_k \\le 0.6,\\ k=1,\\ldots,2 \\} \\\\\n& \\mathbf{H}_{c} = \\begin{bmatrix} 0.2 & 0.5 & 0 \\end{bmatrix} \\\\\n& \\mathbf{h}_{c} = \\begin{bmatrix} 0.34 \\end{bmatrix} \\\\\n& \\mathbf{E}_{c} = \\begin{bmatrix} 0.6 & 0 & -0.2 \\end{bmatrix} \\\\\n& \\mathbf{e}_{c} = \\begin{bmatrix} 0.3 \\end{bmatrix} \\\\\n& \\bar{\\mathbf{c}} = \\begin{bmatrix} -6.9 \\\\ -9.8 \\\\ -1.2 \\end{bmatrix} \\\\\n& \\mathbf{P}^{c} = \\begin{bmatrix} 0.804 & 0.088 & 0.109 \\\\ 0.156 & 0.788 & 0.056 \\\\ 0.058 & 0.155 & 0.787 \\end{bmatrix} \\\\\n& \\bar{\\mathbf{a}}_{1} = \\begin{bmatrix} 0 \\\\ -2.1 \\\\ 3.5 \\end{bmatrix} \\\\\n& \\mathbf{P}_{1} = \\begin{bmatrix} 0 & 0 \\\\ 0.248 & 0.052 \\\\ 0.044 & 0.556 \\end{bmatrix} \\\\\n& b_{1} = 7.14 \\\\\n& \\bar{\\mathbf{a}}_{2} = \\begin{bmatrix} -0.3 \\\\ -5 \\\\ 0 \\end{bmatrix} \\\\\n& b_{2} = -5.4 \\\\\n& \\mathbf{H}_{3} = \\begin{bmatrix} 0.3 & 0.2 \\end{bmatrix} \\\\\n& \\mathbf{h}_{3} = \\begin{bmatrix} 0.24 \\end{bmatrix} \\\\\n& \\bar{\\mathbf{a}}_{3} = \\begin{bmatrix} 0 \\\\ -1.1 \\\\ -5 \\end{bmatrix} \\\\\n& \\mathbf{P}_{3} = \\begin{bmatrix} 0 & 0 \\\\ 0.849 & 0.151 \\\\ 0.083 & 0.917 \\end{bmatrix} \\\\\n& b_{3} = 7.48 \\\\\n\\end{align*}",
+    "uncertainty_type": [
+      3,
+      1,
+      0,
+      3
+    ],
+    "general_p_unit_ids": [
+      0,
+      1,
+      3
+    ],
+    "general_p_unit_labels": [
+      "objective",
+      "constraint_1",
+      "constraint_3"
+    ],
+    "row_indexing": "0=objective, 1..n=constraint rows",
+    "support_mode": "original_random_uncertainty_index",
+    "solution": [
+      0.0,
+      1.08,
+      3.3558620689655174
+    ],
+    "optimal_value": -14.429474482758621
+  },
+  {
+    "id": "3_6_GP",
+    "n_vars": 3,
+    "n_constraints": 3,
+    "template_param": [
+      1,
+      1,
+      1
+    ],
+    "setting": "general_support_preserving_all_uncertain_P",
+    "description": "\\begin{align*}\n\\max_{\\mathbf{x}} \\quad & \\min_{\\boldsymbol{\\zeta}^{c} \\in \\mathcal{U}_{c}} \\left(\\bar{\\mathbf{c}} + \\mathbf{P}^{c} \\boldsymbol{\\zeta}^{c}\\right)^\\top \\mathbf{x} && \\text{[Budgeted Support-Preserving General-P Objective]} \\\\\n& \\text{subject to} \\\\\n& \\min_{\\boldsymbol{\\zeta}_{1} \\in \\mathcal{U}_{1}} \\left(\\bar{\\mathbf{a}}_{1} + \\mathbf{P}_{1} \\boldsymbol{\\zeta}_{1}\\right)^\\top \\mathbf{x} \\ge b_{1} && \\text{[Polyhedral Support-Preserving General-P Constraint]} \\\\\n& \\bar{\\mathbf{a}}_{2}^\\top \\mathbf{x} \\le b_{2} && \\text{[Deterministic Constraint]} \\\\\n& \\max_{\\boldsymbol{\\zeta}_{3} \\in \\mathcal{U}_{3}} \\left(\\bar{\\mathbf{a}}_{3} + \\mathbf{P}_{3} \\boldsymbol{\\zeta}_{3}\\right)^\\top \\mathbf{x} \\le b_{3} && \\text{[Budgeted Support-Preserving General-P Constraint]} \\\\\n& 0 \\le x_j \\le 5, \\quad j=1,\\ldots,3 \\\\\n& \\text{where} \\\\\n& \\mathcal{U}_{c} = \\{ \\boldsymbol{\\zeta}^{c} \\in \\mathbb{R}^{3} : \\|\\boldsymbol{\\zeta}^{c}\\|_\\infty \\le 1, \\|\\boldsymbol{\\zeta}^{c}\\|_1 \\le \\Gamma_{c} \\} \\\\\n& \\mathcal{U}_{1} = \\{ \\boldsymbol{\\zeta}_{1} \\in \\mathbb{R}^{2} : \\mathbf{H}_{1} \\boldsymbol{\\zeta}_{1} \\le \\mathbf{h}_{1}, -0.5 \\le \\boldsymbol{\\zeta}_{1}_k \\le 0.5,\\ k=1,\\ldots,2 \\} \\\\\n& \\mathcal{U}_{3} = \\{ \\boldsymbol{\\zeta}_{3} \\in \\mathbb{R}^{2} : \\|\\boldsymbol{\\zeta}_{3}\\|_\\infty \\le 1, \\|\\boldsymbol{\\zeta}_{3}\\|_1 \\le \\Gamma_{3} \\} \\\\\n& \\Gamma_{c} = 1.6 \\\\\n& \\bar{\\mathbf{c}} = \\begin{bmatrix} 2 \\\\ -5.6 \\\\ 0.7 \\end{bmatrix} \\\\\n& \\mathbf{P}^{c} = \\begin{bmatrix} 0.248 & 0.018 & 0.033 \\\\ 0.109 & 0.838 & 0.053 \\\\ 0.003 & 0.013 & 0.083 \\end{bmatrix} \\\\\n& \\mathbf{H}_{1} = \\begin{bmatrix} -0.3 & -0.2 \\end{bmatrix} \\\\\n& \\mathbf{h}_{1} = \\begin{bmatrix} 0.13 \\end{bmatrix} \\\\\n& \\bar{\\mathbf{a}}_{1} = \\begin{bmatrix} 0 \\\\ -1.7 \\\\ -4.7 \\end{bmatrix} \\\\\n& \\mathbf{P}_{1} = \\begin{bmatrix} 0 & 0 \\\\ 0.759 & 0.241 \\\\ 0.175 & 0.825 \\end{bmatrix} \\\\\n& b_{1} = -28.85 \\\\\n& \\bar{\\mathbf{a}}_{2} = \\begin{bmatrix} 0 \\\\ 0.9 \\\\ -0.7 \\end{bmatrix} \\\\\n& b_{2} = -0.03 \\\\\n& \\Gamma_{3} = 1.7 \\\\\n& \\bar{\\mathbf{a}}_{3} = \\begin{bmatrix} 3.1 \\\\ -3 \\\\ 0 \\end{bmatrix} \\\\\n& \\mathbf{P}_{3} = \\begin{bmatrix} 0.416 & 0.084 \\\\ 0.065 & 0.335 \\\\ 0 & 0 \\end{bmatrix} \\\\\n& b_{3} = 9.15 \\\\\n\\end{align*}",
+    "uncertainty_type": [
+      2,
+      3,
+      0,
+      2
+    ],
+    "general_p_unit_ids": [
+      0,
+      1,
+      3
+    ],
+    "general_p_unit_labels": [
+      "objective",
+      "constraint_1",
+      "constraint_3"
+    ],
+    "row_indexing": "0=objective, 1..n=constraint rows",
+    "support_mode": "original_random_uncertainty_index",
+    "solution": [
+      2.5595837529372276,
+      0.0,
+      5.0
+    ],
+    "optimal_value": 7.669710976837865
+  },
+  {
+    "id": "3_7_GP",
+    "n_vars": 3,
+    "n_constraints": 3,
+    "template_param": [
+      1,
+      1,
+      1
+    ],
+    "setting": "general_support_preserving_all_uncertain_P",
+    "description": "\\begin{align*}\n\\min_{\\mathbf{x}} \\quad & \\max_{\\boldsymbol{\\zeta}^{c} \\in \\mathcal{U}_{c}} \\left(\\bar{\\mathbf{c}} + \\mathbf{P}^{c} \\boldsymbol{\\zeta}^{c}\\right)^\\top \\mathbf{x} && \\text{[Box Support-Preserving General-P Objective]} \\\\\n& \\text{subject to} \\\\\n& \\max_{\\boldsymbol{\\zeta}_{1} \\in \\mathcal{U}_{1}} \\left(\\bar{\\mathbf{a}}_{1} + \\mathbf{P}_{1} \\boldsymbol{\\zeta}_{1}\\right)^\\top \\mathbf{x} \\le b_{1} && \\text{[Box Support-Preserving General-P Constraint]} \\\\\n& \\max_{\\boldsymbol{\\zeta}_{2} \\in \\mathcal{U}_{2}} \\left(\\bar{\\mathbf{a}}_{2} + \\mathbf{P}_{2} \\boldsymbol{\\zeta}_{2}\\right)^\\top \\mathbf{x} \\le b_{2} && \\text{[Box Support-Preserving General-P Constraint]} \\\\\n& \\bar{\\mathbf{a}}_{3}^\\top \\mathbf{x} \\le b_{3} && \\text{[Deterministic Constraint]} \\\\\n& -8.9 \\le x_j \\le 0, \\quad j=1,\\ldots,3 \\\\\n& \\text{where} \\\\\n& \\mathcal{U}_{c} = \\{ \\boldsymbol{\\zeta}^{c} \\in \\mathbb{R}^{3} : \\|\\boldsymbol{\\zeta}^{c}\\|_\\infty \\le 1 \\} \\\\\n& \\mathcal{U}_{1} = \\{ \\boldsymbol{\\zeta}_{1} \\in \\mathbb{R}^{2} : \\|\\boldsymbol{\\zeta}_{1}\\|_\\infty \\le 1 \\} \\\\\n& \\mathcal{U}_{2} = \\{ \\boldsymbol{\\zeta}_{2} \\in \\mathbb{R}^{2} : \\|\\boldsymbol{\\zeta}_{2}\\|_\\infty \\le 1 \\} \\\\\n& \\bar{\\mathbf{c}} = \\begin{bmatrix} 3.1 \\\\ -0.6 \\\\ 4.8 \\end{bmatrix} \\\\\n& \\mathbf{P}^{c} = \\begin{bmatrix} 0.336 & 0.026 & 0.038 \\\\ 0.008 & 0.075 & 0.016 \\\\ 0.083 & 0.063 & 0.554 \\end{bmatrix} \\\\\n& \\bar{\\mathbf{a}}_{1} = \\begin{bmatrix} 0 \\\\ -0.9 \\\\ 8.5 \\end{bmatrix} \\\\\n& \\mathbf{P}_{1} = \\begin{bmatrix} 0 & 0 \\\\ 0.082 & 0.018 \\\\ 0.205 & 0.595 \\end{bmatrix} \\\\\n& b_{1} = 45.66 \\\\\n& \\bar{\\mathbf{a}}_{2} = \\begin{bmatrix} 0 \\\\ 2.7 \\\\ -8.6 \\end{bmatrix} \\\\\n& \\mathbf{P}_{2} = \\begin{bmatrix} 0 & 0 \\\\ 0.252 & 0.048 \\\\ 0.375 & 1.125 \\end{bmatrix} \\\\\n& b_{2} = 72.48 \\\\\n& \\bar{\\mathbf{a}}_{3} = \\begin{bmatrix} -7.6 \\\\ 0 \\\\ 1.1 \\end{bmatrix} \\\\\n& b_{3} = 71.34 \\\\\n\\end{align*}",
+    "uncertainty_type": [
+      1,
+      1,
+      1,
+      0
+    ],
+    "general_p_unit_ids": [
+      0,
+      1,
+      2
+    ],
+    "general_p_unit_labels": [
+      "objective",
+      "constraint_1",
+      "constraint_2"
+    ],
+    "row_indexing": "0=objective, 1..n=constraint rows",
+    "support_mode": "original_random_uncertainty_index",
+    "solution": [
+      -8.9,
+      -7.254166666666668,
+      -8.9
+    ],
+    "optimal_value": -55.4493375
+  },
+  {
+    "id": "3_8_GP",
+    "n_vars": 3,
+    "n_constraints": 3,
+    "template_param": [
+      1,
+      1,
+      1
+    ],
+    "setting": "general_support_preserving_all_uncertain_P",
+    "description": "\\begin{align*}\n\\min_{\\mathbf{x}} \\quad & \\max_{\\boldsymbol{\\zeta}^{c} \\in \\mathcal{U}_{c}} \\left(\\bar{\\mathbf{c}} + \\mathbf{P}^{c} \\boldsymbol{\\zeta}^{c}\\right)^\\top \\mathbf{x} && \\text{[Budgeted Support-Preserving General-P Objective]} \\\\\n& \\text{subject to} \\\\\n& \\max_{\\boldsymbol{\\zeta}_{1} \\in \\mathcal{U}_{1}} \\left(\\bar{\\mathbf{a}}_{1} + \\mathbf{P}_{1} \\boldsymbol{\\zeta}_{1}\\right)^\\top \\mathbf{x} \\le b_{1} && \\text{[Polyhedral Support-Preserving General-P Constraint]} \\\\\n& \\bar{\\mathbf{a}}_{2}^\\top \\mathbf{x} = b_{2} && \\text{[Deterministic Constraint]} \\\\\n& \\min_{\\boldsymbol{\\zeta}_{3} \\in \\mathcal{U}_{3}} \\left(\\bar{\\mathbf{a}}_{3} + \\mathbf{P}_{3} \\boldsymbol{\\zeta}_{3}\\right)^\\top \\mathbf{x} \\ge b_{3} && \\text{[Budgeted Support-Preserving General-P Constraint]} \\\\\n& -5.7 \\le x_j \\le 5.7, \\quad j=1,\\ldots,3 \\\\\n& \\text{where} \\\\\n& \\mathcal{U}_{c} = \\{ \\boldsymbol{\\zeta}^{c} \\in \\mathbb{R}^{3} : \\|\\boldsymbol{\\zeta}^{c}\\|_\\infty \\le 1, \\|\\boldsymbol{\\zeta}^{c}\\|_1 \\le \\Gamma_{c} \\} \\\\\n& \\mathcal{U}_{1} = \\{ \\boldsymbol{\\zeta}_{1} \\in \\mathbb{R}^{3} : \\mathbf{H}_{1} \\boldsymbol{\\zeta}_{1} \\le \\mathbf{h}_{1}, 0 \\le \\boldsymbol{\\zeta}_{1}_k \\le 0.6,\\ k=1,\\ldots,3 \\} \\\\\n& \\mathcal{U}_{3} = \\{ \\boldsymbol{\\zeta}_{3} \\in \\mathbb{R}^{2} : \\|\\boldsymbol{\\zeta}_{3}\\|_\\infty \\le 1, \\|\\boldsymbol{\\zeta}_{3}\\|_1 \\le \\Gamma_{3} \\} \\\\\n& \\Gamma_{c} = 1.4 \\\\\n& \\bar{\\mathbf{c}} = \\begin{bmatrix} 1.2 \\\\ -4.3 \\\\ 1.8 \\end{bmatrix} \\\\\n& \\mathbf{P}^{c} = \\begin{bmatrix} 0.076 & 0.01 & 0.014 \\\\ 0.031 & 0.388 & 0.081 \\\\ 0.028 & 0.037 & 0.235 \\end{bmatrix} \\\\\n& \\mathbf{H}_{1} = \\begin{bmatrix} 0.1 & 0 & -0.3 \\\\ 0.1 & 0.3 & 0 \\end{bmatrix} \\\\\n& \\mathbf{h}_{1} = \\begin{bmatrix} 0.06 \\\\ 0.24 \\end{bmatrix} \\\\\n& \\bar{\\mathbf{a}}_{1} = \\begin{bmatrix} 4.5 \\\\ 4.5 \\\\ -4.4 \\end{bmatrix} \\\\\n& \\mathbf{P}_{1} = \\begin{bmatrix} 0.758 & 0.091 & 0.152 \\\\ 0.076 & 0.812 & 0.112 \\\\ 0.114 & 0.11 & 0.775 \\end{bmatrix} \\\\\n& b_{1} = 51.06 \\\\\n& \\bar{\\mathbf{a}}_{2} = \\begin{bmatrix} -2.8 \\\\ -5.4 \\\\ 2.1 \\end{bmatrix} \\\\\n& b_{2} = -33.28 \\\\\n& \\Gamma_{3} = 0.4 \\\\\n& \\bar{\\mathbf{a}}_{3} = \\begin{bmatrix} -5.3 \\\\ 5.4 \\\\ 0 \\end{bmatrix} \\\\\n& \\mathbf{P}_{3} = \\begin{bmatrix} 0.365 & 0.135 \\\\ 0.102 & 0.298 \\\\ 0 & 0 \\end{bmatrix} \\\\\n& b_{3} = -26.48 \\\\\n\\end{align*}",
+    "uncertainty_type": [
+      2,
+      3,
+      0,
+      2
+    ],
+    "general_p_unit_ids": [
+      0,
+      1,
+      3
+    ],
+    "general_p_unit_labels": [
+      "objective",
+      "constraint_1",
+      "constraint_3"
+    ],
+    "row_indexing": "0=objective, 1..n=constraint rows",
+    "support_mode": "original_random_uncertainty_index",
+    "solution": [
+      -3.3821428571428593,
+      5.7,
+      -5.7
+    ],
+    "optimal_value": -36.49163285714286
+  },
+  {
+    "id": "4_1_GP",
+    "n_vars": 4,
+    "n_constraints": 4,
+    "template_param": [
+      1,
+      1,
+      1
+    ],
+    "setting": "general_support_preserving_all_uncertain_P",
+    "description": "\\begin{align*}\n\\max_{\\mathbf{x}} \\quad & \\min_{\\boldsymbol{\\zeta}^{c} \\in \\mathcal{U}_{c}} \\left(\\bar{\\mathbf{c}} + \\mathbf{P}^{c} \\boldsymbol{\\zeta}^{c}\\right)^\\top \\mathbf{x} && \\text{[Budgeted Support-Preserving General-P Objective]} \\\\\n& \\text{subject to} \\\\\n& \\max_{\\boldsymbol{\\zeta}_{1} \\in \\mathcal{U}_{1}} \\left(\\bar{\\mathbf{a}}_{1} + \\mathbf{P}_{1} \\boldsymbol{\\zeta}_{1}\\right)^\\top \\mathbf{x} \\le b_{1} && \\text{[Box Support-Preserving General-P Constraint]} \\\\\n& \\min_{\\boldsymbol{\\zeta}_{2} \\in \\mathcal{U}_{2}} \\left(\\bar{\\mathbf{a}}_{2} + \\mathbf{P}_{2} \\boldsymbol{\\zeta}_{2}\\right)^\\top \\mathbf{x} \\ge b_{2} && \\text{[Budgeted Support-Preserving General-P Constraint]} \\\\\n& \\bar{\\mathbf{a}}_{3}^\\top \\mathbf{x} = b_{3} && \\text{[Deterministic Constraint]} \\\\\n& \\max_{\\boldsymbol{\\zeta}_{4} \\in \\mathcal{U}_{4}} \\left(\\bar{\\mathbf{a}}_{4} + \\mathbf{P}_{4} \\boldsymbol{\\zeta}_{4}\\right)^\\top \\mathbf{x} \\le b_{4} && \\text{[Box Support-Preserving General-P Constraint]} \\\\\n& -7.6 \\le x_j \\le 7.6, \\quad j=1,\\ldots,4 \\\\\n& \\text{where} \\\\\n& \\mathcal{U}_{c} = \\{ \\boldsymbol{\\zeta}^{c} \\in \\mathbb{R}^{4} : \\|\\boldsymbol{\\zeta}^{c}\\|_\\infty \\le 1, \\|\\boldsymbol{\\zeta}^{c}\\|_1 \\le \\Gamma_{c} \\} \\\\\n& \\mathcal{U}_{1} = \\{ \\boldsymbol{\\zeta}_{1} \\in \\mathbb{R}^{2} : \\|\\boldsymbol{\\zeta}_{1}\\|_\\infty \\le 1 \\} \\\\\n& \\mathcal{U}_{2} = \\{ \\boldsymbol{\\zeta}_{2} \\in \\mathbb{R}^{3} : \\|\\boldsymbol{\\zeta}_{2}\\|_\\infty \\le 1, \\|\\boldsymbol{\\zeta}_{2}\\|_1 \\le \\Gamma_{2} \\} \\\\\n& \\mathcal{U}_{4} = \\{ \\boldsymbol{\\zeta}_{4} \\in \\mathbb{R}^{3} : \\|\\boldsymbol{\\zeta}_{4}\\|_\\infty \\le 1 \\} \\\\\n& \\Gamma_{c} = 0.1 \\\\\n& \\bar{\\mathbf{c}} = \\begin{bmatrix} -0.1 \\\\ -4 \\\\ 5.3 \\\\ 1 \\end{bmatrix} \\\\\n& \\mathbf{P}^{c} = \\begin{bmatrix} 0.066 & 0.011 & 0.013 & 0.01 \\\\ 0.029 & 0.389 & 0.065 & 0.118 \\\\ 0.071 & 0.086 & 0.481 & 0.062 \\\\ 0.013 & 0.007 & 0.012 & 0.068 \\end{bmatrix} \\\\\n& \\bar{\\mathbf{a}}_{1} = \\begin{bmatrix} 0 \\\\ 1.3 \\\\ 0 \\\\ -0.4 \\end{bmatrix} \\\\\n& \\mathbf{P}_{1} = \\begin{bmatrix} 0 & 0 \\\\ 0.154 & 0.046 \\\\ 0 & 0 \\\\ 0.018 & 0.082 \\end{bmatrix} \\\\\n& b_{1} = 6.39 \\\\\n& \\Gamma_{2} = 1.2 \\\\\n& \\bar{\\mathbf{a}}_{2} = \\begin{bmatrix} 0 \\\\ -0.4 \\\\ -2 \\\\ -4.6 \\end{bmatrix} \\\\\n& \\mathbf{P}_{2} = \\begin{bmatrix} 0 & 0 & 0 \\\\ 0.071 & 0.007 & 0.022 \\\\ 0.009 & 0.082 & 0.008 \\\\ 0.028 & 0.044 & 0.228 \\end{bmatrix} \\\\\n& b_{2} = 25.63 \\\\\n& \\bar{\\mathbf{a}}_{3} = \\begin{bmatrix} 0 \\\\ 2 \\\\ 4.5 \\\\ 0 \\end{bmatrix} \\\\\n& b_{3} = 5.2 \\\\\n& \\bar{\\mathbf{a}}_{4} = \\begin{bmatrix} 0 \\\\ 0.1 \\\\ 2.4 \\\\ -3.1 \\end{bmatrix} \\\\\n& \\mathbf{P}_{4} = \\begin{bmatrix} 0 & 0 & 0 \\\\ 0.071 & 0.014 & 0.015 \\\\ 0.096 & 0.362 & 0.042 \\\\ 0.054 & 0.061 & 0.285 \\end{bmatrix} \\\\\n& b_{4} = 33.4 \\\\\n\\end{align*}",
+    "uncertainty_type": [
+      2,
+      1,
+      2,
+      0,
+      1
+    ],
+    "general_p_unit_ids": [
+      0,
+      1,
+      2,
+      4
+    ],
+    "general_p_unit_labels": [
+      "objective",
+      "constraint_1",
+      "constraint_2",
+      "constraint_4"
+    ],
+    "row_indexing": "0=objective, 1..n=constraint rows",
+    "support_mode": "original_random_uncertainty_index",
+    "solution": [
+      -7.6,
+      -5.684560274270374,
+      3.682026788564611,
+      -7.0744610404043895
+    ],
+    "optimal_value": 35.7357459490538
+  },
+  {
+    "id": "4_2_GP",
+    "n_vars": 4,
+    "n_constraints": 4,
+    "template_param": [
+      1,
+      1,
+      1
+    ],
+    "setting": "general_support_preserving_all_uncertain_P",
+    "description": "\\begin{align*}\n\\min_{\\mathbf{x}} \\quad & \\max_{\\boldsymbol{\\zeta}^{c} \\in \\mathcal{U}_{c}} \\left(\\bar{\\mathbf{c}} + \\mathbf{P}^{c} \\boldsymbol{\\zeta}^{c}\\right)^\\top \\mathbf{x} && \\text{[Polyhedral Support-Preserving General-P Objective]} \\\\\n& \\text{subject to} \\\\\n& \\min_{\\boldsymbol{\\zeta}_{1} \\in \\mathcal{U}_{1}} \\left(\\bar{\\mathbf{a}}_{1} + \\mathbf{P}_{1} \\boldsymbol{\\zeta}_{1}\\right)^\\top \\mathbf{x} \\ge b_{1} && \\text{[Budgeted Support-Preserving General-P Constraint]} \\\\\n& \\max_{\\boldsymbol{\\zeta}_{2} \\in \\mathcal{U}_{2}} \\left(\\bar{\\mathbf{a}}_{2} + \\mathbf{P}_{2} \\boldsymbol{\\zeta}_{2}\\right)^\\top \\mathbf{x} \\le b_{2} && \\text{[Budgeted Support-Preserving General-P Constraint]} \\\\\n& \\max_{\\boldsymbol{\\zeta}_{3} \\in \\mathcal{U}_{3}} \\left(\\bar{\\mathbf{a}}_{3} + \\mathbf{P}_{3} \\boldsymbol{\\zeta}_{3}\\right)^\\top \\mathbf{x} \\le b_{3} && \\text{[Polyhedral Support-Preserving General-P Constraint]} \\\\\n& \\bar{\\mathbf{a}}_{4}^\\top \\mathbf{x} \\ge b_{4} && \\text{[Deterministic Constraint]} \\\\\n& -2.8 \\le x_j \\le 0, \\quad j=1,\\ldots,4 \\\\\n& \\text{where} \\\\\n& \\mathcal{U}_{c} = \\{ \\boldsymbol{\\zeta}^{c} \\in \\mathbb{R}^{2} : \\mathbf{H}_{c} \\boldsymbol{\\zeta}^{c} \\le \\mathbf{h}_{c}, -0.3 \\le \\boldsymbol{\\zeta}^{c}_k \\le 0,\\ k=1,\\ldots,2 \\} \\\\\n& \\mathcal{U}_{1} = \\{ \\boldsymbol{\\zeta}_{1} \\in \\mathbb{R}^{2} : \\|\\boldsymbol{\\zeta}_{1}\\|_\\infty \\le 1, \\|\\boldsymbol{\\zeta}_{1}\\|_1 \\le \\Gamma_{1} \\} \\\\\n& \\mathcal{U}_{2} = \\{ \\boldsymbol{\\zeta}_{2} \\in \\mathbb{R}^{3} : \\|\\boldsymbol{\\zeta}_{2}\\|_\\infty \\le 1, \\|\\boldsymbol{\\zeta}_{2}\\|_1 \\le \\Gamma_{2} \\} \\\\\n& \\mathcal{U}_{3} = \\{ \\boldsymbol{\\zeta}_{3} \\in \\mathbb{R}^{2} : \\mathbf{H}_{3} \\boldsymbol{\\zeta}_{3} \\le \\mathbf{h}_{3}, -0.3 \\le \\boldsymbol{\\zeta}_{3}_k \\le 0,\\ k=1,\\ldots,2 \\} \\\\\n& \\mathbf{H}_{c} = \\begin{bmatrix} 0.2 & 0.3 \\end{bmatrix} \\\\\n& \\mathbf{h}_{c} = \\begin{bmatrix} 0.02 \\end{bmatrix} \\\\\n& \\bar{\\mathbf{c}} = \\begin{bmatrix} 3.2 \\\\ 4.4 \\\\ 0.4 \\\\ 2.7 \\end{bmatrix} \\\\\n& \\mathbf{P}^{c} = \\begin{bmatrix} 0.813 & 0.187 \\\\ 0.191 & 0.809 \\\\ 0 & 0 \\\\ 0 & 0 \\end{bmatrix} \\\\\n& \\Gamma_{1} = 1.2 \\\\\n& \\bar{\\mathbf{a}}_{1} = \\begin{bmatrix} 0 \\\\ -0.9 \\\\ -0.9 \\\\ -1.5 \\end{bmatrix} \\\\\n& \\mathbf{P}_{1} = \\begin{bmatrix} 0 & 0 \\\\ 0 & 0 \\\\ 0.088 & 0.012 \\\\ 0.059 & 0.241 \\end{bmatrix} \\\\\n& b_{1} = -8.84 \\\\\n& \\Gamma_{2} = 2.4 \\\\\n& \\bar{\\mathbf{a}}_{2} = \\begin{bmatrix} 0 \\\\ -2.5 \\\\ -2.7 \\\\ 2 \\end{bmatrix} \\\\\n& \\mathbf{P}_{2} = \\begin{bmatrix} 0 & 0 & 0 \\\\ 0.277 & 0.077 & 0.045 \\\\ 0.032 & 0.216 & 0.052 \\\\ 0.058 & 0.04 & 0.301 \\end{bmatrix} \\\\\n& b_{2} = 15.93 \\\\\n& \\mathbf{H}_{3} = \\begin{bmatrix} 0.3 & 0.1 \\end{bmatrix} \\\\\n& \\mathbf{h}_{3} = \\begin{bmatrix} 0.07 \\end{bmatrix} \\\\\n& \\bar{\\mathbf{a}}_{3} = \\begin{bmatrix} 0 \\\\ 0.2 \\\\ 0 \\\\ -1.6 \\end{bmatrix} \\\\\n& \\mathbf{P}_{3} = \\begin{bmatrix} 0 & 0 \\\\ 0.796 & 0.204 \\\\ 0 & 0 \\\\ 0.078 & 0.922 \\end{bmatrix} \\\\\n& b_{3} = 4.57 \\\\\n& \\bar{\\mathbf{a}}_{4} = \\begin{bmatrix} -0.2 \\\\ 1.6 \\\\ 0 \\\\ 2.7 \\end{bmatrix} \\\\\n& b_{4} = -10.15 \\\\\n\\end{align*}",
+    "uncertainty_type": [
+      3,
+      2,
+      2,
+      3,
+      0
+    ],
+    "general_p_unit_ids": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "general_p_unit_labels": [
+      "objective",
+      "constraint_1",
+      "constraint_2",
+      "constraint_3"
+    ],
+    "row_indexing": "0=objective, 1..n=constraint rows",
+    "support_mode": "original_random_uncertainty_index",
+    "solution": [
+      -2.8,
+      -2.8,
+      -2.8,
+      -2.257894736842105
+    ],
+    "optimal_value": -26.816315789473684
+  },
+  {
+    "id": "4_3_GP",
+    "n_vars": 4,
+    "n_constraints": 4,
+    "template_param": [
+      1,
+      1,
+      1
+    ],
+    "setting": "general_support_preserving_all_uncertain_P",
+    "description": "\\begin{align*}\n\\max_{\\mathbf{x}} \\quad & \\min_{\\boldsymbol{\\zeta}^{c} \\in \\mathcal{U}_{c}} \\left(\\bar{\\mathbf{c}} + \\mathbf{P}^{c} \\boldsymbol{\\zeta}^{c}\\right)^\\top \\mathbf{x} && \\text{[Budgeted Support-Preserving General-P Objective]} \\\\\n& \\text{subject to} \\\\\n& \\min_{\\boldsymbol{\\zeta}_{1} \\in \\mathcal{U}_{1}} \\left(\\bar{\\mathbf{a}}_{1} + \\mathbf{P}_{1} \\boldsymbol{\\zeta}_{1}\\right)^\\top \\mathbf{x} \\ge b_{1} && \\text{[Box Support-Preserving General-P Constraint]} \\\\\n& \\min_{\\boldsymbol{\\zeta}_{2} \\in \\mathcal{U}_{2}} \\left(\\bar{\\mathbf{a}}_{2} + \\mathbf{P}_{2} \\boldsymbol{\\zeta}_{2}\\right)^\\top \\mathbf{x} \\ge b_{2} && \\text{[Budgeted Support-Preserving General-P Constraint]} \\\\\n& \\min_{\\boldsymbol{\\zeta}_{3} \\in \\mathcal{U}_{3}} \\left(\\bar{\\mathbf{a}}_{3} + \\mathbf{P}_{3} \\boldsymbol{\\zeta}_{3}\\right)^\\top \\mathbf{x} \\ge b_{3} && \\text{[Polyhedral Support-Preserving General-P Constraint]} \\\\\n& \\bar{\\mathbf{a}}_{4}^\\top \\mathbf{x} = b_{4} && \\text{[Deterministic Constraint]} \\\\\n& -3.7 \\le x_j \\le 3.7, \\quad j=1,\\ldots,4 \\\\\n& \\text{where} \\\\\n& \\mathcal{U}_{c} = \\{ \\boldsymbol{\\zeta}^{c} \\in \\mathbb{R}^{2} : \\|\\boldsymbol{\\zeta}^{c}\\|_\\infty \\le 1, \\|\\boldsymbol{\\zeta}^{c}\\|_1 \\le \\Gamma_{c} \\} \\\\\n& \\mathcal{U}_{1} = \\{ \\boldsymbol{\\zeta}_{1} \\in \\mathbb{R}^{3} : \\|\\boldsymbol{\\zeta}_{1}\\|_\\infty \\le 1 \\} \\\\\n& \\mathcal{U}_{2} = \\{ \\boldsymbol{\\zeta}_{2} \\in \\mathbb{R}^{2} : \\|\\boldsymbol{\\zeta}_{2}\\|_\\infty \\le 1, \\|\\boldsymbol{\\zeta}_{2}\\|_1 \\le \\Gamma_{2} \\} \\\\\n& \\mathcal{U}_{3} = \\{ \\boldsymbol{\\zeta}_{3} \\in \\mathbb{R}^{2} : \\mathbf{H}_{3} \\boldsymbol{\\zeta}_{3} \\le \\mathbf{h}_{3}, 0 \\le \\boldsymbol{\\zeta}_{3}_k \\le 0.4,\\ k=1,\\ldots,2 \\} \\\\\n& \\Gamma_{c} = 1.6 \\\\\n& \\bar{\\mathbf{c}} = \\begin{bmatrix} -5.2 \\\\ 0.8 \\\\ -1.5 \\\\ -4.1 \\end{bmatrix} \\\\\n& \\mathbf{P}^{c} = \\begin{bmatrix} 0 & 0 \\\\ 0 & 0 \\\\ 0.085 & 0.015 \\\\ 0.088 & 0.512 \\end{bmatrix} \\\\\n& \\bar{\\mathbf{a}}_{1} = \\begin{bmatrix} -2.6 \\\\ 0 \\\\ 0.8 \\\\ 2 \\end{bmatrix} \\\\\n& \\mathbf{P}_{1} = \\begin{bmatrix} 0.427 & 0.041 & 0.032 \\\\ 0 & 0 & 0 \\\\ 0.008 & 0.079 & 0.013 \\\\ 0.023 & 0.025 & 0.152 \\end{bmatrix} \\\\\n& b_{1} = 9.02 \\\\\n& \\Gamma_{2} = 0.1 \\\\\n& \\bar{\\mathbf{a}}_{2} = \\begin{bmatrix} 0 \\\\ -0.9 \\\\ 1.6 \\\\ 0 \\end{bmatrix} \\\\\n& \\mathbf{P}_{2} = \\begin{bmatrix} 0 & 0 \\\\ 0.079 & 0.021 \\\\ 0.021 & 0.079 \\\\ 0 & 0 \\end{bmatrix} \\\\\n& b_{2} = -4.84 \\\\\n& \\mathbf{H}_{3} = \\begin{bmatrix} 0.1 & 0.2 \\end{bmatrix} \\\\\n& \\mathbf{h}_{3} = \\begin{bmatrix} 0.11 \\end{bmatrix} \\\\\n& \\bar{\\mathbf{a}}_{3} = \\begin{bmatrix} 0 \\\\ 3.4 \\\\ 0 \\\\ -1.2 \\end{bmatrix} \\\\\n& \\mathbf{P}_{3} = \\begin{bmatrix} 0 & 0 \\\\ 0.838 & 0.162 \\\\ 0 & 0 \\\\ 0.222 & 0.778 \\end{bmatrix} \\\\\n& b_{3} = 1.41 \\\\\n& \\bar{\\mathbf{a}}_{4} = \\begin{bmatrix} -0.7 \\\\ 3.3 \\\\ -0.3 \\\\ -2.6 \\end{bmatrix} \\\\\n& b_{4} = 0.61 \\\\\n\\end{align*}",
+    "uncertainty_type": [
+      2,
+      1,
+      2,
+      3,
+      0
+    ],
+    "general_p_unit_ids": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "general_p_unit_labels": [
+      "objective",
+      "constraint_1",
+      "constraint_2",
+      "constraint_3"
+    ],
+    "row_indexing": "0=objective, 1..n=constraint rows",
+    "support_mode": "original_random_uncertainty_index",
+    "solution": [
+      -3.7,
+      1.4024012105075816,
+      -2.2269941868805536,
+      2.7984700964381477
+    ],
+    "optimal_value": 10.795090559196344
+  },
+  {
+    "id": "4_4_GP",
+    "n_vars": 4,
+    "n_constraints": 4,
+    "template_param": [
+      1,
+      1,
+      1
+    ],
+    "setting": "general_support_preserving_all_uncertain_P",
+    "description": "\\begin{align*}\n\\min_{\\mathbf{x}} \\quad & \\max_{\\boldsymbol{\\zeta}^{c} \\in \\mathcal{U}_{c}} \\left(\\bar{\\mathbf{c}} + \\mathbf{P}^{c} \\boldsymbol{\\zeta}^{c}\\right)^\\top \\mathbf{x} && \\text{[Box Support-Preserving General-P Objective]} \\\\\n& \\text{subject to} \\\\\n& \\bar{\\mathbf{a}}_{1}^\\top \\mathbf{x} = b_{1} && \\text{[Deterministic Constraint]} \\\\\n& \\min_{\\boldsymbol{\\zeta}_{2} \\in \\mathcal{U}_{2}} \\left(\\bar{\\mathbf{a}}_{2} + \\mathbf{P}_{2} \\boldsymbol{\\zeta}_{2}\\right)^\\top \\mathbf{x} \\ge b_{2} && \\text{[Box Support-Preserving General-P Constraint]} \\\\\n& \\min_{\\boldsymbol{\\zeta}_{3} \\in \\mathcal{U}_{3}} \\left(\\bar{\\mathbf{a}}_{3} + \\mathbf{P}_{3} \\boldsymbol{\\zeta}_{3}\\right)^\\top \\mathbf{x} \\ge b_{3} && \\text{[Budgeted Support-Preserving General-P Constraint]} \\\\\n& \\max_{\\boldsymbol{\\zeta}_{4} \\in \\mathcal{U}_{4}} \\left(\\bar{\\mathbf{a}}_{4} + \\mathbf{P}_{4} \\boldsymbol{\\zeta}_{4}\\right)^\\top \\mathbf{x} \\le b_{4} && \\text{[Polyhedral Support-Preserving General-P Constraint]} \\\\\n& 0 \\le x_j \\le 3.7, \\quad j=1,\\ldots,4 \\\\\n& \\text{where} \\\\\n& \\mathcal{U}_{c} = \\{ \\boldsymbol{\\zeta}^{c} \\in \\mathbb{R}^{2} : \\|\\boldsymbol{\\zeta}^{c}\\|_\\infty \\le 1 \\} \\\\\n& \\mathcal{U}_{2} = \\{ \\boldsymbol{\\zeta}_{2} \\in \\mathbb{R}^{2} : \\|\\boldsymbol{\\zeta}_{2}\\|_\\infty \\le 1 \\} \\\\\n& \\mathcal{U}_{3} = \\{ \\boldsymbol{\\zeta}_{3} \\in \\mathbb{R}^{2} : \\|\\boldsymbol{\\zeta}_{3}\\|_\\infty \\le 1, \\|\\boldsymbol{\\zeta}_{3}\\|_1 \\le \\Gamma_{3} \\} \\\\\n& \\mathcal{U}_{4} = \\{ \\boldsymbol{\\zeta}_{4} \\in \\mathbb{R}^{2} : \\mathbf{H}_{4} \\boldsymbol{\\zeta}_{4} \\le \\mathbf{h}_{4}, 0 \\le \\boldsymbol{\\zeta}_{4}_k \\le 0.4,\\ k=1,\\ldots,2 \\} \\\\\n& \\bar{\\mathbf{c}} = \\begin{bmatrix} -8.6 \\\\ -9.5 \\\\ -9.7 \\\\ -4.5 \\end{bmatrix} \\\\\n& \\mathbf{P}^{c} = \\begin{bmatrix} 0.92 & 0.38 \\\\ 0 & 0 \\\\ 0 & 0 \\\\ 0.093 & 0.307 \\end{bmatrix} \\\\\n& \\bar{\\mathbf{a}}_{1} = \\begin{bmatrix} 0 \\\\ 2.7 \\\\ -1.5 \\\\ 0 \\end{bmatrix} \\\\\n& b_{1} = -1.44 \\\\\n& \\bar{\\mathbf{a}}_{2} = \\begin{bmatrix} 0 \\\\ 1.9 \\\\ 0 \\\\ -0.8 \\end{bmatrix} \\\\\n& \\mathbf{P}_{2} = \\begin{bmatrix} 0 & 0 \\\\ 0.172 & 0.028 \\\\ 0 & 0 \\\\ 0.016 & 0.084 \\end{bmatrix} \\\\\n& b_{2} = -7.95 \\\\\n& \\Gamma_{3} = 0.8 \\\\\n& \\bar{\\mathbf{a}}_{3} = \\begin{bmatrix} 3.1 \\\\ 0 \\\\ 1.3 \\\\ 1 \\end{bmatrix} \\\\\n& \\mathbf{P}_{3} = \\begin{bmatrix} 0 & 0 \\\\ 0 & 0 \\\\ 0.175 & 0.025 \\\\ 0.009 & 0.091 \\end{bmatrix} \\\\\n& b_{3} = 4.01 \\\\\n& \\mathbf{H}_{4} = \\begin{bmatrix} 0.3 & -0.1 \\end{bmatrix} \\\\\n& \\mathbf{h}_{4} = \\begin{bmatrix} 0.13 \\end{bmatrix} \\\\\n& \\bar{\\mathbf{a}}_{4} = \\begin{bmatrix} 0 \\\\ -0.5 \\\\ 0 \\\\ 2.9 \\end{bmatrix} \\\\\n& \\mathbf{P}_{4} = \\begin{bmatrix} 0 & 0 \\\\ 0.858 & 0.142 \\\\ 0 & 0 \\\\ 0.158 & 0.842 \\end{bmatrix} \\\\\n& b_{4} = 11.46 \\\\\n\\end{align*}",
+    "uncertainty_type": [
+      1,
+      0,
+      1,
+      2,
+      3
+    ],
+    "general_p_unit_ids": [
+      0,
+      2,
+      3,
+      4
+    ],
+    "general_p_unit_labels": [
+      "objective",
+      "constraint_2",
+      "constraint_3",
+      "constraint_4"
+    ],
+    "row_indexing": "0=objective, 1..n=constraint rows",
+    "support_mode": "original_random_uncertainty_index",
+    "solution": [
+      3.7,
+      1.5222222222222226,
+      3.7,
+      3.5188552188552196
+    ],
+    "optimal_value": -91.78841750841752
+  },
+  {
+    "id": "4_5_GP",
+    "n_vars": 4,
+    "n_constraints": 4,
+    "template_param": [
+      1,
+      1,
+      1
+    ],
+    "setting": "general_support_preserving_all_uncertain_P",
+    "description": "\\begin{align*}\n\\min_{\\mathbf{x}} \\quad & \\max_{\\boldsymbol{\\zeta}^{c} \\in \\mathcal{U}_{c}} \\left(\\bar{\\mathbf{c}} + \\mathbf{P}^{c} \\boldsymbol{\\zeta}^{c}\\right)^\\top \\mathbf{x} && \\text{[Polyhedral Support-Preserving General-P Objective]} \\\\\n& \\text{subject to} \\\\\n& \\min_{\\boldsymbol{\\zeta}_{1} \\in \\mathcal{U}_{1}} \\left(\\bar{\\mathbf{a}}_{1} + \\mathbf{P}_{1} \\boldsymbol{\\zeta}_{1}\\right)^\\top \\mathbf{x} \\ge b_{1} && \\text{[Box Support-Preserving General-P Constraint]} \\\\\n& \\min_{\\boldsymbol{\\zeta}_{2} \\in \\mathcal{U}_{2}} \\left(\\bar{\\mathbf{a}}_{2} + \\mathbf{P}_{2} \\boldsymbol{\\zeta}_{2}\\right)^\\top \\mathbf{x} \\ge b_{2} && \\text{[Polyhedral Support-Preserving General-P Constraint]} \\\\\n& \\max_{\\boldsymbol{\\zeta}_{3} \\in \\mathcal{U}_{3}} \\left(\\bar{\\mathbf{a}}_{3} + \\mathbf{P}_{3} \\boldsymbol{\\zeta}_{3}\\right)^\\top \\mathbf{x} \\le b_{3} && \\text{[Budgeted Support-Preserving General-P Constraint]} \\\\\n& \\bar{\\mathbf{a}}_{4}^\\top \\mathbf{x} = b_{4} && \\text{[Deterministic Constraint]} \\\\\n& -9.4 \\le x_j \\le 0, \\quad j=1,\\ldots,4 \\\\\n& \\text{where} \\\\\n& \\mathcal{U}_{c} = \\{ \\boldsymbol{\\zeta}^{c} \\in \\mathbb{R}^{3} : \\mathbf{H}_{c} \\boldsymbol{\\zeta}^{c} \\le \\mathbf{h}_{c}, -0.9 \\le \\boldsymbol{\\zeta}^{c}_k \\le 0.9,\\ k=1,\\ldots,3 \\} \\\\\n& \\mathcal{U}_{1} = \\{ \\boldsymbol{\\zeta}_{1} \\in \\mathbb{R}^{2} : \\|\\boldsymbol{\\zeta}_{1}\\|_\\infty \\le 1 \\} \\\\\n& \\mathcal{U}_{2} = \\{ \\boldsymbol{\\zeta}_{2} \\in \\mathbb{R}^{2} : \\mathbf{H}_{2} \\boldsymbol{\\zeta}_{2} \\le \\mathbf{h}_{2}, -0.9 \\le \\boldsymbol{\\zeta}_{2}_k \\le 0.9,\\ k=1,\\ldots,2 \\} \\\\\n& \\mathcal{U}_{3} = \\{ \\boldsymbol{\\zeta}_{3} \\in \\mathbb{R}^{2} : \\|\\boldsymbol{\\zeta}_{3}\\|_\\infty \\le 1, \\|\\boldsymbol{\\zeta}_{3}\\|_1 \\le \\Gamma_{3} \\} \\\\\n& \\mathbf{H}_{c} = \\begin{bmatrix} 0 & 0.3 & -0.1 \\\\ 0 & -0.7 & -0.4 \\end{bmatrix} \\\\\n& \\mathbf{h}_{c} = \\begin{bmatrix} 0.04 \\\\ 0.44 \\end{bmatrix} \\\\\n& \\bar{\\mathbf{c}} = \\begin{bmatrix} 4.2 \\\\ -2.7 \\\\ -1.5 \\\\ -0.7 \\end{bmatrix} \\\\\n& \\mathbf{P}^{c} = \\begin{bmatrix} 0.797 & 0.091 & 0.112 \\\\ 0.137 & 0.774 & 0.089 \\\\ 0.056 & 0.116 & 0.828 \\\\ 0 & 0 & 0 \\end{bmatrix} \\\\\n& \\bar{\\mathbf{a}}_{1} = \\begin{bmatrix} -4.6 \\\\ 0 \\\\ -7 \\\\ 0 \\end{bmatrix} \\\\\n& \\mathbf{P}_{1} = \\begin{bmatrix} 0.369 & 0.031 \\\\ 0 & 0 \\\\ 0.235 & 0.865 \\\\ 0 & 0 \\end{bmatrix} \\\\\n& b_{1} = -23.61 \\\\\n& \\mathbf{H}_{2} = \\begin{bmatrix} -0.2 & -0.8 \\end{bmatrix} \\\\\n& \\mathbf{h}_{2} = \\begin{bmatrix} 0.32 \\end{bmatrix} \\\\\n& \\bar{\\mathbf{a}}_{2} = \\begin{bmatrix} -0.4 \\\\ -3.9 \\\\ 0 \\\\ 0 \\end{bmatrix} \\\\\n& \\mathbf{P}_{2} = \\begin{bmatrix} 0.873 & 0.127 \\\\ 0.2 & 0.8 \\\\ 0 & 0 \\\\ 0 & 0 \\end{bmatrix} \\\\\n& b_{2} = -13.7 \\\\\n& \\Gamma_{3} = 1.3 \\\\\n& \\bar{\\mathbf{a}}_{3} = \\begin{bmatrix} 2.8 \\\\ 2.8 \\\\ 0 \\\\ 0 \\end{bmatrix} \\\\\n& \\mathbf{P}_{3} = \\begin{bmatrix} 0.275 & 0.025 \\\\ 0.03 & 0.37 \\\\ 0 & 0 \\\\ 0 & 0 \\end{bmatrix} \\\\\n& b_{3} = 17.69 \\\\\n& \\bar{\\mathbf{a}}_{4} = \\begin{bmatrix} 0 \\\\ -8.2 \\\\ -0.8 \\\\ 0 \\end{bmatrix} \\\\\n& b_{4} = 47.56 \\\\\n\\end{align*}",
+    "uncertainty_type": [
+      3,
+      1,
+      3,
+      2,
+      0
+    ],
+    "general_p_unit_ids": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "general_p_unit_labels": [
+      "objective",
+      "constraint_1",
+      "constraint_2",
+      "constraint_3"
+    ],
+    "row_indexing": "0=objective, 1..n=constraint rows",
+    "support_mode": "original_random_uncertainty_index",
+    "solution": [
+      -9.4,
+      -5.800000000000001,
+      0.0,
+      0.0
+    ],
+    "optimal_value": -12.297374999999999
+  },
+  {
+    "id": "4_6_GP",
+    "n_vars": 4,
+    "n_constraints": 4,
+    "template_param": [
+      1,
+      1,
+      1
+    ],
+    "setting": "general_support_preserving_all_uncertain_P",
+    "description": "\\begin{align*}\n\\min_{\\mathbf{x}} \\quad & \\max_{\\boldsymbol{\\zeta}^{c} \\in \\mathcal{U}_{c}} \\left(\\bar{\\mathbf{c}} + \\mathbf{P}^{c} \\boldsymbol{\\zeta}^{c}\\right)^\\top \\mathbf{x} && \\text{[Box Support-Preserving General-P Objective]} \\\\\n& \\text{subject to} \\\\\n& \\min_{\\boldsymbol{\\zeta}_{1} \\in \\mathcal{U}_{1}} \\left(\\bar{\\mathbf{a}}_{1} + \\mathbf{P}_{1} \\boldsymbol{\\zeta}_{1}\\right)^\\top \\mathbf{x} \\ge b_{1} && \\text{[Box Support-Preserving General-P Constraint]} \\\\\n& \\bar{\\mathbf{a}}_{2}^\\top \\mathbf{x} = b_{2} && \\text{[Deterministic Constraint]} \\\\\n& \\min_{\\boldsymbol{\\zeta}_{3} \\in \\mathcal{U}_{3}} \\left(\\bar{\\mathbf{a}}_{3} + \\mathbf{P}_{3} \\boldsymbol{\\zeta}_{3}\\right)^\\top \\mathbf{x} \\ge b_{3} && \\text{[Box Support-Preserving General-P Constraint]} \\\\\n& \\min_{\\boldsymbol{\\zeta}_{4} \\in \\mathcal{U}_{4}} \\left(\\bar{\\mathbf{a}}_{4} + \\mathbf{P}_{4} \\boldsymbol{\\zeta}_{4}\\right)^\\top \\mathbf{x} \\ge b_{4} && \\text{[Budgeted Support-Preserving General-P Constraint]} \\\\\n& -5.3 \\le x_j \\le 5.3, \\quad j=1,\\ldots,4 \\\\\n& \\text{where} \\\\\n& \\mathcal{U}_{c} = \\{ \\boldsymbol{\\zeta}^{c} \\in \\mathbb{R}^{2} : \\|\\boldsymbol{\\zeta}^{c}\\|_\\infty \\le 1 \\} \\\\\n& \\mathcal{U}_{1} = \\{ \\boldsymbol{\\zeta}_{1} \\in \\mathbb{R}^{2} : \\|\\boldsymbol{\\zeta}_{1}\\|_\\infty \\le 1 \\} \\\\\n& \\mathcal{U}_{3} = \\{ \\boldsymbol{\\zeta}_{3} \\in \\mathbb{R}^{2} : \\|\\boldsymbol{\\zeta}_{3}\\|_\\infty \\le 1 \\} \\\\\n& \\mathcal{U}_{4} = \\{ \\boldsymbol{\\zeta}_{4} \\in \\mathbb{R}^{2} : \\|\\boldsymbol{\\zeta}_{4}\\|_\\infty \\le 1, \\|\\boldsymbol{\\zeta}_{4}\\|_1 \\le \\Gamma_{4} \\} \\\\\n& \\bar{\\mathbf{c}} = \\begin{bmatrix} 1.4 \\\\ -5.7 \\\\ -9.7 \\\\ 7.3 \\end{bmatrix} \\\\\n& \\mathbf{P}^{c} = \\begin{bmatrix} 0 & 0 \\\\ 0 & 0 \\\\ 0.586 & 0.114 \\\\ 0.145 & 1.255 \\end{bmatrix} \\\\\n& \\bar{\\mathbf{a}}_{1} = \\begin{bmatrix} 1 \\\\ -4.2 \\\\ 0 \\\\ 0 \\end{bmatrix} \\\\\n& \\mathbf{P}_{1} = \\begin{bmatrix} 0.076 & 0.024 \\\\ 0.041 & 0.259 \\\\ 0 & 0 \\\\ 0 & 0 \\end{bmatrix} \\\\\n& b_{1} = -10.34 \\\\\n& \\bar{\\mathbf{a}}_{2} = \\begin{bmatrix} 0 \\\\ 0 \\\\ 2.3 \\\\ -3.7 \\end{bmatrix} \\\\\n& b_{2} = 11.14 \\\\\n& \\bar{\\mathbf{a}}_{3} = \\begin{bmatrix} 4.4 \\\\ 0 \\\\ 0 \\\\ 1.5 \\end{bmatrix} \\\\\n& \\mathbf{P}_{3} = \\begin{bmatrix} 0.53 & 0.07 \\\\ 0 & 0 \\\\ 0 & 0 \\\\ 0.035 & 0.165 \\end{bmatrix} \\\\\n& b_{3} = -26.99 \\\\\n& \\Gamma_{4} = 0.7 \\\\\n& \\bar{\\mathbf{a}}_{4} = \\begin{bmatrix} -1.5 \\\\ 0 \\\\ 1.8 \\\\ 4.3 \\end{bmatrix} \\\\\n& \\mathbf{P}_{4} = \\begin{bmatrix} 0.241 & 0.059 \\\\ 0 & 0 \\\\ 0 & 0 \\\\ 0.128 & 0.472 \\end{bmatrix} \\\\\n& b_{4} = -32.82 \\\\\n\\end{align*}",
+    "uncertainty_type": [
+      1,
+      1,
+      0,
+      1,
+      2
+    ],
+    "general_p_unit_ids": [
+      0,
+      1,
+      3,
+      4
+    ],
+    "general_p_unit_labels": [
+      "objective",
+      "constraint_1",
+      "constraint_3",
+      "constraint_4"
+    ],
+    "row_indexing": "0=objective, 1..n=constraint rows",
+    "support_mode": "original_random_uncertainty_index",
+    "solution": [
+      -5.3,
+      1.0784065187867813,
+      5.3,
+      0.2837837837837835
+    ],
+    "optimal_value": -58.797998238165746
+  },
+  {
+    "id": "4_7_GP",
+    "n_vars": 4,
+    "n_constraints": 4,
+    "template_param": [
+      1,
+      1,
+      1
+    ],
+    "setting": "general_support_preserving_all_uncertain_P",
+    "description": "\\begin{align*}\n\\max_{\\mathbf{x}} \\quad & \\min_{\\boldsymbol{\\zeta}^{c} \\in \\mathcal{U}_{c}} \\left(\\bar{\\mathbf{c}} + \\mathbf{P}^{c} \\boldsymbol{\\zeta}^{c}\\right)^\\top \\mathbf{x} && \\text{[Budgeted Support-Preserving General-P Objective]} \\\\\n& \\text{subject to} \\\\\n& \\max_{\\boldsymbol{\\zeta}_{1} \\in \\mathcal{U}_{1}} \\left(\\bar{\\mathbf{a}}_{1} + \\mathbf{P}_{1} \\boldsymbol{\\zeta}_{1}\\right)^\\top \\mathbf{x} \\le b_{1} && \\text{[Box Support-Preserving General-P Constraint]} \\\\\n& \\max_{\\boldsymbol{\\zeta}_{2} \\in \\mathcal{U}_{2}} \\left(\\bar{\\mathbf{a}}_{2} + \\mathbf{P}_{2} \\boldsymbol{\\zeta}_{2}\\right)^\\top \\mathbf{x} \\le b_{2} && \\text{[Budgeted Support-Preserving General-P Constraint]} \\\\\n& \\bar{\\mathbf{a}}_{3}^\\top \\mathbf{x} = b_{3} && \\text{[Deterministic Constraint]} \\\\\n& \\min_{\\boldsymbol{\\zeta}_{4} \\in \\mathcal{U}_{4}} \\left(\\bar{\\mathbf{a}}_{4} + \\mathbf{P}_{4} \\boldsymbol{\\zeta}_{4}\\right)^\\top \\mathbf{x} \\ge b_{4} && \\text{[Box Support-Preserving General-P Constraint]} \\\\\n& 0 \\le x_j \\le 1.9, \\quad j=1,\\ldots,4 \\\\\n& \\text{where} \\\\\n& \\mathcal{U}_{c} = \\{ \\boldsymbol{\\zeta}^{c} \\in \\mathbb{R}^{3} : \\|\\boldsymbol{\\zeta}^{c}\\|_\\infty \\le 1, \\|\\boldsymbol{\\zeta}^{c}\\|_1 \\le \\Gamma_{c} \\} \\\\\n& \\mathcal{U}_{1} = \\{ \\boldsymbol{\\zeta}_{1} \\in \\mathbb{R}^{4} : \\|\\boldsymbol{\\zeta}_{1}\\|_\\infty \\le 1 \\} \\\\\n& \\mathcal{U}_{2} = \\{ \\boldsymbol{\\zeta}_{2} \\in \\mathbb{R}^{3} : \\|\\boldsymbol{\\zeta}_{2}\\|_\\infty \\le 1, \\|\\boldsymbol{\\zeta}_{2}\\|_1 \\le \\Gamma_{2} \\} \\\\\n& \\mathcal{U}_{4} = \\{ \\boldsymbol{\\zeta}_{4} \\in \\mathbb{R}^{4} : \\|\\boldsymbol{\\zeta}_{4}\\|_\\infty \\le 1 \\} \\\\\n& \\Gamma_{c} = 1.6 \\\\\n& \\bar{\\mathbf{c}} = \\begin{bmatrix} -1.8 \\\\ -9 \\\\ -9.5 \\\\ -8.5 \\end{bmatrix} \\\\\n& \\mathbf{P}^{c} = \\begin{bmatrix} 0 & 0 & 0 \\\\ 0.473 & 0.056 & 0.071 \\\\ 0.14 & 0.814 & 0.146 \\\\ 0.17 & 0.05 & 0.881 \\end{bmatrix} \\\\\n& \\bar{\\mathbf{a}}_{1} = \\begin{bmatrix} 1.9 \\\\ 1.1 \\\\ -0.5 \\\\ 0.2 \\end{bmatrix} \\\\\n& \\mathbf{P}_{1} = \\begin{bmatrix} 0.202 & 0.04 & 0.031 & 0.026 \\\\ 0.011 & 0.069 & 0.011 & 0.009 \\\\ 0.012 & 0.007 & 0.074 & 0.007 \\\\ 0.007 & 0.017 & 0.01 & 0.066 \\end{bmatrix} \\\\\n& b_{1} = 6.16 \\\\\n& \\Gamma_{2} = 0.6 \\\\\n& \\bar{\\mathbf{a}}_{2} = \\begin{bmatrix} 0.1 \\\\ 0 \\\\ -0.6 \\\\ 1.3 \\end{bmatrix} \\\\\n& \\mathbf{P}_{2} = \\begin{bmatrix} 0.085 & 0.008 & 0.006 \\\\ 0 & 0 & 0 \\\\ 0.005 & 0.088 & 0.007 \\\\ 0.03 & 0.026 & 0.244 \\end{bmatrix} \\\\\n& b_{2} = 2.08 \\\\\n& \\bar{\\mathbf{a}}_{3} = \\begin{bmatrix} -0.8 \\\\ 0.2 \\\\ -1.9 \\\\ -0.8 \\end{bmatrix} \\\\\n& b_{3} = -2.94 \\\\\n& \\bar{\\mathbf{a}}_{4} = \\begin{bmatrix} 0.3 \\\\ -0.1 \\\\ -1.8 \\\\ 1.6 \\end{bmatrix} \\\\\n& \\mathbf{P}_{4} = \\begin{bmatrix} 0.073 & 0.009 & 0.011 & 0.006 \\\\ 0.007 & 0.076 & 0.011 & 0.007 \\\\ 0.005 & 0.011 & 0.079 & 0.005 \\\\ 0.02 & 0.015 & 0.009 & 0.156 \\end{bmatrix} \\\\\n& b_{4} = -4.6 \\\\\n\\end{align*}",
+    "uncertainty_type": [
+      2,
+      1,
+      2,
+      0,
+      1
+    ],
+    "general_p_unit_ids": [
+      0,
+      1,
+      2,
+      4
+    ],
+    "general_p_unit_labels": [
+      "objective",
+      "constraint_1",
+      "constraint_2",
+      "constraint_4"
+    ],
+    "row_indexing": "0=objective, 1..n=constraint rows",
+    "support_mode": "original_random_uncertainty_index",
+    "solution": [
+      1.9,
+      0.0,
+      0.7473684210526316,
+      0.0
+    ],
+    "optimal_value": -11.19382736842105
+  },
+  {
+    "id": "4_8_GP",
+    "n_vars": 4,
+    "n_constraints": 4,
+    "template_param": [
+      1,
+      1,
+      1
+    ],
+    "setting": "general_support_preserving_all_uncertain_P",
+    "description": "\\begin{align*}\n\\max_{\\mathbf{x}} \\quad & \\min_{\\boldsymbol{\\zeta}^{c} \\in \\mathcal{U}_{c}} \\left(\\bar{\\mathbf{c}} + \\mathbf{P}^{c} \\boldsymbol{\\zeta}^{c}\\right)^\\top \\mathbf{x} && \\text{[Polyhedral Support-Preserving General-P Objective]} \\\\\n& \\text{subject to} \\\\\n& \\max_{\\boldsymbol{\\zeta}_{1} \\in \\mathcal{U}_{1}} \\left(\\bar{\\mathbf{a}}_{1} + \\mathbf{P}_{1} \\boldsymbol{\\zeta}_{1}\\right)^\\top \\mathbf{x} \\le b_{1} && \\text{[Budgeted Support-Preserving General-P Constraint]} \\\\\n& \\bar{\\mathbf{a}}_{2}^\\top \\mathbf{x} = b_{2} && \\text{[Deterministic Constraint]} \\\\\n& \\min_{\\boldsymbol{\\zeta}_{3} \\in \\mathcal{U}_{3}} \\left(\\bar{\\mathbf{a}}_{3} + \\mathbf{P}_{3} \\boldsymbol{\\zeta}_{3}\\right)^\\top \\mathbf{x} \\ge b_{3} && \\text{[Box Support-Preserving General-P Constraint]} \\\\\n& \\min_{\\boldsymbol{\\zeta}_{4} \\in \\mathcal{U}_{4}} \\left(\\bar{\\mathbf{a}}_{4} + \\mathbf{P}_{4} \\boldsymbol{\\zeta}_{4}\\right)^\\top \\mathbf{x} \\ge b_{4} && \\text{[Budgeted Support-Preserving General-P Constraint]} \\\\\n& -4.6 \\le x_j \\le 4.6, \\quad j=1,\\ldots,4 \\\\\n& \\text{where} \\\\\n& \\mathcal{U}_{c} = \\{ \\boldsymbol{\\zeta}^{c} \\in \\mathbb{R}^{3} : \\mathbf{H}_{c} \\boldsymbol{\\zeta}^{c} \\le \\mathbf{h}_{c}, 0 \\le \\boldsymbol{\\zeta}^{c}_k \\le 0.5,\\ k=1,\\ldots,3 \\} \\\\\n& \\mathcal{U}_{1} = \\{ \\boldsymbol{\\zeta}_{1} \\in \\mathbb{R}^{2} : \\|\\boldsymbol{\\zeta}_{1}\\|_\\infty \\le 1, \\|\\boldsymbol{\\zeta}_{1}\\|_1 \\le \\Gamma_{1} \\} \\\\\n& \\mathcal{U}_{3} = \\{ \\boldsymbol{\\zeta}_{3} \\in \\mathbb{R}^{2} : \\|\\boldsymbol{\\zeta}_{3}\\|_\\infty \\le 1 \\} \\\\\n& \\mathcal{U}_{4} = \\{ \\boldsymbol{\\zeta}_{4} \\in \\mathbb{R}^{3} : \\|\\boldsymbol{\\zeta}_{4}\\|_\\infty \\le 1, \\|\\boldsymbol{\\zeta}_{4}\\|_1 \\le \\Gamma_{4} \\} \\\\\n& \\mathbf{H}_{c} = \\begin{bmatrix} 0.2 & 0 & 0.1 \\\\ 0.2 & -0.2 & -0.1 \\end{bmatrix} \\\\\n& \\mathbf{h}_{c} = \\begin{bmatrix} 0.12 \\\\ 0 \\end{bmatrix} \\\\\n& \\bar{\\mathbf{c}} = \\begin{bmatrix} -8.7 \\\\ -3.3 \\\\ -2.1 \\\\ 3.1 \\end{bmatrix} \\\\\n& \\mathbf{P}^{c} = \\begin{bmatrix} 0 & 0 & 0 \\\\ 0.799 & 0.12 & 0.081 \\\\ 0.104 & 0.812 & 0.083 \\\\ 0.07 & 0.186 & 0.745 \\end{bmatrix} \\\\\n& \\Gamma_{1} = 1.4 \\\\\n& \\bar{\\mathbf{a}}_{1} = \\begin{bmatrix} 1.9 \\\\ 1.7 \\\\ 0 \\\\ 0 \\end{bmatrix} \\\\\n& \\mathbf{P}_{1} = \\begin{bmatrix} 0.142 & 0.058 \\\\ 0.049 & 0.251 \\\\ 0 & 0 \\\\ 0 & 0 \\end{bmatrix} \\\\\n& b_{1} = 9.47 \\\\\n& \\bar{\\mathbf{a}}_{2} = \\begin{bmatrix} 0 \\\\ -1.2 \\\\ -2.5 \\\\ -4 \\end{bmatrix} \\\\\n& b_{2} = -0.57 \\\\\n& \\bar{\\mathbf{a}}_{3} = \\begin{bmatrix} 0 \\\\ 0 \\\\ -4.2 \\\\ -2.8 \\end{bmatrix} \\\\\n& \\mathbf{P}_{3} = \\begin{bmatrix} 0 & 0 \\\\ 0 & 0 \\\\ 0.637 & 0.063 \\\\ 0.065 & 0.235 \\end{bmatrix} \\\\\n& b_{3} = -7.72 \\\\\n& \\Gamma_{4} = 1.2 \\\\\n& \\bar{\\mathbf{a}}_{4} = \\begin{bmatrix} -3.8 \\\\ 0 \\\\ 1.4 \\\\ -1.9 \\end{bmatrix} \\\\\n& \\mathbf{P}_{4} = \\begin{bmatrix} 0.354 & 0.017 & 0.029 \\\\ 0 & 0 & 0 \\\\ 0.006 & 0.089 & 0.005 \\\\ 0.025 & 0.009 & 0.165 \\end{bmatrix} \\\\\n& b_{4} = -25.25 \\\\\n\\end{align*}",
+    "uncertainty_type": [
+      3,
+      2,
+      0,
+      1,
+      2
+    ],
+    "general_p_unit_ids": [
+      0,
+      1,
+      3,
+      4
+    ],
+    "general_p_unit_labels": [
+      "objective",
+      "constraint_1",
+      "constraint_3",
+      "constraint_4"
+    ],
+    "row_indexing": "0=objective, 1..n=constraint rows",
+    "support_mode": "original_random_uncertainty_index",
+    "solution": [
+      -4.6,
+      -4.6,
+      -4.6,
+      4.3975
+    ],
+    "optimal_value": 74.83463
+  },
+  {
+    "id": "5_1_GP",
+    "n_vars": 5,
+    "n_constraints": 5,
+    "template_param": [
+      1,
+      1,
+      1
+    ],
+    "setting": "general_support_preserving_all_uncertain_P",
+    "description": "\\begin{align*}\n\\min_{\\mathbf{x}} \\quad & \\max_{\\boldsymbol{\\zeta}^{c} \\in \\mathcal{U}_{c}} \\left(\\bar{\\mathbf{c}} + \\mathbf{P}^{c} \\boldsymbol{\\zeta}^{c}\\right)^\\top \\mathbf{x} && \\text{[Polyhedral Support-Preserving General-P Objective]} \\\\\n& \\text{subject to} \\\\\n& \\max_{\\boldsymbol{\\zeta}_{1} \\in \\mathcal{U}_{1}} \\left(\\bar{\\mathbf{a}}_{1} + \\mathbf{P}_{1} \\boldsymbol{\\zeta}_{1}\\right)^\\top \\mathbf{x} \\le b_{1} && \\text{[Box Support-Preserving General-P Constraint]} \\\\\n& \\min_{\\boldsymbol{\\zeta}_{2} \\in \\mathcal{U}_{2}} \\left(\\bar{\\mathbf{a}}_{2} + \\mathbf{P}_{2} \\boldsymbol{\\zeta}_{2}\\right)^\\top \\mathbf{x} \\ge b_{2} && \\text{[Budgeted Support-Preserving General-P Constraint]} \\\\\n& \\max_{\\boldsymbol{\\zeta}_{3} \\in \\mathcal{U}_{3}} \\left(\\bar{\\mathbf{a}}_{3} + \\mathbf{P}_{3} \\boldsymbol{\\zeta}_{3}\\right)^\\top \\mathbf{x} \\le b_{3} && \\text{[Polyhedral Support-Preserving General-P Constraint]} \\\\\n& \\bar{\\mathbf{a}}_{4}^\\top \\mathbf{x} = b_{4} && \\text{[Deterministic Constraint]} \\\\\n& \\min_{\\boldsymbol{\\zeta}_{5} \\in \\mathcal{U}_{5}} \\left(\\bar{\\mathbf{a}}_{5} + \\mathbf{P}_{5} \\boldsymbol{\\zeta}_{5}\\right)^\\top \\mathbf{x} \\ge b_{5} && \\text{[Budgeted Support-Preserving General-P Constraint]} \\\\\n& 0 \\le x_j \\le 1.3, \\quad j=1,\\ldots,5 \\\\\n& \\text{where} \\\\\n& \\mathcal{U}_{c} = \\{ \\boldsymbol{\\zeta}^{c} \\in \\mathbb{R}^{5} : \\mathbf{H}_{c} \\boldsymbol{\\zeta}^{c} \\le \\mathbf{h}_{c}, -0.1 \\le \\boldsymbol{\\zeta}^{c}_k \\le 0,\\ k=1,\\ldots,5 \\} \\\\\n& \\mathcal{U}_{1} = \\{ \\boldsymbol{\\zeta}_{1} \\in \\mathbb{R}^{3} : \\|\\boldsymbol{\\zeta}_{1}\\|_\\infty \\le 1 \\} \\\\\n& \\mathcal{U}_{2} = \\{ \\boldsymbol{\\zeta}_{2} \\in \\mathbb{R}^{2} : \\|\\boldsymbol{\\zeta}_{2}\\|_\\infty \\le 1, \\|\\boldsymbol{\\zeta}_{2}\\|_1 \\le \\Gamma_{2} \\} \\\\\n& \\mathcal{U}_{3} = \\{ \\boldsymbol{\\zeta}_{3} \\in \\mathbb{R}^{3} : \\mathbf{H}_{3} \\boldsymbol{\\zeta}_{3} \\le \\mathbf{h}_{3}, \\mathbf{E}_{3} \\boldsymbol{\\zeta}_{3} = \\mathbf{e}_{3}, -0.1 \\le \\boldsymbol{\\zeta}_{3}_k \\le 0,\\ k=1,\\ldots,3 \\} \\\\\n& \\mathcal{U}_{5} = \\{ \\boldsymbol{\\zeta}_{5} \\in \\mathbb{R}^{2} : \\|\\boldsymbol{\\zeta}_{5}\\|_\\infty \\le 1, \\|\\boldsymbol{\\zeta}_{5}\\|_1 \\le \\Gamma_{5} \\} \\\\\n& \\mathbf{H}_{c} = \\begin{bmatrix} -0.1 & 0 & 0 & 0 & -0.1 \\\\ 0.1 & 0 & 0.1 & 0 & -0.1 \\\\ 0 & -0.1 & -0.1 & -0.1 & -0.1 \\\\ -0.1 & 0 & 0 & 0.1 & 0 \\end{bmatrix} \\\\\n& \\mathbf{h}_{c} = \\begin{bmatrix} 0.02 \\\\ 0.01 \\\\ 0.04 \\\\ 0.01 \\end{bmatrix} \\\\\n& \\bar{\\mathbf{c}} = \\begin{bmatrix} -6.5 \\\\ -8.3 \\\\ -8.6 \\\\ -1.4 \\\\ 4.3 \\end{bmatrix} \\\\\n& \\mathbf{P}^{c} = \\begin{bmatrix} 0.762 & 0.047 & 0.071 & 0.059 & 0.062 \\\\ 0.018 & 0.726 & 0.079 & 0.089 & 0.087 \\\\ 0.063 & 0.043 & 0.756 & 0.049 & 0.089 \\\\ 0.109 & 0.04 & 0.064 & 0.748 & 0.039 \\\\ 0.089 & 0.09 & 0.054 & 0.045 & 0.722 \\end{bmatrix} \\\\\n& \\bar{\\mathbf{a}}_{1} = \\begin{bmatrix} 0.1 \\\\ 0 \\\\ 0 \\\\ -0.2 \\\\ 0.1 \\end{bmatrix} \\\\\n& \\mathbf{P}_{1} = \\begin{bmatrix} 0.076 & 0.013 & 0.012 \\\\ 0 & 0 & 0 \\\\ 0 & 0 & 0 \\\\ 0.016 & 0.077 & 0.008 \\\\ 0.007 & 0.022 & 0.071 \\end{bmatrix} \\\\\n& b_{1} = 0.22 \\\\\n& \\Gamma_{2} = 0.9 \\\\\n& \\bar{\\mathbf{a}}_{2} = \\begin{bmatrix} -1 \\\\ -0.2 \\\\ 0 \\\\ -0.4 \\\\ 0.9 \\end{bmatrix} \\\\\n& \\mathbf{P}_{2} = \\begin{bmatrix} 0.177 & 0.023 \\\\ 0 & 0 \\\\ 0 & 0 \\\\ 0 & 0 \\\\ 0.006 & 0.094 \\end{bmatrix} \\\\\n& b_{2} = -0.6 \\\\\n& \\mathbf{H}_{3} = \\begin{bmatrix} 0 & -0.1 & 0.1 \\end{bmatrix} \\\\\n& \\mathbf{h}_{3} = \\begin{bmatrix} 0.02 \\end{bmatrix} \\\\\n& \\mathbf{E}_{3} = \\begin{bmatrix} -0.1 & -0.1 & 0 \\end{bmatrix} \\\\\n& \\mathbf{e}_{3} = \\begin{bmatrix} 0.01 \\end{bmatrix} \\\\\n& \\bar{\\mathbf{a}}_{3} = \\begin{bmatrix} -0.8 \\\\ 0 \\\\ 0 \\\\ 0.9 \\\\ 1.1 \\end{bmatrix} \\\\\n& \\mathbf{P}_{3} = \\begin{bmatrix} 0.668 & 0.104 & 0.228 \\\\ 0 & 0 & 0 \\\\ 0 & 0 & 0 \\\\ 0.144 & 0.755 & 0.101 \\\\ 0.228 & 0.088 & 0.684 \\end{bmatrix} \\\\\n& b_{3} = 3.14 \\\\\n& \\bar{\\mathbf{a}}_{4} = \\begin{bmatrix} 0.9 \\\\ 0 \\\\ 0.8 \\\\ 0.3 \\\\ 0 \\end{bmatrix} \\\\\n& b_{4} = 1.31 \\\\\n& \\Gamma_{5} = 1.4 \\\\\n& \\bar{\\mathbf{a}}_{5} = \\begin{bmatrix} 1.1 \\\\ 0.7 \\\\ 0 \\\\ 0 \\\\ 0 \\end{bmatrix} \\\\\n& \\mathbf{P}_{5} = \\begin{bmatrix} 0.175 & 0.025 \\\\ 0.012 & 0.088 \\\\ 0 & 0 \\\\ 0 & 0 \\\\ 0 & 0 \\end{bmatrix} \\\\\n& b_{5} = -0.42 \\\\\n\\end{align*}",
+    "uncertainty_type": [
+      3,
+      1,
+      2,
+      3,
+      0,
+      2
+    ],
+    "general_p_unit_ids": [
+      0,
+      1,
+      2,
+      3,
+      5
+    ],
+    "general_p_unit_labels": [
+      "objective",
+      "constraint_1",
+      "constraint_2",
+      "constraint_3",
+      "constraint_5"
+    ],
+    "row_indexing": "0=objective, 1..n=constraint rows",
+    "support_mode": "original_random_uncertainty_index",
+    "solution": [
+      0.3,
+      1.3,
+      1.3,
+      0.0,
+      0.008707802369774285
+    ],
+    "optimal_value": -23.882556449809968
+  },
+  {
+    "id": "5_2_GP",
+    "n_vars": 5,
+    "n_constraints": 5,
+    "template_param": [
+      1,
+      1,
+      1
+    ],
+    "setting": "general_support_preserving_all_uncertain_P",
+    "description": "\\begin{align*}\n\\min_{\\mathbf{x}} \\quad & \\max_{\\boldsymbol{\\zeta}^{c} \\in \\mathcal{U}_{c}} \\left(\\bar{\\mathbf{c}} + \\mathbf{P}^{c} \\boldsymbol{\\zeta}^{c}\\right)^\\top \\mathbf{x} && \\text{[Budgeted Support-Preserving General-P Objective]} \\\\\n& \\text{subject to} \\\\\n& \\min_{\\boldsymbol{\\zeta}_{1} \\in \\mathcal{U}_{1}} \\left(\\bar{\\mathbf{a}}_{1} + \\mathbf{P}_{1} \\boldsymbol{\\zeta}_{1}\\right)^\\top \\mathbf{x} \\ge b_{1} && \\text{[Polyhedral Support-Preserving General-P Constraint]} \\\\\n& \\bar{\\mathbf{a}}_{2}^\\top \\mathbf{x} = b_{2} && \\text{[Deterministic Constraint]} \\\\\n& \\min_{\\boldsymbol{\\zeta}_{3} \\in \\mathcal{U}_{3}} \\left(\\bar{\\mathbf{a}}_{3} + \\mathbf{P}_{3} \\boldsymbol{\\zeta}_{3}\\right)^\\top \\mathbf{x} \\ge b_{3} && \\text{[Budgeted Support-Preserving General-P Constraint]} \\\\\n& \\min_{\\boldsymbol{\\zeta}_{4} \\in \\mathcal{U}_{4}} \\left(\\bar{\\mathbf{a}}_{4} + \\mathbf{P}_{4} \\boldsymbol{\\zeta}_{4}\\right)^\\top \\mathbf{x} \\ge b_{4} && \\text{[Box Support-Preserving General-P Constraint]} \\\\\n& \\min_{\\boldsymbol{\\zeta}_{5} \\in \\mathcal{U}_{5}} \\left(\\bar{\\mathbf{a}}_{5} + \\mathbf{P}_{5} \\boldsymbol{\\zeta}_{5}\\right)^\\top \\mathbf{x} \\ge b_{5} && \\text{[Budgeted Support-Preserving General-P Constraint]} \\\\\n& 0 \\le x_j \\le 5.6, \\quad j=1,\\ldots,5 \\\\\n& \\text{where} \\\\\n& \\mathcal{U}_{c} = \\{ \\boldsymbol{\\zeta}^{c} \\in \\mathbb{R}^{4} : \\|\\boldsymbol{\\zeta}^{c}\\|_\\infty \\le 1, \\|\\boldsymbol{\\zeta}^{c}\\|_1 \\le \\Gamma_{c} \\} \\\\\n& \\mathcal{U}_{1} = \\{ \\boldsymbol{\\zeta}_{1} \\in \\mathbb{R}^{2} : \\mathbf{H}_{1} \\boldsymbol{\\zeta}_{1} \\le \\mathbf{h}_{1}, -0.6 \\le \\boldsymbol{\\zeta}_{1}_k \\le 0.6,\\ k=1,\\ldots,2 \\} \\\\\n& \\mathcal{U}_{3} = \\{ \\boldsymbol{\\zeta}_{3} \\in \\mathbb{R}^{2} : \\|\\boldsymbol{\\zeta}_{3}\\|_\\infty \\le 1, \\|\\boldsymbol{\\zeta}_{3}\\|_1 \\le \\Gamma_{3} \\} \\\\\n& \\mathcal{U}_{4} = \\{ \\boldsymbol{\\zeta}_{4} \\in \\mathbb{R}^{3} : \\|\\boldsymbol{\\zeta}_{4}\\|_\\infty \\le 1 \\} \\\\\n& \\mathcal{U}_{5} = \\{ \\boldsymbol{\\zeta}_{5} \\in \\mathbb{R}^{2} : \\|\\boldsymbol{\\zeta}_{5}\\|_\\infty \\le 1, \\|\\boldsymbol{\\zeta}_{5}\\|_1 \\le \\Gamma_{5} \\} \\\\\n& \\Gamma_{c} = 3.3 \\\\\n& \\bar{\\mathbf{c}} = \\begin{bmatrix} 9.9 \\\\ 3 \\\\ 0.2 \\\\ 3.6 \\\\ -9.7 \\end{bmatrix} \\\\\n& \\mathbf{P}^{c} = \\begin{bmatrix} 1.183 & 0.101 & 0.181 & 0.135 \\\\ 0 & 0 & 0 & 0 \\\\ 0.007 & 0.083 & 0.004 & 0.006 \\\\ 0.036 & 0.039 & 0.401 & 0.025 \\\\ 0.026 & 0.093 & 0.105 & 0.676 \\end{bmatrix} \\\\\n& \\mathbf{H}_{1} = \\begin{bmatrix} 0.2 & 0.3 \\end{bmatrix} \\\\\n& \\mathbf{h}_{1} = \\begin{bmatrix} 0.27 \\end{bmatrix} \\\\\n& \\bar{\\mathbf{a}}_{1} = \\begin{bmatrix} -0.5 \\\\ 0 \\\\ -3 \\\\ 0 \\\\ 0 \\end{bmatrix} \\\\\n& \\mathbf{P}_{1} = \\begin{bmatrix} 0.847 & 0.153 \\\\ 0 & 0 \\\\ 0.2 & 0.8 \\\\ 0 & 0 \\\\ 0 & 0 \\end{bmatrix} \\\\\n& b_{1} = -17.81 \\\\\n& \\bar{\\mathbf{a}}_{2} = \\begin{bmatrix} -1.2 \\\\ -2.2 \\\\ 0 \\\\ 0 \\\\ 0 \\end{bmatrix} \\\\\n& b_{2} = -8.06 \\\\\n& \\Gamma_{3} = 1.4 \\\\\n& \\bar{\\mathbf{a}}_{3} = \\begin{bmatrix} 0 \\\\ 0 \\\\ 1.4 \\\\ -0.8 \\\\ 0 \\end{bmatrix} \\\\\n& \\mathbf{P}_{3} = \\begin{bmatrix} 0 & 0 \\\\ 0 & 0 \\\\ 0.172 & 0.028 \\\\ 0.019 & 0.081 \\\\ 0 & 0 \\end{bmatrix} \\\\\n& b_{3} = -3.96 \\\\\n& \\bar{\\mathbf{a}}_{4} = \\begin{bmatrix} -0.2 \\\\ 0 \\\\ -1.9 \\\\ -3.4 \\\\ 0 \\end{bmatrix} \\\\\n& \\mathbf{P}_{4} = \\begin{bmatrix} 0.073 & 0.005 & 0.022 \\\\ 0 & 0 & 0 \\\\ 0.034 & 0.153 & 0.013 \\\\ 0.037 & 0.022 & 0.142 \\\\ 0 & 0 & 0 \\end{bmatrix} \\\\\n& b_{4} = -26.57 \\\\\n& \\Gamma_{5} = 0.3 \\\\\n& \\bar{\\mathbf{a}}_{5} = \\begin{bmatrix} 4.9 \\\\ 0 \\\\ 1.1 \\\\ 0 \\\\ 0 \\end{bmatrix} \\\\\n& \\mathbf{P}_{5} = \\begin{bmatrix} 0.72 & 0.08 \\\\ 0 & 0 \\\\ 0.017 & 0.083 \\\\ 0 & 0 \\\\ 0 & 0 \\end{bmatrix} \\\\\n& b_{5} = 3.73 \\\\\n\\end{align*}",
+    "uncertainty_type": [
+      2,
+      3,
+      0,
+      2,
+      1,
+      2
+    ],
+    "general_p_unit_ids": [
+      0,
+      1,
+      3,
+      4,
+      5
+    ],
+    "general_p_unit_labels": [
+      "objective",
+      "constraint_1",
+      "constraint_3",
+      "constraint_4",
+      "constraint_5"
+    ],
+    "row_indexing": "0=objective, 1..n=constraint rows",
+    "support_mode": "original_random_uncertainty_index",
+    "solution": [
+      0.0,
+      3.6636363636363636,
+      3.4694447028183424,
+      0.0,
+      5.6
+    ],
+    "optimal_value": -37.367177777289214
+  },
+  {
+    "id": "5_3_GP",
+    "n_vars": 5,
+    "n_constraints": 5,
+    "template_param": [
+      1,
+      1,
+      1
+    ],
+    "setting": "general_support_preserving_all_uncertain_P",
+    "description": "\\begin{align*}\n\\min_{\\mathbf{x}} \\quad & \\max_{\\boldsymbol{\\zeta}^{c} \\in \\mathcal{U}_{c}} \\left(\\bar{\\mathbf{c}} + \\mathbf{P}^{c} \\boldsymbol{\\zeta}^{c}\\right)^\\top \\mathbf{x} && \\text{[Budgeted Support-Preserving General-P Objective]} \\\\\n& \\text{subject to} \\\\\n& \\max_{\\boldsymbol{\\zeta}_{1} \\in \\mathcal{U}_{1}} \\left(\\bar{\\mathbf{a}}_{1} + \\mathbf{P}_{1} \\boldsymbol{\\zeta}_{1}\\right)^\\top \\mathbf{x} \\le b_{1} && \\text{[Budgeted Support-Preserving General-P Constraint]} \\\\\n& \\bar{\\mathbf{a}}_{2}^\\top \\mathbf{x} = b_{2} && \\text{[Deterministic Constraint]} \\\\\n& \\min_{\\boldsymbol{\\zeta}_{3} \\in \\mathcal{U}_{3}} \\left(\\bar{\\mathbf{a}}_{3} + \\mathbf{P}_{3} \\boldsymbol{\\zeta}_{3}\\right)^\\top \\mathbf{x} \\ge b_{3} && \\text{[Polyhedral Support-Preserving General-P Constraint]} \\\\\n& \\min_{\\boldsymbol{\\zeta}_{4} \\in \\mathcal{U}_{4}} \\left(\\bar{\\mathbf{a}}_{4} + \\mathbf{P}_{4} \\boldsymbol{\\zeta}_{4}\\right)^\\top \\mathbf{x} \\ge b_{4} && \\text{[Budgeted Support-Preserving General-P Constraint]} \\\\\n& \\min_{\\boldsymbol{\\zeta}_{5} \\in \\mathcal{U}_{5}} \\left(\\bar{\\mathbf{a}}_{5} + \\mathbf{P}_{5} \\boldsymbol{\\zeta}_{5}\\right)^\\top \\mathbf{x} \\ge b_{5} && \\text{[Box Support-Preserving General-P Constraint]} \\\\\n& -1.3 \\le x_j \\le 1.3, \\quad j=1,\\ldots,5 \\\\\n& \\text{where} \\\\\n& \\mathcal{U}_{c} = \\{ \\boldsymbol{\\zeta}^{c} \\in \\mathbb{R}^{3} : \\|\\boldsymbol{\\zeta}^{c}\\|_\\infty \\le 1, \\|\\boldsymbol{\\zeta}^{c}\\|_1 \\le \\Gamma_{c} \\} \\\\\n& \\mathcal{U}_{1} = \\{ \\boldsymbol{\\zeta}_{1} \\in \\mathbb{R}^{2} : \\|\\boldsymbol{\\zeta}_{1}\\|_\\infty \\le 1, \\|\\boldsymbol{\\zeta}_{1}\\|_1 \\le \\Gamma_{1} \\} \\\\\n& \\mathcal{U}_{3} = \\{ \\boldsymbol{\\zeta}_{3} \\in \\mathbb{R}^{2} : \\mathbf{H}_{3} \\boldsymbol{\\zeta}_{3} \\le \\mathbf{h}_{3}, -0.1 \\le \\boldsymbol{\\zeta}_{3}_k \\le 0,\\ k=1,\\ldots,2 \\} \\\\\n& \\mathcal{U}_{4} = \\{ \\boldsymbol{\\zeta}_{4} \\in \\mathbb{R}^{2} : \\|\\boldsymbol{\\zeta}_{4}\\|_\\infty \\le 1, \\|\\boldsymbol{\\zeta}_{4}\\|_1 \\le \\Gamma_{4} \\} \\\\\n& \\mathcal{U}_{5} = \\{ \\boldsymbol{\\zeta}_{5} \\in \\mathbb{R}^{4} : \\|\\boldsymbol{\\zeta}_{5}\\|_\\infty \\le 1 \\} \\\\\n& \\Gamma_{c} = 2.4 \\\\\n& \\bar{\\mathbf{c}} = \\begin{bmatrix} -4.3 \\\\ 6.5 \\\\ 0.7 \\\\ 7.9 \\\\ 6.8 \\end{bmatrix} \\\\\n& \\mathbf{P}^{c} = \\begin{bmatrix} 0 & 0 & 0 \\\\ 0.385 & 0.058 & 0.056 \\\\ 0.01 & 0.086 & 0.004 \\\\ 0.1 & 0.029 & 0.57 \\\\ 0 & 0 & 0 \\end{bmatrix} \\\\\n& \\Gamma_{1} = 0.8 \\\\\n& \\bar{\\mathbf{a}}_{1} = \\begin{bmatrix} 0 \\\\ 0.4 \\\\ -0.1 \\\\ 0 \\\\ 0 \\end{bmatrix} \\\\\n& \\mathbf{P}_{1} = \\begin{bmatrix} 0 & 0 \\\\ 0.082 & 0.018 \\\\ 0.014 & 0.086 \\\\ 0 & 0 \\\\ 0 & 0 \\end{bmatrix} \\\\\n& b_{1} = 0.52 \\\\\n& \\bar{\\mathbf{a}}_{2} = \\begin{bmatrix} 0 \\\\ 0 \\\\ -0.4 \\\\ -0.2 \\\\ 0.8 \\end{bmatrix} \\\\\n& b_{2} = -0.18 \\\\\n& \\mathbf{H}_{3} = \\begin{bmatrix} -0.1 & -0.1 \\end{bmatrix} \\\\\n& \\mathbf{h}_{3} = \\begin{bmatrix} 0 \\end{bmatrix} \\\\\n& \\bar{\\mathbf{a}}_{3} = \\begin{bmatrix} 0 \\\\ 0 \\\\ -0.3 \\\\ -0.8 \\\\ 1.1 \\end{bmatrix} \\\\\n& \\mathbf{P}_{3} = \\begin{bmatrix} 0 & 0 \\\\ 0 & 0 \\\\ 0 & 0 \\\\ 0.849 & 0.151 \\\\ 0.206 & 0.794 \\end{bmatrix} \\\\\n& b_{3} = -1.75 \\\\\n& \\Gamma_{4} = 0.1 \\\\\n& \\bar{\\mathbf{a}}_{4} = \\begin{bmatrix} -0.4 \\\\ 0.2 \\\\ 0 \\\\ -1.1 \\\\ 0 \\end{bmatrix} \\\\\n& \\mathbf{P}_{4} = \\begin{bmatrix} 0 & 0 \\\\ 0.073 & 0.027 \\\\ 0 & 0 \\\\ 0.026 & 0.074 \\\\ 0 & 0 \\end{bmatrix} \\\\\n& b_{4} = -1.94 \\\\\n& \\bar{\\mathbf{a}}_{5} = \\begin{bmatrix} -0.1 \\\\ -0.6 \\\\ 0 \\\\ 1.3 \\\\ -0.7 \\end{bmatrix} \\\\\n& \\mathbf{P}_{5} = \\begin{bmatrix} 0.083 & 0.005 & 0.009 & 0.003 \\\\ 0.009 & 0.08 & 0.004 & 0.007 \\\\ 0 & 0 & 0 & 0 \\\\ 0.009 & 0.005 & 0.166 & 0.021 \\\\ 0.011 & 0.004 & 0.008 & 0.077 \\end{bmatrix} \\\\\n& b_{5} = -1.02 \\\\\n\\end{align*}",
+    "uncertainty_type": [
+      2,
+      2,
+      0,
+      3,
+      2,
+      1
+    ],
+    "general_p_unit_ids": [
+      0,
+      1,
+      3,
+      4,
+      5
+    ],
+    "general_p_unit_labels": [
+      "objective",
+      "constraint_1",
+      "constraint_3",
+      "constraint_4",
+      "constraint_5"
+    ],
+    "row_indexing": "0=objective, 1..n=constraint rows",
+    "support_mode": "original_random_uncertainty_index",
+    "solution": [
+      1.3,
+      -1.3,
+      -1.3,
+      -1.3,
+      -1.2
+    ],
+    "optimal_value": -31.827540000000003
+  },
+  {
+    "id": "5_4_GP",
+    "n_vars": 5,
+    "n_constraints": 5,
+    "template_param": [
+      1,
+      1,
+      1
+    ],
+    "setting": "general_support_preserving_all_uncertain_P",
+    "description": "\\begin{align*}\n\\max_{\\mathbf{x}} \\quad & \\min_{\\boldsymbol{\\zeta}^{c} \\in \\mathcal{U}_{c}} \\left(\\bar{\\mathbf{c}} + \\mathbf{P}^{c} \\boldsymbol{\\zeta}^{c}\\right)^\\top \\mathbf{x} && \\text{[Polyhedral Support-Preserving General-P Objective]} \\\\\n& \\text{subject to} \\\\\n& \\min_{\\boldsymbol{\\zeta}_{1} \\in \\mathcal{U}_{1}} \\left(\\bar{\\mathbf{a}}_{1} + \\mathbf{P}_{1} \\boldsymbol{\\zeta}_{1}\\right)^\\top \\mathbf{x} \\ge b_{1} && \\text{[Polyhedral Support-Preserving General-P Constraint]} \\\\\n& \\min_{\\boldsymbol{\\zeta}_{2} \\in \\mathcal{U}_{2}} \\left(\\bar{\\mathbf{a}}_{2} + \\mathbf{P}_{2} \\boldsymbol{\\zeta}_{2}\\right)^\\top \\mathbf{x} \\ge b_{2} && \\text{[Box Support-Preserving General-P Constraint]} \\\\\n& \\max_{\\boldsymbol{\\zeta}_{3} \\in \\mathcal{U}_{3}} \\left(\\bar{\\mathbf{a}}_{3} + \\mathbf{P}_{3} \\boldsymbol{\\zeta}_{3}\\right)^\\top \\mathbf{x} \\le b_{3} && \\text{[Polyhedral Support-Preserving General-P Constraint]} \\\\\n& \\bar{\\mathbf{a}}_{4}^\\top \\mathbf{x} = b_{4} && \\text{[Deterministic Constraint]} \\\\\n& \\max_{\\boldsymbol{\\zeta}_{5} \\in \\mathcal{U}_{5}} \\left(\\bar{\\mathbf{a}}_{5} + \\mathbf{P}_{5} \\boldsymbol{\\zeta}_{5}\\right)^\\top \\mathbf{x} \\le b_{5} && \\text{[Box Support-Preserving General-P Constraint]} \\\\\n& -7.1 \\le x_j \\le 7.1, \\quad j=1,\\ldots,5 \\\\\n& \\text{where} \\\\\n& \\mathcal{U}_{c} = \\{ \\boldsymbol{\\zeta}^{c} \\in \\mathbb{R}^{5} : \\mathbf{H}_{c} \\boldsymbol{\\zeta}^{c} \\le \\mathbf{h}_{c}, -0.7 \\le \\boldsymbol{\\zeta}^{c}_k \\le 0,\\ k=1,\\ldots,5 \\} \\\\\n& \\mathcal{U}_{1} = \\{ \\boldsymbol{\\zeta}_{1} \\in \\mathbb{R}^{2} : \\mathbf{H}_{1} \\boldsymbol{\\zeta}_{1} \\le \\mathbf{h}_{1}, -0.7 \\le \\boldsymbol{\\zeta}_{1}_k \\le 0,\\ k=1,\\ldots,2 \\} \\\\\n& \\mathcal{U}_{2} = \\{ \\boldsymbol{\\zeta}_{2} \\in \\mathbb{R}^{2} : \\|\\boldsymbol{\\zeta}_{2}\\|_\\infty \\le 1 \\} \\\\\n& \\mathcal{U}_{3} = \\{ \\boldsymbol{\\zeta}_{3} \\in \\mathbb{R}^{2} : \\mathbf{H}_{3} \\boldsymbol{\\zeta}_{3} \\le \\mathbf{h}_{3}, -0.7 \\le \\boldsymbol{\\zeta}_{3}_k \\le 0,\\ k=1,\\ldots,2 \\} \\\\\n& \\mathcal{U}_{5} = \\{ \\boldsymbol{\\zeta}_{5} \\in \\mathbb{R}^{3} : \\|\\boldsymbol{\\zeta}_{5}\\|_\\infty \\le 1 \\} \\\\\n& \\mathbf{H}_{c} = \\begin{bmatrix} 0.1 & 0 & -0.5 & -0.5 & 0 \\\\ 0.2 & -0.2 & 0 & 0 & 0 \\\\ 0 & 0 & -0.5 & 0 & -0.1 \\\\ 0.5 & 0.5 & 0 & 0 & 0.4 \\end{bmatrix} \\\\\n& \\mathbf{h}_{c} = \\begin{bmatrix} 0.37 \\\\ 0.25 \\\\ 0.29 \\\\ 0.45 \\end{bmatrix} \\\\\n& \\bar{\\mathbf{c}} = \\begin{bmatrix} -7.1 \\\\ -9.8 \\\\ -0.7 \\\\ 7.8 \\\\ 8.7 \\end{bmatrix} \\\\\n& \\mathbf{P}^{c} = \\begin{bmatrix} 0.676 & 0.046 & 0.141 & 0.047 & 0.091 \\\\ 0.114 & 0.681 & 0.088 & 0.042 & 0.076 \\\\ 0.125 & 0.108 & 0.655 & 0.056 & 0.056 \\\\ 0.101 & 0.119 & 0.05 & 0.63 & 0.1 \\\\ 0.08 & 0.153 & 0.058 & 0.088 & 0.621 \\end{bmatrix} \\\\\n& \\mathbf{H}_{1} = \\begin{bmatrix} -0.1 & -0.4 \\end{bmatrix} \\\\\n& \\mathbf{h}_{1} = \\begin{bmatrix} 0.3 \\end{bmatrix} \\\\\n& \\bar{\\mathbf{a}}_{1} = \\begin{bmatrix} 6.3 \\\\ 1.4 \\\\ -4.1 \\\\ 0 \\\\ 0 \\end{bmatrix} \\\\\n& \\mathbf{P}_{1} = \\begin{bmatrix} 0 & 0 \\\\ 0.844 & 0.156 \\\\ 0.168 & 0.832 \\\\ 0 & 0 \\\\ 0 & 0 \\end{bmatrix} \\\\\n& b_{1} = -13.54 \\\\\n& \\bar{\\mathbf{a}}_{2} = \\begin{bmatrix} 0 \\\\ 5.6 \\\\ -4.7 \\\\ 2.3 \\\\ 0 \\end{bmatrix} \\\\\n& \\mathbf{P}_{2} = \\begin{bmatrix} 0 & 0 \\\\ 0 & 0 \\\\ 0.676 & 0.124 \\\\ 0.053 & 0.247 \\\\ 0 & 0 \\end{bmatrix} \\\\\n& b_{2} = -81.04 \\\\\n& \\mathbf{H}_{3} = \\begin{bmatrix} 0.1 & 0.2 \\end{bmatrix} \\\\\n& \\mathbf{h}_{3} = \\begin{bmatrix} 0.01 \\end{bmatrix} \\\\\n& \\bar{\\mathbf{a}}_{3} = \\begin{bmatrix} 0 \\\\ 3.2 \\\\ -4.6 \\\\ 0 \\\\ 0 \\end{bmatrix} \\\\\n& \\mathbf{P}_{3} = \\begin{bmatrix} 0 & 0 \\\\ 0.83 & 0.17 \\\\ 0.176 & 0.824 \\\\ 0 & 0 \\\\ 0 & 0 \\end{bmatrix} \\\\\n& b_{3} = 31.86 \\\\\n& \\bar{\\mathbf{a}}_{4} = \\begin{bmatrix} -1.8 \\\\ 0 \\\\ 2.2 \\\\ 0 \\\\ -6 \\end{bmatrix} \\\\\n& b_{4} = 29.92 \\\\\n& \\bar{\\mathbf{a}}_{5} = \\begin{bmatrix} -2 \\\\ 0.3 \\\\ 6.3 \\\\ 2.8 \\\\ 0 \\end{bmatrix} \\\\\n& \\mathbf{P}_{5} = \\begin{bmatrix} 0.214 & 0.029 & 0.057 \\\\ 0 & 0 & 0 \\\\ 0.084 & 0.465 & 0.051 \\\\ 0.03 & 0.083 & 0.387 \\\\ 0 & 0 & 0 \\end{bmatrix} \\\\\n& b_{5} = 72.94 \\\\\n\\end{align*}",
+    "uncertainty_type": [
+      3,
+      3,
+      1,
+      3,
+      0,
+      1
+    ],
+    "general_p_unit_ids": [
+      0,
+      1,
+      2,
+      3,
+      5
+    ],
+    "general_p_unit_labels": [
+      "objective",
+      "constraint_1",
+      "constraint_2",
+      "constraint_3",
+      "constraint_5"
+    ],
+    "row_indexing": "0=objective, 1..n=constraint rows",
+    "support_mode": "original_random_uncertainty_index",
+    "solution": [
+      -5.192063492063491,
+      -7.1,
+      -7.1,
+      7.1,
+      -6.032380952380954
+    ],
+    "optimal_value": 112.21031006349205
+  },
+  {
+    "id": "5_5_GP",
+    "n_vars": 5,
+    "n_constraints": 5,
+    "template_param": [
+      1,
+      1,
+      1
+    ],
+    "setting": "general_support_preserving_all_uncertain_P",
+    "description": "\\begin{align*}\n\\min_{\\mathbf{x}} \\quad & \\max_{\\boldsymbol{\\zeta}^{c} \\in \\mathcal{U}_{c}} \\left(\\bar{\\mathbf{c}} + \\mathbf{P}^{c} \\boldsymbol{\\zeta}^{c}\\right)^\\top \\mathbf{x} && \\text{[Budgeted Support-Preserving General-P Objective]} \\\\\n& \\text{subject to} \\\\\n& \\min_{\\boldsymbol{\\zeta}_{1} \\in \\mathcal{U}_{1}} \\left(\\bar{\\mathbf{a}}_{1} + \\mathbf{P}_{1} \\boldsymbol{\\zeta}_{1}\\right)^\\top \\mathbf{x} \\ge b_{1} && \\text{[Box Support-Preserving General-P Constraint]} \\\\\n& \\min_{\\boldsymbol{\\zeta}_{2} \\in \\mathcal{U}_{2}} \\left(\\bar{\\mathbf{a}}_{2} + \\mathbf{P}_{2} \\boldsymbol{\\zeta}_{2}\\right)^\\top \\mathbf{x} \\ge b_{2} && \\text{[Polyhedral Support-Preserving General-P Constraint]} \\\\\n& \\max_{\\boldsymbol{\\zeta}_{3} \\in \\mathcal{U}_{3}} \\left(\\bar{\\mathbf{a}}_{3} + \\mathbf{P}_{3} \\boldsymbol{\\zeta}_{3}\\right)^\\top \\mathbf{x} \\le b_{3} && \\text{[Polyhedral Support-Preserving General-P Constraint]} \\\\\n& \\min_{\\boldsymbol{\\zeta}_{4} \\in \\mathcal{U}_{4}} \\left(\\bar{\\mathbf{a}}_{4} + \\mathbf{P}_{4} \\boldsymbol{\\zeta}_{4}\\right)^\\top \\mathbf{x} \\ge b_{4} && \\text{[Budgeted Support-Preserving General-P Constraint]} \\\\\n& \\bar{\\mathbf{a}}_{5}^\\top \\mathbf{x} = b_{5} && \\text{[Deterministic Constraint]} \\\\\n& 0 \\le x_j \\le 1.8, \\quad j=1,\\ldots,5 \\\\\n& \\text{where} \\\\\n& \\mathcal{U}_{c} = \\{ \\boldsymbol{\\zeta}^{c} \\in \\mathbb{R}^{2} : \\|\\boldsymbol{\\zeta}^{c}\\|_\\infty \\le 1, \\|\\boldsymbol{\\zeta}^{c}\\|_1 \\le \\Gamma_{c} \\} \\\\\n& \\mathcal{U}_{1} = \\{ \\boldsymbol{\\zeta}_{1} \\in \\mathbb{R}^{3} : \\|\\boldsymbol{\\zeta}_{1}\\|_\\infty \\le 1 \\} \\\\\n& \\mathcal{U}_{2} = \\{ \\boldsymbol{\\zeta}_{2} \\in \\mathbb{R}^{3} : \\mathbf{H}_{2} \\boldsymbol{\\zeta}_{2} \\le \\mathbf{h}_{2}, -0.2 \\le \\boldsymbol{\\zeta}_{2}_k \\le 0,\\ k=1,\\ldots,3 \\} \\\\\n& \\mathcal{U}_{3} = \\{ \\boldsymbol{\\zeta}_{3} \\in \\mathbb{R}^{3} : \\mathbf{H}_{3} \\boldsymbol{\\zeta}_{3} \\le \\mathbf{h}_{3}, -0.2 \\le \\boldsymbol{\\zeta}_{3}_k \\le 0,\\ k=1,\\ldots,3 \\} \\\\\n& \\mathcal{U}_{4} = \\{ \\boldsymbol{\\zeta}_{4} \\in \\mathbb{R}^{2} : \\|\\boldsymbol{\\zeta}_{4}\\|_\\infty \\le 1, \\|\\boldsymbol{\\zeta}_{4}\\|_1 \\le \\Gamma_{4} \\} \\\\\n& \\Gamma_{c} = 0.6 \\\\\n& \\bar{\\mathbf{c}} = \\begin{bmatrix} -8.1 \\\\ 6.6 \\\\ -0.9 \\\\ 7.5 \\\\ -5.4 \\end{bmatrix} \\\\\n& \\mathbf{P}^{c} = \\begin{bmatrix} 0.737 & 0.163 \\\\ 0 & 0 \\\\ 0 & 0 \\\\ 0 & 0 \\\\ 0.094 & 0.506 \\end{bmatrix} \\\\\n& \\bar{\\mathbf{a}}_{1} = \\begin{bmatrix} -1.2 \\\\ -0.5 \\\\ -0.2 \\\\ 0 \\\\ -0.6 \\end{bmatrix} \\\\\n& \\mathbf{P}_{1} = \\begin{bmatrix} 0.074 & 0.011 & 0.015 \\\\ 0.011 & 0.079 & 0.011 \\\\ 0 & 0 & 0 \\\\ 0 & 0 & 0 \\\\ 0.012 & 0.012 & 0.076 \\end{bmatrix} \\\\\n& b_{1} = -3.6 \\\\\n& \\mathbf{H}_{2} = \\begin{bmatrix} 0 & -0.2 & -0.1 \\\\ 0.1 & -0.2 & 0 \\end{bmatrix} \\\\\n& \\mathbf{h}_{2} = \\begin{bmatrix} 0.04 \\\\ 0.06 \\end{bmatrix} \\\\\n& \\bar{\\mathbf{a}}_{2} = \\begin{bmatrix} 0 \\\\ 0.3 \\\\ 1.1 \\\\ 0 \\\\ -1.3 \\end{bmatrix} \\\\\n& \\mathbf{P}_{2} = \\begin{bmatrix} 0 & 0 & 0 \\\\ 0.852 & 0.111 & 0.037 \\\\ 0.068 & 0.888 & 0.043 \\\\ 0 & 0 & 0 \\\\ 0.044 & 0.053 & 0.903 \\end{bmatrix} \\\\\n& b_{2} = -0.07 \\\\\n& \\mathbf{H}_{3} = \\begin{bmatrix} -0.2 & -0.1 & 0.1 \\\\ 0.1 & 0 & 0.1 \\end{bmatrix} \\\\\n& \\mathbf{h}_{3} = \\begin{bmatrix} 0.06 \\\\ 0 \\end{bmatrix} \\\\\n& \\bar{\\mathbf{a}}_{3} = \\begin{bmatrix} 0 \\\\ 0.1 \\\\ 0.4 \\\\ -0.6 \\\\ 1 \\end{bmatrix} \\\\\n& \\mathbf{P}_{3} = \\begin{bmatrix} 0 & 0 & 0 \\\\ 0 & 0 & 0 \\\\ 0.809 & 0.126 & 0.066 \\\\ 0.089 & 0.839 & 0.072 \\\\ 0.079 & 0.12 & 0.801 \\end{bmatrix} \\\\\n& b_{3} = 2.39 \\\\\n& \\Gamma_{4} = 0.9 \\\\\n& \\bar{\\mathbf{a}}_{4} = \\begin{bmatrix} 0 \\\\ 1.7 \\\\ 1.7 \\\\ -1.3 \\\\ -0.2 \\end{bmatrix} \\\\\n& \\mathbf{P}_{4} = \\begin{bmatrix} 0 & 0 \\\\ 0.08 & 0.02 \\\\ 0.027 & 0.173 \\\\ 0 & 0 \\\\ 0 & 0 \\end{bmatrix} \\\\\n& b_{4} = -7.95 \\\\\n& \\bar{\\mathbf{a}}_{5} = \\begin{bmatrix} 0 \\\\ 0 \\\\ -1.4 \\\\ 0 \\\\ -1.2 \\end{bmatrix} \\\\\n& b_{5} = -0.26 \\\\\n\\end{align*}",
+    "uncertainty_type": [
+      2,
+      1,
+      3,
+      3,
+      2,
+      0
+    ],
+    "general_p_unit_ids": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "general_p_unit_labels": [
+      "objective",
+      "constraint_1",
+      "constraint_2",
+      "constraint_3",
+      "constraint_4"
+    ],
+    "row_indexing": "0=objective, 1..n=constraint rows",
+    "support_mode": "original_random_uncertainty_index",
+    "solution": [
+      1.8,
+      0.0,
+      0.09289011947380299,
+      0.0,
+      0.10829486061389657
+    ],
+    "optimal_value": -14.446325524702841
+  },
+  {
+    "id": "5_6_GP",
+    "n_vars": 5,
+    "n_constraints": 5,
+    "template_param": [
+      1,
+      1,
+      1
+    ],
+    "setting": "general_support_preserving_all_uncertain_P",
+    "description": "\\begin{align*}\n\\min_{\\mathbf{x}} \\quad & \\max_{\\boldsymbol{\\zeta}^{c} \\in \\mathcal{U}_{c}} \\left(\\bar{\\mathbf{c}} + \\mathbf{P}^{c} \\boldsymbol{\\zeta}^{c}\\right)^\\top \\mathbf{x} && \\text{[Box Support-Preserving General-P Objective]} \\\\\n& \\text{subject to} \\\\\n& \\bar{\\mathbf{a}}_{1}^\\top \\mathbf{x} \\ge b_{1} && \\text{[Deterministic Constraint]} \\\\\n& \\min_{\\boldsymbol{\\zeta}_{2} \\in \\mathcal{U}_{2}} \\left(\\bar{\\mathbf{a}}_{2} + \\mathbf{P}_{2} \\boldsymbol{\\zeta}_{2}\\right)^\\top \\mathbf{x} \\ge b_{2} && \\text{[Box Support-Preserving General-P Constraint]} \\\\\n& \\max_{\\boldsymbol{\\zeta}_{3} \\in \\mathcal{U}_{3}} \\left(\\bar{\\mathbf{a}}_{3} + \\mathbf{P}_{3} \\boldsymbol{\\zeta}_{3}\\right)^\\top \\mathbf{x} \\le b_{3} && \\text{[Box Support-Preserving General-P Constraint]} \\\\\n& \\min_{\\boldsymbol{\\zeta}_{4} \\in \\mathcal{U}_{4}} \\left(\\bar{\\mathbf{a}}_{4} + \\mathbf{P}_{4} \\boldsymbol{\\zeta}_{4}\\right)^\\top \\mathbf{x} \\ge b_{4} && \\text{[Box Support-Preserving General-P Constraint]} \\\\\n& \\min_{\\boldsymbol{\\zeta}_{5} \\in \\mathcal{U}_{5}} \\left(\\bar{\\mathbf{a}}_{5} + \\mathbf{P}_{5} \\boldsymbol{\\zeta}_{5}\\right)^\\top \\mathbf{x} \\ge b_{5} && \\text{[Budgeted Support-Preserving General-P Constraint]} \\\\\n& -1.4 \\le x_j \\le 0, \\quad j=1,\\ldots,5 \\\\\n& \\text{where} \\\\\n& \\mathcal{U}_{c} = \\{ \\boldsymbol{\\zeta}^{c} \\in \\mathbb{R}^{3} : \\|\\boldsymbol{\\zeta}^{c}\\|_\\infty \\le 1 \\} \\\\\n& \\mathcal{U}_{2} = \\{ \\boldsymbol{\\zeta}_{2} \\in \\mathbb{R}^{2} : \\|\\boldsymbol{\\zeta}_{2}\\|_\\infty \\le 1 \\} \\\\\n& \\mathcal{U}_{3} = \\{ \\boldsymbol{\\zeta}_{3} \\in \\mathbb{R}^{3} : \\|\\boldsymbol{\\zeta}_{3}\\|_\\infty \\le 1 \\} \\\\\n& \\mathcal{U}_{4} = \\{ \\boldsymbol{\\zeta}_{4} \\in \\mathbb{R}^{3} : \\|\\boldsymbol{\\zeta}_{4}\\|_\\infty \\le 1 \\} \\\\\n& \\mathcal{U}_{5} = \\{ \\boldsymbol{\\zeta}_{5} \\in \\mathbb{R}^{2} : \\|\\boldsymbol{\\zeta}_{5}\\|_\\infty \\le 1, \\|\\boldsymbol{\\zeta}_{5}\\|_1 \\le \\Gamma_{5} \\} \\\\\n& \\bar{\\mathbf{c}} = \\begin{bmatrix} -9.2 \\\\ 5.3 \\\\ -3.3 \\\\ -1.4 \\\\ 3.1 \\end{bmatrix} \\\\\n& \\mathbf{P}^{c} = \\begin{bmatrix} 0 & 0 & 0 \\\\ 0 & 0 & 0 \\\\ 0.274 & 0.042 & 0.084 \\\\ 0.013 & 0.074 & 0.013 \\\\ 0.059 & 0.062 & 0.28 \\end{bmatrix} \\\\\n& \\bar{\\mathbf{a}}_{1} = \\begin{bmatrix} -1 \\\\ 0 \\\\ 0 \\\\ 0.2 \\\\ -1.2 \\end{bmatrix} \\\\\n& b_{1} = -1.02 \\\\\n& \\bar{\\mathbf{a}}_{2} = \\begin{bmatrix} 0 \\\\ 0 \\\\ 0.7 \\\\ -1.4 \\\\ 0 \\end{bmatrix} \\\\\n& \\mathbf{P}_{2} = \\begin{bmatrix} 0 & 0 \\\\ 0 & 0 \\\\ 0.082 & 0.018 \\\\ 0.016 & 0.084 \\\\ 0 & 0 \\end{bmatrix} \\\\\n& b_{2} = -0.32 \\\\\n& \\bar{\\mathbf{a}}_{3} = \\begin{bmatrix} 0 \\\\ -0.5 \\\\ -0.1 \\\\ -0.5 \\\\ 0 \\end{bmatrix} \\\\\n& \\mathbf{P}_{3} = \\begin{bmatrix} 0 & 0 & 0 \\\\ 0.085 & 0.004 & 0.01 \\\\ 0.016 & 0.076 & 0.007 \\\\ 0.011 & 0.005 & 0.084 \\\\ 0 & 0 & 0 \\end{bmatrix} \\\\\n& b_{3} = 1.01 \\\\\n& \\bar{\\mathbf{a}}_{4} = \\begin{bmatrix} 0 \\\\ 0.6 \\\\ -1.1 \\\\ -0.3 \\\\ -1.2 \\end{bmatrix} \\\\\n& \\mathbf{P}_{4} = \\begin{bmatrix} 0 & 0 & 0 \\\\ 0.084 & 0.006 & 0.009 \\\\ 0 & 0 & 0 \\\\ 0.007 & 0.085 & 0.008 \\\\ 0.01 & 0.012 & 0.078 \\end{bmatrix} \\\\\n& b_{4} = -1.47 \\\\\n& \\Gamma_{5} = 1.2 \\\\\n& \\bar{\\mathbf{a}}_{5} = \\begin{bmatrix} -1 \\\\ 1.1 \\\\ 0 \\\\ 0 \\\\ 1 \\end{bmatrix} \\\\\n& \\mathbf{P}_{5} = \\begin{bmatrix} 0.159 & 0.041 \\\\ 0.033 & 0.167 \\\\ 0 & 0 \\\\ 0 & 0 \\\\ 0 & 0 \\end{bmatrix} \\\\\n& b_{5} = -1 \\\\\n\\end{align*}",
+    "uncertainty_type": [
+      1,
+      0,
+      1,
+      1,
+      1,
+      2
+    ],
+    "general_p_unit_ids": [
+      0,
+      2,
+      3,
+      4,
+      5
+    ],
+    "general_p_unit_labels": [
+      "objective",
+      "constraint_2",
+      "constraint_3",
+      "constraint_4",
+      "constraint_5"
+    ],
+    "row_indexing": "0=objective, 1..n=constraint rows",
+    "support_mode": "original_random_uncertainty_index",
+    "solution": [
+      0.0,
+      -0.7851758793969849,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "optimal_value": -4.1614321608040195
+  },
+  {
+    "id": "5_7_GP",
+    "n_vars": 5,
+    "n_constraints": 5,
+    "template_param": [
+      1,
+      1,
+      1
+    ],
+    "setting": "general_support_preserving_all_uncertain_P",
+    "description": "\\begin{align*}\n\\max_{\\mathbf{x}} \\quad & \\min_{\\boldsymbol{\\zeta}^{c} \\in \\mathcal{U}_{c}} \\left(\\bar{\\mathbf{c}} + \\mathbf{P}^{c} \\boldsymbol{\\zeta}^{c}\\right)^\\top \\mathbf{x} && \\text{[Polyhedral Support-Preserving General-P Objective]} \\\\\n& \\text{subject to} \\\\\n& \\min_{\\boldsymbol{\\zeta}_{1} \\in \\mathcal{U}_{1}} \\left(\\bar{\\mathbf{a}}_{1} + \\mathbf{P}_{1} \\boldsymbol{\\zeta}_{1}\\right)^\\top \\mathbf{x} \\ge b_{1} && \\text{[Polyhedral Support-Preserving General-P Constraint]} \\\\\n& \\min_{\\boldsymbol{\\zeta}_{2} \\in \\mathcal{U}_{2}} \\left(\\bar{\\mathbf{a}}_{2} + \\mathbf{P}_{2} \\boldsymbol{\\zeta}_{2}\\right)^\\top \\mathbf{x} \\ge b_{2} && \\text{[Budgeted Support-Preserving General-P Constraint]} \\\\\n& \\max_{\\boldsymbol{\\zeta}_{3} \\in \\mathcal{U}_{3}} \\left(\\bar{\\mathbf{a}}_{3} + \\mathbf{P}_{3} \\boldsymbol{\\zeta}_{3}\\right)^\\top \\mathbf{x} \\le b_{3} && \\text{[Polyhedral Support-Preserving General-P Constraint]} \\\\\n& \\min_{\\boldsymbol{\\zeta}_{4} \\in \\mathcal{U}_{4}} \\left(\\bar{\\mathbf{a}}_{4} + \\mathbf{P}_{4} \\boldsymbol{\\zeta}_{4}\\right)^\\top \\mathbf{x} \\ge b_{4} && \\text{[Box Support-Preserving General-P Constraint]} \\\\\n& \\bar{\\mathbf{a}}_{5}^\\top \\mathbf{x} = b_{5} && \\text{[Deterministic Constraint]} \\\\\n& 0 \\le x_j \\le 2.1, \\quad j=1,\\ldots,5 \\\\\n& \\text{where} \\\\\n& \\mathcal{U}_{c} = \\{ \\boldsymbol{\\zeta}^{c} \\in \\mathbb{R}^{4} : \\mathbf{H}_{c} \\boldsymbol{\\zeta}^{c} \\le \\mathbf{h}_{c}, 0 \\le \\boldsymbol{\\zeta}^{c}_k \\le 0.2,\\ k=1,\\ldots,4 \\} \\\\\n& \\mathcal{U}_{1} = \\{ \\boldsymbol{\\zeta}_{1} \\in \\mathbb{R}^{3} : \\mathbf{H}_{1} \\boldsymbol{\\zeta}_{1} \\le \\mathbf{h}_{1}, \\mathbf{E}_{1} \\boldsymbol{\\zeta}_{1} = \\mathbf{e}_{1}, 0 \\le \\boldsymbol{\\zeta}_{1}_k \\le 0.2,\\ k=1,\\ldots,3 \\} \\\\\n& \\mathcal{U}_{2} = \\{ \\boldsymbol{\\zeta}_{2} \\in \\mathbb{R}^{2} : \\|\\boldsymbol{\\zeta}_{2}\\|_\\infty \\le 1, \\|\\boldsymbol{\\zeta}_{2}\\|_1 \\le \\Gamma_{2} \\} \\\\\n& \\mathcal{U}_{3} = \\{ \\boldsymbol{\\zeta}_{3} \\in \\mathbb{R}^{2} : \\mathbf{H}_{3} \\boldsymbol{\\zeta}_{3} \\le \\mathbf{h}_{3}, 0 \\le \\boldsymbol{\\zeta}_{3}_k \\le 0.2,\\ k=1,\\ldots,2 \\} \\\\\n& \\mathcal{U}_{4} = \\{ \\boldsymbol{\\zeta}_{4} \\in \\mathbb{R}^{2} : \\|\\boldsymbol{\\zeta}_{4}\\|_\\infty \\le 1 \\} \\\\\n& \\mathbf{H}_{c} = \\begin{bmatrix} 0.1 & 0 & 0.2 & 0 \\\\ 0.1 & 0 & 0.1 & 0 \\\\ 0.1 & 0.1 & 0 & -0.2 \\end{bmatrix} \\\\\n& \\mathbf{h}_{c} = \\begin{bmatrix} 0.04 \\\\ 0.03 \\\\ 0.06 \\end{bmatrix} \\\\\n& \\bar{\\mathbf{c}} = \\begin{bmatrix} 8.9 \\\\ -9.9 \\\\ 9 \\\\ 2.6 \\\\ -1.8 \\end{bmatrix} \\\\\n& \\mathbf{P}^{c} = \\begin{bmatrix} 0.798 & 0.108 & 0.036 & 0.057 \\\\ 0.03 & 0.815 & 0.069 & 0.086 \\\\ 0.075 & 0.066 & 0.818 & 0.042 \\\\ 0.082 & 0.097 & 0.063 & 0.758 \\\\ 0 & 0 & 0 & 0 \\end{bmatrix} \\\\\n& \\mathbf{H}_{1} = \\begin{bmatrix} 0.1 & -0.2 & -0.2 \\end{bmatrix} \\\\\n& \\mathbf{h}_{1} = \\begin{bmatrix} -0.03 \\end{bmatrix} \\\\\n& \\mathbf{E}_{1} = \\begin{bmatrix} -0.2 & 0 & -0.1 \\end{bmatrix} \\\\\n& \\mathbf{e}_{1} = \\begin{bmatrix} -0.03 \\end{bmatrix} \\\\\n& \\bar{\\mathbf{a}}_{1} = \\begin{bmatrix} -2.1 \\\\ 0 \\\\ 1.1 \\\\ -0.4 \\\\ 0 \\end{bmatrix} \\\\\n& \\mathbf{P}_{1} = \\begin{bmatrix} 0.786 & 0.067 & 0.146 \\\\ 0 & 0 & 0 \\\\ 0.111 & 0.74 & 0.149 \\\\ 0.096 & 0.158 & 0.746 \\\\ 0 & 0 & 0 \\end{bmatrix} \\\\\n& b_{1} = -5.62 \\\\\n& \\Gamma_{2} = 1.8 \\\\\n& \\bar{\\mathbf{a}}_{2} = \\begin{bmatrix} 0 \\\\ 0 \\\\ 1.4 \\\\ -1.3 \\\\ -1.3 \\end{bmatrix} \\\\\n& \\mathbf{P}_{2} = \\begin{bmatrix} 0 & 0 \\\\ 0 & 0 \\\\ 0 & 0 \\\\ 0.086 & 0.014 \\\\ 0.04 & 0.16 \\end{bmatrix} \\\\\n& b_{2} = -6.07 \\\\\n& \\mathbf{H}_{3} = \\begin{bmatrix} 0.2 & -0.2 \\end{bmatrix} \\\\\n& \\mathbf{h}_{3} = \\begin{bmatrix} 0.07 \\end{bmatrix} \\\\\n& \\bar{\\mathbf{a}}_{3} = \\begin{bmatrix} 0 \\\\ -1.4 \\\\ 1.5 \\\\ -1.1 \\\\ 0 \\end{bmatrix} \\\\\n& \\mathbf{P}_{3} = \\begin{bmatrix} 0 & 0 \\\\ 0.709 & 0.291 \\\\ 0.199 & 0.801 \\\\ 0 & 0 \\\\ 0 & 0 \\end{bmatrix} \\\\\n& b_{3} = 1.49 \\\\\n& \\bar{\\mathbf{a}}_{4} = \\begin{bmatrix} 0 \\\\ 1.5 \\\\ 0 \\\\ 0 \\\\ 1.8 \\end{bmatrix} \\\\\n& \\mathbf{P}_{4} = \\begin{bmatrix} 0 & 0 \\\\ 0.259 & 0.041 \\\\ 0 & 0 \\\\ 0 & 0 \\\\ 0.051 & 0.249 \\end{bmatrix} \\\\\n& b_{4} = -3.98 \\\\\n& \\bar{\\mathbf{a}}_{5} = \\begin{bmatrix} 0 \\\\ 0.2 \\\\ -0.7 \\\\ 0 \\\\ 0 \\end{bmatrix} \\\\\n& b_{5} = -0.82 \\\\\n\\end{align*}",
+    "uncertainty_type": [
+      3,
+      3,
+      2,
+      3,
+      1,
+      0
+    ],
+    "general_p_unit_ids": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "general_p_unit_labels": [
+      "objective",
+      "constraint_1",
+      "constraint_2",
+      "constraint_3",
+      "constraint_4"
+    ],
+    "row_indexing": "0=objective, 1..n=constraint rows",
+    "support_mode": "original_random_uncertainty_index",
+    "solution": [
+      2.1,
+      0.0,
+      1.1714285714285715,
+      2.1,
+      0.0
+    ],
+    "optimal_value": 34.69285714285714
+  },
+  {
+    "id": "5_8_GP",
+    "n_vars": 5,
+    "n_constraints": 5,
+    "template_param": [
+      1,
+      1,
+      1
+    ],
+    "setting": "general_support_preserving_all_uncertain_P",
+    "description": "\\begin{align*}\n\\max_{\\mathbf{x}} \\quad & \\min_{\\boldsymbol{\\zeta}^{c} \\in \\mathcal{U}_{c}} \\left(\\bar{\\mathbf{c}} + \\mathbf{P}^{c} \\boldsymbol{\\zeta}^{c}\\right)^\\top \\mathbf{x} && \\text{[Polyhedral Support-Preserving General-P Objective]} \\\\\n& \\text{subject to} \\\\\n& \\min_{\\boldsymbol{\\zeta}_{1} \\in \\mathcal{U}_{1}} \\left(\\bar{\\mathbf{a}}_{1} + \\mathbf{P}_{1} \\boldsymbol{\\zeta}_{1}\\right)^\\top \\mathbf{x} \\ge b_{1} && \\text{[Polyhedral Support-Preserving General-P Constraint]} \\\\\n& \\max_{\\boldsymbol{\\zeta}_{2} \\in \\mathcal{U}_{2}} \\left(\\bar{\\mathbf{a}}_{2} + \\mathbf{P}_{2} \\boldsymbol{\\zeta}_{2}\\right)^\\top \\mathbf{x} \\le b_{2} && \\text{[Box Support-Preserving General-P Constraint]} \\\\\n& \\min_{\\boldsymbol{\\zeta}_{3} \\in \\mathcal{U}_{3}} \\left(\\bar{\\mathbf{a}}_{3} + \\mathbf{P}_{3} \\boldsymbol{\\zeta}_{3}\\right)^\\top \\mathbf{x} \\ge b_{3} && \\text{[Budgeted Support-Preserving General-P Constraint]} \\\\\n& \\bar{\\mathbf{a}}_{4}^\\top \\mathbf{x} = b_{4} && \\text{[Deterministic Constraint]} \\\\\n& \\max_{\\boldsymbol{\\zeta}_{5} \\in \\mathcal{U}_{5}} \\left(\\bar{\\mathbf{a}}_{5} + \\mathbf{P}_{5} \\boldsymbol{\\zeta}_{5}\\right)^\\top \\mathbf{x} \\le b_{5} && \\text{[Polyhedral Support-Preserving General-P Constraint]} \\\\\n& -1.2 \\le x_j \\le 0, \\quad j=1,\\ldots,5 \\\\\n& \\text{where} \\\\\n& \\mathcal{U}_{c} = \\{ \\boldsymbol{\\zeta}^{c} \\in \\mathbb{R}^{3} : \\mathbf{H}_{c} \\boldsymbol{\\zeta}^{c} \\le \\mathbf{h}_{c}, 0 \\le \\boldsymbol{\\zeta}^{c}_k \\le 0.1,\\ k=1,\\ldots,3 \\} \\\\\n& \\mathcal{U}_{1} = \\{ \\boldsymbol{\\zeta}_{1} \\in \\mathbb{R}^{2} : \\mathbf{H}_{1} \\boldsymbol{\\zeta}_{1} \\le \\mathbf{h}_{1}, 0 \\le \\boldsymbol{\\zeta}_{1}_k \\le 0.1,\\ k=1,\\ldots,2 \\} \\\\\n& \\mathcal{U}_{2} = \\{ \\boldsymbol{\\zeta}_{2} \\in \\mathbb{R}^{2} : \\|\\boldsymbol{\\zeta}_{2}\\|_\\infty \\le 1 \\} \\\\\n& \\mathcal{U}_{3} = \\{ \\boldsymbol{\\zeta}_{3} \\in \\mathbb{R}^{3} : \\|\\boldsymbol{\\zeta}_{3}\\|_\\infty \\le 1, \\|\\boldsymbol{\\zeta}_{3}\\|_1 \\le \\Gamma_{3} \\} \\\\\n& \\mathcal{U}_{5} = \\{ \\boldsymbol{\\zeta}_{5} \\in \\mathbb{R}^{2} : \\mathbf{H}_{5} \\boldsymbol{\\zeta}_{5} \\le \\mathbf{h}_{5}, 0 \\le \\boldsymbol{\\zeta}_{5}_k \\le 0.1,\\ k=1,\\ldots,2 \\} \\\\\n& \\mathbf{H}_{c} = \\begin{bmatrix} 0.1 & -0.1 & -0.1 \\\\ 0 & 0.1 & 0.1 \\end{bmatrix} \\\\\n& \\mathbf{h}_{c} = \\begin{bmatrix} 0.02 \\\\ 0.01 \\end{bmatrix} \\\\\n& \\bar{\\mathbf{c}} = \\begin{bmatrix} -5.7 \\\\ -5.4 \\\\ 8.5 \\\\ 10 \\\\ -8 \\end{bmatrix} \\\\\n& \\mathbf{P}^{c} = \\begin{bmatrix} 0.797 & 0.113 & 0.09 \\\\ 0.052 & 0.799 & 0.149 \\\\ 0 & 0 & 0 \\\\ 0.042 & 0.146 & 0.812 \\\\ 0 & 0 & 0 \\end{bmatrix} \\\\\n& \\mathbf{H}_{1} = \\begin{bmatrix} 0.1 & -0.1 \\end{bmatrix} \\\\\n& \\mathbf{h}_{1} = \\begin{bmatrix} 0.01 \\end{bmatrix} \\\\\n& \\bar{\\mathbf{a}}_{1} = \\begin{bmatrix} 0 \\\\ -0.7 \\\\ -0.3 \\\\ 0 \\\\ 0.7 \\end{bmatrix} \\\\\n& \\mathbf{P}_{1} = \\begin{bmatrix} 0 & 0 \\\\ 0 & 0 \\\\ 0.792 & 0.208 \\\\ 0 & 0 \\\\ 0.306 & 0.694 \\end{bmatrix} \\\\\n& b_{1} = -0.14 \\\\\n& \\bar{\\mathbf{a}}_{2} = \\begin{bmatrix} 0 \\\\ 0.5 \\\\ 0 \\\\ 0 \\\\ -0.5 \\end{bmatrix} \\\\\n& \\mathbf{P}_{2} = \\begin{bmatrix} 0 & 0 \\\\ 0.082 & 0.018 \\\\ 0 & 0 \\\\ 0 & 0 \\\\ 0.021 & 0.079 \\end{bmatrix} \\\\\n& b_{2} = 0.61 \\\\\n& \\Gamma_{3} = 1.8 \\\\\n& \\bar{\\mathbf{a}}_{3} = \\begin{bmatrix} 0.8 \\\\ 0 \\\\ 0.6 \\\\ 0.3 \\\\ 0 \\end{bmatrix} \\\\\n& \\mathbf{P}_{3} = \\begin{bmatrix} 0.077 & 0.008 & 0.014 \\\\ 0 & 0 & 0 \\\\ 0.016 & 0.077 & 0.007 \\\\ 0.014 & 0.007 & 0.078 \\\\ 0 & 0 & 0 \\end{bmatrix} \\\\\n& b_{3} = -1.48 \\\\\n& \\bar{\\mathbf{a}}_{4} = \\begin{bmatrix} 0.1 \\\\ -0.3 \\\\ -0.9 \\\\ 0.5 \\\\ 0 \\end{bmatrix} \\\\\n& b_{4} = 0.35 \\\\\n& \\mathbf{H}_{5} = \\begin{bmatrix} -0.1 & 0.1 \\end{bmatrix} \\\\\n& \\mathbf{h}_{5} = \\begin{bmatrix} 0 \\end{bmatrix} \\\\\n& \\bar{\\mathbf{a}}_{5} = \\begin{bmatrix} -0.1 \\\\ -0.9 \\\\ -0.4 \\\\ -1.2 \\\\ -0.8 \\end{bmatrix} \\\\\n& \\mathbf{P}_{5} = \\begin{bmatrix} 0.769 & 0.231 \\\\ 0 & 0 \\\\ 0.264 & 0.736 \\\\ 0 & 0 \\\\ 0 & 0 \\end{bmatrix} \\\\\n& b_{5} = 3.82 \\\\\n\\end{align*}",
+    "uncertainty_type": [
+      3,
+      3,
+      1,
+      2,
+      0,
+      3
+    ],
+    "general_p_unit_ids": [
+      0,
+      1,
+      2,
+      3,
+      5
+    ],
+    "general_p_unit_labels": [
+      "objective",
+      "constraint_1",
+      "constraint_2",
+      "constraint_3",
+      "constraint_5"
+    ],
+    "row_indexing": "0=objective, 1..n=constraint rows",
+    "support_mode": "original_random_uncertainty_index",
+    "solution": [
+      -1.2,
+      -1.2,
+      -0.1222222222222222,
+      0.0,
+      -1.2
+    ],
+    "optimal_value": 21.669791111111113
+  }
+]

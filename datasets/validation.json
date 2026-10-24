@@ -1,0 +1,1538 @@
+[
+  {
+    "id": "2_1_T100",
+    "n_vars": 2,
+    "n_constraints": 2,
+    "template_param": [
+      1,
+      0,
+      0
+    ],
+    "description": "\\begin{align*}\n\\max_{x_{1}, x_{2}} \\quad & \\min_{\\delta^c_{1}, \\delta^c_{2} \\in \\mathcal{U}^c} -6.9x_{1} + \\delta^c_{1}x_{1} - 4x_{2} + \\delta^c_{2}x_{2} \\\\\n& \\min_{\\xi^a_{1,1}, \\xi^a_{1,2} \\in \\mathcal{U}^a_{1}} -0.8x_{1} + 0.2\\xi^a_{1,1}x_{1} + 1.6x_{2} + 0.3\\xi^a_{1,2}x_{2} \\ge -3.45 \\\\\n& 1.2x_{1} - 2.4x_{2} \\ge 3.51 \\\\\n& \\mathcal{U}^c = \\{ \\delta^c_{1}, \\delta^c_{2} : - 0.1\\delta^c_{1} - 0.1\\delta^c_{2} \\le -0.03, 0 \\le \\delta^c_{1} \\le 0.2, 0 \\le \\delta^c_{2} \\le 0.2 \\} \\\\\n& \\mathcal{U}^a_{1} = \\{ \\xi^a_{1,1}, \\xi^a_{1,2} : |\\xi^a_{1,1}| + |\\xi^a_{1,2}| \\le 0.5, -1 \\le \\xi^a_{1,1} \\le 1, -1 \\le \\xi^a_{1,2} \\le 1 \\} \\\\\n& -2.5 \\le x_{1} \\le 2.5, -2.5 \\le x_{2} \\le 2.5 \\\\\n\\end{align*}",
+    "uncertainty_type": [
+      3,
+      2,
+      0
+    ],
+    "solution": [
+      -2.075,
+      -2.5
+    ],
+    "optimal_value": 23.402500000000003
+  },
+  {
+    "id": "2_2_T101",
+    "n_vars": 2,
+    "n_constraints": 2,
+    "template_param": [
+      1,
+      0,
+      1
+    ],
+    "description": "\\begin{align*}\n& \\text{minimize } \\max_{\\delta^c_{1}, \\delta^c_{2} \\in \\mathcal{U}^c_{poly}} \\{ (-2.9 + \\delta^c_{1})x_{1} + (-6.5 + \\delta^c_{2})x_{2} \\} && \\text{[Polyhedral Uncertainty Objective]} \\\\\n& \\text{subject to} \\\\\n& - 1.4x_{1} - 2.1x_{2} \\ge -6.07 && \\text{[Deterministic Constraint]} \\\\\n& \\min_{\\delta^a_{2,1}, \\delta^a_{2,2} \\in \\mathcal{U}^a_{2,poly}} \\{ (-1.6 + \\delta^a_{2,1})x_{1} + (-1.6 + \\delta^a_{2,2})x_{2} \\} \\ge -7.11 && \\text{[Polyhedral Uncertainty Constraint]} \\\\\n& \\text{where the uncertainty sets are defined as:} \\\\\n& \\mathcal{U}^c_{poly} = \\{ \\delta^c_{1}, \\delta^c_{2} : - 0.1\\delta^c_{1} - 0.2\\delta^c_{2} \\le 0, 0 \\le \\delta^c_{1} \\le 0.2, 0 \\le \\delta^c_{2} \\le 0.2 \\} \\\\\n& \\mathcal{U}^a_{2,poly} = \\{ \\delta^a_{2,1}, \\delta^a_{2,2} : - 0.1\\delta^a_{2,1} + 0.1\\delta^a_{2,2} \\ge 0, 0 \\le \\delta^a_{2,1} \\le 0.2, 0 \\le \\delta^a_{2,2} \\le 0.2 \\} \\\\\n& 0 \\le x_{1} \\le 2.3, 0 \\le x_{2} \\le 2.3 \\\\\n\\end{align*}",
+    "uncertainty_type": [
+      3,
+      0,
+      3
+    ],
+    "solution": [
+      0.8857142857142859,
+      2.3
+    ],
+    "optimal_value": -16.881428571428568
+  },
+  {
+    "id": "2_3_T101",
+    "n_vars": 2,
+    "n_constraints": 2,
+    "template_param": [
+      1,
+      0,
+      1
+    ],
+    "description": "\\begin{align*}\n& \\text{maximize } \\min_{\\eta^c_{1}, \\eta^c_{2} \\in \\mathcal{U}^c_{bud}} \\{ (1.8 + 0.2\\eta^c_{1})x_{1} + (0 + 0.1\\eta^c_{2})x_{2} \\} && \\text{[Budgeted Uncertainty Objective]} \\\\\n& \\text{subject to} \\\\\n& 0.2x_{1} - 2x_{2} \\ge -2.85 && \\text{[Deterministic Constraint]} \\\\\n& \\min_{\\eta^a_{2,1}, \\eta^a_{2,2} \\in \\mathcal{U}^a_{2,bud}} \\{ (-1.2 + 0.1\\eta^a_{2,1})x_{1} + (-0.2 + 0.1\\eta^a_{2,2})x_{2} \\} \\ge -0.45 && \\text{[Budgeted Uncertainty Constraint]} \\\\\n& \\text{where the uncertainty sets are defined as:} \\\\\n& \\mathcal{U}^c_{bud} = \\{ \\eta^c_{1}, \\eta^c_{2} : -1 \\le \\eta^c_{1} \\le 1, -1 \\le \\eta^c_{2} \\le 1, |\\eta^c_{1}| + |\\eta^c_{2}| \\le 1.3 \\} \\\\\n& \\mathcal{U}^a_{2,bud} = \\{ \\eta^a_{2,1}, \\eta^a_{2,2} : -1 \\le \\eta^a_{2,1} \\le 1, -1 \\le \\eta^a_{2,2} \\le 1, |\\eta^a_{2,1}| + |\\eta^a_{2,2}| \\le 1.5 \\} \\\\\n& -2 \\le x_{1} \\le 2, -2 \\le x_{2} \\le 2 \\\\\n\\end{align*}",
+    "uncertainty_type": [
+      2,
+      0,
+      2
+    ],
+    "solution": [
+      0.5200000000000001,
+      -2.0
+    ],
+    "optimal_value": 0.7048000000000002
+  },
+  {
+    "id": "2_4_T010",
+    "n_vars": 2,
+    "n_constraints": 2,
+    "template_param": [
+      0,
+      1,
+      0
+    ],
+    "description": "\\begin{align*}\n\\min_{\\mathbf{x}} \\quad & \\mathbf{c}^\\top \\mathbf{x}, \\quad \\forall \\mathbf{c} \\in \\mathcal{U}_c \\\\\n& \\mathbf{a}_{1}^\\top \\mathbf{x} \\ge b_{1}, \\quad \\forall \\mathbf{a}_{1} \\in \\mathcal{U}_{1} \\\\\n& \\mathbf{a}_{2}^\\top \\mathbf{x} \\ge b_{2} \\\\\n& \\mathcal{U}_c = \\{ \\mathbf{c} \\in \\mathbb{R}^{2} : |\\mathbf{c} - \\mathbf{c}^{nom}| \\le \\hat{\\mathbf{c}}, \\quad \\sum_{j \\in \\{1, 2\\}} \\frac{| c_{j} - c_j^{nom} |}{\\hat{c}_j} \\le \\Gamma_c \\} \\\\\n& \\mathcal{U}_{1} = \\{ \\mathbf{a}_{1} \\in \\mathbb{R}^{2} : |\\mathbf{a}_{1} - \\mathbf{a}_{1}^{nom}| \\le \\hat{\\mathbf{a}}_{1} \\} \\\\\n& \\mathbf{x} = [x_{1}, x_{2}]^\\top \\\\\n& \\mathbf{c}^{nom} = [-9.1, 7.3]^\\top \\\\\n& \\mathbf{a}_{1}^{nom} = [-6.8, 1.7]^\\top \\\\\n& b_{1} = -22.27 \\\\\n& \\mathbf{a}_{2} = [-5.2, -0.9]^\\top \\\\\n& b_{2} = -60.14 \\\\\n& 0 \\le x_j \\le 10, \\quad \\forall j \\in \\{1, \\dots, 2\\} \\\\\n& \\hat{\\mathbf{c}} = [0.7, 0.5]^\\top \\\\\n& \\Gamma_c = 1.4 \\\\\n& \\hat{\\mathbf{a}}_{1} = [0.8, 0.2]^\\top \\\\\n\\end{align*}",
+    "uncertainty_type": [
+      2,
+      1,
+      0
+    ],
+    "solution": [
+      2.930263157894737,
+      0.0
+    ],
+    "optimal_value": -24.61421052631579
+  },
+  {
+    "id": "2_5_T000",
+    "n_vars": 2,
+    "n_constraints": 2,
+    "template_param": [
+      0,
+      0,
+      0
+    ],
+    "description": "\\begin{align*}\n\\min \\quad & c_{1}x_{1} + c_{2}x_{2}, \\quad \\forall (c_{1}, c_{2}) \\in \\mathcal{U}_{c} \\\\\n& (1.1 + \\zeta^{a1}_{1})x_{1} + (0.3 + \\zeta^{a1}_{2})x_{2} \\le 1.62, \\quad \\forall (\\zeta^{a1}_{1}, \\zeta^{a1}_{2}) \\in \\mathcal{U}_{a1} \\\\\n& - 0.7x_{1} - 1.2x_{2} \\le 2.11 \\\\\n& -1.6 \\le x_{1} \\le 1.6, \\quad -1.6 \\le x_{2} \\le 1.6 \\\\\n\\mathcal{U}_{c} = \\{ (c_{1}, c_{2}) : \\quad & |c_{1} - 1.8| \\le 0.3, \\\\\n& \\quad |c_{2} - 2.5| \\le 0.2, \\\\\n& \\quad \\frac{|c_{1} - 1.8|}{0.3} + \\frac{|c_{2} - 2.5|}{0.2} \\le 1.4 \\} \\\\\n\\mathcal{U}_{a1} = \\{ (\\zeta^{a1}_{1}, \\zeta^{a1}_{2}) : \\quad & 0.1\\zeta^{a1}_{1} + 0.2\\zeta^{a1}_{2} \\le 0.05, \\\\\n& \\quad 0 \\le \\zeta^{a1}_{1} \\le 0.2, \\\\\n& \\quad 0 \\le \\zeta^{a1}_{2} \\le 0.2 \\} \\\\\n\\end{align*}",
+    "uncertainty_type": [
+      2,
+      3,
+      0
+    ],
+    "solution": [
+      -1.6,
+      -0.8250000000000001
+    ],
+    "optimal_value": -4.3965000000000005
+  },
+  {
+    "id": "2_6_T111",
+    "n_vars": 2,
+    "n_constraints": 2,
+    "template_param": [
+      1,
+      1,
+      1
+    ],
+    "description": "\\begin{align*}\n& \\text{Maximize} \\quad \\min_{\\xi_c \\in \\mathcal{U}_{c,Bud}} \\left( \\bar{c} + \\text{diag}(\\hat{c}) \\xi_c \\right)^\\top x && \\text{(Budgeted Uncertainty Objective)} \\\\\n& \\text{subject to} \\\\\n& a_{1}^\\top x \\le b_{1} && \\text{(Deterministic Constraint)} \\\\\n& \\min_{\\delta_{a2} \\in \\mathcal{U}_{a2,P}} ( \\bar{a}_{2} + \\delta_{a2} )^\\top x \\ge b_{2} && \\text{(Polyhedral Uncertainty Constraint)} \\\\\n& \\text{where:} \\\\\n& \\mathcal{U}_{c,Bud} = \\{ \\xi_c \\in \\mathbb{R}^{2} : \\|\\xi_c\\|_{\\infty} \\le 1, \\|\\xi_c\\|_1 \\le \\Gamma_c \\} \\\\\n& \\mathcal{U}_{a2,P} = \\{ \\delta_{a2} \\in \\mathbb{R}^{2} : D_{a2} \\delta_{a2} \\le d_{a2} \\} \\\\\n& x = [x_{1}, x_{2}]^\\top \\\\\n& -7.8 \\le x_j \\le 7.8, \\quad \\forall j \\in \\{1, \\dots, 2\\} \\\\\n& \\bar{c} = [3.6, 5.5]^\\top \\\\\n& \\hat{c} = [0.7, 0.7]^\\top \\\\\n& a_{1} = [6, -5.8]^\\top \\\\\n& b_{1} = 51.73 \\\\\n& \\bar{a}_{2} = [-5.5, -4]^\\top \\\\\n& b_{2} = -36.55 \\\\\n& \\Gamma_c = 0.5 \\\\\n& D_{a2} = \\begin{bmatrix} 0.5 & 0.2 \\\\ 1 & 0 \\\\ -1 & 0 \\\\ 0 & 1 \\\\ 0 & -1 \\end{bmatrix} \\\\\n& d_{a2} = [0.54, 0, 0.8, 0, 0.8]^\\top \\\\\n\\end{align*}",
+    "uncertainty_type": [
+      2,
+      0,
+      3
+    ],
+    "solution": [
+      -0.16181818181818225,
+      7.8
+    ],
+    "optimal_value": 39.58745454545455
+  },
+  {
+    "id": "2_7_T000",
+    "n_vars": 2,
+    "n_constraints": 2,
+    "template_param": [
+      0,
+      0,
+      0
+    ],
+    "description": "\\begin{align*}\n\\max \\quad & c_{1}x_{1} + c_{2}x_{2}, \\quad \\forall (c_{1}, c_{2}) \\in \\mathcal{U}_{c} \\\\\n& (8.3 + \\zeta^{a1}_{1})x_{1} + (1.2 + \\zeta^{a1}_{2})x_{2} \\le 25.04, \\quad \\forall (\\zeta^{a1}_{1}, \\zeta^{a1}_{2}) \\in \\mathcal{U}_{a1} \\\\\n& 4.4x_{1} + 4.9x_{2} \\ge -75.17 \\\\\n& -9.5 \\le x_{1} \\le 9.5, \\quad -9.5 \\le x_{2} \\le 9.5 \\\\\n\\mathcal{U}_{c} = \\{ (c_{1}, c_{2}) : \\quad & |c_{1} - (-1.5)| \\le 0.2, \\\\\n& \\quad |c_{2} - (-2.3)| \\le 0.3 \\} \\\\\n\\mathcal{U}_{a1} = \\{ (\\zeta^{a1}_{1}, \\zeta^{a1}_{2}) : \\quad & - 0.1\\zeta^{a1}_{1} + 0.2\\zeta^{a1}_{2} \\ge -0.08, \\\\\n& \\quad -1 \\le \\zeta^{a1}_{1} \\le 1, \\\\\n& \\quad -1 \\le \\zeta^{a1}_{2} \\le 1 \\} \\\\\n\\end{align*}",
+    "uncertainty_type": [
+      1,
+      3,
+      0
+    ],
+    "solution": [
+      -6.504545454545453,
+      -9.5
+    ],
+    "optimal_value": 27.455909090909085
+  },
+  {
+    "id": "2_8_T011",
+    "n_vars": 2,
+    "n_constraints": 2,
+    "template_param": [
+      0,
+      1,
+      1
+    ],
+    "description": "\\begin{align*}\n\\text{Minimize} \\quad & \\mathbf{c}^\\top \\mathbf{x} && \\forall \\mathbf{c} \\in \\mathcal{U}_{c,Box} && \\text{(Box Uncertainty Objective)} \\\\\n\\text{subject to} \\quad & \\mathbf{a}_{1}^\\top \\mathbf{x} \\ge b_{1} && \\forall \\mathbf{a}_{1} \\in \\mathcal{U}_{a1,Box} && \\text{(Box Uncertainty Constraint)} \\\\\n& \\mathbf{a}_{2}^\\top \\mathbf{x} \\ge b_{2} && && \\text{(Deterministic Constraint)} \\\\\n\\text{where:} \\quad\n& \\mathcal{U}_{c,Box} = \\{ \\mathbf{c} \\in \\mathbb{R}^{2} : \\mathbf{c} = \\mathbf{c}^{nom} + \\mathbf{D}_c \\boldsymbol{\\xi}_c, \\|\\boldsymbol{\\xi}_c\\|_{\\infty} \\le 1 \\} \\\\\n& \\mathcal{U}_{a1,Box} = \\{ \\mathbf{a}_{1} \\in \\mathbb{R}^{2} : \\mathbf{a}_{1} = \\mathbf{a}_{1}^{nom} + \\mathbf{D}_{a1} \\boldsymbol{\\xi}_{a1}, \\|\\boldsymbol{\\xi}_{a1}\\|_{\\infty} \\le 1 \\} \\\\\n& \\mathbf{x} = [x_{1}, x_{2}]^\\top \\\\\n& \\mathbf{c}^{nom} = [0.3, -4.8]^\\top \\\\\n& \\mathbf{a}_{1}^{nom} = [6.7, -4]^\\top \\\\\n& b_{1} = -74.93 \\\\\n& \\mathbf{a}_{2} = [-7.6, -6.3]^\\top \\\\\n& b_{2} = -94.29 \\\\\n& \\mathbf{D}_c = \\text{diag}(0.1, 0.8) \\\\\n& \\mathbf{D}_{a1} = \\text{diag}(1.2, 0.4) \\\\\n& -8 \\le x_j \\le 8, \\quad \\forall j \\in \\{1, \\dots, 2\\} && && \\text{(Variable Bounds)} \\\\\n\\end{align*}",
+    "uncertainty_type": [
+      1,
+      1,
+      0
+    ],
+    "solution": [
+      -5.029113924050633,
+      8.0
+    ],
+    "optimal_value": -33.00582278481012
+  },
+  {
+    "id": "2_9_T101",
+    "n_vars": 2,
+    "n_constraints": 2,
+    "template_param": [
+      1,
+      0,
+      1
+    ],
+    "description": "\\begin{align*}\n& \\text{maximize } 5.5x_{1} + 1x_{2} && \\text{[Deterministic Objective]} \\\\\n& \\text{subject to} \\\\\n& \\min_{-1 \\le \\xi^a_{1,1} \\le 1, -1 \\le \\xi^a_{1,2} \\le 1} \\{ (-4.2 + 0.8\\xi^a_{1,1})x_{1} + (2.8 + 0.4\\xi^a_{1,2})x_{2} \\} \\ge -20.8 && \\text{[Box Uncertainty Constraint]} \\\\\n& \\min_{-1 \\le \\xi^a_{2,1} \\le 1, -1 \\le \\xi^a_{2,2} \\le 1} \\{ (-4.1 + 0.3\\xi^a_{2,1})x_{1} + (-2.2 + 0.3\\xi^a_{2,2})x_{2} \\} \\ge -21.29 && \\text{[Box Uncertainty Constraint]} \\\\\n& 0 \\le x_{1} \\le 4.5, 0 \\le x_{2} \\le 4.5 \\\\\n\\end{align*}",
+    "uncertainty_type": [
+      0,
+      1,
+      1
+    ],
+    "solution": [
+      4.470771899392888,
+      0.647441457068517
+    ],
+    "optimal_value": 25.236686903729403
+  },
+  {
+    "id": "2_10_T000",
+    "n_vars": 2,
+    "n_constraints": 2,
+    "template_param": [
+      0,
+      0,
+      0
+    ],
+    "description": "\\begin{align*}\n\\max \\quad & (1.6 + \\zeta^c_{1})x_{1} + (6.9 + \\zeta^c_{2})x_{2}, \\quad \\forall (\\zeta^c_{1}, \\zeta^c_{2}) \\in \\mathcal{U}_{c} \\\\\n& 8.4x_{1} + 6.4x_{2} \\le -26.48 \\\\\n& a_{21}x_{1} + a_{22}x_{2} \\ge -52.23, \\quad \\forall (a_{21}, a_{22}) \\in \\mathcal{U}_{a2} \\\\\n& -9.6 \\le x_{1} \\le 0, \\quad -9.6 \\le x_{2} \\le 0 \\\\\n\\mathcal{U}_{c} = \\{ (\\zeta^c_{1}, \\zeta^c_{2}) : \\quad & - 0.6\\zeta^c_{1} - 0.4\\zeta^c_{2} \\le 0.49, \\\\\n& \\quad -1 \\le \\zeta^c_{1} \\le 1, \\\\\n& \\quad -1 \\le \\zeta^c_{2} \\le 1 \\} \\\\\n\\mathcal{U}_{a2} = \\{ (a_{21}, a_{22}) : \\quad & |a_{21} - (-4.5)| \\le 0.4, \\\\\n& \\quad |a_{22} - 4.9| \\le 0.9 \\} \\\\\n\\end{align*}",
+    "uncertainty_type": [
+      3,
+      0,
+      1
+    ],
+    "solution": [
+      -3.1523809523809523,
+      0.0
+    ],
+    "optimal_value": -8.196190476190477
+  },
+  {
+    "id": "2_11_T111",
+    "n_vars": 2,
+    "n_constraints": 2,
+    "template_param": [
+      1,
+      1,
+      1
+    ],
+    "description": "\\begin{align*}\n& \\text{Minimize} \\quad \\max_{\\xi_c \\in \\mathcal{U}_{c,Box}} \\left( \\bar{c} + \\text{diag}(\\hat{c}) \\xi_c \\right)^\\top x && \\text{(Box Uncertainty Objective)} \\\\\n& \\text{subject to} \\\\\n& \\min_{\\delta_{a1} \\in \\mathcal{U}_{a1,P}} ( \\bar{a}_{1} + \\delta_{a1} )^\\top x \\ge b_{1} && \\text{(Polyhedral Uncertainty Constraint)} \\\\\n& a_{2}^\\top x \\ge b_{2} && \\text{(Deterministic Constraint)} \\\\\n& \\text{where:} \\\\\n& \\mathcal{U}_{c,Box} = \\{ \\xi_c \\in \\mathbb{R}^{2} : \\|\\xi_c\\|_{\\infty} \\le 1 \\} \\\\\n& \\mathcal{U}_{a1,P} = \\{ \\delta_{a1} \\in \\mathbb{R}^{2} : D_{a1} \\delta_{a1} \\le d_{a1} \\} \\\\\n& x = [x_{1}, x_{2}]^\\top \\\\\n& 0 \\le x_j \\le 5.4, \\quad \\forall j \\in \\{1, \\dots, 2\\} \\\\\n& \\bar{c} = [-7.8, 0.4]^\\top \\\\\n& \\hat{c} = [0.5, 0.1]^\\top \\\\\n& \\bar{a}_{1} = [-2.6, 4.7]^\\top \\\\\n& b_{1} = -7.07 \\\\\n& a_{2} = [-3.8, 1.2]^\\top \\\\\n& b_{2} = -26.2 \\\\\n& D_{a1} = \\begin{bmatrix} 0.3 & 0.4 \\\\ 1 & 0 \\\\ -1 & 0 \\\\ 0 & 1 \\\\ 0 & -1 \\end{bmatrix} \\\\\n& d_{a1} = [0.19, 0.5, 0.5, 0.5, 0.5]^\\top \\\\\n\\end{align*}",
+    "uncertainty_type": [
+      1,
+      3,
+      0
+    ],
+    "solution": [
+      5.4,
+      2.3023809523809526
+    ],
+    "optimal_value": -38.26880952380953
+  },
+  {
+    "id": "2_12_T111",
+    "n_vars": 2,
+    "n_constraints": 2,
+    "template_param": [
+      1,
+      1,
+      1
+    ],
+    "description": "\\begin{align*}\n& \\text{Maximize} \\quad \\min_{\\delta_c \\in \\mathcal{U}_{c,P}} ( \\bar{c} + \\delta_c )^\\top x && \\text{(Polyhedral Uncertainty Objective)} \\\\\n& \\text{subject to} \\\\\n& \\max_{\\xi_{a1} \\in \\mathcal{U}_{a1,Bud}} \\left( \\bar{a}_{1} + \\text{diag}(\\hat{a}_{1}) \\xi_{a1} \\right)^\\top x \\le b_{1} && \\text{(Budgeted Uncertainty Constraint)} \\\\\n& a_{2}^\\top x \\le b_{2} && \\text{(Deterministic Constraint)} \\\\\n& \\text{where:} \\\\\n& \\mathcal{U}_{c,P} = \\{ \\delta_c \\in \\mathbb{R}^{2} : D_c \\delta_c \\le d_c \\} \\\\\n& \\mathcal{U}_{a1,Bud} = \\{ \\xi_{a1} \\in \\mathbb{R}^{2} : \\|\\xi_{a1}\\|_{\\infty} \\le 1, \\|\\xi_{a1}\\|_1 \\le \\Gamma_{a1} \\} \\\\\n& x = [x_{1}, x_{2}]^\\top \\\\\n& -6.1 \\le x_j \\le 6.1, \\quad \\forall j \\in \\{1, \\dots, 2\\} \\\\\n& \\bar{c} = [-3.9, -5.3]^\\top \\\\\n& \\bar{a}_{1} = [-1.4, 3.9]^\\top \\\\\n& b_{1} = 15.43 \\\\\n& \\hat{a}_{1} = [0.1, 0.3]^\\top \\\\\n& a_{2} = [-3.9, -6]^\\top \\\\\n& b_{2} = -8.78 \\\\\n& D_c = \\begin{bmatrix} -0.3 & -0.2 \\\\ 1 & 0 \\\\ -1 & 0 \\\\ 0 & 1 \\\\ 0 & -1 \\end{bmatrix} \\\\\n& d_c = [0.21, 0.6, 0, 0.6, 0]^\\top \\\\\n& \\Gamma_{a1} = 1.6 \\\\\n\\end{align*}",
+    "uncertainty_type": [
+      3,
+      2,
+      0
+    ],
+    "solution": [
+      -0.0,
+      1.4633333333333332
+    ],
+    "optimal_value": -7.755666666666666
+  },
+  {
+    "id": "2_13_T010",
+    "n_vars": 2,
+    "n_constraints": 2,
+    "template_param": [
+      0,
+      1,
+      0
+    ],
+    "description": "\\begin{align*}\n\\min_{\\mathbf{x}} \\quad & \\mathbf{c}^\\top \\mathbf{x}, \\quad \\forall \\mathbf{c} \\in \\mathcal{U}_c \\\\\n& \\mathbf{a}_{1}^\\top \\mathbf{x} \\le b_{1} \\\\\n& (\\mathbf{a}_{2}^{nom} + \\boldsymbol{\\delta}_{2})^\\top \\mathbf{x} \\ge b_{2}, \\quad \\forall \\boldsymbol{\\delta}_{2} \\in \\mathcal{U}_{2} \\\\\n& \\mathcal{U}_c = \\{ \\mathbf{c} \\in \\mathbb{R}^{2} : |\\mathbf{c} - \\mathbf{c}^{nom}| \\le \\hat{\\mathbf{c}}, \\quad \\sum_{j \\in \\{1, 2\\}} \\frac{| c_{j} - c_j^{nom} |}{\\hat{c}_j} \\le \\Gamma_c \\} \\\\\n& \\mathcal{U}_{2} = \\{ \\boldsymbol{\\delta}_{2} \\in \\mathbb{R}^{2} : \\mathbf{P}_{2} \\boldsymbol{\\delta}_{2} \\le \\mathbf{q}_{2} \\} \\\\\n& \\mathbf{x} = [x_{1}, x_{2}]^\\top \\\\\n& \\mathbf{c}^{nom} = [-2.3, 8.6]^\\top \\\\\n& \\mathbf{a}_{1} = [6.2, -1.3]^\\top \\\\\n& b_{1} = 35.12 \\\\\n& \\mathbf{a}_{2}^{nom} = [-4.7, 1.2]^\\top \\\\\n& b_{2} = -25.04 \\\\\n& 0 \\le x_j \\le 6.2, \\quad \\forall j \\in \\{1, \\dots, 2\\} \\\\\n& \\hat{\\mathbf{c}} = [0.3, 1.2]^\\top \\\\\n& \\Gamma_c = 1 \\\\\n& \\mathbf{P}_{2} = \\begin{bmatrix} -0.1 & -0.5 \\\\ 1 & 0 \\\\ -1 & 0 \\\\ 0 & 1 \\\\ 0 & -1 \\end{bmatrix} \\\\\n& \\mathbf{q}_{2} = [0.34, 0, 0.6, 0, 0.6]^\\top \\\\\n\\end{align*}",
+    "uncertainty_type": [
+      2,
+      0,
+      3
+    ],
+    "solution": [
+      4.724528301886792,
+      0.0
+    ],
+    "optimal_value": -9.449056603773585
+  },
+  {
+    "id": "2_14_T001",
+    "n_vars": 2,
+    "n_constraints": 2,
+    "template_param": [
+      0,
+      0,
+      1
+    ],
+    "description": "\\begin{align*}\n\\max \\quad & (5 + \\delta_{41})x_{1} + (2.3 + \\delta_{42})x_{2} \\quad \\forall (\\delta_{41}, \\delta_{42}) \\in \\mathcal{U}_{poly\\_obj} \\quad & \\text{Objective: Polyhedral Uncertainty} \\\\\n\\text{s.t.} \\quad & (2.5 + \\epsilon_{31})x_{1} + (-2.1 + \\epsilon_{32})x_{2} \\le 23.17 \\quad \\forall (\\epsilon_{31}, \\epsilon_{32}) \\in \\mathcal{U}_{budg\\_con} \\quad & \\text{Constraint 1: Budgeted Uncertainty} \\\\\n& - 4.8x_{1} + 0.3x_{2} \\ge 5.68 \\quad & \\text{Constraint 2: Deterministic} \\\\\n& -5.3 \\le x_{1} \\le 0, -5.3 \\le x_{2} \\le 0 \\\\\n& \\mathcal{U}_{poly\\_obj} = \\{ (\\delta_{41}, \\delta_{42}) : - 0.1\\delta_{41} - 0.1\\delta_{42} \\ge -0.05, -0.5 \\le \\delta_{41} \\le 0, -0.5 \\le \\delta_{42} \\le 0 \\} \\\\\n& \\mathcal{U}_{budg\\_con} = \\{ (\\epsilon_{31}, \\epsilon_{32}) : |\\epsilon_{31}| \\le 0.4, |\\epsilon_{32}| \\le 0.4, \\frac{|\\epsilon_{31}|}{0.4} + \\frac{|\\epsilon_{32}|}{0.4} \\le 1.5 \\} \\\\\n\\end{align*}",
+    "uncertainty_type": [
+      3,
+      2,
+      0
+    ],
+    "solution": [
+      -1.1833333333333333,
+      0.0
+    ],
+    "optimal_value": -5.916666666666667
+  },
+  {
+    "id": "2_15_T010",
+    "n_vars": 2,
+    "n_constraints": 2,
+    "template_param": [
+      0,
+      1,
+      0
+    ],
+    "description": "\\begin{align*}\n\\max_{\\mathbf{x}} \\quad & \\mathbf{c}^\\top \\mathbf{x}, \\quad \\forall \\mathbf{c} \\in \\mathcal{U}_c \\\\\n& \\mathbf{a}_{1}^\\top \\mathbf{x} \\le b_{1}, \\quad \\forall \\mathbf{a}_{1} \\in \\mathcal{U}_{1} \\\\\n& \\mathbf{a}_{2}^\\top \\mathbf{x} \\le b_{2} \\\\\n& \\mathcal{U}_c = \\{ \\mathbf{c} \\in \\mathbb{R}^{2} : |\\mathbf{c} - \\mathbf{c}^{nom}| \\le \\hat{\\mathbf{c}} \\} \\\\\n& \\mathcal{U}_{1} = \\{ \\mathbf{a}_{1} \\in \\mathbb{R}^{2} : |\\mathbf{a}_{1} - \\mathbf{a}_{1}^{nom}| \\le \\hat{\\mathbf{a}}_{1} \\} \\\\\n& \\mathbf{x} = [x_{1}, x_{2}]^\\top \\\\\n& \\mathbf{c}^{nom} = [2.2, 1.5]^\\top \\\\\n& \\mathbf{a}_{1}^{nom} = [-0.8, -1.8]^\\top \\\\\n& b_{1} = 1.83 \\\\\n& \\mathbf{a}_{2} = [1.7, 0.2]^\\top \\\\\n& b_{2} = -1 \\\\\n& -2.1 \\le x_j \\le 0, \\quad \\forall j \\in \\{1, \\dots, 2\\} \\\\\n& \\hat{\\mathbf{c}} = [0.1, 0.3]^\\top \\\\\n& \\hat{\\mathbf{a}}_{1} = [0.1, 0.2]^\\top \\\\\n\\end{align*}",
+    "uncertainty_type": [
+      1,
+      1,
+      0
+    ],
+    "solution": [
+      -0.5882352941176471,
+      0.0
+    ],
+    "optimal_value": -1.3529411764705883
+  },
+  {
+    "id": "2_16_T010",
+    "n_vars": 2,
+    "n_constraints": 2,
+    "template_param": [
+      0,
+      1,
+      0
+    ],
+    "description": "\\begin{align*}\n\\max_{\\mathbf{x}} \\quad & \\mathbf{c}^\\top \\mathbf{x}, \\quad \\forall \\mathbf{c} \\in \\mathcal{U}_c \\\\\n& \\mathbf{a}_{1}^\\top \\mathbf{x} \\ge b_{1} \\\\\n& (\\mathbf{a}_{2}^{nom} + \\boldsymbol{\\delta}_{2})^\\top \\mathbf{x} \\le b_{2}, \\quad \\forall \\boldsymbol{\\delta}_{2} \\in \\mathcal{U}_{2} \\\\\n& \\mathcal{U}_c = \\{ \\mathbf{c} \\in \\mathbb{R}^{2} : |\\mathbf{c} - \\mathbf{c}^{nom}| \\le \\hat{\\mathbf{c}} \\} \\\\\n& \\mathcal{U}_{2} = \\{ \\boldsymbol{\\delta}_{2} \\in \\mathbb{R}^{2} : \\mathbf{P}_{2} \\boldsymbol{\\delta}_{2} \\le \\mathbf{q}_{2} \\} \\\\\n& \\mathbf{x} = [x_{1}, x_{2}]^\\top \\\\\n& \\mathbf{c}^{nom} = [-5.8, -0.9]^\\top \\\\\n& \\mathbf{a}_{1} = [3.3, 6.3]^\\top \\\\\n& b_{1} = -38.73 \\\\\n& \\mathbf{a}_{2}^{nom} = [-5.9, -8]^\\top \\\\\n& b_{2} = 92.65 \\\\\n& -9.2 \\le x_j \\le 0, \\quad \\forall j \\in \\{1, \\dots, 2\\} \\\\\n& \\hat{\\mathbf{c}} = [0.9, 0.1]^\\top \\\\\n& \\mathbf{P}_{2} = \\begin{bmatrix} -0.5 & -0.9 \\\\ 1 & 0 \\\\ -1 & 0 \\\\ 0 & 1 \\\\ 0 & -1 \\end{bmatrix} \\\\\n& \\mathbf{q}_{2} = [1.21, 0, 0.9, 0, 0.9]^\\top \\\\\n\\end{align*}",
+    "uncertainty_type": [
+      1,
+      0,
+      3
+    ],
+    "solution": [
+      -9.2,
+      -1.3285714285714287
+    ],
+    "optimal_value": 46.14285714285714
+  },
+  {
+    "id": "3_1_T110",
+    "n_vars": 3,
+    "n_constraints": 3,
+    "template_param": [
+      1,
+      1,
+      0
+    ],
+    "description": "\\begin{align*}\n& \\min_{\\mathbf{x}} \\max_{\\boldsymbol{\\delta}_c \\in \\mathcal{U}_c} (\\mathbf{c}^{nom} + \\boldsymbol{\\delta}_c)^\\top \\mathbf{x} \\\\\n& \\mathbf{a}_{1}^\\top \\mathbf{x} = b_{1} \\\\\n& \\max_{\\boldsymbol{\\delta}_{a2} \\in \\mathcal{U}_{a2}} (\\mathbf{a}_{2}^{nom} + \\boldsymbol{\\delta}_{a2})^\\top \\mathbf{x} \\le b_{2} \\\\\n& \\min_{\\boldsymbol{\\delta}_{a3} \\in \\mathcal{U}_{a3}} (\\mathbf{a}_{3}^{nom} + \\boldsymbol{\\delta}_{a3})^\\top \\mathbf{x} \\ge b_{3} \\\\\n& \\mathcal{U}_c = \\{ \\boldsymbol{\\delta}_c \\in \\mathbb{R}^{3} : \\mathbf{D}_c \\boldsymbol{\\delta}_c \\le \\mathbf{d}_c, \\quad \\mathbf{E}_c \\boldsymbol{\\delta}_c = \\mathbf{e}_c \\} \\\\\n& \\mathcal{U}_{a2} = \\{ \\boldsymbol{\\delta}_{a2} \\in \\mathbb{R}^{3} : |\\boldsymbol{\\delta}_{a2}| \\le \\hat{\\mathbf{a}}_{2}, \\|\\text{diag}(\\hat{\\mathbf{a}}_{2})^{-1} \\boldsymbol{\\delta}_{a2}\\|_1 \\le \\Gamma_{a2} \\} \\\\\n& \\mathcal{U}_{a3} = \\{ \\boldsymbol{\\delta}_{a3} \\in \\mathbb{R}^{3} : |\\boldsymbol{\\delta}_{a3}| \\le \\hat{\\mathbf{a}}_{3} \\} \\\\\n& \\mathbf{x} = \\begin{bmatrix} x_{1} \\\\ x_{2} \\\\ x_{3} \\end{bmatrix} \\\\\n& -6.6 \\le x_j \\le 6.6, \\quad \\forall j \\in \\{1, \\dots, 3\\} \\\\\n& \\mathbf{c}^{nom} = [7, 9.1, -3.9]^\\top \\\\\n& \\mathbf{a}_{1} = [-2.2, 0, -1.2]^\\top \\\\\n& b_{1} = 0.7 \\\\\n& \\mathbf{a}_{2}^{nom} = [-3.7, -3.6, 0]^\\top \\\\\n& b_{2} = 22.3 \\\\\n& \\mathbf{a}_{3}^{nom} = [0.6, 4.9, 0]^\\top \\\\\n& b_{3} = 2.22 \\\\\n& \\mathbf{D}_c = \\begin{bmatrix} -0.4 & -0.5 & -0.6 \\\\ 1 & 0 & 0 \\\\ -1 & 0 & 0 \\\\ 0 & 1 & 0 \\\\ 0 & -1 & 0 \\\\ 0 & 0 & 1 \\\\ 0 & 0 & -1 \\end{bmatrix} \\\\\n& \\mathbf{d}_c = [0.99, 0, 0.7, 0, 0.7, 0, 0.7]^\\top \\\\\n& \\mathbf{E}_c = \\begin{bmatrix} -0.1 & 0 & 0.1 \\end{bmatrix} \\\\\n& \\mathbf{e}_c = [-0.03]^\\top \\\\\n& \\hat{\\mathbf{a}}_{2} = [0.2, 0.6, 0]^\\top \\\\\n& \\Gamma_{a2} = 0.3 \\\\\n& \\hat{\\mathbf{a}}_{3} = [0.1, 0.4, 0]^\\top \\\\\n\\end{align*}",
+    "uncertainty_type": [
+      3,
+      0,
+      2,
+      1
+    ],
+    "solution": [
+      -3.9181818181818175,
+      1.1028282828282827,
+      6.6
+    ],
+    "optimal_value": -45.111535353535345
+  },
+  {
+    "id": "3_2_T100",
+    "n_vars": 3,
+    "n_constraints": 3,
+    "template_param": [
+      1,
+      0,
+      0
+    ],
+    "description": "\\begin{align*}\n\\min_{x_{1}, x_{2}, x_{3}} \\quad & \\max_{\\xi^c_{1}, \\xi^c_{2}, \\xi^c_{3} \\in \\mathcal{U}^c} 2.3x_{1} + 0.2\\xi^c_{1}x_{1} - 5x_{2} + 0.9\\xi^c_{2}x_{2} - 4.3x_{3} + 0.7\\xi^c_{3}x_{3} \\\\\n& 0.7x_{2} - 0.4x_{3} \\le -0.03 \\\\\n& \\min_{\\xi^a_{2,2}, \\xi^a_{2,3} \\in \\mathcal{U}^a_{2}} 1x_{1} + 0.7x_{2} + 0.1\\xi^a_{2,2}x_{2} - 0.5x_{3} + 0.1\\xi^a_{2,3}x_{3} \\ge -1.01 \\\\\n& \\min_{\\delta^a_{3,1}, \\delta^a_{3,3} \\in \\mathcal{U}^a_{3}} 0.7x_{1} + \\delta^a_{3,1}x_{1} - 0.1x_{2} - 0.1x_{3} + \\delta^a_{3,3}x_{3} \\ge 0.2 \\\\\n& \\mathcal{U}^c = \\{ \\xi^c_{1}, \\xi^c_{2}, \\xi^c_{3} : -1 \\le \\xi^c_{1} \\le 1, -1 \\le \\xi^c_{2} \\le 1, -1 \\le \\xi^c_{3} \\le 1 \\} \\\\\n& \\mathcal{U}^a_{2} = \\{ \\xi^a_{2,2}, \\xi^a_{2,3} : -1 \\le \\xi^a_{2,2} \\le 1, -1 \\le \\xi^a_{2,3} \\le 1 \\} \\\\\n& \\mathcal{U}^a_{3} = \\{ \\delta^a_{3,1}, \\delta^a_{3,3} : - 0.1\\delta^a_{3,1} - 0.1\\delta^a_{3,3} \\ge -0.01, 0 \\le \\delta^a_{3,1} \\le 0.1, 0 \\le \\delta^a_{3,3} \\le 0.1 \\} \\\\\n& -1.4 \\le x_{1} \\le 1.4, -1.4 \\le x_{2} \\le 1.4, -1.4 \\le x_{3} \\le 1.4 \\\\\n\\end{align*}",
+    "uncertainty_type": [
+      1,
+      0,
+      1,
+      3
+    ],
+    "solution": [
+      0.5938775510204082,
+      0.7571428571428571,
+      1.4
+    ],
+    "optimal_value": -6.659591836734694
+  },
+  {
+    "id": "3_3_T111",
+    "n_vars": 3,
+    "n_constraints": 3,
+    "template_param": [
+      1,
+      1,
+      1
+    ],
+    "description": "\\begin{align*}\n& \\text{Maximize} \\quad \\min_{\\delta_c \\in \\mathcal{U}_{c,P}} ( \\bar{c} + \\delta_c )^\\top x && \\text{(Polyhedral Uncertainty Objective)} \\\\\n& \\text{subject to} \\\\\n& a_{1}^\\top x = b_{1} && \\text{(Deterministic Constraint)} \\\\\n& \\min_{\\xi_{a2} \\in \\mathcal{U}_{a2,Box}} \\left( \\bar{a}_{2} + \\text{diag}(\\hat{a}_{2}) \\xi_{a2} \\right)^\\top x \\ge b_{2} && \\text{(Box Uncertainty Constraint)} \\\\\n& \\min_{\\xi_{a3} \\in \\mathcal{U}_{a3,Box}} \\left( \\bar{a}_{3} + \\text{diag}(\\hat{a}_{3}) \\xi_{a3} \\right)^\\top x \\ge b_{3} && \\text{(Box Uncertainty Constraint)} \\\\\n& \\text{where:} \\\\\n& \\mathcal{U}_{c,P} = \\{ \\delta_c \\in \\mathbb{R}^{3} : D_c \\delta_c \\le d_c \\} \\\\\n& \\mathcal{U}_{a2,Box} = \\{ \\xi_{a2} \\in \\mathbb{R}^{3} : \\|\\xi_{a2}\\|_{\\infty} \\le 1 \\} \\\\\n& \\mathcal{U}_{a3,Box} = \\{ \\xi_{a3} \\in \\mathbb{R}^{3} : \\|\\xi_{a3}\\|_{\\infty} \\le 1 \\} \\\\\n& x = [x_{1}, x_{2}, x_{3}]^\\top \\\\\n& -1.2 \\le x_j \\le 0, \\quad \\forall j \\in \\{1, \\dots, 3\\} \\\\\n& \\bar{c} = [-8.6, 9.8, 7.3]^\\top \\\\\n& a_{1} = [0, -0.1, 1]^\\top \\\\\n& b_{1} = -0.64 \\\\\n& \\bar{a}_{2} = [-1.2, 0, 0.5]^\\top \\\\\n& b_{2} = -0.74 \\\\\n& \\hat{a}_{2} = [0.2, 0, 0.1]^\\top \\\\\n& \\bar{a}_{3} = [0.9, 1.2, 0.1]^\\top \\\\\n& b_{3} = -2.02 \\\\\n& \\hat{a}_{3} = [0.1, 0.1, 0.1]^\\top \\\\\n& D_c = \\begin{bmatrix} -0.1 & 0 & 0.1 \\\\ -0.1 & 0.1 & -0.1 \\\\ 1 & 0 & 0 \\\\ -1 & 0 & 0 \\\\ 0 & 1 & 0 \\\\ 0 & -1 & 0 \\\\ 0 & 0 & 1 \\\\ 0 & 0 & -1 \\end{bmatrix} \\\\\n& d_c = [0.01, 0.02, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1]^\\top \\\\\n\\end{align*}",
+    "uncertainty_type": [
+      3,
+      0,
+      1,
+      1
+    ],
+    "solution": [
+      -1.2,
+      0.0,
+      -0.64
+    ],
+    "optimal_value": 5.4639999999999995
+  },
+  {
+    "id": "3_4_T101",
+    "n_vars": 3,
+    "n_constraints": 3,
+    "template_param": [
+      1,
+      0,
+      1
+    ],
+    "description": "\\begin{align*}\n& \\text{minimize } \\max_{\\delta^c_{1}, \\delta^c_{2} \\in \\mathcal{U}^c_{poly}} \\{ (7.1 + \\delta^c_{1})x_{1} + (9.4 + \\delta^c_{2})x_{2} + 1.7x_{3} \\} && \\text{[Polyhedral Uncertainty Objective]} \\\\\n& \\text{subject to} \\\\\n& - 1.9x_{1} + 0.4x_{2} = -0.56 && \\text{[Deterministic Constraint]} \\\\\n& \\max_{-1 \\le \\xi^a_{2,1} \\le 1, -1 \\le \\xi^a_{2,3} \\le 1} \\{ (-0.5 + 0.1\\xi^a_{2,1})x_{1} + (-1.7 + 0.2\\xi^a_{2,3})x_{3} \\} \\le 1.93 && \\text{[Box Uncertainty Constraint]} \\\\\n& \\min_{\\delta^a_{3,1}, \\delta^a_{3,3} \\in \\mathcal{U}^a_{3,poly}} \\{ (1.7 + \\delta^a_{3,1})x_{1} + (2 + \\delta^a_{3,3})x_{3} \\} \\ge -1.04 && \\text{[Polyhedral Uncertainty Constraint]} \\\\\n& \\text{where the uncertainty sets are defined as:} \\\\\n& \\mathcal{U}^c_{poly} = \\{ \\delta^c_{1}, \\delta^c_{2} : - 0.1\\delta^c_{1} - 0.2\\delta^c_{2} \\ge -0.05, 0 \\le \\delta^c_{1} \\le 0.2, 0 \\le \\delta^c_{2} \\le 0.2 \\} \\\\\n& \\mathcal{U}^a_{3,poly} = \\{ \\delta^a_{3,1}, \\delta^a_{3,3} : - 0.2\\delta^a_{3,1} + 0.2\\delta^a_{3,3} \\ge -0.02, 0 \\le \\delta^a_{3,1} \\le 0.2, 0 \\le \\delta^a_{3,3} \\le 0.2 \\} \\\\\n& -2.3 \\le x_{1} \\le 0, -2.3 \\le x_{2} \\le 0, -2.3 \\le x_{3} \\le 0 \\\\\n\\end{align*}",
+    "uncertainty_type": [
+      3,
+      0,
+      1,
+      3
+    ],
+    "solution": [
+      -0.18947368421052627,
+      -2.3,
+      -0.3090909090909092
+    ],
+    "optimal_value": -23.490717703349283
+  },
+  {
+    "id": "3_5_T001",
+    "n_vars": 3,
+    "n_constraints": 3,
+    "template_param": [
+      0,
+      0,
+      1
+    ],
+    "description": "\\begin{align*}\n\\max \\quad & - 8.2x_{1} + (3.4 + \\delta_{42})x_{2} + (-1.3 + \\delta_{43})x_{3} \\quad \\forall (\\delta_{42}, \\delta_{43}) \\in \\mathcal{U}_{poly\\_obj} \\quad & \\text{Objective: Polyhedral Uncertainty} \\\\\n\\text{s.t.} \\quad & 6.2x_{1} + 5.9x_{2} - 0.3x_{3} \\le -62.58 \\quad & \\text{Constraint 1: Deterministic} \\\\\n& (3.6 + \\epsilon_{31})x_{1} + (4.4 + \\epsilon_{32})x_{2} \\le -9.21 \\quad \\forall (\\epsilon_{31}, \\epsilon_{32}) \\in \\mathcal{U}_{budg\\_con2} \\quad & \\text{Constraint 2: Budgeted Uncertainty} \\\\\n& (-4.9 + \\epsilon_{31})x_{1} + (4.6 + \\epsilon_{32})x_{2} \\le 56.24 \\quad \\forall (\\epsilon_{31}, \\epsilon_{32}) \\in \\mathcal{U}_{budg\\_con3} \\quad & \\text{Constraint 3: Budgeted Uncertainty} \\\\\n& -7.8 \\le x_{1} \\le 0, -7.8 \\le x_{2} \\le 0, -7.8 \\le x_{3} \\le 0 \\\\\n& \\mathcal{U}_{poly\\_obj} = \\{ (\\delta_{42}, \\delta_{43}) : 0.4\\delta_{42} - 0.7\\delta_{43} \\le 0.67, -0.8 \\le \\delta_{42} \\le 0, -0.8 \\le \\delta_{43} \\le 0 \\} \\\\\n& \\mathcal{U}_{budg\\_con2} = \\{ (\\epsilon_{31}, \\epsilon_{32}) : |\\epsilon_{31}| \\le 0.7, |\\epsilon_{32}| \\le 0.4, \\frac{|\\epsilon_{31}|}{0.7} + \\frac{|\\epsilon_{32}|}{0.4} \\le 0.5 \\} \\\\\n& \\mathcal{U}_{budg\\_con3} = \\{ (\\epsilon_{31}, \\epsilon_{32}) : |\\epsilon_{31}| \\le 0.3, |\\epsilon_{32}| \\le 0.6, \\frac{|\\epsilon_{31}|}{0.3} + \\frac{|\\epsilon_{32}|}{0.6} \\le 1.5 \\} \\\\\n\\end{align*}",
+    "uncertainty_type": [
+      3,
+      0,
+      2,
+      2
+    ],
+    "solution": [
+      -7.8,
+      -2.8067796610169493,
+      -7.8
+    ],
+    "optimal_value": 64.55694915254237
+  },
+  {
+    "id": "3_6_T000",
+    "n_vars": 3,
+    "n_constraints": 3,
+    "template_param": [
+      0,
+      0,
+      0
+    ],
+    "description": "\\begin{align*}\n\\max \\quad & - 2.4x_{1} + c_{2}x_{2} + c_{3}x_{3}, \\quad \\forall (c_{2}, c_{3}) \\in \\mathcal{U}_{c} \\\\\n& a_{11}x_{1} + a_{12}x_{2} + a_{13}x_{3} \\ge -33.13, \\quad \\forall (a_{11}, a_{12}, a_{13}) \\in \\mathcal{U}_{a1} \\\\\n& - 5.2x_{1} - 7.7x_{2} = -2.77 \\\\\n& (-7 + \\zeta^{a3}_{1})x_{1} + (-0.6 + \\zeta^{a3}_{2})x_{2} \\ge -58.87, \\quad \\forall (\\zeta^{a3}_{1}, \\zeta^{a3}_{2}) \\in \\mathcal{U}_{a3} \\\\\n& -8.6 \\le x_{1} \\le 8.6, \\quad -8.6 \\le x_{2} \\le 8.6, \\quad -8.6 \\le x_{3} \\le 8.6 \\\\\n\\mathcal{U}_{c} = \\{ (c_{2}, c_{3}) : \\quad & |c_{2} - 0.4| \\le 0.1, \\\\\n& \\quad |c_{3} - 5| \\le 0.6, \\\\\n& \\quad \\frac{|c_{2} - 0.4|}{0.1} + \\frac{|c_{3} - 5|}{0.6} \\le 1.9 \\} \\\\\n\\mathcal{U}_{a1} = \\{ (a_{11}, a_{12}, a_{13}) : \\quad & |a_{11} - (-1)| \\le 0.1, \\\\\n& \\quad |a_{12} - (-2)| \\le 0.3, \\\\\n& \\quad |a_{13} - (-4.4)| \\le 0.6 \\} \\\\\n\\mathcal{U}_{a3} = \\{ (\\zeta^{a3}_{1}, \\zeta^{a3}_{2}) : \\quad & 0.4\\zeta^{a3}_{1} - 0.5\\zeta^{a3}_{2} \\le -0.14, \\\\\n& \\quad 0 \\le \\zeta^{a3}_{1} \\le 0.9, \\\\\n& \\quad 0 \\le \\zeta^{a3}_{2} \\le 0.9 \\} \\\\\n\\end{align*}",
+    "uncertainty_type": [
+      2,
+      1,
+      0,
+      3
+    ],
+    "solution": [
+      -8.6,
+      6.167532467532467,
+      5.336935064935066
+    ],
+    "optimal_value": 46.034449350649346
+  },
+  {
+    "id": "3_7_T100",
+    "n_vars": 3,
+    "n_constraints": 3,
+    "template_param": [
+      1,
+      0,
+      0
+    ],
+    "description": "\\begin{align*}\n\\min_{x_{1}, x_{2}, x_{3}} \\quad & \\max_{\\xi^c_{2}, \\xi^c_{3} \\in \\mathcal{U}^c} -7x_{1} + 0.9x_{2} + 0.1\\xi^c_{2}x_{2} - 6.6x_{3} + 0.7\\xi^c_{3}x_{3} \\\\\n& 3.1x_{2} + 1.4x_{3} = 8.35 \\\\\n& \\min_{\\xi^a_{2,2}, \\xi^a_{2,3} \\in \\mathcal{U}^a_{2}} 1.3x_{2} + 0.1\\xi^a_{2,2}x_{2} - 3.7x_{3} + 0.2\\xi^a_{2,3}x_{3} \\ge -8.13 \\\\\n& \\max_{\\xi^a_{3,1}, \\xi^a_{3,2}, \\xi^a_{3,3} \\in \\mathcal{U}^a_{3}} -0.7x_{1} + 0.1\\xi^a_{3,1}x_{1} + 2.8x_{2} + 0.2\\xi^a_{3,2}x_{2} + 0.1x_{3} + 0.1\\xi^a_{3,3}x_{3} \\le 10.44 \\\\\n& \\mathcal{U}^c = \\{ \\xi^c_{2}, \\xi^c_{3} : -1 \\le \\xi^c_{2} \\le 1, -1 \\le \\xi^c_{3} \\le 1 \\} \\\\\n& \\mathcal{U}^a_{2} = \\{ \\xi^a_{2,2}, \\xi^a_{2,3} : -1 \\le \\xi^a_{2,2} \\le 1, -1 \\le \\xi^a_{2,3} \\le 1 \\} \\\\\n& \\mathcal{U}^a_{3} = \\{ \\xi^a_{3,1}, \\xi^a_{3,2}, \\xi^a_{3,3} : -1 \\le \\xi^a_{3,1} \\le 1, -1 \\le \\xi^a_{3,2} \\le 1, -1 \\le \\xi^a_{3,3} \\le 1 \\} \\\\\n& 0 \\le x_{1} \\le 5.1, 0 \\le x_{2} \\le 5.1, 0 \\le x_{3} \\le 5.1 \\\\\n\\end{align*}",
+    "uncertainty_type": [
+      1,
+      0,
+      1,
+      1
+    ],
+    "solution": [
+      5.1,
+      1.5383442265795206,
+      2.5579520697167752
+    ],
+    "optimal_value": -49.253572984749454
+  },
+  {
+    "id": "3_8_T000",
+    "n_vars": 3,
+    "n_constraints": 3,
+    "template_param": [
+      0,
+      0,
+      0
+    ],
+    "description": "\\begin{align*}\n\\min \\quad & c_{1}x_{1} + c_{2}x_{2} + c_{3}x_{3}, \\quad \\forall (c_{1}, c_{2}, c_{3}) \\in \\mathcal{U}_{c} \\\\\n& (-3.1 + \\zeta^{a1}_{2})x_{2} + (7.8 + \\zeta^{a1}_{3})x_{3} \\ge -22.79, \\quad \\forall (\\zeta^{a1}_{2}, \\zeta^{a1}_{3}) \\in \\mathcal{U}_{a1} \\\\\n& 3.4x_{1} + 8.7x_{2} + 4.6x_{3} = -41.94 \\\\\n& a_{32}x_{2} + a_{33}x_{3} \\ge -94.13, \\quad \\forall (a_{32}, a_{33}) \\in \\mathcal{U}_{a3} \\\\\n& -9 \\le x_{1} \\le 0, \\quad -9 \\le x_{2} \\le 0, \\quad -9 \\le x_{3} \\le 0 \\\\\n\\mathcal{U}_{c} = \\{ (c_{1}, c_{2}, c_{3}) : \\quad & |c_{1} - 5.7| \\le 0.8, \\\\\n& \\quad |c_{2} - (-4.3)| \\le 0.7, \\\\\n& \\quad |c_{3} - (-3.5)| \\le 0.6 \\} \\\\\n\\mathcal{U}_{a1} = \\{ (\\zeta^{a1}_{2}, \\zeta^{a1}_{3}) : \\quad & - 0.6\\zeta^{a1}_{2} - 0.4\\zeta^{a1}_{3} \\le 0.85, \\\\\n& \\quad -0.9 \\le \\zeta^{a1}_{2} \\le 0, \\\\\n& \\quad -0.9 \\le \\zeta^{a1}_{3} \\le 0 \\} \\\\\n\\mathcal{U}_{a3} = \\{ (a_{32}, a_{33}) : \\quad & |a_{32} - (-3.9)| \\le 0.3, \\\\\n& \\quad |a_{33} - (-7.7)| \\le 1, \\\\\n& \\quad \\frac{|a_{32} - (-3.9)|}{0.3} + \\frac{|a_{33} - (-7.7)|}{1} \\le 1.8 \\} \\\\\n\\end{align*}",
+    "uncertainty_type": [
+      1,
+      3,
+      0,
+      2
+    ],
+    "solution": [
+      -9.0,
+      -1.3034482758620691,
+      0.0
+    ],
+    "optimal_value": -37.58275862068966
+  },
+  {
+    "id": "3_9_T100",
+    "n_vars": 3,
+    "n_constraints": 3,
+    "template_param": [
+      1,
+      0,
+      0
+    ],
+    "description": "\\begin{align*}\n\\min_{x_{1}, x_{2}, x_{3}} \\quad & \\max_{\\xi^c_{2}, \\xi^c_{3} \\in \\mathcal{U}^c} -9.4x_{1} + 9.1x_{2} + 0.8\\xi^c_{2}x_{2} + 3x_{3} + 0.5\\xi^c_{3}x_{3} \\\\\n& \\max_{\\xi^a_{1,1}, \\xi^a_{1,2} \\in \\mathcal{U}^a_{1}} -1.2x_{1} + 0.2\\xi^a_{1,1}x_{1} - 1.8x_{2} + 0.1\\xi^a_{1,2}x_{2} \\le -1.16 \\\\\n& 0.9x_{1} + 0.5x_{3} \\le 4.29 \\\\\n& \\max_{\\xi^a_{3,1}, \\xi^a_{3,2} \\in \\mathcal{U}^a_{3}} 2x_{1} + 0.3\\xi^a_{3,1}x_{1} + 0.4x_{2} + 0.1\\xi^a_{3,2}x_{2} \\le 4.43 \\\\\n& \\mathcal{U}^c = \\{ \\xi^c_{2}, \\xi^c_{3} : |\\xi^c_{2}| + |\\xi^c_{3}| \\le 1.8, -1 \\le \\xi^c_{2} \\le 1, -1 \\le \\xi^c_{3} \\le 1 \\} \\\\\n& \\mathcal{U}^a_{1} = \\{ \\xi^a_{1,1}, \\xi^a_{1,2} : |\\xi^a_{1,1}| + |\\xi^a_{1,2}| \\le 0.4, -1 \\le \\xi^a_{1,1} \\le 1, -1 \\le \\xi^a_{1,2} \\le 1 \\} \\\\\n& \\mathcal{U}^a_{3} = \\{ \\xi^a_{3,1}, \\xi^a_{3,2} : |\\xi^a_{3,1}| + |\\xi^a_{3,2}| \\le 0.2, -1 \\le \\xi^a_{3,1} \\le 1, -1 \\le \\xi^a_{3,2} \\le 1 \\} \\\\\n& 0 \\le x_{1} \\le 3.3, 0 \\le x_{2} \\le 3.3, 0 \\le x_{3} \\le 3.3 \\\\\n\\end{align*}",
+    "uncertainty_type": [
+      2,
+      2,
+      0,
+      2
+    ],
+    "solution": [
+      2.1504854368932036,
+      0.0,
+      0.0
+    ],
+    "optimal_value": -20.214563106796113
+  },
+  {
+    "id": "3_10_T111",
+    "n_vars": 3,
+    "n_constraints": 3,
+    "template_param": [
+      1,
+      1,
+      1
+    ],
+    "description": "\\begin{align*}\n& \\text{Minimize} \\quad \\max_{\\xi_c \\in \\mathcal{U}_{c,Box}} \\left( \\bar{c} + \\text{diag}(\\hat{c}) \\xi_c \\right)^\\top x && \\text{(Box Uncertainty Objective)} \\\\\n& \\text{subject to} \\\\\n& \\max_{\\delta_{a1} \\in \\mathcal{U}_{a1,P}} ( \\bar{a}_{1} + \\delta_{a1} )^\\top x \\le b_{1} && \\text{(Polyhedral Uncertainty Constraint)} \\\\\n& a_{2}^\\top x \\ge b_{2} && \\text{(Deterministic Constraint)} \\\\\n& \\min_{\\delta_{a3} \\in \\mathcal{U}_{a3,P}} ( \\bar{a}_{3} + \\delta_{a3} )^\\top x \\ge b_{3} && \\text{(Polyhedral Uncertainty Constraint)} \\\\\n& \\text{where:} \\\\\n& \\mathcal{U}_{c,Box} = \\{ \\xi_c \\in \\mathbb{R}^{3} : \\|\\xi_c\\|_{\\infty} \\le 1 \\} \\\\\n& \\mathcal{U}_{a1,P} = \\{ \\delta_{a1} \\in \\mathbb{R}^{3} : D_{a1} \\delta_{a1} \\le d_{a1} \\} \\\\\n& \\mathcal{U}_{a3,P} = \\{ \\delta_{a3} \\in \\mathbb{R}^{3} : D_{a3} \\delta_{a3} \\le d_{a3}, \\quad E_{a3} \\delta_{a3} = e_{a3} \\} \\\\\n& x = [x_{1}, x_{2}, x_{3}]^\\top \\\\\n& 0 \\le x_j \\le 3.9, \\quad \\forall j \\in \\{1, \\dots, 3\\} \\\\\n& \\bar{c} = [1.8, -1.7, -9.2]^\\top \\\\\n& \\hat{c} = [0.2, 0.3, 1]^\\top \\\\\n& \\bar{a}_{1} = [2.2, 3.3, -0.1]^\\top \\\\\n& b_{1} = 14.33 \\\\\n& a_{2} = [-1.2, 0, 2.7]^\\top \\\\\n& b_{2} = -12.72 \\\\\n& \\bar{a}_{3} = [0, 2.9, -1.4]^\\top \\\\\n& b_{3} = -7.61 \\\\\n& D_{a1} = \\begin{bmatrix} 0.1 & 0 & 0.1 \\\\ 0 & -0.3 & 0.2 \\\\ 1 & 0 & 0 \\\\ -1 & 0 & 0 \\\\ 0 & 1 & 0 \\\\ 0 & -1 & 0 \\\\ 0 & 0 & 1 \\\\ 0 & 0 & -1 \\end{bmatrix} \\\\\n& d_{a1} = [0.05, 0.19, 0.4, 0, 0.4, 0, 0.4, 0]^\\top \\\\\n& D_{a3} = \\begin{bmatrix} 0 & -0.4 & 0.2 \\\\ 0 & 1 & 0 \\\\ 0 & -1 & 0 \\\\ 0 & 0 & 1 \\\\ 0 & 0 & -1 \\end{bmatrix} \\\\\n& d_{a3} = [0.01, 0.4, 0, 0.4, 0]^\\top \\\\\n& E_{a3} = \\begin{bmatrix} 1 & 0 & 0 \\end{bmatrix} \\\\\n& e_{a3} = [0]^\\top \\\\\n\\end{align*}",
+    "uncertainty_type": [
+      1,
+      3,
+      0,
+      3
+    ],
+    "solution": [
+      0.0,
+      3.5567567567567564,
+      3.9
+    ],
+    "optimal_value": -36.95945945945945
+  },
+  {
+    "id": "3_11_T001",
+    "n_vars": 3,
+    "n_constraints": 3,
+    "template_param": [
+      0,
+      0,
+      1
+    ],
+    "description": "\\begin{align*}\n\\min \\quad & (2.8 + \\delta_{21})x_{1} + (1.5 + \\delta_{22})x_{2} + (-7.4 + \\delta_{23})x_{3} \\quad \\forall (\\delta_{21}, \\delta_{22}, \\delta_{23}) \\in \\mathcal{U}_{box\\_obj} \\quad & \\text{Objective: Box Uncertainty} \\\\\n\\text{s.t.} \\quad & (2.5 + \\epsilon_{42})x_{2} + (1.1 + \\epsilon_{43})x_{3} \\le 23.19 \\quad \\forall (\\epsilon_{42}, \\epsilon_{43}) \\in \\mathcal{U}_{poly\\_con} \\quad & \\text{Constraint 1: Polyhedral Uncertainty} \\\\\n& (-4.6 + \\epsilon_{31})x_{1} + (-0.3 + \\epsilon_{32})x_{2} - 2.4x_{3} \\le 42.63 \\quad \\forall (\\epsilon_{31}, \\epsilon_{32}) \\in \\mathcal{U}_{budg\\_con} \\quad & \\text{Constraint 2: Budgeted Uncertainty} \\\\\n& - 4.7x_{2} + 0.9x_{3} = 18.33 \\quad & \\text{Constraint 3: Deterministic} \\\\\n& -9 \\le x_{1} \\le 0, -9 \\le x_{2} \\le 0, -9 \\le x_{3} \\le 0 \\\\\n& \\mathcal{U}_{box\\_obj} = \\{ (\\delta_{21}, \\delta_{22}, \\delta_{23}) : -0.4 \\le \\delta_{21} \\le 0.4, -0.1 \\le \\delta_{22} \\le 0.1, -0.9 \\le \\delta_{23} \\le 0.9 \\} \\\\\n& \\mathcal{U}_{poly\\_con} = \\{ (\\epsilon_{42}, \\epsilon_{43}) : 0.9\\epsilon_{42} + 0.8\\epsilon_{43} \\le 0.76, 0 \\le \\epsilon_{42} \\le 0.9, 0 \\le \\epsilon_{43} \\le 0.9 \\} \\\\\n& \\mathcal{U}_{budg\\_con} = \\{ (\\epsilon_{31}, \\epsilon_{32}) : |\\epsilon_{31}| \\le 0.4, |\\epsilon_{32}| \\le 0.1, \\frac{|\\epsilon_{31}|}{0.4} + \\frac{|\\epsilon_{32}|}{0.1} \\le 0.1 \\} \\\\\n\\end{align*}",
+    "uncertainty_type": [
+      1,
+      3,
+      2,
+      0
+    ],
+    "solution": [
+      -8.935344827586208,
+      -3.8999999999999995,
+      0.0
+    ],
+    "optimal_value": -26.9048275862069
+  },
+  {
+    "id": "3_12_T011",
+    "n_vars": 3,
+    "n_constraints": 3,
+    "template_param": [
+      0,
+      1,
+      1
+    ],
+    "description": "\\begin{align*}\n\\text{Maximize} \\quad & \\mathbf{c}^\\top \\mathbf{x} && \\forall \\mathbf{c} \\in \\mathcal{U}_{c,Bud} && \\text{(Budgeted Uncertainty Objective)} \\\\\n\\text{subject to} \\quad & \\mathbf{a}_{1}^\\top \\mathbf{x} \\ge b_{1} && && \\text{(Deterministic Constraint)} \\\\\n& \\mathbf{a}_{2}^\\top \\mathbf{x} \\le b_{2} && \\forall \\mathbf{a}_{2} \\in \\mathcal{U}_{a2,Bud} && \\text{(Budgeted Uncertainty Constraint)} \\\\\n& \\mathbf{a}_{3}^\\top \\mathbf{x} \\ge b_{3} && \\forall \\mathbf{a}_{3} \\in \\mathcal{U}_{a3,Bud} && \\text{(Budgeted Uncertainty Constraint)} \\\\\n\\text{where:} \\quad\n& \\mathcal{U}_{c,Bud} = \\{ \\mathbf{c} \\in \\mathbb{R}^{3} : \\mathbf{c} = \\mathbf{c}^{nom} + \\mathbf{D}_c \\boldsymbol{\\xi}_c, \\|\\boldsymbol{\\xi}_c\\|_{\\infty} \\le 1, \\|\\boldsymbol{\\xi}_c\\|_1 \\le \\Gamma_c \\} \\\\\n& \\mathcal{U}_{a2,Bud} = \\{ \\mathbf{a}_{2} \\in \\mathbb{R}^{3} : \\mathbf{a}_{2} = \\mathbf{a}_{2}^{nom} + \\mathbf{D}_{a2} \\boldsymbol{\\xi}_{a2}, \\|\\boldsymbol{\\xi}_{a2}\\|_{\\infty} \\le 1, \\|\\boldsymbol{\\xi}_{a2}\\|_1 \\le \\Gamma_{a2} \\} \\\\\n& \\mathcal{U}_{a3,Bud} = \\{ \\mathbf{a}_{3} \\in \\mathbb{R}^{3} : \\mathbf{a}_{3} = \\mathbf{a}_{3}^{nom} + \\mathbf{D}_{a3} \\boldsymbol{\\xi}_{a3}, \\|\\boldsymbol{\\xi}_{a3}\\|_{\\infty} \\le 1, \\|\\boldsymbol{\\xi}_{a3}\\|_1 \\le \\Gamma_{a3} \\} \\\\\n& \\mathbf{x} = [x_{1}, x_{2}, x_{3}]^\\top \\\\\n& \\mathbf{c}^{nom} = [1.9, 8.9, -4.9]^\\top \\\\\n& \\mathbf{a}_{1} = [0.3, -2.6, 0.6]^\\top \\\\\n& b_{1} = 3.08 \\\\\n& \\mathbf{a}_{2}^{nom} = [-0.8, 0, -2.1]^\\top \\\\\n& b_{2} = 1.73 \\\\\n& \\mathbf{a}_{3}^{nom} = [0, 2.3, 1.8]^\\top \\\\\n& b_{3} = -9.18 \\\\\n& \\mathbf{D}_c = \\text{diag}(0.2, 0.9, 0.7) \\\\\n& \\Gamma_c = 2.2 \\\\\n& \\mathbf{D}_{a2} = \\text{diag}(0.2, 0, 0.3) \\\\\n& \\Gamma_{a2} = 1.9 \\\\\n& \\mathbf{D}_{a3} = \\text{diag}(0, 0.2, 0.3) \\\\\n& \\Gamma_{a3} = 0.9 \\\\\n& -3.2 \\le x_j \\le 3.2, \\quad \\forall j \\in \\{1, \\dots, 3\\} && && \\text{(Variable Bounds)} \\\\\n\\end{align*}",
+    "uncertainty_type": [
+      2,
+      0,
+      2,
+      2
+    ],
+    "solution": [
+      3.2,
+      -1.1707887049659202,
+      -1.5400843881856543
+    ],
+    "optimal_value": 0.9466251217137291
+  },
+  {
+    "id": "3_13_T110",
+    "n_vars": 3,
+    "n_constraints": 3,
+    "template_param": [
+      1,
+      1,
+      0
+    ],
+    "description": "\\begin{align*}\n& \\max_{\\mathbf{x}} \\min_{\\boldsymbol{\\delta}_c \\in \\mathcal{U}_c} (\\mathbf{c}^{nom} + \\boldsymbol{\\delta}_c)^\\top \\mathbf{x} \\\\\n& \\max_{\\boldsymbol{\\delta}_{a1} \\in \\mathcal{U}_{a1}} (\\mathbf{a}_{1}^{nom} + \\boldsymbol{\\delta}_{a1})^\\top \\mathbf{x} \\le b_{1} \\\\\n& \\max_{\\boldsymbol{\\delta}_{a2} \\in \\mathcal{U}_{a2}} (\\mathbf{a}_{2}^{nom} + \\boldsymbol{\\delta}_{a2})^\\top \\mathbf{x} \\le b_{2} \\\\\n& \\mathbf{a}_{3}^\\top \\mathbf{x} = b_{3} \\\\\n& \\mathcal{U}_c = \\{ \\boldsymbol{\\delta}_c \\in \\mathbb{R}^{3} : \\mathbf{D}_c \\boldsymbol{\\delta}_c \\le \\mathbf{d}_c, \\quad \\mathbf{E}_c \\boldsymbol{\\delta}_c = \\mathbf{e}_c \\} \\\\\n& \\mathcal{U}_{a1} = \\{ \\boldsymbol{\\delta}_{a1} \\in \\mathbb{R}^{3} : |\\boldsymbol{\\delta}_{a1}| \\le \\hat{\\mathbf{a}}_{1}, \\|\\text{diag}(\\hat{\\mathbf{a}}_{1})^{-1} \\boldsymbol{\\delta}_{a1}\\|_1 \\le \\Gamma_{a1} \\} \\\\\n& \\mathcal{U}_{a2} = \\{ \\boldsymbol{\\delta}_{a2} \\in \\mathbb{R}^{3} : |\\boldsymbol{\\delta}_{a2}| \\le \\hat{\\mathbf{a}}_{2}, \\|\\text{diag}(\\hat{\\mathbf{a}}_{2})^{-1} \\boldsymbol{\\delta}_{a2}\\|_1 \\le \\Gamma_{a2} \\} \\\\\n& \\mathbf{x} = \\begin{bmatrix} x_{1} \\\\ x_{2} \\\\ x_{3} \\end{bmatrix} \\\\\n& 0 \\le x_j \\le 6.7, \\quad \\forall j \\in \\{1, \\dots, 3\\} \\\\\n& \\mathbf{c}^{nom} = [7.2, -5.9, 4.3]^\\top \\\\\n& \\mathbf{a}_{1}^{nom} = [0, -3.5, 2.2]^\\top \\\\\n& b_{1} = -4.54 \\\\\n& \\mathbf{a}_{2}^{nom} = [-6.7, -0.3, 2.5]^\\top \\\\\n& b_{2} = 10.16 \\\\\n& \\mathbf{a}_{3} = [2, -1.2, 0]^\\top \\\\\n& b_{3} = 0.48 \\\\\n& \\mathbf{D}_c = \\begin{bmatrix} 0 & 0.4 & 0.1 \\\\ 1 & 0 & 0 \\\\ -1 & 0 & 0 \\\\ 0 & 1 & 0 \\\\ 0 & -1 & 0 \\\\ 0 & 0 & 1 \\\\ 0 & 0 & -1 \\end{bmatrix} \\\\\n& \\mathbf{d}_c = [-0.1, 0.7, 0.7, 0.7, 0.7, 0.7, 0.7]^\\top \\\\\n& \\mathbf{E}_c = \\begin{bmatrix} 0 & -0.4 & -0.2 \\end{bmatrix} \\\\\n& \\mathbf{e}_c = [0.18]^\\top \\\\\n& \\hat{\\mathbf{a}}_{1} = [0, 0.2, 0.2]^\\top \\\\\n& \\Gamma_{a1} = 1.5 \\\\\n& \\hat{\\mathbf{a}}_{2} = [0.5, 0.1, 0.1]^\\top \\\\\n& \\Gamma_{a2} = 1.3 \\\\\n\\end{align*}",
+    "uncertainty_type": [
+      3,
+      2,
+      2,
+      0
+    ],
+    "solution": [
+      3.878823529411765,
+      6.064705882352942,
+      6.7
+    ],
+    "optimal_value": 12.944117647058816
+  },
+  {
+    "id": "3_14_T111",
+    "n_vars": 3,
+    "n_constraints": 3,
+    "template_param": [
+      1,
+      1,
+      1
+    ],
+    "description": "\\begin{align*}\n& \\text{Maximize} \\quad \\min_{\\delta_c \\in \\mathcal{U}_{c,P}} ( \\bar{c} + \\delta_c )^\\top x && \\text{(Polyhedral Uncertainty Objective)} \\\\\n& \\text{subject to} \\\\\n& a_{1}^\\top x = b_{1} && \\text{(Deterministic Constraint)} \\\\\n& \\min_{\\delta_{a2} \\in \\mathcal{U}_{a2,P}} ( \\bar{a}_{2} + \\delta_{a2} )^\\top x \\ge b_{2} && \\text{(Polyhedral Uncertainty Constraint)} \\\\\n& \\min_{\\xi_{a3} \\in \\mathcal{U}_{a3,Box}} \\left( \\bar{a}_{3} + \\text{diag}(\\hat{a}_{3}) \\xi_{a3} \\right)^\\top x \\ge b_{3} && \\text{(Box Uncertainty Constraint)} \\\\\n& \\text{where:} \\\\\n& \\mathcal{U}_{c,P} = \\{ \\delta_c \\in \\mathbb{R}^{3} : D_c \\delta_c \\le d_c \\} \\\\\n& \\mathcal{U}_{a2,P} = \\{ \\delta_{a2} \\in \\mathbb{R}^{3} : D_{a2} \\delta_{a2} \\le d_{a2}, \\quad E_{a2} \\delta_{a2} = e_{a2} \\} \\\\\n& \\mathcal{U}_{a3,Box} = \\{ \\xi_{a3} \\in \\mathbb{R}^{3} : \\|\\xi_{a3}\\|_{\\infty} \\le 1 \\} \\\\\n& x = [x_{1}, x_{2}, x_{3}]^\\top \\\\\n& -5.2 \\le x_j \\le 0, \\quad \\forall j \\in \\{1, \\dots, 3\\} \\\\\n& \\bar{c} = [-0.6, -7.3, -8.3]^\\top \\\\\n& a_{1} = [0, 3.8, 4.7]^\\top \\\\\n& b_{1} = -22.86 \\\\\n& \\bar{a}_{2} = [4.6, 0, 0.1]^\\top \\\\\n& b_{2} = -18.39 \\\\\n& \\bar{a}_{3} = [0, 4.2, 5.2]^\\top \\\\\n& b_{3} = -45.34 \\\\\n& \\hat{a}_{3} = [0, 0.7, 0.6]^\\top \\\\\n& D_c = \\begin{bmatrix} 0.2 & -0.5 & 0 \\\\ -0.1 & 0 & 0.1 \\\\ 1 & 0 & 0 \\\\ -1 & 0 & 0 \\\\ 0 & 1 & 0 \\\\ 0 & -1 & 0 \\\\ 0 & 0 & 1 \\\\ 0 & 0 & -1 \\end{bmatrix} \\\\\n& d_c = [0.33, 0.06, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5]^\\top \\\\\n& D_{a2} = \\begin{bmatrix} -0.1 & 0 & 0.2 \\\\ 1 & 0 & 0 \\\\ -1 & 0 & 0 \\\\ 0 & 0 & 1 \\\\ 0 & 0 & -1 \\end{bmatrix} \\\\\n& d_{a2} = [-0.04, 0.5, 0.5, 0.5, 0.5]^\\top \\\\\n& E_{a2} = \\begin{bmatrix} 0 & 1 & 0 \\end{bmatrix} \\\\\n& e_{a2} = [0]^\\top \\\\\n\\end{align*}",
+    "uncertainty_type": [
+      3,
+      0,
+      3,
+      1
+    ],
+    "solution": [
+      -3.58648310387985,
+      -5.2,
+      -0.6595744680851067
+    ],
+    "optimal_value": 40.86332916145182
+  },
+  {
+    "id": "3_15_T011",
+    "n_vars": 3,
+    "n_constraints": 3,
+    "template_param": [
+      0,
+      1,
+      1
+    ],
+    "description": "\\begin{align*}\n\\text{Maximize} \\quad & \\mathbf{c}^\\top \\mathbf{x} && \\forall \\mathbf{c} \\in \\mathcal{U}_{c,Bud} && \\text{(Budgeted Uncertainty Objective)} \\\\\n\\text{subject to} \\quad & \\mathbf{a}_{1}^\\top \\mathbf{x} \\le b_{1} && \\forall \\mathbf{a}_{1} \\in \\mathcal{U}_{a,Box} && \\text{(Box Uncertainty Constraint)} \\\\\n& \\mathbf{a}_{2}^\\top \\mathbf{x} \\le b_{2} && && \\text{(Deterministic Constraint)} \\\\\n& \\mathbf{a}_{3}^\\top \\mathbf{x} \\le b_{3} && \\forall \\mathbf{a}_{3} \\in \\mathcal{U}_{a3,Bud} && \\text{(Budgeted Uncertainty Constraint)} \\\\\n\\text{where:} \\quad\n& \\mathcal{U}_{c,Bud} = \\{ \\mathbf{c} \\in \\mathbb{R}^{3} : \\mathbf{c} = \\mathbf{c}^{nom} + \\mathbf{D}_c \\boldsymbol{\\xi}_c, \\|\\boldsymbol{\\xi}_c\\|_{\\infty} \\le 1, \\|\\boldsymbol{\\xi}_c\\|_1 \\le \\Gamma_c \\} \\\\\n& \\mathcal{U}_{a,Box} = \\{ \\mathbf{a}_{1} \\in \\mathbb{R}^{3} : \\mathbf{a}_{1} = \\mathbf{a}_{1}^{nom} + \\mathbf{D}_{a1} \\boldsymbol{\\xi}_{a1}, \\|\\boldsymbol{\\xi}_{a1}\\|_{\\infty} \\le 1 \\} \\\\\n& \\mathcal{U}_{a3,Bud} = \\{ \\mathbf{a}_{3} \\in \\mathbb{R}^{3} : \\mathbf{a}_{3} = \\mathbf{a}_{3}^{nom} + \\mathbf{D}_{a3} \\boldsymbol{\\xi}_{a3}, \\|\\boldsymbol{\\xi}_{a3}\\|_{\\infty} \\le 1, \\|\\boldsymbol{\\xi}_{a3}\\|_1 \\le \\Gamma_{a3} \\} \\\\\n& \\mathbf{x} = [x_{1}, x_{2}, x_{3}]^\\top \\\\\n& \\mathbf{c}^{nom} = [-5.4, -3.1, 3.6]^\\top \\\\\n& \\mathbf{a}_{1}^{nom} = [-4.1, -5.3, 0]^\\top \\\\\n& b_{1} = 88.16 \\\\\n& \\mathbf{a}_{2} = [-4.5, 0, -5.8]^\\top \\\\\n& b_{2} = 72.11 \\\\\n& \\mathbf{a}_{3}^{nom} = [3.8, -5.7, 1]^\\top \\\\\n& b_{3} = 98.41 \\\\\n& \\mathbf{D}_c = \\text{diag}(0, 0.4, 0.3) \\\\\n& \\Gamma_c = 0.2 \\\\\n& \\mathbf{D}_{a1} = \\text{diag}(0.3, 0.8, 0) \\\\\n& \\mathbf{D}_{a3} = \\text{diag}(0.7, 0, 0.2) \\\\\n& \\Gamma_{a3} = 1.1 \\\\\n& -10 \\le x_j \\le 0, \\quad \\forall j \\in \\{1, \\dots, 3\\} && && \\text{(Variable Bounds)} \\\\\n\\end{align*}",
+    "uncertainty_type": [
+      2,
+      1,
+      0,
+      2
+    ],
+    "solution": [
+      -10.0,
+      -7.239344262295081,
+      0.0
+    ],
+    "optimal_value": 75.86281967213114
+  },
+  {
+    "id": "3_16_T000",
+    "n_vars": 3,
+    "n_constraints": 3,
+    "template_param": [
+      0,
+      0,
+      0
+    ],
+    "description": "\\begin{align*}\n\\min \\quad & (9.2 + \\zeta^c_{1})x_{1} + (0.4 + \\zeta^c_{2})x_{2} + 0.3x_{3}, \\quad \\forall (\\zeta^c_{1}, \\zeta^c_{2}) \\in \\mathcal{U}_{c} \\\\\n& - 6.8x_{2} - 4.5x_{3} \\le 5.8 \\\\\n& (-7.4 + \\zeta^{a2}_{1})x_{1} + (-2.7 + \\zeta^{a2}_{3})x_{3} \\ge -88.37, \\quad \\forall (\\zeta^{a2}_{1}, \\zeta^{a2}_{3}) \\in \\mathcal{U}_{a2} \\\\\n& 5.1x_{1} + (-0.7 + \\zeta^{a3}_{2})x_{2} + (4.9 + \\zeta^{a3}_{3})x_{3} \\ge 29.89, \\quad \\forall (\\zeta^{a3}_{2}, \\zeta^{a3}_{3}) \\in \\mathcal{U}_{a3} \\\\\n& 0 \\le x_{1} \\le 9, \\quad 0 \\le x_{2} \\le 9, \\quad 0 \\le x_{3} \\le 9 \\\\\n\\mathcal{U}_{c} = \\{ (\\zeta^c_{1}, \\zeta^c_{2}) : \\quad & 0.1\\zeta^c_{1} - 0.4\\zeta^c_{2} \\ge -0.24, \\\\\n& \\quad -0.9 \\le \\zeta^c_{1} \\le 0, \\\\\n& \\quad -0.9 \\le \\zeta^c_{2} \\le 0 \\} \\\\\n\\mathcal{U}_{a2} = \\{ (\\zeta^{a2}_{1}, \\zeta^{a2}_{3}) : \\quad & - 0.3\\zeta^{a2}_{1} + 0.6\\zeta^{a2}_{3} \\ge -0.7, \\\\\n& \\quad -0.9 \\le \\zeta^{a2}_{1} \\le 0, \\\\\n& \\quad -0.9 \\le \\zeta^{a2}_{3} \\le 0 \\} \\\\\n\\mathcal{U}_{a3} = \\{ (\\zeta^{a3}_{2}, \\zeta^{a3}_{3}) : \\quad & - 0.8\\zeta^{a3}_{2} + 0.8\\zeta^{a3}_{3} \\le 0.24, \\\\\n& \\quad -0.9 \\le \\zeta^{a3}_{2} \\le 0, \\\\\n& \\quad -0.9 \\le \\zeta^{a3}_{3} \\le 0 \\} \\\\\n\\end{align*}",
+    "uncertainty_type": [
+      3,
+      0,
+      3,
+      3
+    ],
+    "solution": [
+      0.0,
+      0.0,
+      7.472500000000001
+    ],
+    "optimal_value": 2.24175
+  },
+  {
+    "id": "4_1_T001",
+    "n_vars": 4,
+    "n_constraints": 4,
+    "template_param": [
+      0,
+      0,
+      1
+    ],
+    "description": "\\begin{align*}\n\\min \\quad & (-1.7 + \\delta_{31})x_{1} + (-3.9 + \\delta_{32})x_{2} - 2.2x_{3} + (-7.4 + \\delta_{34})x_{4} \\quad \\forall (\\delta_{31}, \\delta_{32}, \\delta_{34}) \\in \\mathcal{U}_{budg\\_obj} \\quad & \\text{Objective: Budgeted Uncertainty} \\\\\n\\text{s.t.} \\quad & (-2.7 + \\epsilon_{22})x_{2} + (4.4 + \\epsilon_{24})x_{4} \\ge -21.6 \\quad \\forall (\\epsilon_{22}, \\epsilon_{24}) \\in \\mathcal{U}_{box\\_con} \\quad & \\text{Constraint 1: Box Uncertainty} \\\\\n& - 4.3x_{2} - 0.1x_{4} \\le 12.38 \\quad & \\text{Constraint 2: Deterministic} \\\\\n& (1.1 + \\epsilon_{43})x_{3} + (-2.7 + \\epsilon_{44})x_{4} \\ge 0.37 \\quad \\forall (\\epsilon_{43}, \\epsilon_{44}) \\in \\mathcal{U}_{poly\\_con3} \\quad & \\text{Constraint 3: Polyhedral Uncertainty} \\\\\n& (-3.3 + \\epsilon_{41})x_{1} + (1.4 + \\epsilon_{44})x_{4} \\ge -0.62 \\quad \\forall (\\epsilon_{41}, \\epsilon_{44}) \\in \\mathcal{U}_{poly\\_con4} \\quad & \\text{Constraint 4: Polyhedral Uncertainty} \\\\\n& -4.5 \\le x_{1} \\le 0, -4.5 \\le x_{2} \\le 0, -4.5 \\le x_{3} \\le 0, -4.5 \\le x_{4} \\le 0 \\\\\n& \\mathcal{U}_{budg\\_obj} = \\{ (\\delta_{31}, \\delta_{32}, \\delta_{34}) : |\\delta_{31}| \\le 0.2, |\\delta_{32}| \\le 0.2, |\\delta_{34}| \\le 0.7, \\frac{|\\delta_{31}|}{0.2} + \\frac{|\\delta_{32}|}{0.2} + \\frac{|\\delta_{34}|}{0.7} \\le 1.3 \\} \\\\\n& \\mathcal{U}_{box\\_con} = \\{ (\\epsilon_{22}, \\epsilon_{24}) : -0.3 \\le \\epsilon_{22} \\le 0.3, -0.2 \\le \\epsilon_{24} \\le 0.2 \\} \\\\\n& \\mathcal{U}_{poly\\_con3} = \\{ (\\epsilon_{43}, \\epsilon_{44}) : 0.4\\epsilon_{43} - 0.4\\epsilon_{44} \\le -0.02, -0.5 \\le \\epsilon_{43} \\le 0.5, -0.5 \\le \\epsilon_{44} \\le 0.5 \\} \\\\\n& \\mathcal{U}_{poly\\_con4} = \\{ (\\epsilon_{41}, \\epsilon_{44}) : 0.4\\epsilon_{41} - 0.5\\epsilon_{44} \\le 0.25, -0.5 \\le \\epsilon_{41} \\le 0.5, -0.5 \\le \\epsilon_{44} \\le 0.5 \\} \\\\\n\\end{align*}",
+    "uncertainty_type": [
+      2,
+      1,
+      0,
+      3,
+      3
+    ],
+    "solution": [
+      0.0,
+      0.0,
+      0.0,
+      -0.16818181818181815
+    ],
+    "optimal_value": 1.362272727272727
+  },
+  {
+    "id": "4_2_T110",
+    "n_vars": 4,
+    "n_constraints": 4,
+    "template_param": [
+      1,
+      1,
+      0
+    ],
+    "description": "\\begin{align*}\n& \\min_{\\mathbf{x}} \\max_{\\boldsymbol{\\delta}_c \\in \\mathcal{U}_c} (\\mathbf{c}^{nom} + \\boldsymbol{\\delta}_c)^\\top \\mathbf{x} \\\\\n& \\mathbf{a}_{1}^\\top \\mathbf{x} \\ge b_{1} \\\\\n& \\min_{\\boldsymbol{\\delta}_{a2} \\in \\mathcal{U}_{a2}} (\\mathbf{a}_{2}^{nom} + \\boldsymbol{\\delta}_{a2})^\\top \\mathbf{x} \\ge b_{2} \\\\\n& \\min_{\\boldsymbol{\\delta}_{a3} \\in \\mathcal{U}_{a3}} (\\mathbf{a}_{3}^{nom} + \\boldsymbol{\\delta}_{a3})^\\top \\mathbf{x} \\ge b_{3} \\\\\n& \\max_{\\boldsymbol{\\delta}_{a4} \\in \\mathcal{U}_{a4}} (\\mathbf{a}_{4}^{nom} + \\boldsymbol{\\delta}_{a4})^\\top \\mathbf{x} \\le b_{4} \\\\\n& \\mathcal{U}_c = \\{ \\boldsymbol{\\delta}_c \\in \\mathbb{R}^{4} : \\mathbf{D}_c \\boldsymbol{\\delta}_c \\le \\mathbf{d}_c, \\quad \\mathbf{E}_c \\boldsymbol{\\delta}_c = \\mathbf{e}_c \\} \\\\\n& \\mathcal{U}_{a2} = \\{ \\boldsymbol{\\delta}_{a2} \\in \\mathbb{R}^{4} : \\mathbf{D}_{a2} \\boldsymbol{\\delta}_{a2} \\le \\mathbf{d}_{a2}, \\quad \\mathbf{E}_{a2} \\boldsymbol{\\delta}_{a2} = \\mathbf{e}_{a2} \\} \\\\\n& \\mathcal{U}_{a3} = \\{ \\boldsymbol{\\delta}_{a3} \\in \\mathbb{R}^{4} : |\\boldsymbol{\\delta}_{a3}| \\le \\hat{\\mathbf{a}}_{3} \\} \\\\\n& \\mathcal{U}_{a4} = \\{ \\boldsymbol{\\delta}_{a4} \\in \\mathbb{R}^{4} : |\\boldsymbol{\\delta}_{a4}| \\le \\hat{\\mathbf{a}}_{4} \\} \\\\\n& \\mathbf{x} = \\begin{bmatrix} x_{1} \\\\ x_{2} \\\\ x_{3} \\\\ x_{4} \\end{bmatrix} \\\\\n& -4 \\le x_j \\le 0, \\quad \\forall j \\in \\{1, \\dots, 4\\} \\\\\n& \\mathbf{c}^{nom} = [-2.3, -9.8, 3.7, 3]^\\top \\\\\n& \\mathbf{a}_{1} = [2.9, -0.4, 0, 0]^\\top \\\\\n& b_{1} = -5.03 \\\\\n& \\mathbf{a}_{2}^{nom} = [0, 0, 0.8, -2.8]^\\top \\\\\n& b_{2} = -4.41 \\\\\n& \\mathbf{a}_{3}^{nom} = [0, 0, -1, 2.5]^\\top \\\\\n& b_{3} = -12.25 \\\\\n& \\mathbf{a}_{4}^{nom} = [0, 1.1, 2.6, -2.9]^\\top \\\\\n& b_{4} = -4.38 \\\\\n& \\mathbf{D}_c = \\begin{bmatrix} 0 & -0.2 & 0 & -0.1 \\\\ 0 & 1 & 0 & 0 \\\\ 0 & -1 & 0 & 0 \\\\ 0 & 0 & 0 & 1 \\\\ 0 & 0 & 0 & -1 \\end{bmatrix} \\\\\n& \\mathbf{d}_c = [-0.03, 0.4, 0, 0.4, 0]^\\top \\\\\n& \\mathbf{E}_c = \\begin{bmatrix} 1 & 0 & 0 & 0 \\\\ 0 & 0 & 1 & 0 \\end{bmatrix} \\\\\n& \\mathbf{e}_c = [0, 0]^\\top \\\\\n& \\mathbf{D}_{a2} = \\begin{bmatrix} 0 & 0 & 0.3 & 0.3 \\\\ 0 & 0 & 1 & 0 \\\\ 0 & 0 & -1 & 0 \\\\ 0 & 0 & 0 & 1 \\\\ 0 & 0 & 0 & -1 \\end{bmatrix} \\\\\n& \\mathbf{d}_{a2} = [0.2, 0.4, 0, 0.4, 0]^\\top \\\\\n& \\mathbf{E}_{a2} = \\begin{bmatrix} 1 & 0 & 0 & 0 \\\\ 0 & 1 & 0 & 0 \\end{bmatrix} \\\\\n& \\mathbf{e}_{a2} = [0, 0]^\\top \\\\\n& \\hat{\\mathbf{a}}_{3} = [0, 0, 0.2, 0.5]^\\top \\\\\n& \\hat{\\mathbf{a}}_{4} = [0, 0.2, 0, 0.5]^\\top \\\\\n\\end{align*}",
+    "uncertainty_type": [
+      3,
+      0,
+      3,
+      1,
+      1
+    ],
+    "solution": [
+      0.0,
+      0.0,
+      -4.0,
+      -1.7705882352941178
+    ],
+    "optimal_value": -20.111764705882354
+  },
+  {
+    "id": "4_3_T101",
+    "n_vars": 4,
+    "n_constraints": 4,
+    "template_param": [
+      1,
+      0,
+      1
+    ],
+    "description": "\\begin{align*}\n& \\text{minimize } \\max_{\\delta^c_{1}, \\delta^c_{2}, \\delta^c_{4} \\in \\mathcal{U}^c_{poly}} \\{ (5.3 + \\delta^c_{1})x_{1} + (6.2 + \\delta^c_{2})x_{2} + 7.7x_{3} + (-5.1 + \\delta^c_{4})x_{4} \\} && \\text{[Polyhedral Uncertainty Objective]} \\\\\n& \\text{subject to} \\\\\n& - 6.4x_{1} + 2.6x_{2} - 5.3x_{3} \\ge -86.52 && \\text{[Deterministic Constraint]} \\\\\n& \\min_{\\delta^a_{2,1}, \\delta^a_{2,2} \\in \\mathcal{U}^a_{2,poly}} \\{ (3.5 + \\delta^a_{2,1})x_{1} + (1.4 + \\delta^a_{2,2})x_{2} - 3.8x_{3} \\} \\ge -22.03 && \\text{[Polyhedral Uncertainty Constraint]} \\\\\n& \\min_{-1 \\le \\xi^a_{3,3} \\le 1, -1 \\le \\xi^a_{3,4} \\le 1} \\{ (-4.1 + 0.6\\xi^a_{3,3})x_{3} + (-6.7 + 0.5\\xi^a_{3,4})x_{4} \\} \\ge -46.19 && \\text{[Box Uncertainty Constraint]} \\\\\n& \\max_{-1 \\le \\xi^a_{4,1} \\le 1, -1 \\le \\xi^a_{4,2} \\le 1} \\{ (-4.2 + 0.7\\xi^a_{4,1})x_{1} + (4.6 + 0.3\\xi^a_{4,2})x_{2} + 3.3x_{3} \\} \\le 87.55 && \\text{[Box Uncertainty Constraint]} \\\\\n& \\text{where the uncertainty sets are defined as:} \\\\\n& \\mathcal{U}^c_{poly} = \\{ \\delta^c_{1}, \\delta^c_{2}, \\delta^c_{4} : - 0.7\\delta^c_{1} - 0.6\\delta^c_{4} = -0.46, - 0.7\\delta^c_{1} - 0.6\\delta^c_{2} + 0.1\\delta^c_{4} \\ge -0.51, -0.8 \\le \\delta^c_{1} \\le 0.8, -0.8 \\le \\delta^c_{2} \\le 0.8, -0.8 \\le \\delta^c_{4} \\le 0.8 \\} \\\\\n& \\mathcal{U}^a_{2,poly} = \\{ \\delta^a_{2,1}, \\delta^a_{2,2} : - 0.7\\delta^a_{2,1} - 0.3\\delta^a_{2,2} \\le 0.68, -0.8 \\le \\delta^a_{2,1} \\le 0.8, -0.8 \\le \\delta^a_{2,2} \\le 0.8 \\} \\\\\n& 0 \\le x_{1} \\le 8.3, 0 \\le x_{2} \\le 8.3, 0 \\le x_{3} \\le 8.3, 0 \\le x_{4} \\le 8.3 \\\\\n\\end{align*}",
+    "uncertainty_type": [
+      3,
+      0,
+      3,
+      1,
+      1
+    ],
+    "solution": [
+      0.0,
+      0.0,
+      0.0,
+      6.415277777777777
+    ],
+    "optimal_value": -27.58569444444444
+  },
+  {
+    "id": "4_4_T110",
+    "n_vars": 4,
+    "n_constraints": 4,
+    "template_param": [
+      1,
+      1,
+      0
+    ],
+    "description": "\\begin{align*}\n& \\min_{\\mathbf{x}} \\max_{\\boldsymbol{\\delta}_c \\in \\mathcal{U}_c} (\\mathbf{c}^{nom} + \\boldsymbol{\\delta}_c)^\\top \\mathbf{x} \\\\\n& \\min_{\\boldsymbol{\\delta}_{a1} \\in \\mathcal{U}_{a1}} (\\mathbf{a}_{1}^{nom} + \\boldsymbol{\\delta}_{a1})^\\top \\mathbf{x} \\ge b_{1} \\\\\n& \\min_{\\boldsymbol{\\delta}_{a2} \\in \\mathcal{U}_{a2}} (\\mathbf{a}_{2}^{nom} + \\boldsymbol{\\delta}_{a2})^\\top \\mathbf{x} \\ge b_{2} \\\\\n& \\max_{\\boldsymbol{\\delta}_{a3} \\in \\mathcal{U}_{a3}} (\\mathbf{a}_{3}^{nom} + \\boldsymbol{\\delta}_{a3})^\\top \\mathbf{x} \\le b_{3} \\\\\n& \\mathbf{a}_{4}^\\top \\mathbf{x} = b_{4} \\\\\n& \\mathcal{U}_c = \\{ \\boldsymbol{\\delta}_c \\in \\mathbb{R}^{4} : |\\boldsymbol{\\delta}_c| \\le \\hat{\\mathbf{c}}, \\|\\text{diag}(\\hat{\\mathbf{c}})^{-1} \\boldsymbol{\\delta}_c\\|_1 \\le \\Gamma_c \\} \\\\\n& \\mathcal{U}_{a1} = \\{ \\boldsymbol{\\delta}_{a1} \\in \\mathbb{R}^{4} : |\\boldsymbol{\\delta}_{a1}| \\le \\hat{\\mathbf{a}}_{1} \\} \\\\\n& \\mathcal{U}_{a2} = \\{ \\boldsymbol{\\delta}_{a2} \\in \\mathbb{R}^{4} : |\\boldsymbol{\\delta}_{a2}| \\le \\hat{\\mathbf{a}}_{2} \\} \\\\\n& \\mathcal{U}_{a3} = \\{ \\boldsymbol{\\delta}_{a3} \\in \\mathbb{R}^{4} : |\\boldsymbol{\\delta}_{a3}| \\le \\hat{\\mathbf{a}}_{3}, \\|\\text{diag}(\\hat{\\mathbf{a}}_{3})^{-1} \\boldsymbol{\\delta}_{a3}\\|_1 \\le \\Gamma_{a3} \\} \\\\\n& \\mathbf{x} = \\begin{bmatrix} x_{1} \\\\ x_{2} \\\\ x_{3} \\\\ x_{4} \\end{bmatrix} \\\\\n& 0 \\le x_j \\le 1.2, \\quad \\forall j \\in \\{1, \\dots, 4\\} \\\\\n& \\mathbf{c}^{nom} = [-7.3, -8.9, -7.2, 8.5]^\\top \\\\\n& \\mathbf{a}_{1}^{nom} = [-0.1, -0.8, 0, 0]^\\top \\\\\n& b_{1} = -0.89 \\\\\n& \\mathbf{a}_{2}^{nom} = [0, 0, 0.1, -0.8]^\\top \\\\\n& b_{2} = -0.85 \\\\\n& \\mathbf{a}_{3}^{nom} = [-0.1, 0, -0.3, 0]^\\top \\\\\n& b_{3} = 0.1 \\\\\n& \\mathbf{a}_{4} = [0, -0.6, -0.5, 0.9]^\\top \\\\\n& b_{4} = 0.33 \\\\\n& \\hat{\\mathbf{c}} = [0.7, 1.2, 0.7, 1.4]^\\top \\\\\n& \\Gamma_c = 0.1 \\\\\n& \\hat{\\mathbf{a}}_{1} = [0.1, 0.1, 0, 0]^\\top \\\\\n& \\hat{\\mathbf{a}}_{2} = [0, 0, 0.1, 0.1]^\\top \\\\\n& \\hat{\\mathbf{a}}_{3} = [0.1, 0, 0.1, 0]^\\top \\\\\n& \\Gamma_{a3} = 0.6 \\\\\n\\end{align*}",
+    "uncertainty_type": [
+      2,
+      1,
+      1,
+      2,
+      0
+    ],
+    "solution": [
+      1.2,
+      0.7222222222222222,
+      0.17333333333333312,
+      0.9444444444444444
+    ],
+    "optimal_value": -8.275777777777778
+  },
+  {
+    "id": "4_5_T000",
+    "n_vars": 4,
+    "n_constraints": 4,
+    "template_param": [
+      0,
+      0,
+      0
+    ],
+    "description": "\\begin{align*}\n\\max \\quad & c_{1}x_{1} + c_{2}x_{2} + 4.3x_{3} + c_{4}x_{4}, \\quad \\forall (c_{1}, c_{2}, c_{4}) \\in \\mathcal{U}_{c} \\\\\n& - 4.2x_{1} - 4x_{3} + 2.8x_{4} = 36.34 \\\\\n& a_{21}x_{1} + a_{23}x_{3} \\le 88.49, \\quad \\forall (a_{21}, a_{23}) \\in \\mathcal{U}_{a2} \\\\\n& a_{31}x_{1} + a_{32}x_{2} + a_{34}x_{4} \\ge -94.7, \\quad \\forall (a_{31}, a_{32}, a_{34}) \\in \\mathcal{U}_{a3} \\\\\n& - 8.6x_{1} + a_{43}x_{3} + a_{44}x_{4} \\le 43.5, \\quad \\forall (a_{43}, a_{44}) \\in \\mathcal{U}_{a4} \\\\\n& -9.6 \\le x_{1} \\le 0, \\quad -9.6 \\le x_{2} \\le 0, \\quad -9.6 \\le x_{3} \\le 0, \\quad -9.6 \\le x_{4} \\le 0 \\\\\n\\mathcal{U}_{c} = \\{ (c_{1}, c_{2}, c_{4}) : \\quad & |c_{1} - 2.6| \\le 0.1, \\\\\n& \\quad |c_{2} - (-4.5)| \\le 0.3, \\\\\n& \\quad |c_{4} - (-3)| \\le 0.3, \\\\\n& \\quad \\frac{|c_{1} - 2.6|}{0.1} + \\frac{|c_{2} - (-4.5)|}{0.3} + \\frac{|c_{4} - (-3)|}{0.3} \\le 2.7 \\} \\\\\n\\mathcal{U}_{a2} = \\{ (a_{21}, a_{23}) : \\quad & |a_{21} - 8.7| \\le 0.7, \\\\\n& \\quad |a_{23} - (-2.5)| \\le 0.4, \\\\\n& \\quad \\frac{|a_{21} - 8.7|}{0.7} + \\frac{|a_{23} - (-2.5)|}{0.4} \\le 1.9 \\} \\\\\n\\mathcal{U}_{a3} = \\{ (a_{31}, a_{32}, a_{34}) : \\quad & |a_{31} - (-4.5)| \\le 0.7, \\\\\n& \\quad |a_{32} - 6.9| \\le 1, \\\\\n& \\quad |a_{34} - (-1.3)| \\le 0.1, \\\\\n& \\quad \\frac{|a_{31} - (-4.5)|}{0.7} + \\frac{|a_{32} - 6.9|}{1} + \\frac{|a_{34} - (-1.3)|}{0.1} \\le 2.3 \\} \\\\\n\\mathcal{U}_{a4} = \\{ (a_{43}, a_{44}) : \\quad & |a_{43} - 1.8| \\le 0.2, \\\\\n& \\quad |a_{44} - 2.3| \\le 0.2 \\} \\\\\n\\end{align*}",
+    "uncertainty_type": [
+      2,
+      0,
+      2,
+      2,
+      1
+    ],
+    "solution": [
+      -8.652529182879377,
+      -9.6,
+      -6.719844357976648,
+      -9.6
+    ],
+    "optimal_value": 14.242416342412472
+  },
+  {
+    "id": "4_6_T000",
+    "n_vars": 4,
+    "n_constraints": 4,
+    "template_param": [
+      0,
+      0,
+      0
+    ],
+    "description": "\\begin{align*}\n\\min \\quad & c_{1}x_{1} + 3.5x_{2} + c_{3}x_{3} - 7.8x_{4}, \\quad \\forall (c_{1}, c_{3}) \\in \\mathcal{U}_{c} \\\\\n& - 5.9x_{3} - 2.3x_{4} \\ge -17.78 \\\\\n& a_{21}x_{1} + a_{22}x_{2} + a_{23}x_{3} \\le 8.35, \\quad \\forall (a_{21}, a_{22}, a_{23}) \\in \\mathcal{U}_{a2} \\\\\n& (-3.4 + \\zeta^{a3}_{1})x_{1} + (-3 + \\zeta^{a3}_{3})x_{3} + (0.1 + \\zeta^{a3}_{4})x_{4} \\le 25.35, \\quad \\forall (\\zeta^{a3}_{1}, \\zeta^{a3}_{3}, \\zeta^{a3}_{4}) \\in \\mathcal{U}_{a3} \\\\\n& a_{41}x_{1} + a_{42}x_{2} + a_{43}x_{3} \\ge -12.18, \\quad \\forall (a_{41}, a_{42}, a_{43}) \\in \\mathcal{U}_{a4} \\\\\n& -6.2 \\le x_{1} \\le 0, \\quad -6.2 \\le x_{2} \\le 0, \\quad -6.2 \\le x_{3} \\le 0, \\quad -6.2 \\le x_{4} \\le 0 \\\\\n\\mathcal{U}_{c} = \\{ (c_{1}, c_{3}) : \\quad & |c_{1} - 9| \\le 1.3, \\\\\n& \\quad |c_{3} - 1.9| \\le 0.1, \\\\\n& \\quad \\frac{|c_{1} - 9|}{1.3} + \\frac{|c_{3} - 1.9|}{0.1} \\le 1.3 \\} \\\\\n\\mathcal{U}_{a2} = \\{ (a_{21}, a_{22}, a_{23}) : \\quad & |a_{21} - 2| \\le 0.2, \\\\\n& \\quad |a_{22} - (-1.6)| \\le 0.3, \\\\\n& \\quad |a_{23} - (-2.4)| \\le 0.4 \\} \\\\\n\\mathcal{U}_{a3} = \\{ (\\zeta^{a3}_{1}, \\zeta^{a3}_{3}, \\zeta^{a3}_{4}) : \\quad & - 0.4\\zeta^{a3}_{1} + 0.4\\zeta^{a3}_{4} \\le 0.46, \\\\\n& \\quad 0.3\\zeta^{a3}_{3} + 0.2\\zeta^{a3}_{4} \\le 0.26, \\\\\n& \\quad -0.6 \\le \\zeta^{a3}_{1} \\le 0.6, \\\\\n& \\quad -0.6 \\le \\zeta^{a3}_{3} \\le 0.6, \\\\\n& \\quad -0.6 \\le \\zeta^{a3}_{4} \\le 0.6 \\} \\\\\n\\mathcal{U}_{a4} = \\{ (a_{41}, a_{42}, a_{43}) : \\quad & |a_{41} - (-3.8)| \\le 0.6, \\\\\n& \\quad |a_{42} - (-4.9)| \\le 0.8, \\\\\n& \\quad |a_{43} - (-4.2)| \\le 0.4 \\} \\\\\n\\end{align*}",
+    "uncertainty_type": [
+      2,
+      0,
+      1,
+      3,
+      1
+    ],
+    "solution": [
+      -6.2,
+      -6.2,
+      -0.1527777777777787,
+      0.0
+    ],
+    "optimal_value": -69.72569444444444
+  },
+  {
+    "id": "4_7_T101",
+    "n_vars": 4,
+    "n_constraints": 4,
+    "template_param": [
+      1,
+      0,
+      1
+    ],
+    "description": "\\begin{align*}\n& \\text{minimize } \\max_{-1 \\le \\xi^c_{1} \\le 1, -1 \\le \\xi^c_{2} \\le 1, -1 \\le \\xi^c_{3} \\le 1, -1 \\le \\xi^c_{4} \\le 1} \\{ (-9.2 + 1.7\\xi^c_{1})x_{1} + (7.6 + 0.9\\xi^c_{2})x_{2} + (1.8 + 0.1\\xi^c_{3})x_{3} + (9.4 + 1.4\\xi^c_{4})x_{4} \\} && \\text{[Box Uncertainty Objective]} \\\\\n& \\text{subject to} \\\\\n& - 4.5x_{2} - 1.5x_{4} = 18.45 && \\text{[Deterministic Constraint]} \\\\\n& \\max_{-1 \\le \\xi^a_{2,3} \\le 1, -1 \\le \\xi^a_{2,4} \\le 1} \\{ (-1.4 + 0.1\\xi^a_{2,3})x_{3} + (2.5 + 0.5\\xi^a_{2,4})x_{4} \\} \\le 13.41 && \\text{[Box Uncertainty Constraint]} \\\\\n& \\min_{\\eta^a_{3,1}, \\eta^a_{3,2}, \\eta^a_{3,4} \\in \\mathcal{U}^a_{3,bud}} \\{ (0.6 + 0.1\\eta^a_{3,1})x_{1} + (0.2 + 0.1\\eta^a_{3,2})x_{2} + (3.2 + 0.3\\eta^a_{3,4})x_{4} \\} \\ge -20.28 && \\text{[Budgeted Uncertainty Constraint]} \\\\\n& \\min_{\\eta^a_{4,1}, \\eta^a_{4,2}, \\eta^a_{4,3}, \\eta^a_{4,4} \\in \\mathcal{U}^a_{4,bud}} \\{ (1.4 + 0.2\\eta^a_{4,1})x_{1} + (1.1 + 0.1\\eta^a_{4,2})x_{2} + (-2.1 + 0.4\\eta^a_{4,3})x_{3} + (-3.8 + 0.2\\eta^a_{4,4})x_{4} \\} \\ge -42.72 && \\text{[Budgeted Uncertainty Constraint]} \\\\\n& \\text{where the uncertainty sets are defined as:} \\\\\n& \\mathcal{U}^a_{3,bud} = \\{ \\eta^a_{3,1}, \\eta^a_{3,2}, \\eta^a_{3,4} : -1 \\le \\eta^a_{3,1} \\le 1, -1 \\le \\eta^a_{3,2} \\le 1, -1 \\le \\eta^a_{3,4} \\le 1, |\\eta^a_{3,1}| + |\\eta^a_{3,2}| + |\\eta^a_{3,4}| \\le 1.3 \\} \\\\\n& \\mathcal{U}^a_{4,bud} = \\{ \\eta^a_{4,1}, \\eta^a_{4,2}, \\eta^a_{4,3}, \\eta^a_{4,4} : -1 \\le \\eta^a_{4,1} \\le 1, -1 \\le \\eta^a_{4,2} \\le 1, -1 \\le \\eta^a_{4,3} \\le 1, -1 \\le \\eta^a_{4,4} \\le 1, |\\eta^a_{4,1}| + |\\eta^a_{4,2}| + |\\eta^a_{4,3}| + |\\eta^a_{4,4}| \\le 3.2 \\} \\\\\n& -5.3 \\le x_{1} \\le 0, -5.3 \\le x_{2} \\le 0, -5.3 \\le x_{3} \\le 0, -5.3 \\le x_{4} \\le 0 \\\\\n\\end{align*}",
+    "uncertainty_type": [
+      1,
+      0,
+      1,
+      2,
+      2
+    ],
+    "solution": [
+      0.0,
+      -2.3333333333333335,
+      -5.3,
+      -5.3
+    ],
+    "optimal_value": -67.04333333333334
+  },
+  {
+    "id": "4_8_T010",
+    "n_vars": 4,
+    "n_constraints": 4,
+    "template_param": [
+      0,
+      1,
+      0
+    ],
+    "description": "\\begin{align*}\n\\min_{\\mathbf{x}} \\quad & (\\mathbf{c}^{nom} + \\boldsymbol{\\delta}_c)^\\top \\mathbf{x}, \\quad \\forall \\boldsymbol{\\delta}_c \\in \\mathcal{U}_c \\\\\n& (\\mathbf{a}_{1}^{nom} + \\boldsymbol{\\delta}_{1})^\\top \\mathbf{x} \\ge b_{1}, \\quad \\forall \\boldsymbol{\\delta}_{1} \\in \\mathcal{U}_{1} \\\\\n& \\mathbf{a}_{2}^\\top \\mathbf{x} = b_{2} \\\\\n& \\mathbf{a}_{3}^\\top \\mathbf{x} \\ge b_{3}, \\quad \\forall \\mathbf{a}_{3} \\in \\mathcal{U}_{3} \\\\\n& \\mathbf{a}_{4}^\\top \\mathbf{x} \\le b_{4}, \\quad \\forall \\mathbf{a}_{4} \\in \\mathcal{U}_{4} \\\\\n& \\mathcal{U}_c = \\{ \\boldsymbol{\\delta}_c \\in \\mathbb{R}^{4} : \\mathbf{P}_c \\boldsymbol{\\delta}_c \\le \\mathbf{q}_c, \\quad \\mathbf{E}_c \\boldsymbol{\\delta}_c = \\mathbf{e}_c \\} \\\\\n& \\mathcal{U}_{1} = \\{ \\boldsymbol{\\delta}_{1} \\in \\mathbb{R}^{4} : \\mathbf{P}_{1} \\boldsymbol{\\delta}_{1} \\le \\mathbf{q}_{1}, \\quad \\mathbf{E}_{1} \\boldsymbol{\\delta}_{1} = \\mathbf{e}_{1} \\} \\\\\n& \\mathcal{U}_{3} = \\{ \\mathbf{a}_{3} \\in \\mathbb{R}^{4} : |\\mathbf{a}_{3} - \\mathbf{a}_{3}^{nom}| \\le \\hat{\\mathbf{a}}_{3}, \\quad \\sum_{j \\in \\{2, 4\\}} \\frac{| a_{3,j} - a_{3,j}^{nom} |}{\\hat{a}_{3,j}} \\le \\Gamma_{3} \\} \\\\\n& \\mathcal{U}_{4} = \\{ \\mathbf{a}_{4} \\in \\mathbb{R}^{4} : |\\mathbf{a}_{4} - \\mathbf{a}_{4}^{nom}| \\le \\hat{\\mathbf{a}}_{4} \\} \\\\\n& \\mathbf{x} = [x_{1}, x_{2}, x_{3}, x_{4}]^\\top \\\\\n& \\mathbf{c}^{nom} = [5.3, 4.7, 3.4, 1.6]^\\top \\\\\n& \\mathbf{a}_{1}^{nom} = [-6.2, -4.1, 0.4, 0]^\\top \\\\\n& b_{1} = -40.51 \\\\\n& \\mathbf{a}_{2} = [3.7, 0, 2.3, 0]^\\top \\\\\n& b_{2} = 20.84 \\\\\n& \\mathbf{a}_{3}^{nom} = [0, 7.7, 0, 8.4]^\\top \\\\\n& b_{3} = -20.71 \\\\\n& \\mathbf{a}_{4}^{nom} = [-1.9, 0, 0.5, 0.5]^\\top \\\\\n& b_{4} = 13.79 \\\\\n& 0 \\le x_j \\le 9.2, \\quad \\forall j \\in \\{1, \\dots, 4\\} \\\\\n& \\mathbf{P}_c = \\begin{bmatrix} 0 & 0.4 & 0.1 & -0.6 \\\\ 0 & 0.5 & 0.7 & 0.1 \\\\ 1 & 0 & 0 & 0 \\\\ -1 & 0 & 0 & 0 \\\\ 0 & 1 & 0 & 0 \\\\ 0 & -1 & 0 & 0 \\\\ 0 & 0 & 1 & 0 \\\\ 0 & 0 & -1 & 0 \\\\ 0 & 0 & 0 & 1 \\\\ 0 & 0 & 0 & -1 \\end{bmatrix} \\\\\n& \\mathbf{q}_c = [0.23, 1.11, 0, 0.9, 0, 0.9, 0, 0.9, 0, 0.9]^\\top \\\\\n& \\mathbf{E}_c = \\begin{bmatrix} 0.6 & 0 & -0.6 & 0 \\end{bmatrix} \\\\\n& \\mathbf{e}_c = [-0.24]^\\top \\\\\n& \\mathbf{P}_{1} = \\begin{bmatrix} 0.9 & -0.8 & 0 & 0 \\\\ 0.8 & -0.8 & 0 & 0 \\\\ 1 & 0 & 0 & 0 \\\\ -1 & 0 & 0 & 0 \\\\ 0 & 1 & 0 & 0 \\\\ 0 & -1 & 0 & 0 \\\\ 0 & 0 & 1 & 0 \\\\ 0 & 0 & -1 & 0 \\end{bmatrix} \\\\\n& \\mathbf{q}_{1} = [0.88, 0.11, 0, 0.9, 0, 0.9, 0, 0.9]^\\top \\\\\n& \\mathbf{E}_{1} = \\begin{bmatrix} 0 & 0 & 0 & 1 \\end{bmatrix} \\\\\n& \\mathbf{e}_{1} = [0]^\\top \\\\\n& \\hat{\\mathbf{a}}_{3} = [0, 0.9, 0, 0.6]^\\top \\\\\n& \\Gamma_{3} = 1.7 \\\\\n& \\hat{\\mathbf{a}}_{4} = [0.3, 0, 0.1, 0]^\\top \\\\\n\\end{align*}",
+    "uncertainty_type": [
+      3,
+      3,
+      0,
+      2,
+      1
+    ],
+    "solution": [
+      5.632432432432432,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "optimal_value": 27.598918918918915
+  },
+  {
+    "id": "4_9_T100",
+    "n_vars": 4,
+    "n_constraints": 4,
+    "template_param": [
+      1,
+      0,
+      0
+    ],
+    "description": "\\begin{align*}\n\\min_{x_{1}, x_{2}, x_{3}, x_{4}} \\quad & \\max_{\\xi^c_{1}, \\xi^c_{2}, \\xi^c_{3}, \\xi^c_{4} \\in \\mathcal{U}^c} 3.2x_{1} + 0.6\\xi^c_{1}x_{1} + 5.3x_{2} + 1\\xi^c_{2}x_{2} - 0.3x_{3} + 0.1\\xi^c_{3}x_{3} + 2.6x_{4} + 0.3\\xi^c_{4}x_{4} \\\\\n& \\min_{\\delta^a_{1,1}, \\delta^a_{1,3} \\in \\mathcal{U}^a_{1}} 4.1x_{1} + \\delta^a_{1,1}x_{1} - 1.9x_{3} + \\delta^a_{1,3}x_{3} \\ge -30.52 \\\\\n& \\max_{\\xi^a_{2,1}, \\xi^a_{2,3} \\in \\mathcal{U}^a_{2}} 3.7x_{1} + 0.6\\xi^a_{2,1}x_{1} - 0.6x_{3} + 0.1\\xi^a_{2,3}x_{3} \\le 16.3 \\\\\n& \\max_{\\xi^a_{3,2}, \\xi^a_{3,4} \\in \\mathcal{U}^a_{3}} 1.7x_{2} + 0.1\\xi^a_{3,2}x_{2} - 2.1x_{4} + 0.3\\xi^a_{3,4}x_{4} \\le 16.21 \\\\\n& - 2.4x_{1} - 5.2x_{2} - 2.7x_{3} = 46.27 \\\\\n& \\mathcal{U}^c = \\{ \\xi^c_{1}, \\xi^c_{2}, \\xi^c_{3}, \\xi^c_{4} : |\\xi^c_{1}| + |\\xi^c_{2}| + |\\xi^c_{3}| + |\\xi^c_{4}| \\le 3.5, -1 \\le \\xi^c_{1} \\le 1, -1 \\le \\xi^c_{2} \\le 1, -1 \\le \\xi^c_{3} \\le 1, -1 \\le \\xi^c_{4} \\le 1 \\} \\\\\n& \\mathcal{U}^a_{1} = \\{ \\delta^a_{1,1}, \\delta^a_{1,3} : 0.5\\delta^a_{1,1} - 0.2\\delta^a_{1,3} \\ge -0.33, -0.6 \\le \\delta^a_{1,1} \\le 0.6, -0.6 \\le \\delta^a_{1,3} \\le 0.6 \\} \\\\\n& \\mathcal{U}^a_{2} = \\{ \\xi^a_{2,1}, \\xi^a_{2,3} : |\\xi^a_{2,1}| + |\\xi^a_{2,3}| \\le 1.1, -1 \\le \\xi^a_{2,1} \\le 1, -1 \\le \\xi^a_{2,3} \\le 1 \\} \\\\\n& \\mathcal{U}^a_{3} = \\{ \\xi^a_{3,2}, \\xi^a_{3,4} : |\\xi^a_{3,2}| + |\\xi^a_{3,4}| \\le 0.3, -1 \\le \\xi^a_{3,2} \\le 1, -1 \\le \\xi^a_{3,4} \\le 1 \\} \\\\\n& -6.1 \\le x_{1} \\le 0, -6.1 \\le x_{2} \\le 0, -6.1 \\le x_{3} \\le 0, -6.1 \\le x_{4} \\le 0 \\\\\n\\end{align*}",
+    "uncertainty_type": [
+      2,
+      3,
+      2,
+      2,
+      0
+    ],
+    "solution": [
+      -6.1,
+      -6.082692307692308,
+      0.0,
+      -6.1
+    ],
+    "optimal_value": -56.04557692307692
+  },
+  {
+    "id": "4_10_T111",
+    "n_vars": 4,
+    "n_constraints": 4,
+    "template_param": [
+      1,
+      1,
+      1
+    ],
+    "description": "\\begin{align*}\n& \\text{Maximize} \\quad \\min_{\\xi_c \\in \\mathcal{U}_{c,Box}} \\left( \\bar{c} + \\text{diag}(\\hat{c}) \\xi_c \\right)^\\top x && \\text{(Box Uncertainty Objective)} \\\\\n& \\text{subject to} \\\\\n& a_{1}^\\top x \\le b_{1} && \\text{(Deterministic Constraint)} \\\\\n& \\max_{\\xi_{a2} \\in \\mathcal{U}_{a2,Bud}} \\left( \\bar{a}_{2} + \\text{diag}(\\hat{a}_{2}) \\xi_{a2} \\right)^\\top x \\le b_{2} && \\text{(Budgeted Uncertainty Constraint)} \\\\\n& \\min_{\\xi_{a3} \\in \\mathcal{U}_{a3,Bud}} \\left( \\bar{a}_{3} + \\text{diag}(\\hat{a}_{3}) \\xi_{a3} \\right)^\\top x \\ge b_{3} && \\text{(Budgeted Uncertainty Constraint)} \\\\\n& \\min_{\\xi_{a4} \\in \\mathcal{U}_{a4,Box}} \\left( \\bar{a}_{4} + \\text{diag}(\\hat{a}_{4}) \\xi_{a4} \\right)^\\top x \\ge b_{4} && \\text{(Box Uncertainty Constraint)} \\\\\n& \\text{where:} \\\\\n& \\mathcal{U}_{c,Box} = \\{ \\xi_c \\in \\mathbb{R}^{4} : \\|\\xi_c\\|_{\\infty} \\le 1 \\} \\\\\n& \\mathcal{U}_{a2,Bud} = \\{ \\xi_{a2} \\in \\mathbb{R}^{4} : \\|\\xi_{a2}\\|_{\\infty} \\le 1, \\|\\xi_{a2}\\|_1 \\le \\Gamma_{a2} \\} \\\\\n& \\mathcal{U}_{a3,Bud} = \\{ \\xi_{a3} \\in \\mathbb{R}^{4} : \\|\\xi_{a3}\\|_{\\infty} \\le 1, \\|\\xi_{a3}\\|_1 \\le \\Gamma_{a3} \\} \\\\\n& \\mathcal{U}_{a4,Box} = \\{ \\xi_{a4} \\in \\mathbb{R}^{4} : \\|\\xi_{a4}\\|_{\\infty} \\le 1 \\} \\\\\n& x = [x_{1}, x_{2}, x_{3}, x_{4}]^\\top \\\\\n& -2.9 \\le x_j \\le 0, \\quad \\forall j \\in \\{1, \\dots, 4\\} \\\\\n& \\bar{c} = [-4.5, 8, -3.5, -7]^\\top \\\\\n& \\hat{c} = [0.9, 0.4, 0.5, 0]^\\top \\\\\n& a_{1} = [-0.8, 0, -2, 0]^\\top \\\\\n& b_{1} = 8.11 \\\\\n& \\bar{a}_{2} = [0, 0, 1.2, 0.4]^\\top \\\\\n& b_{2} = -1.26 \\\\\n& \\hat{a}_{2} = [0, 0, 0.1, 0.1]^\\top \\\\\n& \\bar{a}_{3} = [0.3, 0.3, 2.7, -1.4]^\\top \\\\\n& b_{3} = -5.63 \\\\\n& \\hat{a}_{3} = [0.1, 0.1, 0.4, 0.2]^\\top \\\\\n& \\bar{a}_{4} = [0, 1.6, 0, -2.1]^\\top \\\\\n& b_{4} = 2.62 \\\\\n& \\hat{a}_{4} = [0, 0.1, 0, 0.3]^\\top \\\\\n& \\Gamma_{a2} = 1.5 \\\\\n& \\Gamma_{a3} = 0.5 \\\\\n\\end{align*}",
+    "uncertainty_type": [
+      1,
+      0,
+      2,
+      2,
+      1
+    ],
+    "solution": [
+      -2.9,
+      0.0,
+      -2.8949999999999996,
+      -2.9
+    ],
+    "optimal_value": 39.425000000000004
+  },
+  {
+    "id": "4_11_T101",
+    "n_vars": 4,
+    "n_constraints": 4,
+    "template_param": [
+      1,
+      0,
+      1
+    ],
+    "description": "\\begin{align*}\n& \\text{minimize } \\max_{\\delta^c_{1}, \\delta^c_{2}, \\delta^c_{3} \\in \\mathcal{U}^c_{poly}} \\{ (-5.7 + \\delta^c_{1})x_{1} + (-6 + \\delta^c_{2})x_{2} + (8.2 + \\delta^c_{3})x_{3} + 8.7x_{4} \\} && \\text{[Polyhedral Uncertainty Objective]} \\\\\n& \\text{subject to} \\\\\n& \\min_{-1 \\le \\xi^a_{1,1} \\le 1, -1 \\le \\xi^a_{1,2} \\le 1} \\{ (3 + 0.2\\xi^a_{1,1})x_{1} + (-3.5 + 0.6\\xi^a_{1,2})x_{2} \\} \\ge 3.99 && \\text{[Box Uncertainty Constraint]} \\\\\n& \\min_{-1 \\le \\xi^a_{2,1} \\le 1, -1 \\le \\xi^a_{2,4} \\le 1} \\{ (3.5 + 0.4\\xi^a_{2,1})x_{1} - 3.5x_{3} + (3.2 + 0.5\\xi^a_{2,4})x_{4} \\} \\ge -7.92 && \\text{[Box Uncertainty Constraint]} \\\\\n& - 0.2x_{2} + 2.4x_{3} \\ge 1.07 && \\text{[Deterministic Constraint]} \\\\\n& \\max_{\\delta^a_{4,2}, \\delta^a_{4,4} \\in \\mathcal{U}^a_{4,poly}} \\{ (-1.6 + \\delta^a_{4,2})x_{2} + (1.2 + \\delta^a_{4,4})x_{4} \\} \\le 8.33 && \\text{[Polyhedral Uncertainty Constraint]} \\\\\n& \\text{where the uncertainty sets are defined as:} \\\\\n& \\mathcal{U}^c_{poly} = \\{ \\delta^c_{1}, \\delta^c_{2}, \\delta^c_{3} : - 0.3\\delta^c_{1} + 0.3\\delta^c_{2} \\le 0.24, - 0.2\\delta^c_{2} + 0.1\\delta^c_{3} \\ge -0.1, 0 \\le \\delta^c_{1} \\le 0.4, 0 \\le \\delta^c_{2} \\le 0.4, 0 \\le \\delta^c_{3} \\le 0.4 \\} \\\\\n& \\mathcal{U}^a_{4,poly} = \\{ \\delta^a_{4,2}, \\delta^a_{4,4} : 0.4\\delta^a_{4,2} - 0.3\\delta^a_{4,4} \\ge -0.07, 0 \\le \\delta^a_{4,2} \\le 0.4, 0 \\le \\delta^a_{4,4} \\le 0.4 \\} \\\\\n& 0 \\le x_{1} \\le 3.7, 0 \\le x_{2} \\le 3.7, 0 \\le x_{3} \\le 3.7, 0 \\le x_{4} \\le 3.7 \\\\\n\\end{align*}",
+    "uncertainty_type": [
+      3,
+      1,
+      1,
+      0,
+      3
+    ],
+    "solution": [
+      3.7,
+      1.5536585365853661,
+      0.5753048780487806,
+      0.0
+    ],
+    "optimal_value": -23.36286585365854
+  },
+  {
+    "id": "4_12_T010",
+    "n_vars": 4,
+    "n_constraints": 4,
+    "template_param": [
+      0,
+      1,
+      0
+    ],
+    "description": "\\begin{align*}\n\\max_{\\mathbf{x}} \\quad & \\mathbf{c}^\\top \\mathbf{x}, \\quad \\forall \\mathbf{c} \\in \\mathcal{U}_c \\\\\n& \\mathbf{a}_{1}^\\top \\mathbf{x} = b_{1} \\\\\n& \\mathbf{a}_{2}^\\top \\mathbf{x} \\ge b_{2}, \\quad \\forall \\mathbf{a}_{2} \\in \\mathcal{U}_{2} \\\\\n& \\mathbf{a}_{3}^\\top \\mathbf{x} \\le b_{3}, \\quad \\forall \\mathbf{a}_{3} \\in \\mathcal{U}_{3} \\\\\n& \\mathbf{a}_{4}^\\top \\mathbf{x} \\ge b_{4}, \\quad \\forall \\mathbf{a}_{4} \\in \\mathcal{U}_{4} \\\\\n& \\mathcal{U}_c = \\{ \\mathbf{c} \\in \\mathbb{R}^{4} : |\\mathbf{c} - \\mathbf{c}^{nom}| \\le \\hat{\\mathbf{c}}, \\quad \\sum_{j \\in \\{1, 2, 3, 4\\}} \\frac{| c_{j} - c_j^{nom} |}{\\hat{c}_j} \\le \\Gamma_c \\} \\\\\n& \\mathcal{U}_{2} = \\{ \\mathbf{a}_{2} \\in \\mathbb{R}^{4} : |\\mathbf{a}_{2} - \\mathbf{a}_{2}^{nom}| \\le \\hat{\\mathbf{a}}_{2}, \\quad \\sum_{j \\in \\{1, 2\\}} \\frac{| a_{2,j} - a_{2,j}^{nom} |}{\\hat{a}_{2,j}} \\le \\Gamma_{2} \\} \\\\\n& \\mathcal{U}_{3} = \\{ \\mathbf{a}_{3} \\in \\mathbb{R}^{4} : |\\mathbf{a}_{3} - \\mathbf{a}_{3}^{nom}| \\le \\hat{\\mathbf{a}}_{3} \\} \\\\\n& \\mathcal{U}_{4} = \\{ \\mathbf{a}_{4} \\in \\mathbb{R}^{4} : |\\mathbf{a}_{4} - \\mathbf{a}_{4}^{nom}| \\le \\hat{\\mathbf{a}}_{4}, \\quad \\sum_{j \\in \\{2, 3\\}} \\frac{| a_{4,j} - a_{4,j}^{nom} |}{\\hat{a}_{4,j}} \\le \\Gamma_{4} \\} \\\\\n& \\mathbf{x} = [x_{1}, x_{2}, x_{3}, x_{4}]^\\top \\\\\n& \\mathbf{c}^{nom} = [2, 4.5, 0.2, 3.9]^\\top \\\\\n& \\mathbf{a}_{1} = [0, -0.5, 2.3, 1.1]^\\top \\\\\n& b_{1} = -0.94 \\\\\n& \\mathbf{a}_{2}^{nom} = [-2.5, 0.6, 0, 0]^\\top \\\\\n& b_{2} = -6.08 \\\\\n& \\mathbf{a}_{3}^{nom} = [0, 0.2, 0.5, -1.9]^\\top \\\\\n& b_{3} = -0.55 \\\\\n& \\mathbf{a}_{4}^{nom} = [0, 0.8, -0.3, 0]^\\top \\\\\n& b_{4} = -0.93 \\\\\n& -3 \\le x_j \\le 3, \\quad \\forall j \\in \\{1, \\dots, 4\\} \\\\\n& \\hat{\\mathbf{c}} = [0.2, 0.3, 0.1, 0.4]^\\top \\\\\n& \\Gamma_c = 3.2 \\\\\n& \\hat{\\mathbf{a}}_{2} = [0.4, 0.1, 0, 0]^\\top \\\\\n& \\Gamma_{2} = 0.5 \\\\\n& \\hat{\\mathbf{a}}_{3} = [0, 0, 0.1, 0.1]^\\top \\\\\n& \\hat{\\mathbf{a}}_{4} = [0, 0.1, 0.1, 0]^\\top \\\\\n& \\Gamma_{4} = 0.5 \\\\\n\\end{align*}",
+    "uncertainty_type": [
+      2,
+      0,
+      2,
+      1,
+      2
+    ],
+    "solution": [
+      2.918518518518518,
+      3.0,
+      -1.1913043478260872,
+      3.0
+    ],
+    "optimal_value": 28.091246376811593
+  },
+  {
+    "id": "4_13_T110",
+    "n_vars": 4,
+    "n_constraints": 4,
+    "template_param": [
+      1,
+      1,
+      0
+    ],
+    "description": "\\begin{align*}\n& \\min_{\\mathbf{x}} \\max_{\\boldsymbol{\\delta}_c \\in \\mathcal{U}_c} (\\mathbf{c}^{nom} + \\boldsymbol{\\delta}_c)^\\top \\mathbf{x} \\\\\n& \\mathbf{a}_{1}^\\top \\mathbf{x} \\le b_{1} \\\\\n& \\min_{\\boldsymbol{\\delta}_{a2} \\in \\mathcal{U}_{a2}} (\\mathbf{a}_{2}^{nom} + \\boldsymbol{\\delta}_{a2})^\\top \\mathbf{x} \\ge b_{2} \\\\\n& \\max_{\\boldsymbol{\\delta}_{a3} \\in \\mathcal{U}_{a3}} (\\mathbf{a}_{3}^{nom} + \\boldsymbol{\\delta}_{a3})^\\top \\mathbf{x} \\le b_{3} \\\\\n& \\max_{\\boldsymbol{\\delta}_{a4} \\in \\mathcal{U}_{a4}} (\\mathbf{a}_{4}^{nom} + \\boldsymbol{\\delta}_{a4})^\\top \\mathbf{x} \\le b_{4} \\\\\n& \\mathcal{U}_c = \\{ \\boldsymbol{\\delta}_c \\in \\mathbb{R}^{4} : \\mathbf{D}_c \\boldsymbol{\\delta}_c \\le \\mathbf{d}_c, \\quad \\mathbf{E}_c \\boldsymbol{\\delta}_c = \\mathbf{e}_c \\} \\\\\n& \\mathcal{U}_{a2} = \\{ \\boldsymbol{\\delta}_{a2} \\in \\mathbb{R}^{4} : \\mathbf{D}_{a2} \\boldsymbol{\\delta}_{a2} \\le \\mathbf{d}_{a2}, \\quad \\mathbf{E}_{a2} \\boldsymbol{\\delta}_{a2} = \\mathbf{e}_{a2} \\} \\\\\n& \\mathcal{U}_{a3} = \\{ \\boldsymbol{\\delta}_{a3} \\in \\mathbb{R}^{4} : \\mathbf{D}_{a3} \\boldsymbol{\\delta}_{a3} \\le \\mathbf{d}_{a3}, \\quad \\mathbf{E}_{a3} \\boldsymbol{\\delta}_{a3} = \\mathbf{e}_{a3} \\} \\\\\n& \\mathcal{U}_{a4} = \\{ \\boldsymbol{\\delta}_{a4} \\in \\mathbb{R}^{4} : \\mathbf{D}_{a4} \\boldsymbol{\\delta}_{a4} \\le \\mathbf{d}_{a4}, \\quad \\mathbf{E}_{a4} \\boldsymbol{\\delta}_{a4} = \\mathbf{e}_{a4} \\} \\\\\n& \\mathbf{x} = \\begin{bmatrix} x_{1} \\\\ x_{2} \\\\ x_{3} \\\\ x_{4} \\end{bmatrix} \\\\\n& 0 \\le x_j \\le 3.1, \\quad \\forall j \\in \\{1, \\dots, 4\\} \\\\\n& \\mathbf{c}^{nom} = [-8, -5.9, 4.5, 9.4]^\\top \\\\\n& \\mathbf{a}_{1} = [2.6, -0.5, -2.7, -0.8]^\\top \\\\\n& b_{1} = 19.96 \\\\\n& \\mathbf{a}_{2}^{nom} = [-0.6, 0, 2.7, 0.7]^\\top \\\\\n& b_{2} = -11.63 \\\\\n& \\mathbf{a}_{3}^{nom} = [1.1, 0, -0.9, -0.7]^\\top \\\\\n& b_{3} = 2.59 \\\\\n& \\mathbf{a}_{4}^{nom} = [0.7, 0, 0.3, 0]^\\top \\\\\n& b_{4} = 2.61 \\\\\n& \\mathbf{D}_c = \\begin{bmatrix} 0 & -0.3 & 0.1 & 0 \\\\ -0.2 & 0 & 0.1 & 0 \\\\ 1 & 0 & 0 & 0 \\\\ -1 & 0 & 0 & 0 \\\\ 0 & 1 & 0 & 0 \\\\ 0 & -1 & 0 & 0 \\\\ 0 & 0 & 1 & 0 \\\\ 0 & 0 & -1 & 0 \\end{bmatrix} \\\\\n& \\mathbf{d}_c = [0.08, 0, 0.3, 0, 0.3, 0, 0.3, 0]^\\top \\\\\n& \\mathbf{E}_c = \\begin{bmatrix} 0 & 0 & 0 & 1 \\end{bmatrix} \\\\\n& \\mathbf{e}_c = [0]^\\top \\\\\n& \\mathbf{D}_{a2} = \\begin{bmatrix} 0.1 & 0 & 0.2 & 0 \\\\ 1 & 0 & 0 & 0 \\\\ -1 & 0 & 0 & 0 \\\\ 0 & 0 & 1 & 0 \\\\ 0 & 0 & -1 & 0 \\end{bmatrix} \\\\\n& \\mathbf{d}_{a2} = [0.03, 0.3, 0, 0.3, 0]^\\top \\\\\n& \\mathbf{E}_{a2} = \\begin{bmatrix} 0 & 1 & 0 & 0 \\\\ 0 & 0 & 0 & 1 \\end{bmatrix} \\\\\n& \\mathbf{e}_{a2} = [0, 0]^\\top \\\\\n& \\mathbf{D}_{a3} = \\begin{bmatrix} 0.1 & 0 & 0 & 0.2 \\\\ -0.1 & 0 & 0 & -0.1 \\\\ 1 & 0 & 0 & 0 \\\\ -1 & 0 & 0 & 0 \\\\ 0 & 0 & 1 & 0 \\\\ 0 & 0 & -1 & 0 \\\\ 0 & 0 & 0 & 1 \\\\ 0 & 0 & 0 & -1 \\end{bmatrix} \\\\\n& \\mathbf{d}_{a3} = [0.02, 0.03, 0.3, 0, 0.3, 0, 0.3, 0]^\\top \\\\\n& \\mathbf{E}_{a3} = \\begin{bmatrix} 0 & 1 & 0 & 0 \\end{bmatrix} \\\\\n& \\mathbf{e}_{a3} = [0]^\\top \\\\\n& \\mathbf{D}_{a4} = \\begin{bmatrix} 0.3 & 0 & 0.1 & 0 \\\\ 1 & 0 & 0 & 0 \\\\ -1 & 0 & 0 & 0 \\\\ 0 & 0 & 1 & 0 \\\\ 0 & 0 & -1 & 0 \\end{bmatrix} \\\\\n& \\mathbf{d}_{a4} = [0.06, 0.3, 0, 0.3, 0]^\\top \\\\\n& \\mathbf{E}_{a4} = \\begin{bmatrix} 0 & 1 & 0 & 0 \\\\ 0 & 0 & 0 & 1 \\end{bmatrix} \\\\\n& \\mathbf{e}_{a4} = [0, 0]^\\top \\\\\n\\end{align*}",
+    "uncertainty_type": [
+      3,
+      0,
+      3,
+      3,
+      3
+    ],
+    "solution": [
+      1.9923076923076921,
+      3.1,
+      0.0,
+      0.0
+    ],
+    "optimal_value": -32.70076923076923
+  },
+  {
+    "id": "4_14_T111",
+    "n_vars": 4,
+    "n_constraints": 4,
+    "template_param": [
+      1,
+      1,
+      1
+    ],
+    "description": "\\begin{align*}\n& \\text{Minimize} \\quad \\max_{\\xi_c \\in \\mathcal{U}_{c,Box}} \\left( \\bar{c} + \\text{diag}(\\hat{c}) \\xi_c \\right)^\\top x && \\text{(Box Uncertainty Objective)} \\\\\n& \\text{subject to} \\\\\n& \\max_{\\xi_{a1} \\in \\mathcal{U}_{a1,Box}} \\left( \\bar{a}_{1} + \\text{diag}(\\hat{a}_{1}) \\xi_{a1} \\right)^\\top x \\le b_{1} && \\text{(Box Uncertainty Constraint)} \\\\\n& \\max_{\\delta_{a2} \\in \\mathcal{U}_{a2,P}} ( \\bar{a}_{2} + \\delta_{a2} )^\\top x \\le b_{2} && \\text{(Polyhedral Uncertainty Constraint)} \\\\\n& \\max_{\\xi_{a3} \\in \\mathcal{U}_{a3,Box}} \\left( \\bar{a}_{3} + \\text{diag}(\\hat{a}_{3}) \\xi_{a3} \\right)^\\top x \\le b_{3} && \\text{(Box Uncertainty Constraint)} \\\\\n& a_{4}^\\top x = b_{4} && \\text{(Deterministic Constraint)} \\\\\n& \\text{where:} \\\\\n& \\mathcal{U}_{c,Box} = \\{ \\xi_c \\in \\mathbb{R}^{4} : \\|\\xi_c\\|_{\\infty} \\le 1 \\} \\\\\n& \\mathcal{U}_{a1,Box} = \\{ \\xi_{a1} \\in \\mathbb{R}^{4} : \\|\\xi_{a1}\\|_{\\infty} \\le 1 \\} \\\\\n& \\mathcal{U}_{a2,P} = \\{ \\delta_{a2} \\in \\mathbb{R}^{4} : D_{a2} \\delta_{a2} \\le d_{a2}, \\quad E_{a2} \\delta_{a2} = e_{a2} \\} \\\\\n& \\mathcal{U}_{a3,Box} = \\{ \\xi_{a3} \\in \\mathbb{R}^{4} : \\|\\xi_{a3}\\|_{\\infty} \\le 1 \\} \\\\\n& x = [x_{1}, x_{2}, x_{3}, x_{4}]^\\top \\\\\n& 0 \\le x_j \\le 4.5, \\quad \\forall j \\in \\{1, \\dots, 4\\} \\\\\n& \\bar{c} = [5.4, 3.2, -2.5, -7.8]^\\top \\\\\n& \\hat{c} = [0.6, 0.3, 0.2, 0]^\\top \\\\\n& \\bar{a}_{1} = [0, 3, -1.5, -2.5]^\\top \\\\\n& b_{1} = 20.44 \\\\\n& \\hat{a}_{1} = [0, 0.5, 0.1, 0.3]^\\top \\\\\n& \\bar{a}_{2} = [0.5, 0, 0, -3.1]^\\top \\\\\n& b_{2} = -3.78 \\\\\n& \\bar{a}_{3} = [0.6, 0.1, 0, -2.2]^\\top \\\\\n& b_{3} = 2.06 \\\\\n& \\hat{a}_{3} = [0.1, 0.1, 0, 0.3]^\\top \\\\\n& a_{4} = [0, 3.8, -1.9, -4.4]^\\top \\\\\n& b_{4} = -3.83 \\\\\n& D_{a2} = \\begin{bmatrix} -0.5 & 0 & 0 & 0.3 \\\\ 1 & 0 & 0 & 0 \\\\ -1 & 0 & 0 & 0 \\\\ 0 & 0 & 0 & 1 \\\\ 0 & 0 & 0 & -1 \\end{bmatrix} \\\\\n& d_{a2} = [0.07, 0.5, 0.5, 0.5, 0.5]^\\top \\\\\n& E_{a2} = \\begin{bmatrix} 0 & 1 & 0 & 0 \\\\ 0 & 0 & 1 & 0 \\end{bmatrix} \\\\\n& e_{a2} = [0, 0]^\\top \\\\\n\\end{align*}",
+    "uncertainty_type": [
+      1,
+      1,
+      3,
+      1,
+      0
+    ],
+    "solution": [
+      0.0,
+      4.5,
+      0.5947368421052617,
+      4.5
+    ],
+    "optimal_value": -20.717894736842105
+  },
+  {
+    "id": "4_15_T110",
+    "n_vars": 4,
+    "n_constraints": 4,
+    "template_param": [
+      1,
+      1,
+      0
+    ],
+    "description": "\\begin{align*}\n& \\min_{\\mathbf{x}} \\mathbf{c}^\\top \\mathbf{x} \\\\\n& \\min_{\\boldsymbol{\\delta}_{a1} \\in \\mathcal{U}_{a1}} (\\mathbf{a}_{1}^{nom} + \\boldsymbol{\\delta}_{a1})^\\top \\mathbf{x} \\ge b_{1} \\\\\n& \\min_{\\boldsymbol{\\delta}_{a2} \\in \\mathcal{U}_{a2}} (\\mathbf{a}_{2}^{nom} + \\boldsymbol{\\delta}_{a2})^\\top \\mathbf{x} \\ge b_{2} \\\\\n& \\min_{\\boldsymbol{\\delta}_{a3} \\in \\mathcal{U}_{a3}} (\\mathbf{a}_{3}^{nom} + \\boldsymbol{\\delta}_{a3})^\\top \\mathbf{x} \\ge b_{3} \\\\\n& \\max_{\\boldsymbol{\\delta}_{a4} \\in \\mathcal{U}_{a4}} (\\mathbf{a}_{4}^{nom} + \\boldsymbol{\\delta}_{a4})^\\top \\mathbf{x} \\le b_{4} \\\\\n& \\mathcal{U}_{a1} = \\{ \\boldsymbol{\\delta}_{a1} \\in \\mathbb{R}^{4} : \\mathbf{D}_{a1} \\boldsymbol{\\delta}_{a1} \\le \\mathbf{d}_{a1}, \\quad \\mathbf{E}_{a1} \\boldsymbol{\\delta}_{a1} = \\mathbf{e}_{a1} \\} \\\\\n& \\mathcal{U}_{a2} = \\{ \\boldsymbol{\\delta}_{a2} \\in \\mathbb{R}^{4} : |\\boldsymbol{\\delta}_{a2}| \\le \\hat{\\mathbf{a}}_{2}, \\|\\text{diag}(\\hat{\\mathbf{a}}_{2})^{-1} \\boldsymbol{\\delta}_{a2}\\|_1 \\le \\Gamma_{a2} \\} \\\\\n& \\mathcal{U}_{a3} = \\{ \\boldsymbol{\\delta}_{a3} \\in \\mathbb{R}^{4} : |\\boldsymbol{\\delta}_{a3}| \\le \\hat{\\mathbf{a}}_{3}, \\|\\text{diag}(\\hat{\\mathbf{a}}_{3})^{-1} \\boldsymbol{\\delta}_{a3}\\|_1 \\le \\Gamma_{a3} \\} \\\\\n& \\mathcal{U}_{a4} = \\{ \\boldsymbol{\\delta}_{a4} \\in \\mathbb{R}^{4} : |\\boldsymbol{\\delta}_{a4}| \\le \\hat{\\mathbf{a}}_{4} \\} \\\\\n& \\mathbf{x} = \\begin{bmatrix} x_{1} \\\\ x_{2} \\\\ x_{3} \\\\ x_{4} \\end{bmatrix} \\\\\n& 0 \\le x_j \\le 4, \\quad \\forall j \\in \\{1, \\dots, 4\\} \\\\\n& \\mathbf{c} = [-0.5, -7.6, -1.9, -1.1]^\\top \\\\\n& \\mathbf{a}_{1}^{nom} = [-3.8, 0, 0.1, -1.9]^\\top \\\\\n& b_{1} = -14.16 \\\\\n& \\mathbf{a}_{2}^{nom} = [0, -1.7, 0.3, 0]^\\top \\\\\n& b_{2} = -6.87 \\\\\n& \\mathbf{a}_{3}^{nom} = [1.7, 0, 1.5, -1.7]^\\top \\\\\n& b_{3} = -13.29 \\\\\n& \\mathbf{a}_{4}^{nom} = [0, 0, 1.2, -3.9]^\\top \\\\\n& b_{4} = -8.16 \\\\\n& \\mathbf{D}_{a1} = \\begin{bmatrix} 0 & 0 & -0.1 & -0.4 \\\\ 0 & 0 & 1 & 0 \\\\ 0 & 0 & -1 & 0 \\\\ 0 & 0 & 0 & 1 \\\\ 0 & 0 & 0 & -1 \\end{bmatrix} \\\\\n& \\mathbf{d}_{a1} = [0.01, 0.4, 0, 0.4, 0]^\\top \\\\\n& \\mathbf{E}_{a1} = \\begin{bmatrix} 1 & 0 & 0 & 0 \\\\ 0 & 1 & 0 & 0 \\end{bmatrix} \\\\\n& \\mathbf{e}_{a1} = [0, 0]^\\top \\\\\n& \\hat{\\mathbf{a}}_{2} = [0, 0.1, 0.1, 0]^\\top \\\\\n& \\Gamma_{a2} = 1.9 \\\\\n& \\hat{\\mathbf{a}}_{3} = [0.3, 0, 0.1, 0.1]^\\top \\\\\n& \\Gamma_{a3} = 1.1 \\\\\n& \\hat{\\mathbf{a}}_{4} = [0, 0, 0.1, 0.3]^\\top \\\\\n\\end{align*}",
+    "uncertainty_type": [
+      0,
+      3,
+      2,
+      2,
+      1
+    ],
+    "solution": [
+      1.8315789473684214,
+      4.0,
+      4.0,
+      4.0
+    ],
+    "optimal_value": -43.31578947368421
+  },
+  {
+    "id": "4_16_T101",
+    "n_vars": 4,
+    "n_constraints": 4,
+    "template_param": [
+      1,
+      0,
+      1
+    ],
+    "description": "\\begin{align*}\n& \\text{maximize } \\min_{\\eta^c_{2}, \\eta^c_{4} \\in \\mathcal{U}^c_{bud}} \\{ -8.2x_{1} + (-1.5 + 0.1\\eta^c_{2})x_{2} + 1.2x_{3} + (8.4 + 0.9\\eta^c_{4})x_{4} \\} && \\text{[Budgeted Uncertainty Objective]} \\\\\n& \\text{subject to} \\\\\n& - 3.5x_{1} + 0.5x_{3} = 10.65 && \\text{[Deterministic Constraint]} \\\\\n& \\min_{\\eta^a_{2,1}, \\eta^a_{2,2}, \\eta^a_{2,4} \\in \\mathcal{U}^a_{2,bud}} \\{ (5 + 0.8\\eta^a_{2,1})x_{1} + (-1.5 + 0.1\\eta^a_{2,2})x_{2} + (-4.5 + 0.3\\eta^a_{2,4})x_{4} \\} \\ge -60.92 && \\text{[Budgeted Uncertainty Constraint]} \\\\\n& \\min_{-1 \\le \\xi^a_{3,1} \\le 1, -1 \\le \\xi^a_{3,3} \\le 1, -1 \\le \\xi^a_{3,4} \\le 1} \\{ (1.7 + 0.2\\xi^a_{3,1})x_{1} + (-3.9 + 0.6\\xi^a_{3,3})x_{3} + (-3.1 + 0.4\\xi^a_{3,4})x_{4} \\} \\ge -15.03 && \\text{[Box Uncertainty Constraint]} \\\\\n& \\min_{\\delta^a_{4,3}, \\delta^a_{4,4} \\in \\mathcal{U}^a_{4,poly}} \\{ 2.2x_{2} + (-2.5 + \\delta^a_{4,3})x_{3} + (0.1 + \\delta^a_{4,4})x_{4} \\} \\ge -24.93 && \\text{[Polyhedral Uncertainty Constraint]} \\\\\n& \\text{where the uncertainty sets are defined as:} \\\\\n& \\mathcal{U}^c_{bud} = \\{ \\eta^c_{2}, \\eta^c_{4} : -1 \\le \\eta^c_{2} \\le 1, -1 \\le \\eta^c_{4} \\le 1, |\\eta^c_{2}| + |\\eta^c_{4}| \\le 0.5 \\} \\\\\n& \\mathcal{U}^a_{2,bud} = \\{ \\eta^a_{2,1}, \\eta^a_{2,2}, \\eta^a_{2,4} : -1 \\le \\eta^a_{2,1} \\le 1, -1 \\le \\eta^a_{2,2} \\le 1, -1 \\le \\eta^a_{2,4} \\le 1, |\\eta^a_{2,1}| + |\\eta^a_{2,2}| + |\\eta^a_{2,4}| \\le 2.7 \\} \\\\\n& \\mathcal{U}^a_{4,poly} = \\{ \\delta^a_{4,3}, \\delta^a_{4,4} : 0.4\\delta^a_{4,3} - 0.5\\delta^a_{4,4} \\le 0.22, -0.6 \\le \\delta^a_{4,3} \\le 0, -0.6 \\le \\delta^a_{4,4} \\le 0 \\} \\\\\n& -5.6 \\le x_{1} \\le 5.6, -5.6 \\le x_{2} \\le 5.6, -5.6 \\le x_{3} \\le 5.6, -5.6 \\le x_{4} \\le 5.6 \\\\\n\\end{align*}",
+    "uncertainty_type": [
+      2,
+      0,
+      2,
+      1,
+      3
+    ],
+    "solution": [
+      -3.5311320754716986,
+      -5.6,
+      -3.4179245283018878,
+      5.6
+    ],
+    "optimal_value": 77.77377358490567
+  },
+  {
+    "id": "5_1_T110",
+    "n_vars": 5,
+    "n_constraints": 5,
+    "template_param": [
+      1,
+      1,
+      0
+    ],
+    "description": "\\begin{align*}\n& \\max_{\\mathbf{x}} \\min_{\\boldsymbol{\\delta}_c \\in \\mathcal{U}_c} (\\mathbf{c}^{nom} + \\boldsymbol{\\delta}_c)^\\top \\mathbf{x} \\\\\n& \\mathbf{a}_{1}^\\top \\mathbf{x} = b_{1} \\\\\n& \\min_{\\boldsymbol{\\delta}_{a2} \\in \\mathcal{U}_{a2}} (\\mathbf{a}_{2}^{nom} + \\boldsymbol{\\delta}_{a2})^\\top \\mathbf{x} \\ge b_{2} \\\\\n& \\min_{\\boldsymbol{\\delta}_{a3} \\in \\mathcal{U}_{a3}} (\\mathbf{a}_{3}^{nom} + \\boldsymbol{\\delta}_{a3})^\\top \\mathbf{x} \\ge b_{3} \\\\\n& \\max_{\\boldsymbol{\\delta}_{a4} \\in \\mathcal{U}_{a4}} (\\mathbf{a}_{4}^{nom} + \\boldsymbol{\\delta}_{a4})^\\top \\mathbf{x} \\le b_{4} \\\\\n& \\max_{\\boldsymbol{\\delta}_{a5} \\in \\mathcal{U}_{a5}} (\\mathbf{a}_{5}^{nom} + \\boldsymbol{\\delta}_{a5})^\\top \\mathbf{x} \\le b_{5} \\\\\n& \\mathcal{U}_c = \\{ \\boldsymbol{\\delta}_c \\in \\mathbb{R}^{5} : \\mathbf{D}_c \\boldsymbol{\\delta}_c \\le \\mathbf{d}_c, \\quad \\mathbf{E}_c \\boldsymbol{\\delta}_c = \\mathbf{e}_c \\} \\\\\n& \\mathcal{U}_{a2} = \\{ \\boldsymbol{\\delta}_{a2} \\in \\mathbb{R}^{5} : |\\boldsymbol{\\delta}_{a2}| \\le \\hat{\\mathbf{a}}_{2} \\} \\\\\n& \\mathcal{U}_{a3} = \\{ \\boldsymbol{\\delta}_{a3} \\in \\mathbb{R}^{5} : |\\boldsymbol{\\delta}_{a3}| \\le \\hat{\\mathbf{a}}_{3}, \\|\\text{diag}(\\hat{\\mathbf{a}}_{3})^{-1} \\boldsymbol{\\delta}_{a3}\\|_1 \\le \\Gamma_{a3} \\} \\\\\n& \\mathcal{U}_{a4} = \\{ \\boldsymbol{\\delta}_{a4} \\in \\mathbb{R}^{5} : |\\boldsymbol{\\delta}_{a4}| \\le \\hat{\\mathbf{a}}_{4}, \\|\\text{diag}(\\hat{\\mathbf{a}}_{4})^{-1} \\boldsymbol{\\delta}_{a4}\\|_1 \\le \\Gamma_{a4} \\} \\\\\n& \\mathcal{U}_{a5} = \\{ \\boldsymbol{\\delta}_{a5} \\in \\mathbb{R}^{5} : \\mathbf{D}_{a5} \\boldsymbol{\\delta}_{a5} \\le \\mathbf{d}_{a5}, \\quad \\mathbf{E}_{a5} \\boldsymbol{\\delta}_{a5} = \\mathbf{e}_{a5} \\} \\\\\n& \\mathbf{x} = \\begin{bmatrix} x_{1} \\\\ x_{2} \\\\ x_{3} \\\\ x_{4} \\\\ x_{5} \\end{bmatrix} \\\\\n& -4.1 \\le x_j \\le 4.1, \\quad \\forall j \\in \\{1, \\dots, 5\\} \\\\\n& \\mathbf{c}^{nom} = [-6.5, 3.6, -3.2, 7.3, -3.7]^\\top \\\\\n& \\mathbf{a}_{1} = [1, 0, 0, -1.2, 0.9]^\\top \\\\\n& b_{1} = 3.25 \\\\\n& \\mathbf{a}_{2}^{nom} = [-2.9, 3.7, -2.3, 0, -2.2]^\\top \\\\\n& b_{2} = -8.29 \\\\\n& \\mathbf{a}_{3}^{nom} = [0, 4, 0.3, -3.1, -1.2]^\\top \\\\\n& b_{3} = -18.52 \\\\\n& \\mathbf{a}_{4}^{nom} = [-2.8, 0, 1.9, 2.7, 0]^\\top \\\\\n& b_{4} = 16.26 \\\\\n& \\mathbf{a}_{5}^{nom} = [-1, 0.3, -2.2, 0, 0]^\\top \\\\\n& b_{5} = 5.33 \\\\\n& \\mathbf{D}_c = \\begin{bmatrix} 0 & 0 & -0.1 & 0.1 & 0.3 \\\\ 0.1 & 0 & 0 & 0 & 0.1 \\\\ 0.1 & 0 & -0.2 & 0 & 0 \\\\ 1 & 0 & 0 & 0 & 0 \\\\ -1 & 0 & 0 & 0 & 0 \\\\ 0 & 0 & 1 & 0 & 0 \\\\ 0 & 0 & -1 & 0 & 0 \\\\ 0 & 0 & 0 & 1 & 0 \\\\ 0 & 0 & 0 & -1 & 0 \\\\ 0 & 0 & 0 & 0 & 1 \\\\ 0 & 0 & 0 & 0 & -1 \\end{bmatrix} \\\\\n& \\mathbf{d}_c = [0.12, 0.08, 0.11, 0.4, 0, 0.4, 0, 0.4, 0, 0.4, 0]^\\top \\\\\n& \\mathbf{E}_c = \\begin{bmatrix} 0 & 1 & 0 & 0 & 0 \\end{bmatrix} \\\\\n& \\mathbf{e}_c = [0]^\\top \\\\\n& \\hat{\\mathbf{a}}_{2} = [0.5, 0.4, 0.4, 0, 0.3]^\\top \\\\\n& \\hat{\\mathbf{a}}_{3} = [0, 0.3, 0.1, 0.2, 0.2]^\\top \\\\\n& \\Gamma_{a3} = 2.2 \\\\\n& \\hat{\\mathbf{a}}_{4} = [0.3, 0, 0, 0.1, 0]^\\top \\\\\n& \\Gamma_{a4} = 0.1 \\\\\n& \\mathbf{D}_{a5} = \\begin{bmatrix} -0.1 & 0 & -0.1 & 0 & 0 \\\\ 1 & 0 & 0 & 0 & 0 \\\\ -1 & 0 & 0 & 0 & 0 \\\\ 0 & 0 & 1 & 0 & 0 \\\\ 0 & 0 & -1 & 0 & 0 \\end{bmatrix} \\\\\n& \\mathbf{d}_{a5} = [0.02, 0.4, 0, 0.4, 0]^\\top \\\\\n& \\mathbf{E}_{a5} = \\begin{bmatrix} 0 & 1 & 0 & 0 & 0 \\\\ 0 & 0 & 0 & 1 & 0 \\\\ 0 & 0 & 0 & 0 & 1 \\end{bmatrix} \\\\\n& \\mathbf{e}_{a5} = [0, 0, 0]^\\top \\\\\n\\end{align*}",
+    "uncertainty_type": [
+      3,
+      0,
+      1,
+      2,
+      2,
+      3
+    ],
+    "solution": [
+      4.1,
+      4.1,
+      -2.9818181818181815,
+      3.7833333333333328,
+      4.1
+    ],
+    "optimal_value": 8.907424242424241
+  },
+  {
+    "id": "5_2_T111",
+    "n_vars": 5,
+    "n_constraints": 5,
+    "template_param": [
+      1,
+      1,
+      1
+    ],
+    "description": "\\begin{align*}\n& \\text{Minimize} \\quad \\max_{\\xi_c \\in \\mathcal{U}_{c,Box}} \\left( \\bar{c} + \\text{diag}(\\hat{c}) \\xi_c \\right)^\\top x && \\text{(Box Uncertainty Objective)} \\\\\n& \\text{subject to} \\\\\n& \\min_{\\delta_{a1} \\in \\mathcal{U}_{a1,P}} ( \\bar{a}_{1} + \\delta_{a1} )^\\top x \\ge b_{1} && \\text{(Polyhedral Uncertainty Constraint)} \\\\\n& \\max_{\\xi_{a2} \\in \\mathcal{U}_{a2,Bud}} \\left( \\bar{a}_{2} + \\text{diag}(\\hat{a}_{2}) \\xi_{a2} \\right)^\\top x \\le b_{2} && \\text{(Budgeted Uncertainty Constraint)} \\\\\n& \\max_{\\xi_{a3} \\in \\mathcal{U}_{a3,Bud}} \\left( \\bar{a}_{3} + \\text{diag}(\\hat{a}_{3}) \\xi_{a3} \\right)^\\top x \\le b_{3} && \\text{(Budgeted Uncertainty Constraint)} \\\\\n& \\min_{\\delta_{a4} \\in \\mathcal{U}_{a4,P}} ( \\bar{a}_{4} + \\delta_{a4} )^\\top x \\ge b_{4} && \\text{(Polyhedral Uncertainty Constraint)} \\\\\n& a_{5}^\\top x \\ge b_{5} && \\text{(Deterministic Constraint)} \\\\\n& \\text{where:} \\\\\n& \\mathcal{U}_{c,Box} = \\{ \\xi_c \\in \\mathbb{R}^{5} : \\|\\xi_c\\|_{\\infty} \\le 1 \\} \\\\\n& \\mathcal{U}_{a1,P} = \\{ \\delta_{a1} \\in \\mathbb{R}^{5} : D_{a1} \\delta_{a1} \\le d_{a1}, \\quad E_{a1} \\delta_{a1} = e_{a1} \\} \\\\\n& \\mathcal{U}_{a2,Bud} = \\{ \\xi_{a2} \\in \\mathbb{R}^{5} : \\|\\xi_{a2}\\|_{\\infty} \\le 1, \\|\\xi_{a2}\\|_1 \\le \\Gamma_{a2} \\} \\\\\n& \\mathcal{U}_{a3,Bud} = \\{ \\xi_{a3} \\in \\mathbb{R}^{5} : \\|\\xi_{a3}\\|_{\\infty} \\le 1, \\|\\xi_{a3}\\|_1 \\le \\Gamma_{a3} \\} \\\\\n& \\mathcal{U}_{a4,P} = \\{ \\delta_{a4} \\in \\mathbb{R}^{5} : D_{a4} \\delta_{a4} \\le d_{a4}, \\quad E_{a4} \\delta_{a4} = e_{a4} \\} \\\\\n& x = [x_{1}, x_{2}, x_{3}, x_{4}, x_{5}]^\\top \\\\\n& -9.6 \\le x_j \\le 0, \\quad \\forall j \\in \\{1, \\dots, 5\\} \\\\\n& \\bar{c} = [3.7, 4.3, -0.2, 0.1, 2.1]^\\top \\\\\n& \\hat{c} = [0.2, 0, 0.1, 0, 0]^\\top \\\\\n& \\bar{a}_{1} = [-4.7, -8.9, 5.1, 0, 0]^\\top \\\\\n& b_{1} = -133.39 \\\\\n& \\bar{a}_{2} = [4.4, 0, 0, -9, -2.5]^\\top \\\\\n& b_{2} = 122.33 \\\\\n& \\hat{a}_{2} = [0.5, 0, 0, 0.5, 0.3]^\\top \\\\\n& \\bar{a}_{3} = [0, 0, 0, 8.7, 3.4]^\\top \\\\\n& b_{3} = 61.86 \\\\\n& \\hat{a}_{3} = [0, 0, 0, 0.8, 0.2]^\\top \\\\\n& \\bar{a}_{4} = [2, -7.6, 0, 0, -6.8]^\\top \\\\\n& b_{4} = 90.95 \\\\\n& a_{5} = [-0.1, 0, 0, 3.4, 9.6]^\\top \\\\\n& b_{5} = -119.59 \\\\\n& D_{a1} = \\begin{bmatrix} -0.5 & 0 & -0.1 & 0 & 0 \\\\ 1 & 0 & 0 & 0 & 0 \\\\ -1 & 0 & 0 & 0 & 0 \\\\ 0 & 0 & 1 & 0 & 0 \\\\ 0 & 0 & -1 & 0 & 0 \\end{bmatrix} \\\\\n& d_{a1} = [0.55, 0, 1, 0, 1]^\\top \\\\\n& E_{a1} = \\begin{bmatrix} 0 & 1 & 0 & 0 & 0 \\\\ 0 & 0 & 0 & 1 & 0 \\\\ 0 & 0 & 0 & 0 & 1 \\end{bmatrix} \\\\\n& e_{a1} = [0, 0, 0]^\\top \\\\\n& \\Gamma_{a2} = 1.3 \\\\\n& \\Gamma_{a3} = 0.6 \\\\\n& D_{a4} = \\begin{bmatrix} 0.1 & 0 & 0 & 0 & -0.3 \\\\ 1 & 0 & 0 & 0 & 0 \\\\ -1 & 0 & 0 & 0 & 0 \\\\ 0 & 0 & 0 & 0 & 1 \\\\ 0 & 0 & 0 & 0 & -1 \\end{bmatrix} \\\\\n& d_{a4} = [0.36, 0, 1, 0, 1]^\\top \\\\\n& E_{a4} = \\begin{bmatrix} 0 & 1 & 0 & 0 & 0 \\\\ 0 & 0 & 1 & 0 & 0 \\\\ 0 & 0 & 0 & 1 & 0 \\end{bmatrix} \\\\\n& e_{a4} = [0, 0, 0]^\\top \\\\\n\\end{align*}",
+    "uncertainty_type": [
+      1,
+      3,
+      2,
+      2,
+      3,
+      0
+    ],
+    "solution": [
+      -9.6,
+      -9.6,
+      0.0,
+      -8.35,
+      -9.6
+    ],
+    "optimal_value": -95.87499999999999
+  },
+  {
+    "id": "5_3_T000",
+    "n_vars": 5,
+    "n_constraints": 5,
+    "template_param": [
+      0,
+      0,
+      0
+    ],
+    "description": "\\begin{align*}\n\\min \\quad & c_{1}x_{1} + 4.3x_{2} + c_{3}x_{3} + c_{4}x_{4} + c_{5}x_{5}, \\quad \\forall (c_{1}, c_{3}, c_{4}, c_{5}) \\in \\mathcal{U}_{c} \\\\\n& (1.4 + \\zeta^{a1}_{1})x_{1} + (1.5 + \\zeta^{a1}_{4})x_{4} + 0.6x_{5} \\ge -7.41, \\quad \\forall (\\zeta^{a1}_{1}, \\zeta^{a1}_{4}) \\in \\mathcal{U}_{a1} \\\\\n& - 0.1x_{2} - 1.4x_{3} - 0.8x_{4} = -2.74 \\\\\n& - 1.7x_{1} + a_{32}x_{2} + a_{34}x_{4} + a_{35}x_{5} \\ge -10.94, \\quad \\forall (a_{32}, a_{34}, a_{35}) \\in \\mathcal{U}_{a3} \\\\\n& a_{41}x_{1} + a_{42}x_{2} + a_{44}x_{4} \\ge -3.15, \\quad \\forall (a_{41}, a_{42}, a_{44}) \\in \\mathcal{U}_{a4} \\\\\n& (-0.6 + \\zeta^{a5}_{4})x_{4} + (-0.2 + \\zeta^{a5}_{5})x_{5} \\ge -1.87, \\quad \\forall (\\zeta^{a5}_{4}, \\zeta^{a5}_{5}) \\in \\mathcal{U}_{a5} \\\\\n& 0 \\le x_{1} \\le 2.5, \\quad 0 \\le x_{2} \\le 2.5, \\quad 0 \\le x_{3} \\le 2.5, \\quad 0 \\le x_{4} \\le 2.5, \\quad 0 \\le x_{5} \\le 2.5 \\\\\n\\mathcal{U}_{c} = \\{ (c_{1}, c_{3}, c_{4}, c_{5}) : \\quad & |c_{1} - 2.6| \\le 0.5, \\\\\n& \\quad |c_{3} - 0.7| \\le 0.1, \\\\\n& \\quad |c_{4} - (-7.8)| \\le 0.9, \\\\\n& \\quad |c_{5} - 9.1| \\le 1.6 \\} \\\\\n\\mathcal{U}_{a1} = \\{ (\\zeta^{a1}_{1}, \\zeta^{a1}_{4}) : \\quad & - 0.1\\zeta^{a1}_{1} + 0.1\\zeta^{a1}_{4} \\ge -0.03, \\\\\n& \\quad -0.2 \\le \\zeta^{a1}_{1} \\le 0.2, \\\\\n& \\quad -0.2 \\le \\zeta^{a1}_{4} \\le 0.2 \\} \\\\\n\\mathcal{U}_{a3} = \\{ (a_{32}, a_{34}, a_{35}) : \\quad & |a_{32} - (-1.8)| \\le 0.1, \\\\\n& \\quad |a_{34} - 0.1| \\le 0.1, \\\\\n& \\quad |a_{35} - (-1)| \\le 0.1, \\\\\n& \\quad \\frac{|a_{32} - (-1.8)|}{0.1} + \\frac{|a_{34} - 0.1|}{0.1} + \\frac{|a_{35} - (-1)|}{0.1} \\le 1.7 \\} \\\\\n\\mathcal{U}_{a4} = \\{ (a_{41}, a_{42}, a_{44}) : \\quad & |a_{41} - (-1.2)| \\le 0.1, \\\\\n& \\quad |a_{42} - 0.8| \\le 0.1, \\\\\n& \\quad |a_{44} - 1.5| \\le 0.2, \\\\\n& \\quad \\frac{|a_{41} - (-1.2)|}{0.1} + \\frac{|a_{42} - 0.8|}{0.1} + \\frac{|a_{44} - 1.5|}{0.2} \\le 0 \\} \\\\\n\\mathcal{U}_{a5} = \\{ (\\zeta^{a5}_{4}, \\zeta^{a5}_{5}) : \\quad & 0.2\\zeta^{a5}_{4} + 0.2\\zeta^{a5}_{5} \\le 0.07, \\\\\n& \\quad -0.2 \\le \\zeta^{a5}_{4} \\le 0.2, \\\\\n& \\quad -0.2 \\le \\zeta^{a5}_{5} \\le 0.2 \\} \\\\\n\\end{align*}",
+    "uncertainty_type": [
+      1,
+      3,
+      0,
+      2,
+      2,
+      3
+    ],
+    "solution": [
+      0.0,
+      0.0,
+      0.6214285714285713,
+      2.3375000000000004,
+      0.0
+    ],
+    "optimal_value": -15.631607142857145
+  },
+  {
+    "id": "5_4_T111",
+    "n_vars": 5,
+    "n_constraints": 5,
+    "template_param": [
+      1,
+      1,
+      1
+    ],
+    "description": "\\begin{align*}\n& \\text{Minimize} \\quad \\max_{\\delta_c \\in \\mathcal{U}_{c,P}} ( \\bar{c} + \\delta_c )^\\top x && \\text{(Polyhedral Uncertainty Objective)} \\\\\n& \\text{subject to} \\\\\n& a_{1}^\\top x = b_{1} && \\text{(Deterministic Constraint)} \\\\\n& \\min_{\\delta_{a2} \\in \\mathcal{U}_{a2,P}} ( \\bar{a}_{2} + \\delta_{a2} )^\\top x \\ge b_{2} && \\text{(Polyhedral Uncertainty Constraint)} \\\\\n& \\min_{\\xi_{a3} \\in \\mathcal{U}_{a3,Bud}} \\left( \\bar{a}_{3} + \\text{diag}(\\hat{a}_{3}) \\xi_{a3} \\right)^\\top x \\ge b_{3} && \\text{(Budgeted Uncertainty Constraint)} \\\\\n& \\min_{\\delta_{a4} \\in \\mathcal{U}_{a4,P}} ( \\bar{a}_{4} + \\delta_{a4} )^\\top x \\ge b_{4} && \\text{(Polyhedral Uncertainty Constraint)} \\\\\n& \\max_{\\delta_{a5} \\in \\mathcal{U}_{a5,P}} ( \\bar{a}_{5} + \\delta_{a5} )^\\top x \\le b_{5} && \\text{(Polyhedral Uncertainty Constraint)} \\\\\n& \\text{where:} \\\\\n& \\mathcal{U}_{c,P} = \\{ \\delta_c \\in \\mathbb{R}^{5} : D_c \\delta_c \\le d_c, \\quad E_c \\delta_c = e_c \\} \\\\\n& \\mathcal{U}_{a2,P} = \\{ \\delta_{a2} \\in \\mathbb{R}^{5} : D_{a2} \\delta_{a2} \\le d_{a2}, \\quad E_{a2} \\delta_{a2} = e_{a2} \\} \\\\\n& \\mathcal{U}_{a3,Bud} = \\{ \\xi_{a3} \\in \\mathbb{R}^{5} : \\|\\xi_{a3}\\|_{\\infty} \\le 1, \\|\\xi_{a3}\\|_1 \\le \\Gamma_{a3} \\} \\\\\n& \\mathcal{U}_{a4,P} = \\{ \\delta_{a4} \\in \\mathbb{R}^{5} : D_{a4} \\delta_{a4} \\le d_{a4}, \\quad E_{a4} \\delta_{a4} = e_{a4} \\} \\\\\n& \\mathcal{U}_{a5,P} = \\{ \\delta_{a5} \\in \\mathbb{R}^{5} : D_{a5} \\delta_{a5} \\le d_{a5}, \\quad E_{a5} \\delta_{a5} = e_{a5} \\} \\\\\n& x = [x_{1}, x_{2}, x_{3}, x_{4}, x_{5}]^\\top \\\\\n& 0 \\le x_j \\le 2, \\quad \\forall j \\in \\{1, \\dots, 5\\} \\\\\n& \\bar{c} = [-1, -4.6, -2.6, 9.5, 9.6]^\\top \\\\\n& a_{1} = [1.4, -0.9, 0, -1, 0.9]^\\top \\\\\n& b_{1} = 1.39 \\\\\n& \\bar{a}_{2} = [-0.8, 1.2, 0, 0, -1.5]^\\top \\\\\n& b_{2} = -6.71 \\\\\n& \\bar{a}_{3} = [0, 1.1, 0, -0.5, -0.3]^\\top \\\\\n& b_{3} = -2.82 \\\\\n& \\hat{a}_{3} = [0, 0.1, 0, 0.1, 0.1]^\\top \\\\\n& \\bar{a}_{4} = [0, 0, -0.8, 0, 0.7]^\\top \\\\\n& b_{4} = -1.59 \\\\\n& \\bar{a}_{5} = [-0.2, 1.3, -1.1, -1.3, 1.7]^\\top \\\\\n& b_{5} = 9.13 \\\\\n& D_c = \\begin{bmatrix} 0 & 0 & -0.1 & -0.1 & 0 \\\\ 0 & 0 & 1 & 0 & 0 \\\\ 0 & 0 & -1 & 0 & 0 \\\\ 0 & 0 & 0 & 1 & 0 \\\\ 0 & 0 & 0 & -1 & 0 \\end{bmatrix} \\\\\n& d_c = [0.03, 0, 0.2, 0, 0.2]^\\top \\\\\n& E_c = \\begin{bmatrix} 1 & 0 & 0 & 0 & 0 \\\\ 0 & 1 & 0 & 0 & 0 \\\\ 0 & 0 & 0 & 0 & 1 \\end{bmatrix} \\\\\n& e_c = [0, 0, 0]^\\top \\\\\n& D_{a2} = \\begin{bmatrix} 0.1 & -0.1 & 0 & 0 & 0 \\\\ 1 & 0 & 0 & 0 & 0 \\\\ -1 & 0 & 0 & 0 & 0 \\\\ 0 & 1 & 0 & 0 & 0 \\\\ 0 & -1 & 0 & 0 & 0 \\end{bmatrix} \\\\\n& d_{a2} = [0, 0, 0.2, 0, 0.2]^\\top \\\\\n& E_{a2} = \\begin{bmatrix} 0 & 0 & 1 & 0 & 0 \\\\ 0 & 0 & 0 & 1 & 0 \\\\ 0 & 0 & 0 & 0 & 1 \\end{bmatrix} \\\\\n& e_{a2} = [0, 0, 0]^\\top \\\\\n& \\Gamma_{a3} = 2.4 \\\\\n& D_{a4} = \\begin{bmatrix} 0 & 0 & 0.2 & 0 & 0.1 \\\\ 0 & 0 & 1 & 0 & 0 \\\\ 0 & 0 & -1 & 0 & 0 \\\\ 0 & 0 & 0 & 0 & 1 \\\\ 0 & 0 & 0 & 0 & -1 \\end{bmatrix} \\\\\n& d_{a4} = [-0.01, 0, 0.2, 0, 0.2]^\\top \\\\\n& E_{a4} = \\begin{bmatrix} 1 & 0 & 0 & 0 & 0 \\\\ 0 & 1 & 0 & 0 & 0 \\\\ 0 & 0 & 0 & 1 & 0 \\end{bmatrix} \\\\\n& e_{a4} = [0, 0, 0]^\\top \\\\\n& D_{a5} = \\begin{bmatrix} -0.2 & 0 & 0 & -0.1 & 0.2 \\\\ 0 & 0 & 0 & 0.1 & -0.1 \\\\ 0.1 & 0 & 0 & -0.1 & 0.1 \\\\ 1 & 0 & 0 & 0 & 0 \\\\ -1 & 0 & 0 & 0 & 0 \\\\ 0 & 0 & 1 & 0 & 0 \\\\ 0 & 0 & -1 & 0 & 0 \\\\ 0 & 0 & 0 & 1 & 0 \\\\ 0 & 0 & 0 & -1 & 0 \\\\ 0 & 0 & 0 & 0 & 1 \\\\ 0 & 0 & 0 & 0 & -1 \\end{bmatrix} \\\\\n& d_{a5} = [-0.01, 0.01, 0.01, 0, 0.2, 0, 0.2, 0, 0.2, 0, 0.2]^\\top \\\\\n& E_{a5} = \\begin{bmatrix} 0 & 1 & 0 & 0 & 0 \\end{bmatrix} \\\\\n& e_{a5} = [0]^\\top \\\\\n\\end{align*}",
+    "uncertainty_type": [
+      3,
+      0,
+      3,
+      2,
+      3,
+      3
+    ],
+    "solution": [
+      2.0,
+      1.5666666666666664,
+      1.59,
+      0.0,
+      0.0
+    ],
+    "optimal_value": -13.340666666666666
+  },
+  {
+    "id": "5_5_T101",
+    "n_vars": 5,
+    "n_constraints": 5,
+    "template_param": [
+      1,
+      0,
+      1
+    ],
+    "description": "\\begin{align*}\n& \\text{minimize } \\max_{\\eta^c_{4}, \\eta^c_{5} \\in \\mathcal{U}^c_{bud}} \\{ -3.4x_{1} - 3.5x_{2} - 9.7x_{3} + (8 + 0.5\\eta^c_{4})x_{4} + (2.2 + 0.4\\eta^c_{5})x_{5} \\} && \\text{[Budgeted Uncertainty Objective]} \\\\\n& \\text{subject to} \\\\\n& \\max_{\\eta^a_{1,1}, \\eta^a_{1,3} \\in \\mathcal{U}^a_{1,bud}} \\{ (0.3 + 0.1\\eta^a_{1,1})x_{1} + (-1.7 + 0.3\\eta^a_{1,3})x_{3} \\} \\le 8.22 && \\text{[Budgeted Uncertainty Constraint]} \\\\\n& \\max_{-1 \\le \\xi^a_{2,1} \\le 1, -1 \\le \\xi^a_{2,2} \\le 1, -1 \\le \\xi^a_{2,3} \\le 1, -1 \\le \\xi^a_{2,4} \\le 1} \\{ (3.4 + 0.6\\xi^a_{2,1})x_{1} + (-2.4 + 0.3\\xi^a_{2,2})x_{2} + (1.9 + 0.2\\xi^a_{2,3})x_{3} + (4.1 + 0.5\\xi^a_{2,4})x_{4} \\} \\le 23.34 && \\text{[Box Uncertainty Constraint]} \\\\\n& - 1.6x_{4} + 2.4x_{5} = -1.12 && \\text{[Deterministic Constraint]} \\\\\n& \\max_{-1 \\le \\xi^a_{4,1} \\le 1, -1 \\le \\xi^a_{4,2} \\le 1} \\{ (-3.2 + 0.2\\xi^a_{4,1})x_{1} + (3.9 + 0.6\\xi^a_{4,2})x_{2} \\} \\le 33.1 && \\text{[Box Uncertainty Constraint]} \\\\\n& \\min_{\\eta^a_{5,1}, \\eta^a_{5,3}, \\eta^a_{5,4}, \\eta^a_{5,5} \\in \\mathcal{U}^a_{5,bud}} \\{ (-3.9 + 0.4\\eta^a_{5,1})x_{1} + (4.5 + 0.7\\eta^a_{5,3})x_{3} + (4.4 + 0.8\\eta^a_{5,4})x_{4} + (-1.1 + 0.1\\eta^a_{5,5})x_{5} \\} \\ge -56.73 && \\text{[Budgeted Uncertainty Constraint]} \\\\\n& \\text{where the uncertainty sets are defined as:} \\\\\n& \\mathcal{U}^c_{bud} = \\{ \\eta^c_{4}, \\eta^c_{5} : -1 \\le \\eta^c_{4} \\le 1, -1 \\le \\eta^c_{5} \\le 1, |\\eta^c_{4}| + |\\eta^c_{5}| \\le 0.9 \\} \\\\\n& \\mathcal{U}^a_{1,bud} = \\{ \\eta^a_{1,1}, \\eta^a_{1,3} : -1 \\le \\eta^a_{1,1} \\le 1, -1 \\le \\eta^a_{1,3} \\le 1, |\\eta^a_{1,1}| + |\\eta^a_{1,3}| \\le 0.1 \\} \\\\\n& \\mathcal{U}^a_{5,bud} = \\{ \\eta^a_{5,1}, \\eta^a_{5,3}, \\eta^a_{5,4}, \\eta^a_{5,5} : -1 \\le \\eta^a_{5,1} \\le 1, -1 \\le \\eta^a_{5,3} \\le 1, -1 \\le \\eta^a_{5,4} \\le 1, -1 \\le \\eta^a_{5,5} \\le 1, |\\eta^a_{5,1}| + |\\eta^a_{5,3}| + |\\eta^a_{5,4}| + |\\eta^a_{5,5}| \\le 2.6 \\} \\\\\n& -4.7 \\le x_{1} \\le 0, -4.7 \\le x_{2} \\le 0, -4.7 \\le x_{3} \\le 0, -4.7 \\le x_{4} \\le 0, -4.7 \\le x_{5} \\le 0 \\\\\n\\end{align*}",
+    "uncertainty_type": [
+      2,
+      2,
+      1,
+      0,
+      1,
+      2
+    ],
+    "solution": [
+      0.0,
+      0.0,
+      0.0,
+      -4.7,
+      -3.6000000000000005
+    ],
+    "optimal_value": -43.405
+  },
+  {
+    "id": "5_6_T111",
+    "n_vars": 5,
+    "n_constraints": 5,
+    "template_param": [
+      1,
+      1,
+      1
+    ],
+    "description": "\\begin{align*}\n& \\text{Minimize} \\quad \\max_{\\xi_c \\in \\mathcal{U}_{c,Box}} \\left( \\bar{c} + \\text{diag}(\\hat{c}) \\xi_c \\right)^\\top x && \\text{(Box Uncertainty Objective)} \\\\\n& \\text{subject to} \\\\\n& \\max_{\\delta_{a1} \\in \\mathcal{U}_{a1,P}} ( \\bar{a}_{1} + \\delta_{a1} )^\\top x \\le b_{1} && \\text{(Polyhedral Uncertainty Constraint)} \\\\\n& a_{2}^\\top x \\ge b_{2} && \\text{(Deterministic Constraint)} \\\\\n& \\min_{\\xi_{a3} \\in \\mathcal{U}_{a3,Bud}} \\left( \\bar{a}_{3} + \\text{diag}(\\hat{a}_{3}) \\xi_{a3} \\right)^\\top x \\ge b_{3} && \\text{(Budgeted Uncertainty Constraint)} \\\\\n& \\max_{\\xi_{a4} \\in \\mathcal{U}_{a4,Bud}} \\left( \\bar{a}_{4} + \\text{diag}(\\hat{a}_{4}) \\xi_{a4} \\right)^\\top x \\le b_{4} && \\text{(Budgeted Uncertainty Constraint)} \\\\\n& \\min_{\\delta_{a5} \\in \\mathcal{U}_{a5,P}} ( \\bar{a}_{5} + \\delta_{a5} )^\\top x \\ge b_{5} && \\text{(Polyhedral Uncertainty Constraint)} \\\\\n& \\text{where:} \\\\\n& \\mathcal{U}_{c,Box} = \\{ \\xi_c \\in \\mathbb{R}^{5} : \\|\\xi_c\\|_{\\infty} \\le 1 \\} \\\\\n& \\mathcal{U}_{a1,P} = \\{ \\delta_{a1} \\in \\mathbb{R}^{5} : D_{a1} \\delta_{a1} \\le d_{a1}, \\quad E_{a1} \\delta_{a1} = e_{a1} \\} \\\\\n& \\mathcal{U}_{a3,Bud} = \\{ \\xi_{a3} \\in \\mathbb{R}^{5} : \\|\\xi_{a3}\\|_{\\infty} \\le 1, \\|\\xi_{a3}\\|_1 \\le \\Gamma_{a3} \\} \\\\\n& \\mathcal{U}_{a4,Bud} = \\{ \\xi_{a4} \\in \\mathbb{R}^{5} : \\|\\xi_{a4}\\|_{\\infty} \\le 1, \\|\\xi_{a4}\\|_1 \\le \\Gamma_{a4} \\} \\\\\n& \\mathcal{U}_{a5,P} = \\{ \\delta_{a5} \\in \\mathbb{R}^{5} : D_{a5} \\delta_{a5} \\le d_{a5}, \\quad E_{a5} \\delta_{a5} = e_{a5} \\} \\\\\n& x = [x_{1}, x_{2}, x_{3}, x_{4}, x_{5}]^\\top \\\\\n& -4.2 \\le x_j \\le 4.2, \\quad \\forall j \\in \\{1, \\dots, 5\\} \\\\\n& \\bar{c} = [-6.1, 8.2, 1.6, 0.5, 4.2]^\\top \\\\\n& \\hat{c} = [0, 1.1, 0, 0, 0.4]^\\top \\\\\n& \\bar{a}_{1} = [-1.2, 0, 0, -4.1, 0]^\\top \\\\\n& b_{1} = 20 \\\\\n& a_{2} = [0, 0, 0.6, -3.8, 0.7]^\\top \\\\\n& b_{2} = -17.64 \\\\\n& \\bar{a}_{3} = [0, 0, 2.5, 2.5, 0]^\\top \\\\\n& b_{3} = -12.77 \\\\\n& \\hat{a}_{3} = [0, 0, 0.5, 0.5, 0]^\\top \\\\\n& \\bar{a}_{4} = [0, 0, -2.8, 0, -2.4]^\\top \\\\\n& b_{4} = 12.99 \\\\\n& \\hat{a}_{4} = [0, 0, 0.2, 0, 0.2]^\\top \\\\\n& \\bar{a}_{5} = [0, 0, -3.5, 3, -2.6]^\\top \\\\\n& b_{5} = -19.97 \\\\\n& D_{a1} = \\begin{bmatrix} 0.3 & 0 & 0 & -0.1 & 0 \\\\ 1 & 0 & 0 & 0 & 0 \\\\ -1 & 0 & 0 & 0 & 0 \\\\ 0 & 0 & 0 & 1 & 0 \\\\ 0 & 0 & 0 & -1 & 0 \\end{bmatrix} \\\\\n& d_{a1} = [0.15, 0.4, 0.4, 0.4, 0.4]^\\top \\\\\n& E_{a1} = \\begin{bmatrix} 0 & 1 & 0 & 0 & 0 \\\\ 0 & 0 & 1 & 0 & 0 \\\\ 0 & 0 & 0 & 0 & 1 \\end{bmatrix} \\\\\n& e_{a1} = [0, 0, 0]^\\top \\\\\n& \\Gamma_{a3} = 0.5 \\\\\n& \\Gamma_{a4} = 0.5 \\\\\n& D_{a5} = \\begin{bmatrix} 0 & 0 & -0.1 & 0 & -0.1 \\\\ 0 & 0 & 1 & 0 & 0 \\\\ 0 & 0 & -1 & 0 & 0 \\\\ 0 & 0 & 0 & 0 & 1 \\\\ 0 & 0 & 0 & 0 & -1 \\end{bmatrix} \\\\\n& d_{a5} = [0.07, 0.4, 0.4, 0.4, 0.4]^\\top \\\\\n& E_{a5} = \\begin{bmatrix} 1 & 0 & 0 & 0 & 0 \\\\ 0 & 1 & 0 & 0 & 0 \\\\ 0 & 0 & 0 & 1 & 0 \\end{bmatrix} \\\\\n& e_{a5} = [0, 0, 0]^\\top \\\\\n\\end{align*}",
+    "uncertainty_type": [
+      1,
+      3,
+      0,
+      2,
+      2,
+      3
+    ],
+    "solution": [
+      4.2,
+      -4.2,
+      -0.8892857142857145,
+      -3.8351948051948046,
+      -4.2
+    ],
+    "optimal_value": -74.74045454545455
+  },
+  {
+    "id": "5_7_T101",
+    "n_vars": 5,
+    "n_constraints": 5,
+    "template_param": [
+      1,
+      0,
+      1
+    ],
+    "description": "\\begin{align*}\n& \\text{maximize } \\min_{\\delta^c_{1}, \\delta^c_{2}, \\delta^c_{3}, \\delta^c_{4}, \\delta^c_{5} \\in \\mathcal{U}^c_{poly}} \\{ (6.7 + \\delta^c_{1})x_{1} + (2.7 + \\delta^c_{2})x_{2} + (-1.4 + \\delta^c_{3})x_{3} + (2.7 + \\delta^c_{4})x_{4} + (-8.6 + \\delta^c_{5})x_{5} \\} && \\text{[Polyhedral Uncertainty Objective]} \\\\\n& \\text{subject to} \\\\\n& \\max_{\\eta^a_{1,3}, \\eta^a_{1,4}, \\eta^a_{1,5} \\in \\mathcal{U}^a_{1,bud}} \\{ (-0.8 + 0.1\\eta^a_{1,3})x_{3} + (-0.3 + 0.1\\eta^a_{1,4})x_{4} + (-1.3 + 0.1\\eta^a_{1,5})x_{5} \\} \\le -2.7 && \\text{[Budgeted Uncertainty Constraint]} \\\\\n& \\min_{\\eta^a_{2,1}, \\eta^a_{2,5} \\in \\mathcal{U}^a_{2,bud}} \\{ (1 + 0.2\\eta^a_{2,1})x_{1} + (1.2 + 0.2\\eta^a_{2,5})x_{5} \\} \\ge 2.2 && \\text{[Budgeted Uncertainty Constraint]} \\\\\n& \\min_{\\eta^a_{3,4}, \\eta^a_{3,5} \\in \\mathcal{U}^a_{3,bud}} \\{ 0.1x_{2} + (-1.1 + 0.2\\eta^a_{3,4})x_{4} + (1.4 + 0.2\\eta^a_{3,5})x_{5} \\} \\ge -3.15 && \\text{[Budgeted Uncertainty Constraint]} \\\\\n& \\max_{-1 \\le \\xi^a_{4,3} \\le 1, -1 \\le \\xi^a_{4,4} \\le 1} \\{ (-0.8 + 0.1\\xi^a_{4,3})x_{3} + (-0.9 + 0.1\\xi^a_{4,4})x_{4} \\} \\le 1.23 && \\text{[Box Uncertainty Constraint]} \\\\\n& 0.1x_{1} + 0.7x_{2} - 0.2x_{5} \\le 1.55 && \\text{[Deterministic Constraint]} \\\\\n& \\text{where the uncertainty sets are defined as:} \\\\\n& \\mathcal{U}^c_{poly} = \\{ \\delta^c_{1}, \\delta^c_{2}, \\delta^c_{3}, \\delta^c_{4}, \\delta^c_{5} : 0.1\\delta^c_{1} + 0.2\\delta^c_{2} - 0.1\\delta^c_{5} \\le -0.03, - 0.1\\delta^c_{1} - 0.1\\delta^c_{2} - 0.2\\delta^c_{5} \\ge 0.06, - 0.2\\delta^c_{3} + 0.2\\delta^c_{5} \\ge -0.04, 0.1\\delta^c_{1} + 0.1\\delta^c_{2} + 0.1\\delta^c_{5} \\le 0.06, -0.2 \\le \\delta^c_{1} \\le 0, -0.2 \\le \\delta^c_{2} \\le 0, -0.2 \\le \\delta^c_{3} \\le 0, -0.2 \\le \\delta^c_{4} \\le 0, -0.2 \\le \\delta^c_{5} \\le 0 \\} \\\\\n& \\mathcal{U}^a_{1,bud} = \\{ \\eta^a_{1,3}, \\eta^a_{1,4}, \\eta^a_{1,5} : -1 \\le \\eta^a_{1,3} \\le 1, -1 \\le \\eta^a_{1,4} \\le 1, -1 \\le \\eta^a_{1,5} \\le 1, |\\eta^a_{1,3}| + |\\eta^a_{1,4}| + |\\eta^a_{1,5}| \\le 0.5 \\} \\\\\n& \\mathcal{U}^a_{2,bud} = \\{ \\eta^a_{2,1}, \\eta^a_{2,5} : -1 \\le \\eta^a_{2,1} \\le 1, -1 \\le \\eta^a_{2,5} \\le 1, |\\eta^a_{2,1}| + |\\eta^a_{2,5}| \\le 1.9 \\} \\\\\n& \\mathcal{U}^a_{3,bud} = \\{ \\eta^a_{3,4}, \\eta^a_{3,5} : -1 \\le \\eta^a_{3,4} \\le 1, -1 \\le \\eta^a_{3,5} \\le 1, |\\eta^a_{3,4}| + |\\eta^a_{3,5}| \\le 0 \\} \\\\\n& 0 \\le x_{1} \\le 1.6, 0 \\le x_{2} \\le 1.6, 0 \\le x_{3} \\le 1.6, 0 \\le x_{4} \\le 1.6, 0 \\le x_{5} \\le 1.6 \\\\\n\\end{align*}",
+    "uncertainty_type": [
+      3,
+      2,
+      2,
+      2,
+      1,
+      0
+    ],
+    "solution": [
+      1.6,
+      1.6,
+      1.409313725490196,
+      1.6,
+      0.9019607843137256
+    ],
+    "optimal_value": 8.207843137254901
+  },
+  {
+    "id": "5_8_T111",
+    "n_vars": 5,
+    "n_constraints": 5,
+    "template_param": [
+      1,
+      1,
+      1
+    ],
+    "description": "\\begin{align*}\n& \\text{Minimize} \\quad \\bar{c}^\\top x && \\text{(Deterministic Objective)} \\\\\n& \\text{subject to} \\\\\n& \\max_{\\xi_{a1} \\in \\mathcal{U}_{a1,Bud}} \\left( \\bar{a}_{1} + \\text{diag}(\\hat{a}_{1}) \\xi_{a1} \\right)^\\top x \\le b_{1} && \\text{(Budgeted Uncertainty Constraint)} \\\\\n& \\max_{\\delta_{a2} \\in \\mathcal{U}_{a2,P}} ( \\bar{a}_{2} + \\delta_{a2} )^\\top x \\le b_{2} && \\text{(Polyhedral Uncertainty Constraint)} \\\\\n& \\min_{\\xi_{a3} \\in \\mathcal{U}_{a3,Bud}} \\left( \\bar{a}_{3} + \\text{diag}(\\hat{a}_{3}) \\xi_{a3} \\right)^\\top x \\ge b_{3} && \\text{(Budgeted Uncertainty Constraint)} \\\\\n& \\max_{\\xi_{a4} \\in \\mathcal{U}_{a4,Box}} \\left( \\bar{a}_{4} + \\text{diag}(\\hat{a}_{4}) \\xi_{a4} \\right)^\\top x \\le b_{4} && \\text{(Box Uncertainty Constraint)} \\\\\n& \\min_{\\xi_{a5} \\in \\mathcal{U}_{a5,Bud}} \\left( \\bar{a}_{5} + \\text{diag}(\\hat{a}_{5}) \\xi_{a5} \\right)^\\top x \\ge b_{5} && \\text{(Budgeted Uncertainty Constraint)} \\\\\n& \\text{where:} \\\\\n& \\mathcal{U}_{a1,Bud} = \\{ \\xi_{a1} \\in \\mathbb{R}^{5} : \\|\\xi_{a1}\\|_{\\infty} \\le 1, \\|\\xi_{a1}\\|_1 \\le \\Gamma_{a1} \\} \\\\\n& \\mathcal{U}_{a2,P} = \\{ \\delta_{a2} \\in \\mathbb{R}^{5} : D_{a2} \\delta_{a2} \\le d_{a2}, \\quad E_{a2} \\delta_{a2} = e_{a2} \\} \\\\\n& \\mathcal{U}_{a3,Bud} = \\{ \\xi_{a3} \\in \\mathbb{R}^{5} : \\|\\xi_{a3}\\|_{\\infty} \\le 1, \\|\\xi_{a3}\\|_1 \\le \\Gamma_{a3} \\} \\\\\n& \\mathcal{U}_{a4,Box} = \\{ \\xi_{a4} \\in \\mathbb{R}^{5} : \\|\\xi_{a4}\\|_{\\infty} \\le 1 \\} \\\\\n& \\mathcal{U}_{a5,Bud} = \\{ \\xi_{a5} \\in \\mathbb{R}^{5} : \\|\\xi_{a5}\\|_{\\infty} \\le 1, \\|\\xi_{a5}\\|_1 \\le \\Gamma_{a5} \\} \\\\\n& x = [x_{1}, x_{2}, x_{3}, x_{4}, x_{5}]^\\top \\\\\n& -7.4 \\le x_j \\le 7.4, \\quad \\forall j \\in \\{1, \\dots, 5\\} \\\\\n& \\bar{c} = [-3.9, -6.5, 3.7, 1.1, -8.9]^\\top \\\\\n& \\bar{a}_{1} = [5.3, 5.8, 4.6, 0, -0.6]^\\top \\\\\n& b_{1} = 72.91 \\\\\n& \\hat{a}_{1} = [0.4, 0.8, 0.4, 0, 0]^\\top \\\\\n& \\bar{a}_{2} = [-1.8, 0, -3.3, 0, 2.7]^\\top \\\\\n& b_{2} = 40.33 \\\\\n& \\bar{a}_{3} = [4.5, 0, -5.9, 2.1, 0]^\\top \\\\\n& b_{3} = -15.54 \\\\\n& \\hat{a}_{3} = [0.8, 0, 0, 0.4, 0]^\\top \\\\\n& \\bar{a}_{4} = [-5.8, 0, 1.9, 0, 0]^\\top \\\\\n& b_{4} = 3.9 \\\\\n& \\hat{a}_{4} = [0.6, 0, 0.2, 0, 0]^\\top \\\\\n& \\bar{a}_{5} = [5.3, -5.7, 0, 1.3, 0]^\\top \\\\\n& b_{5} = 9.22 \\\\\n& \\hat{a}_{5} = [0.6, 0.5, 0, 0.2, 0]^\\top \\\\\n& \\Gamma_{a1} = 1.2 \\\\\n& D_{a2} = \\begin{bmatrix} 0 & 0 & -0.6 & 0 & -0.1 \\\\ 0 & 0 & 1 & 0 & 0 \\\\ 0 & 0 & -1 & 0 & 0 \\\\ 0 & 0 & 0 & 0 & 1 \\\\ 0 & 0 & 0 & 0 & -1 \\end{bmatrix} \\\\\n& d_{a2} = [0.42, 0.7, 0, 0.7, 0]^\\top \\\\\n& E_{a2} = \\begin{bmatrix} 1 & 0 & 0 & 0 & 0 \\\\ 0 & 1 & 0 & 0 & 0 \\\\ 0 & 0 & 0 & 1 & 0 \\end{bmatrix} \\\\\n& e_{a2} = [0, 0, 0]^\\top \\\\\n& \\Gamma_{a3} = 0.2 \\\\\n& \\Gamma_{a5} = 0.4 \\\\\n\\end{align*}",
+    "uncertainty_type": [
+      0,
+      2,
+      3,
+      2,
+      1,
+      2
+    ],
+    "solution": [
+      7.4,
+      6.639298245614035,
+      -7.4,
+      7.4,
+      7.4
+    ],
+    "optimal_value": -157.11543859649123
+  },
+  {
+    "id": "5_9_T001",
+    "n_vars": 5,
+    "n_constraints": 5,
+    "template_param": [
+      0,
+      0,
+      1
+    ],
+    "description": "\\begin{align*}\n\\max \\quad & - 5.7x_{1} + (0 + \\delta_{22})x_{2} + (-1.3 + \\delta_{23})x_{3} + (8.5 + \\delta_{24})x_{4} + (3.2 + \\delta_{25})x_{5} \\quad \\forall (\\delta_{22}, \\delta_{23}, \\delta_{24}, \\delta_{25}) \\in \\mathcal{U}_{box\\_obj} \\quad & \\text{Objective: Box Uncertainty} \\\\\n\\text{s.t.} \\quad & (0.5 + \\epsilon_{34})x_{4} + (-3.2 + \\epsilon_{35})x_{5} \\ge -8.68 \\quad \\forall (\\epsilon_{34}, \\epsilon_{35}) \\in \\mathcal{U}_{budg\\_con1} \\quad & \\text{Constraint 1: Budgeted Uncertainty} \\\\\n& (2.3 + \\epsilon_{31})x_{1} + (-3 + \\epsilon_{32})x_{2} + (-5.2 + \\epsilon_{33})x_{3} - 5.5x_{5} \\le 40.01 \\quad \\forall (\\epsilon_{31}, \\epsilon_{32}, \\epsilon_{33}) \\in \\mathcal{U}_{budg\\_con2} \\quad & \\text{Constraint 2: Budgeted Uncertainty} \\\\\n& (-3.9 + \\epsilon_{33})x_{3} + (4.7 + \\epsilon_{34})x_{4} + (-5.8 + \\epsilon_{35})x_{5} \\le 51.51 \\quad \\forall (\\epsilon_{33}, \\epsilon_{34}, \\epsilon_{35}) \\in \\mathcal{U}_{budg\\_con3} \\quad & \\text{Constraint 3: Budgeted Uncertainty} \\\\\n& - 5x_{3} - 5.8x_{4} - 0.1x_{5} = 64.85 \\quad & \\text{Constraint 4: Deterministic} \\\\\n& (4.4 + \\epsilon_{33})x_{3} + (-1.3 + \\epsilon_{35})x_{5} \\le -19.73 \\quad \\forall (\\epsilon_{33}, \\epsilon_{35}) \\in \\mathcal{U}_{budg\\_con5} \\quad & \\text{Constraint 5: Budgeted Uncertainty} \\\\\n& -7.4 \\le x_{1} \\le 0, -7.4 \\le x_{2} \\le 0, -7.4 \\le x_{3} \\le 0, -7.4 \\le x_{4} \\le 0, -7.4 \\le x_{5} \\le 0 \\\\\n& \\mathcal{U}_{box\\_obj} = \\{ (\\delta_{22}, \\delta_{23}, \\delta_{24}, \\delta_{25}) : -0.1 \\le \\delta_{22} \\le 0.1, -0.1 \\le \\delta_{23} \\le 0.1, -1 \\le \\delta_{24} \\le 1, -0.5 \\le \\delta_{25} \\le 0.5 \\} \\\\\n& \\mathcal{U}_{budg\\_con1} = \\{ (\\epsilon_{34}, \\epsilon_{35}) : |\\epsilon_{34}| \\le 0.1, |\\epsilon_{35}| \\le 0.6, \\frac{|\\epsilon_{34}|}{0.1} + \\frac{|\\epsilon_{35}|}{0.6} \\le 0.8 \\} \\\\\n& \\mathcal{U}_{budg\\_con2} = \\{ (\\epsilon_{31}, \\epsilon_{32}, \\epsilon_{33}) : |\\epsilon_{31}| \\le 0.2, |\\epsilon_{32}| \\le 0.2, |\\epsilon_{33}| \\le 0.3, \\frac{|\\epsilon_{31}|}{0.2} + \\frac{|\\epsilon_{32}|}{0.2} + \\frac{|\\epsilon_{33}|}{0.3} \\le 0.8 \\} \\\\\n& \\mathcal{U}_{budg\\_con3} = \\{ (\\epsilon_{33}, \\epsilon_{34}, \\epsilon_{35}) : |\\epsilon_{33}| \\le 0.5, |\\epsilon_{34}| \\le 0.5, |\\epsilon_{35}| \\le 0.5, \\frac{|\\epsilon_{33}|}{0.5} + \\frac{|\\epsilon_{34}|}{0.5} + \\frac{|\\epsilon_{35}|}{0.5} \\le 3 \\} \\\\\n& \\mathcal{U}_{budg\\_con5} = \\{ (\\epsilon_{33}, \\epsilon_{35}) : |\\epsilon_{33}| \\le 0.3, |\\epsilon_{35}| \\le 0.2, \\frac{|\\epsilon_{33}|}{0.3} + \\frac{|\\epsilon_{35}|}{0.2} \\le 1.5 \\} \\\\\n\\end{align*}",
+    "uncertainty_type": [
+      1,
+      2,
+      2,
+      2,
+      0,
+      2
+    ],
+    "solution": [
+      -7.4,
+      0.0,
+      -7.4,
+      -4.801724137931034,
+      0.0
+    ],
+    "optimal_value": 5.443620689655191
+  },
+  {
+    "id": "5_10_T110",
+    "n_vars": 5,
+    "n_constraints": 5,
+    "template_param": [
+      1,
+      1,
+      0
+    ],
+    "description": "\\begin{align*}\n& \\max_{\\mathbf{x}} \\min_{\\boldsymbol{\\delta}_c \\in \\mathcal{U}_c} (\\mathbf{c}^{nom} + \\boldsymbol{\\delta}_c)^\\top \\mathbf{x} \\\\\n& \\mathbf{a}_{1}^\\top \\mathbf{x} \\le b_{1} \\\\\n& \\max_{\\boldsymbol{\\delta}_{a2} \\in \\mathcal{U}_{a2}} (\\mathbf{a}_{2}^{nom} + \\boldsymbol{\\delta}_{a2})^\\top \\mathbf{x} \\le b_{2} \\\\\n& \\max_{\\boldsymbol{\\delta}_{a3} \\in \\mathcal{U}_{a3}} (\\mathbf{a}_{3}^{nom} + \\boldsymbol{\\delta}_{a3})^\\top \\mathbf{x} \\le b_{3} \\\\\n& \\max_{\\boldsymbol{\\delta}_{a4} \\in \\mathcal{U}_{a4}} (\\mathbf{a}_{4}^{nom} + \\boldsymbol{\\delta}_{a4})^\\top \\mathbf{x} \\le b_{4} \\\\\n& \\max_{\\boldsymbol{\\delta}_{a5} \\in \\mathcal{U}_{a5}} (\\mathbf{a}_{5}^{nom} + \\boldsymbol{\\delta}_{a5})^\\top \\mathbf{x} \\le b_{5} \\\\\n& \\mathcal{U}_c = \\{ \\boldsymbol{\\delta}_c \\in \\mathbb{R}^{5} : \\mathbf{D}_c \\boldsymbol{\\delta}_c \\le \\mathbf{d}_c \\} \\\\\n& \\mathcal{U}_{a2} = \\{ \\boldsymbol{\\delta}_{a2} \\in \\mathbb{R}^{5} : \\mathbf{D}_{a2} \\boldsymbol{\\delta}_{a2} \\le \\mathbf{d}_{a2}, \\quad \\mathbf{E}_{a2} \\boldsymbol{\\delta}_{a2} = \\mathbf{e}_{a2} \\} \\\\\n& \\mathcal{U}_{a3} = \\{ \\boldsymbol{\\delta}_{a3} \\in \\mathbb{R}^{5} : \\mathbf{D}_{a3} \\boldsymbol{\\delta}_{a3} \\le \\mathbf{d}_{a3}, \\quad \\mathbf{E}_{a3} \\boldsymbol{\\delta}_{a3} = \\mathbf{e}_{a3} \\} \\\\\n& \\mathcal{U}_{a4} = \\{ \\boldsymbol{\\delta}_{a4} \\in \\mathbb{R}^{5} : \\mathbf{D}_{a4} \\boldsymbol{\\delta}_{a4} \\le \\mathbf{d}_{a4}, \\quad \\mathbf{E}_{a4} \\boldsymbol{\\delta}_{a4} = \\mathbf{e}_{a4} \\} \\\\\n& \\mathcal{U}_{a5} = \\{ \\boldsymbol{\\delta}_{a5} \\in \\mathbb{R}^{5} : |\\boldsymbol{\\delta}_{a5}| \\le \\hat{\\mathbf{a}}_{5} \\} \\\\\n& \\mathbf{x} = \\begin{bmatrix} x_{1} \\\\ x_{2} \\\\ x_{3} \\\\ x_{4} \\\\ x_{5} \\end{bmatrix} \\\\\n& -4.4 \\le x_j \\le 0, \\quad \\forall j \\in \\{1, \\dots, 5\\} \\\\\n& \\mathbf{c}^{nom} = [9.7, -0.7, -7.8, -6.7, -4.5]^\\top \\\\\n& \\mathbf{a}_{1} = [0, 0.8, 2.3, 2.3, 0]^\\top \\\\\n& b_{1} = 19.28 \\\\\n& \\mathbf{a}_{2}^{nom} = [-3.2, -0.9, 0, 0, 0]^\\top \\\\\n& b_{2} = 15.26 \\\\\n& \\mathbf{a}_{3}^{nom} = [-0.1, 0, -3.4, -3.9, 0]^\\top \\\\\n& b_{3} = 29.37 \\\\\n& \\mathbf{a}_{4}^{nom} = [-3.9, 0, 0, 1.6, 3.1]^\\top \\\\\n& b_{4} = 27.95 \\\\\n& \\mathbf{a}_{5}^{nom} = [0, 0, 0, -1.4, -4.1]^\\top \\\\\n& b_{5} = 19.1 \\\\\n& \\mathbf{D}_c = \\begin{bmatrix} 0.1 & 0 & 0 & 0.1 & 0 \\\\ 0.2 & -0.1 & 0.1 & 0 & 0 \\\\ -0.2 & 0.2 & -0.2 & 0 & 0.4 \\\\ 0 & 0.2 & 0 & 0.4 & 0 \\\\ 1 & 0 & 0 & 0 & 0 \\\\ -1 & 0 & 0 & 0 & 0 \\\\ 0 & 1 & 0 & 0 & 0 \\\\ 0 & -1 & 0 & 0 & 0 \\\\ 0 & 0 & 1 & 0 & 0 \\\\ 0 & 0 & -1 & 0 & 0 \\\\ 0 & 0 & 0 & 1 & 0 \\\\ 0 & 0 & 0 & -1 & 0 \\\\ 0 & 0 & 0 & 0 & 1 \\\\ 0 & 0 & 0 & 0 & -1 \\end{bmatrix} \\\\\n& \\mathbf{d}_c = [0.08, -0.01, 0.15, 0.14, 0, 0.4, 0, 0.4, 0, 0.4, 0, 0.4, 0, 0.4]^\\top \\\\\n& \\mathbf{D}_{a2} = \\begin{bmatrix} -0.3 & -0.4 & 0 & 0 & 0 \\\\ 1 & 0 & 0 & 0 & 0 \\\\ -1 & 0 & 0 & 0 & 0 \\\\ 0 & 1 & 0 & 0 & 0 \\\\ 0 & -1 & 0 & 0 & 0 \\end{bmatrix} \\\\\n& \\mathbf{d}_{a2} = [0.22, 0, 0.4, 0, 0.4]^\\top \\\\\n& \\mathbf{E}_{a2} = \\begin{bmatrix} 0 & 0 & 1 & 0 & 0 \\\\ 0 & 0 & 0 & 1 & 0 \\\\ 0 & 0 & 0 & 0 & 1 \\end{bmatrix} \\\\\n& \\mathbf{e}_{a2} = [0, 0, 0]^\\top \\\\\n& \\mathbf{D}_{a3} = \\begin{bmatrix} 0.1 & 0 & 0.2 & 0 & 0 \\\\ 0.2 & 0 & 0.2 & -0.3 & 0 \\\\ 1 & 0 & 0 & 0 & 0 \\\\ -1 & 0 & 0 & 0 & 0 \\\\ 0 & 0 & 1 & 0 & 0 \\\\ 0 & 0 & -1 & 0 & 0 \\\\ 0 & 0 & 0 & 1 & 0 \\\\ 0 & 0 & 0 & -1 & 0 \\end{bmatrix} \\\\\n& \\mathbf{d}_{a3} = [-0.05, 0.09, 0, 0.4, 0, 0.4, 0, 0.4]^\\top \\\\\n& \\mathbf{E}_{a3} = \\begin{bmatrix} 0 & 1 & 0 & 0 & 0 \\\\ 0 & 0 & 0 & 0 & 1 \\end{bmatrix} \\\\\n& \\mathbf{e}_{a3} = [0, 0]^\\top \\\\\n& \\mathbf{D}_{a4} = \\begin{bmatrix} -0.1 & 0 & 0 & -0.2 & 0.3 \\\\ -0.1 & 0 & 0 & 0.3 & 0 \\\\ 1 & 0 & 0 & 0 & 0 \\\\ -1 & 0 & 0 & 0 & 0 \\\\ 0 & 0 & 0 & 1 & 0 \\\\ 0 & 0 & 0 & -1 & 0 \\\\ 0 & 0 & 0 & 0 & 1 \\\\ 0 & 0 & 0 & 0 & -1 \\end{bmatrix} \\\\\n& \\mathbf{d}_{a4} = [0.06, 0.13, 0, 0.4, 0, 0.4, 0, 0.4]^\\top \\\\\n& \\mathbf{E}_{a4} = \\begin{bmatrix} 0 & 1 & 0 & 0 & 0 \\\\ 0 & 0 & 1 & 0 & 0 \\end{bmatrix} \\\\\n& \\mathbf{e}_{a4} = [0, 0]^\\top \\\\\n& \\hat{\\mathbf{a}}_{5} = [0, 0, 0, 0.2, 0.7]^\\top \\\\\n\\end{align*}",
+    "uncertainty_type": [
+      3,
+      0,
+      3,
+      3,
+      3,
+      1
+    ],
+    "solution": [
+      0.0,
+      -4.4,
+      -4.4,
+      -2.941860465116279,
+      -2.9985465116279073
+    ],
+    "optimal_value": 70.60392441860465
+  },
+  {
+    "id": "5_11_T111",
+    "n_vars": 5,
+    "n_constraints": 5,
+    "template_param": [
+      1,
+      1,
+      1
+    ],
+    "description": "\\begin{align*}\n& \\text{Minimize} \\quad \\max_{\\xi_c \\in \\mathcal{U}_{c,Bud}} \\left( \\bar{c} + \\text{diag}(\\hat{c}) \\xi_c \\right)^\\top x && \\text{(Budgeted Uncertainty Objective)} \\\\\n& \\text{subject to} \\\\\n& a_{1}^\\top x \\le b_{1} && \\text{(Deterministic Constraint)} \\\\\n& \\min_{\\delta_{a2} \\in \\mathcal{U}_{a2,P}} ( \\bar{a}_{2} + \\delta_{a2} )^\\top x \\ge b_{2} && \\text{(Polyhedral Uncertainty Constraint)} \\\\\n& \\max_{\\xi_{a3} \\in \\mathcal{U}_{a3,Bud}} \\left( \\bar{a}_{3} + \\text{diag}(\\hat{a}_{3}) \\xi_{a3} \\right)^\\top x \\le b_{3} && \\text{(Budgeted Uncertainty Constraint)} \\\\\n& \\min_{\\xi_{a4} \\in \\mathcal{U}_{a4,Box}} \\left( \\bar{a}_{4} + \\text{diag}(\\hat{a}_{4}) \\xi_{a4} \\right)^\\top x \\ge b_{4} && \\text{(Box Uncertainty Constraint)} \\\\\n& \\max_{\\xi_{a5} \\in \\mathcal{U}_{a5,Bud}} \\left( \\bar{a}_{5} + \\text{diag}(\\hat{a}_{5}) \\xi_{a5} \\right)^\\top x \\le b_{5} && \\text{(Budgeted Uncertainty Constraint)} \\\\\n& \\text{where:} \\\\\n& \\mathcal{U}_{c,Bud} = \\{ \\xi_c \\in \\mathbb{R}^{5} : \\|\\xi_c\\|_{\\infty} \\le 1, \\|\\xi_c\\|_1 \\le \\Gamma_c \\} \\\\\n& \\mathcal{U}_{a2,P} = \\{ \\delta_{a2} \\in \\mathbb{R}^{5} : D_{a2} \\delta_{a2} \\le d_{a2}, \\quad E_{a2} \\delta_{a2} = e_{a2} \\} \\\\\n& \\mathcal{U}_{a3,Bud} = \\{ \\xi_{a3} \\in \\mathbb{R}^{5} : \\|\\xi_{a3}\\|_{\\infty} \\le 1, \\|\\xi_{a3}\\|_1 \\le \\Gamma_{a3} \\} \\\\\n& \\mathcal{U}_{a4,Box} = \\{ \\xi_{a4} \\in \\mathbb{R}^{5} : \\|\\xi_{a4}\\|_{\\infty} \\le 1 \\} \\\\\n& \\mathcal{U}_{a5,Bud} = \\{ \\xi_{a5} \\in \\mathbb{R}^{5} : \\|\\xi_{a5}\\|_{\\infty} \\le 1, \\|\\xi_{a5}\\|_1 \\le \\Gamma_{a5} \\} \\\\\n& x = [x_{1}, x_{2}, x_{3}, x_{4}, x_{5}]^\\top \\\\\n& -4.5 \\le x_j \\le 4.5, \\quad \\forall j \\in \\{1, \\dots, 5\\} \\\\\n& \\bar{c} = [-8.2, -8.4, 9.7, 3.5, 7.2]^\\top \\\\\n& \\hat{c} = [0.4, 1.1, 1.4, 0, 0.4]^\\top \\\\\n& a_{1} = [3.5, 0, 0, 0, -1.3]^\\top \\\\\n& b_{1} = 8.51 \\\\\n& \\bar{a}_{2} = [1.9, 0, 0, -3.7, 0]^\\top \\\\\n& b_{2} = -23.97 \\\\\n& \\bar{a}_{3} = [1.2, 0, 4.1, 0, 3.7]^\\top \\\\\n& b_{3} = 25.29 \\\\\n& \\hat{a}_{3} = [0.2, 0, 0.6, 0, 0.3]^\\top \\\\\n& \\bar{a}_{4} = [-1.4, 0, -0.9, 0.4, 4.4]^\\top \\\\\n& b_{4} = -20.87 \\\\\n& \\hat{a}_{4} = [0.2, 0, 0, 0.1, 0]^\\top \\\\\n& \\bar{a}_{5} = [-0.9, 0, -0.1, 0, 0]^\\top \\\\\n& b_{5} = 2.9 \\\\\n& \\hat{a}_{5} = [0.2, 0, 0.1, 0, 0]^\\top \\\\\n& \\Gamma_c = 0.6 \\\\\n& D_{a2} = \\begin{bmatrix} 0.3 & 0 & 0 & -0.3 & 0 \\\\ 1 & 0 & 0 & 0 & 0 \\\\ -1 & 0 & 0 & 0 & 0 \\\\ 0 & 0 & 0 & 1 & 0 \\\\ 0 & 0 & 0 & -1 & 0 \\end{bmatrix} \\\\\n& d_{a2} = [0.02, 0.5, 0, 0.5, 0]^\\top \\\\\n& E_{a2} = \\begin{bmatrix} 0 & 1 & 0 & 0 & 0 \\\\ 0 & 0 & 1 & 0 & 0 \\\\ 0 & 0 & 0 & 0 & 1 \\end{bmatrix} \\\\\n& e_{a2} = [0, 0, 0]^\\top \\\\\n& \\Gamma_{a3} = 1.2 \\\\\n& \\Gamma_{a5} = 1.7 \\\\\n\\end{align*}",
+    "uncertainty_type": [
+      2,
+      0,
+      3,
+      2,
+      1,
+      2
+    ],
+    "solution": [
+      0.7599999999999998,
+      4.5,
+      -4.5,
+      -4.5,
+      -4.5
+    ],
+    "optimal_value": -132.052
+  },
+  {
+    "id": "5_12_T011",
+    "n_vars": 5,
+    "n_constraints": 5,
+    "template_param": [
+      0,
+      1,
+      1
+    ],
+    "description": "\\begin{align*}\n\\text{Minimize} \\quad & \\mathbf{c}^\\top \\mathbf{x} && \\forall \\mathbf{c} \\in \\mathcal{U}_{c,Box} && \\text{(Box Uncertainty Objective)} \\\\\n\\text{subject to} \\quad & \\mathbf{a}_{1}^\\top \\mathbf{x} \\le b_{1} && \\forall \\mathbf{a}_{1} \\in \\mathcal{U}_{a1,Box} && \\text{(Box Uncertainty Constraint)} \\\\\n& \\mathbf{a}_{2}^\\top \\mathbf{x} = b_{2} && && \\text{(Deterministic Constraint)} \\\\\n& \\mathbf{a}_{3}^\\top \\mathbf{x} \\ge b_{3} && \\forall \\mathbf{a}_{3} \\in \\mathcal{U}_{a3,Box} && \\text{(Box Uncertainty Constraint)} \\\\\n& \\mathbf{a}_{4}^\\top \\mathbf{x} \\ge b_{4} && \\forall \\mathbf{a}_{4} \\in \\mathcal{U}_{a4,Bud} && \\text{(Budgeted Uncertainty Constraint)} \\\\\n& \\mathbf{a}_{5}^\\top \\mathbf{x} \\ge b_{5} && \\forall \\mathbf{a}_{5} \\in \\mathcal{U}_{a5,Bud} && \\text{(Budgeted Uncertainty Constraint)} \\\\\n\\text{where:} \\quad\n& \\mathcal{U}_{c,Box} = \\{ \\mathbf{c} \\in \\mathbb{R}^{5} : \\mathbf{c} = \\mathbf{c}^{nom} + \\mathbf{D}_c \\boldsymbol{\\xi}_c, \\|\\boldsymbol{\\xi}_c\\|_{\\infty} \\le 1 \\} \\\\\n& \\mathcal{U}_{a1,Box} = \\{ \\mathbf{a}_{1} \\in \\mathbb{R}^{5} : \\mathbf{a}_{1} = \\mathbf{a}_{1}^{nom} + \\mathbf{D}_{a1} \\boldsymbol{\\xi}_{a1}, \\|\\boldsymbol{\\xi}_{a1}\\|_{\\infty} \\le 1 \\} \\\\\n& \\mathcal{U}_{a3,Box} = \\{ \\mathbf{a}_{3} \\in \\mathbb{R}^{5} : \\mathbf{a}_{3} = \\mathbf{a}_{3}^{nom} + \\mathbf{D}_{a3} \\boldsymbol{\\xi}_{a3}, \\|\\boldsymbol{\\xi}_{a3}\\|_{\\infty} \\le 1 \\} \\\\\n& \\mathcal{U}_{a4,Bud} = \\{ \\mathbf{a}_{4} \\in \\mathbb{R}^{5} : \\mathbf{a}_{4} = \\mathbf{a}_{4}^{nom} + \\mathbf{D}_{a4} \\boldsymbol{\\xi}_{a4}, \\|\\boldsymbol{\\xi}_{a4}\\|_{\\infty} \\le 1, \\|\\boldsymbol{\\xi}_{a4}\\|_1 \\le \\Gamma_{a4} \\} \\\\\n& \\mathcal{U}_{a5,Bud} = \\{ \\mathbf{a}_{5} \\in \\mathbb{R}^{5} : \\mathbf{a}_{5} = \\mathbf{a}_{5}^{nom} + \\mathbf{D}_{a5} \\boldsymbol{\\xi}_{a5}, \\|\\boldsymbol{\\xi}_{a5}\\|_{\\infty} \\le 1, \\|\\boldsymbol{\\xi}_{a5}\\|_1 \\le \\Gamma_{a5} \\} \\\\\n& \\mathbf{x} = [x_{1}, x_{2}, x_{3}, x_{4}, x_{5}]^\\top \\\\\n& \\mathbf{c}^{nom} = [0.6, 8.9, -8.9, 1.6, 1.4]^\\top \\\\\n& \\mathbf{a}_{1}^{nom} = [3, 0, -3.7, 0, 0]^\\top \\\\\n& b_{1} = 50.57 \\\\\n& \\mathbf{a}_{2} = [-2.8, -7, 2.7, -0.1, 3]^\\top \\\\\n& b_{2} = 21.8 \\\\\n& \\mathbf{a}_{3}^{nom} = [4.2, 0, 1.6, 7.8, 0]^\\top \\\\\n& b_{3} = 16.63 \\\\\n& \\mathbf{a}_{4}^{nom} = [-6.8, 3.4, 0, 0, -7.7]^\\top \\\\\n& b_{4} = -85.6 \\\\\n& \\mathbf{a}_{5}^{nom} = [7.3, 0, -6.6, -1.8, 5.4]^\\top \\\\\n& b_{5} = -66.27 \\\\\n& \\mathbf{D}_c = \\text{diag}(0.1, 1.7, 0, 0.3, 0.1) \\\\\n& \\mathbf{D}_{a1} = \\text{diag}(0.5, 0, 0.4, 0, 0) \\\\\n& \\mathbf{D}_{a3} = \\text{diag}(0, 0, 0.1, 1, 0) \\\\\n& \\mathbf{D}_{a4} = \\text{diag}(1, 0.5, 0, 0, 0.7) \\\\\n& \\Gamma_{a4} = 2.4 \\\\\n& \\mathbf{D}_{a5} = \\text{diag}(1.4, 0, 0.7, 0.1, 0.7) \\\\\n& \\Gamma_{a5} = 2.1 \\\\\n& -8 \\le x_j \\le 8, \\quad \\forall j \\in \\{1, \\dots, 5\\} && && \\text{(Variable Bounds)} \\\\\n\\end{align*}",
+    "uncertainty_type": [
+      1,
+      1,
+      0,
+      1,
+      2,
+      2
+    ],
+    "solution": [
+      8.0,
+      -6.610113636363636,
+      8.0,
+      -3.292045454545455,
+      -8.0
+    ],
+    "optimal_value": -127.87247727272727
+  },
+  {
+    "id": "5_13_T010",
+    "n_vars": 5,
+    "n_constraints": 5,
+    "template_param": [
+      0,
+      1,
+      0
+    ],
+    "description": "\\begin{align*}\n\\max_{\\mathbf{x}} \\quad & (\\mathbf{c}^{nom} + \\boldsymbol{\\delta}_c)^\\top \\mathbf{x}, \\quad \\forall \\boldsymbol{\\delta}_c \\in \\mathcal{U}_c \\\\\n& (\\mathbf{a}_{1}^{nom} + \\boldsymbol{\\delta}_{1})^\\top \\mathbf{x} \\le b_{1}, \\quad \\forall \\boldsymbol{\\delta}_{1} \\in \\mathcal{U}_{1} \\\\\n& \\mathbf{a}_{2}^\\top \\mathbf{x} \\ge b_{2}, \\quad \\forall \\mathbf{a}_{2} \\in \\mathcal{U}_{2} \\\\\n& \\mathbf{a}_{3}^\\top \\mathbf{x} \\le b_{3} \\\\\n& \\mathbf{a}_{4}^\\top \\mathbf{x} \\le b_{4}, \\quad \\forall \\mathbf{a}_{4} \\in \\mathcal{U}_{4} \\\\\n& \\mathbf{a}_{5}^\\top \\mathbf{x} \\le b_{5}, \\quad \\forall \\mathbf{a}_{5} \\in \\mathcal{U}_{5} \\\\\n& \\mathcal{U}_c = \\{ \\boldsymbol{\\delta}_c \\in \\mathbb{R}^{5} : \\mathbf{P}_c \\boldsymbol{\\delta}_c \\le \\mathbf{q}_c, \\quad \\mathbf{E}_c \\boldsymbol{\\delta}_c = \\mathbf{e}_c \\} \\\\\n& \\mathcal{U}_{1} = \\{ \\boldsymbol{\\delta}_{1} \\in \\mathbb{R}^{5} : \\mathbf{P}_{1} \\boldsymbol{\\delta}_{1} \\le \\mathbf{q}_{1}, \\quad \\mathbf{E}_{1} \\boldsymbol{\\delta}_{1} = \\mathbf{e}_{1} \\} \\\\\n& \\mathcal{U}_{2} = \\{ \\mathbf{a}_{2} \\in \\mathbb{R}^{5} : |\\mathbf{a}_{2} - \\mathbf{a}_{2}^{nom}| \\le \\hat{\\mathbf{a}}_{2} \\} \\\\\n& \\mathcal{U}_{4} = \\{ \\mathbf{a}_{4} \\in \\mathbb{R}^{5} : |\\mathbf{a}_{4} - \\mathbf{a}_{4}^{nom}| \\le \\hat{\\mathbf{a}}_{4} \\} \\\\\n& \\mathcal{U}_{5} = \\{ \\mathbf{a}_{5} \\in \\mathbb{R}^{5} : |\\mathbf{a}_{5} - \\mathbf{a}_{5}^{nom}| \\le \\hat{\\mathbf{a}}_{5}, \\quad \\sum_{j \\in \\{3, 5\\}} \\frac{| a_{5,j} - a_{5,j}^{nom} |}{\\hat{a}_{5,j}} \\le \\Gamma_{5} \\} \\\\\n& \\mathbf{x} = [x_{1}, x_{2}, x_{3}, x_{4}, x_{5}]^\\top \\\\\n& \\mathbf{c}^{nom} = [-4.3, 1.6, 2.2, 4.5, 8.3]^\\top \\\\\n& \\mathbf{a}_{1}^{nom} = [-1.7, 0, 0.7, 8.9, 0]^\\top \\\\\n& b_{1} = -0.77 \\\\\n& \\mathbf{a}_{2}^{nom} = [0, 6.4, 0, 0, 3.3]^\\top \\\\\n& b_{2} = -72.56 \\\\\n& \\mathbf{a}_{3} = [0, 0, -9.3, 2.6, 0]^\\top \\\\\n& b_{3} = 72.1 \\\\\n& \\mathbf{a}_{4}^{nom} = [0.1, 5.9, 0, 6, 5.8]^\\top \\\\\n& b_{4} = 107.53 \\\\\n& \\mathbf{a}_{5}^{nom} = [0, 0, -7.3, 0, -3.9]^\\top \\\\\n& b_{5} = 104.35 \\\\\n& -9.9 \\le x_j \\le 9.9, \\quad \\forall j \\in \\{1, \\dots, 5\\} \\\\\n& \\mathbf{P}_c = \\begin{bmatrix} 0 & 0 & 0.5 & -0.7 & 0 \\\\ 0 & 0 & -0.6 & 0.2 & -0.8 \\\\ 0 & 0 & 1 & 0 & 0 \\\\ 0 & 0 & -1 & 0 & 0 \\\\ 0 & 0 & 0 & 1 & 0 \\\\ 0 & 0 & 0 & -1 & 0 \\\\ 0 & 0 & 0 & 0 & 1 \\\\ 0 & 0 & 0 & 0 & -1 \\end{bmatrix} \\\\\n& \\mathbf{q}_c = [0.01, -0.94, 1, 0, 1, 0, 1, 0]^\\top \\\\\n& \\mathbf{E}_c = \\begin{bmatrix} 1 & 0 & 0 & 0 & 0 \\\\ 0 & 1 & 0 & 0 & 0 \\end{bmatrix} \\\\\n& \\mathbf{e}_c = [0, 0]^\\top \\\\\n& \\mathbf{P}_{1} = \\begin{bmatrix} 0.4 & 0 & 0.7 & -0.4 & 0 \\\\ 0.9 & 0 & 0.8 & 0.5 & 0 \\\\ 1 & 0 & 0 & 0 & 0 \\\\ -1 & 0 & 0 & 0 & 0 \\\\ 0 & 0 & 1 & 0 & 0 \\\\ 0 & 0 & -1 & 0 & 0 \\\\ 0 & 0 & 0 & 1 & 0 \\\\ 0 & 0 & 0 & -1 & 0 \\end{bmatrix} \\\\\n& \\mathbf{q}_{1} = [1.18, 1.17, 1, 0, 1, 0, 1, 0]^\\top \\\\\n& \\mathbf{E}_{1} = \\begin{bmatrix} 0 & 1 & 0 & 0 & 0 \\\\ 0 & 0 & 0 & 0 & 1 \\end{bmatrix} \\\\\n& \\mathbf{e}_{1} = [0, 0]^\\top \\\\\n& \\hat{\\mathbf{a}}_{2} = [0, 0.7, 0, 0, 0.3]^\\top \\\\\n& \\hat{\\mathbf{a}}_{4} = [0.1, 0.4, 0, 0.3, 1.1]^\\top \\\\\n& \\hat{\\mathbf{a}}_{5} = [0, 0, 1.4, 0, 0.3]^\\top \\\\\n& \\Gamma_{5} = 1.9 \\\\\n\\end{align*}",
+    "uncertainty_type": [
+      3,
+      3,
+      1,
+      0,
+      1,
+      2
+    ],
+    "solution": [
+      -9.9,
+      9.725503834492597,
+      9.9,
+      -3.8685393258426966,
+      9.9
+    ],
+    "optimal_value": 156.31383984305333
+  },
+  {
+    "id": "5_14_T101",
+    "n_vars": 5,
+    "n_constraints": 5,
+    "template_param": [
+      1,
+      0,
+      1
+    ],
+    "description": "\\begin{align*}\n& \\text{minimize } \\max_{\\eta^c_{2}, \\eta^c_{4} \\in \\mathcal{U}^c_{bud}} \\{ -4.9x_{1} + (2.5 + 0.3\\eta^c_{2})x_{2} + 7.8x_{3} + (8 + 1.4\\eta^c_{4})x_{4} + 2.2x_{5} \\} && \\text{[Budgeted Uncertainty Objective]} \\\\\n& \\text{subject to} \\\\\n& \\max_{\\delta^a_{1,1}, \\delta^a_{1,3} \\in \\mathcal{U}^a_{1,poly}} \\{ (0.9 + \\delta^a_{1,1})x_{1} - 1.3x_{2} + (-0.5 + \\delta^a_{1,3})x_{3} + 0.8x_{5} \\} \\le 3.59 && \\text{[Polyhedral Uncertainty Constraint]} \\\\\n& \\max_{-1 \\le \\xi^a_{2,2} \\le 1, -1 \\le \\xi^a_{2,4} \\le 1, -1 \\le \\xi^a_{2,5} \\le 1} \\{ (0.3 + 0.1\\xi^a_{2,2})x_{2} + (1.1 + 0.2\\xi^a_{2,4})x_{4} + (0.7 + 0.1\\xi^a_{2,5})x_{5} \\} \\le 3.83 && \\text{[Box Uncertainty Constraint]} \\\\\n& - 1.6x_{1} - 0.2x_{5} \\ge -2.11 && \\text{[Deterministic Constraint]} \\\\\n& \\min_{\\eta^a_{4,2}, \\eta^a_{4,4} \\in \\mathcal{U}^a_{4,bud}} \\{ (-0.9 + 0.2\\eta^a_{4,2})x_{2} + (-0.8 + 0.1\\eta^a_{4,4})x_{4} \\} \\ge -1.29 && \\text{[Budgeted Uncertainty Constraint]} \\\\\n& \\min_{\\delta^a_{5,1}, \\delta^a_{5,3} \\in \\mathcal{U}^a_{5,poly}} \\{ (-1.7 + \\delta^a_{5,1})x_{1} - 0.1x_{2} + (-0.1 + \\delta^a_{5,3})x_{3} - 0.8x_{5} \\} \\ge -4.45 && \\text{[Polyhedral Uncertainty Constraint]} \\\\\n& \\text{where the uncertainty sets are defined as:} \\\\\n& \\mathcal{U}^c_{bud} = \\{ \\eta^c_{2}, \\eta^c_{4} : -1 \\le \\eta^c_{2} \\le 1, -1 \\le \\eta^c_{4} \\le 1, |\\eta^c_{2}| + |\\eta^c_{4}| \\le 1.1 \\} \\\\\n& \\mathcal{U}^a_{1,poly} = \\{ \\delta^a_{1,1}, \\delta^a_{1,3} : 0.1\\delta^a_{1,1} - 0.1\\delta^a_{1,3} \\ge -0.04, -0.2 \\le \\delta^a_{1,1} \\le 0.2, -0.2 \\le \\delta^a_{1,3} \\le 0.2 \\} \\\\\n& \\mathcal{U}^a_{4,bud} = \\{ \\eta^a_{4,2}, \\eta^a_{4,4} : -1 \\le \\eta^a_{4,2} \\le 1, -1 \\le \\eta^a_{4,4} \\le 1, |\\eta^a_{4,2}| + |\\eta^a_{4,4}| \\le 1.3 \\} \\\\\n& \\mathcal{U}^a_{5,poly} = \\{ \\delta^a_{5,1}, \\delta^a_{5,3} : - 0.1\\delta^a_{5,1} + 0.1\\delta^a_{5,3} \\le 0.02, -0.2 \\le \\delta^a_{5,1} \\le 0.2, -0.2 \\le \\delta^a_{5,3} \\le 0.2 \\} \\\\\n& 0 \\le x_{1} \\le 1.9, 0 \\le x_{2} \\le 1.9, 0 \\le x_{3} \\le 1.9, 0 \\le x_{4} \\le 1.9, 0 \\le x_{5} \\le 1.9 \\\\\n\\end{align*}",
+    "uncertainty_type": [
+      2,
+      3,
+      1,
+      0,
+      2,
+      3
+    ],
+    "solution": [
+      1.3187499999999999,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "optimal_value": -6.461875
+  },
+  {
+    "id": "5_15_T011",
+    "n_vars": 5,
+    "n_constraints": 5,
+    "template_param": [
+      0,
+      1,
+      1
+    ],
+    "description": "\\begin{align*}\n\\text{Maximize} \\quad & \\mathbf{c}^\\top \\mathbf{x} && \\forall \\mathbf{c} \\in \\mathcal{U}_{c,Box} && \\text{(Box Uncertainty Objective)} \\\\\n\\text{subject to} \\quad & \\mathbf{a}_{1}^\\top \\mathbf{x} \\le b_{1} && \\forall \\mathbf{a}_{1} \\in \\mathcal{U}_{a1,Bud} && \\text{(Budgeted Uncertainty Constraint)} \\\\\n& \\mathbf{a}_{2}^\\top \\mathbf{x} \\le b_{2} && \\forall \\mathbf{a}_{2} \\in \\mathcal{U}_{a2,Bud} && \\text{(Budgeted Uncertainty Constraint)} \\\\\n& \\mathbf{a}_{3}^\\top \\mathbf{x} = b_{3} && && \\text{(Deterministic Constraint)} \\\\\n& \\mathbf{a}_{4}^\\top \\mathbf{x} \\le b_{4} && \\forall \\mathbf{a}_{4} \\in \\mathcal{U}_{a4,Bud} && \\text{(Budgeted Uncertainty Constraint)} \\\\\n& (\\mathbf{a}_{5}^{nom} + \\boldsymbol{\\delta}_{a5})^\\top \\mathbf{x} \\le b_{5} && \\forall \\boldsymbol{\\delta}_{a5} \\in \\mathcal{U}_{a,P} && \\text{(Polyhedral Uncertainty Constraint)} \\\\\n\\text{where:} \\quad\n& \\mathcal{U}_{c,Box} = \\{ \\mathbf{c} \\in \\mathbb{R}^{5} : \\mathbf{c} = \\mathbf{c}^{nom} + \\mathbf{D}_c \\boldsymbol{\\xi}_c, \\|\\boldsymbol{\\xi}_c\\|_{\\infty} \\le 1 \\} \\\\\n& \\mathcal{U}_{a1,Bud} = \\{ \\mathbf{a}_{1} \\in \\mathbb{R}^{5} : \\mathbf{a}_{1} = \\mathbf{a}_{1}^{nom} + \\mathbf{D}_{a1} \\boldsymbol{\\xi}_{a1}, \\|\\boldsymbol{\\xi}_{a1}\\|_{\\infty} \\le 1, \\|\\boldsymbol{\\xi}_{a1}\\|_1 \\le \\Gamma_{a1} \\} \\\\\n& \\mathcal{U}_{a2,Bud} = \\{ \\mathbf{a}_{2} \\in \\mathbb{R}^{5} : \\mathbf{a}_{2} = \\mathbf{a}_{2}^{nom} + \\mathbf{D}_{a2} \\boldsymbol{\\xi}_{a2}, \\|\\boldsymbol{\\xi}_{a2}\\|_{\\infty} \\le 1, \\|\\boldsymbol{\\xi}_{a2}\\|_1 \\le \\Gamma_{a2} \\} \\\\\n& \\mathcal{U}_{a4,Bud} = \\{ \\mathbf{a}_{4} \\in \\mathbb{R}^{5} : \\mathbf{a}_{4} = \\mathbf{a}_{4}^{nom} + \\mathbf{D}_{a4} \\boldsymbol{\\xi}_{a4}, \\|\\boldsymbol{\\xi}_{a4}\\|_{\\infty} \\le 1, \\|\\boldsymbol{\\xi}_{a4}\\|_1 \\le \\Gamma_{a4} \\} \\\\\n& \\mathcal{U}_{a,P} = \\{ \\boldsymbol{\\delta}_{a5} \\in \\mathbb{R}^{5} : \\mathbf{M}_{a5} \\boldsymbol{\\delta}_{a5} \\le \\mathbf{q}_{a5}, \\quad \\mathbf{E}_{a5} \\boldsymbol{\\delta}_{a5} = \\mathbf{e}_{a5} \\} \\\\\n& \\mathbf{x} = [x_{1}, x_{2}, x_{3}, x_{4}, x_{5}]^\\top \\\\\n& \\mathbf{c}^{nom} = [-1.9, 7.5, 3.3, -5.7, 1.1]^\\top \\\\\n& \\mathbf{a}_{1}^{nom} = [0, 0, -0.2, 0, 5]^\\top \\\\\n& b_{1} = 33.73 \\\\\n& \\mathbf{a}_{2}^{nom} = [5.7, -0.2, 0, -6.9, 1.3]^\\top \\\\\n& b_{2} = 5.85 \\\\\n& \\mathbf{a}_{3} = [-5.2, 0, -0.6, -4, -6.6]^\\top \\\\\n& b_{3} = -78.4 \\\\\n& \\mathbf{a}_{4}^{nom} = [-3, 6.5, -5.4, 2.7, 0]^\\top \\\\\n& b_{4} = 49.27 \\\\\n& \\mathbf{a}_{5}^{nom} = [0, 5.6, 0, 5.7, 0]^\\top \\\\\n& b_{5} = 54.38 \\\\\n& \\mathbf{D}_c = \\text{diag}(0.2, 0.6, 0.4, 1.1, 0.1) \\\\\n& \\mathbf{D}_{a1} = \\text{diag}(0, 0, 0.1, 0, 0.9) \\\\\n& \\Gamma_{a1} = 0.5 \\\\\n& \\mathbf{D}_{a2} = \\text{diag}(0, 0.1, 0, 1.1, 0.2) \\\\\n& \\Gamma_{a2} = 0.1 \\\\\n& \\mathbf{D}_{a4} = \\text{diag}(0.3, 1.2, 0.4, 0.5, 0) \\\\\n& \\Gamma_{a4} = 2.7 \\\\\n& \\mathbf{M}_{a5} = \\begin{bmatrix} 0 & -0.2 & 0 & 0.7 & 0 \\\\ 0 & 1 & 0 & 0 & 0 \\\\ 0 & -1 & 0 & 0 & 0 \\\\ 0 & 0 & 0 & 1 & 0 \\\\ 0 & 0 & 0 & -1 & 0 \\end{bmatrix} \\\\\n& \\mathbf{q}_{a5} = [0.27, 0.7, 0.7, 0.7, 0.7]^\\top \\\\\n& \\mathbf{E}_{a5} = \\begin{bmatrix} 1 & 0 & 0 & 0 & 0 \\\\ 0 & 0 & 1 & 0 & 0 \\\\ 0 & 0 & 0 & 0 & 1 \\end{bmatrix} \\\\\n& \\mathbf{e}_{a5} = [0, 0, 0]^\\top \\\\\n& 0 \\le x_j \\le 7, \\quad \\forall j \\in \\{1, \\dots, 5\\} && && \\text{(Variable Bounds)} \\\\\n\\end{align*}",
+    "uncertainty_type": [
+      1,
+      2,
+      2,
+      0,
+      2,
+      3
+    ],
+    "solution": [
+      3.5994602159898057,
+      5.4040680177772,
+      7.0,
+      3.235013645818761,
+      6.4458715596330265
+    ],
+    "optimal_value": 34.476981637149535
+  },
+  {
+    "id": "5_16_T111",
+    "n_vars": 5,
+    "n_constraints": 5,
+    "template_param": [
+      1,
+      1,
+      1
+    ],
+    "description": "\\begin{align*}\n& \\text{Maximize} \\quad \\min_{\\xi_c \\in \\mathcal{U}_{c,Box}} \\left( \\bar{c} + \\text{diag}(\\hat{c}) \\xi_c \\right)^\\top x && \\text{(Box Uncertainty Objective)} \\\\\n& \\text{subject to} \\\\\n& \\min_{\\delta_{a1} \\in \\mathcal{U}_{a1,P}} ( \\bar{a}_{1} + \\delta_{a1} )^\\top x \\ge b_{1} && \\text{(Polyhedral Uncertainty Constraint)} \\\\\n& \\min_{\\xi_{a2} \\in \\mathcal{U}_{a2,Bud}} \\left( \\bar{a}_{2} + \\text{diag}(\\hat{a}_{2}) \\xi_{a2} \\right)^\\top x \\ge b_{2} && \\text{(Budgeted Uncertainty Constraint)} \\\\\n& \\min_{\\delta_{a3} \\in \\mathcal{U}_{a3,P}} ( \\bar{a}_{3} + \\delta_{a3} )^\\top x \\ge b_{3} && \\text{(Polyhedral Uncertainty Constraint)} \\\\\n& \\max_{\\xi_{a4} \\in \\mathcal{U}_{a4,Box}} \\left( \\bar{a}_{4} + \\text{diag}(\\hat{a}_{4}) \\xi_{a4} \\right)^\\top x \\le b_{4} && \\text{(Box Uncertainty Constraint)} \\\\\n& a_{5}^\\top x = b_{5} && \\text{(Deterministic Constraint)} \\\\\n& \\text{where:} \\\\\n& \\mathcal{U}_{c,Box} = \\{ \\xi_c \\in \\mathbb{R}^{5} : \\|\\xi_c\\|_{\\infty} \\le 1 \\} \\\\\n& \\mathcal{U}_{a1,P} = \\{ \\delta_{a1} \\in \\mathbb{R}^{5} : D_{a1} \\delta_{a1} \\le d_{a1}, \\quad E_{a1} \\delta_{a1} = e_{a1} \\} \\\\\n& \\mathcal{U}_{a2,Bud} = \\{ \\xi_{a2} \\in \\mathbb{R}^{5} : \\|\\xi_{a2}\\|_{\\infty} \\le 1, \\|\\xi_{a2}\\|_1 \\le \\Gamma_{a2} \\} \\\\\n& \\mathcal{U}_{a3,P} = \\{ \\delta_{a3} \\in \\mathbb{R}^{5} : D_{a3} \\delta_{a3} \\le d_{a3}, \\quad E_{a3} \\delta_{a3} = e_{a3} \\} \\\\\n& \\mathcal{U}_{a4,Box} = \\{ \\xi_{a4} \\in \\mathbb{R}^{5} : \\|\\xi_{a4}\\|_{\\infty} \\le 1 \\} \\\\\n& x = [x_{1}, x_{2}, x_{3}, x_{4}, x_{5}]^\\top \\\\\n& -7.4 \\le x_j \\le 7.4, \\quad \\forall j \\in \\{1, \\dots, 5\\} \\\\\n& \\bar{c} = [-8.1, 8, 0.4, 7.6, 0.6]^\\top \\\\\n& \\hat{c} = [0.7, 1.1, 0.1, 1.2, 0.1]^\\top \\\\\n& \\bar{a}_{1} = [7.4, 0, 0.6, 0, 0]^\\top \\\\\n& b_{1} = -55.79 \\\\\n& \\bar{a}_{2} = [0, 0, -2.6, 0, -7.3]^\\top \\\\\n& b_{2} = -46.71 \\\\\n& \\hat{a}_{2} = [0, 0, 0.4, 0, 1]^\\top \\\\\n& \\bar{a}_{3} = [-6.4, 0, 0, -0.9, 0]^\\top \\\\\n& b_{3} = 28.53 \\\\\n& \\bar{a}_{4} = [3.9, -4, 0, 0, 0]^\\top \\\\\n& b_{4} = 33.02 \\\\\n& \\hat{a}_{4} = [0.4, 0.8, 0, 0, 0]^\\top \\\\\n& a_{5} = [-1.1, 3.2, 6.4, 0, -6.9]^\\top \\\\\n& b_{5} = 5.83 \\\\\n& D_{a1} = \\begin{bmatrix} -0.1 & 0 & -0.3 & 0 & 0 \\\\ 1 & 0 & 0 & 0 & 0 \\\\ -1 & 0 & 0 & 0 & 0 \\\\ 0 & 0 & 1 & 0 & 0 \\\\ 0 & 0 & -1 & 0 & 0 \\end{bmatrix} \\\\\n& d_{a1} = [0, 0.7, 0, 0.7, 0]^\\top \\\\\n& E_{a1} = \\begin{bmatrix} 0 & 1 & 0 & 0 & 0 \\\\ 0 & 0 & 0 & 1 & 0 \\\\ 0 & 0 & 0 & 0 & 1 \\end{bmatrix} \\\\\n& e_{a1} = [0, 0, 0]^\\top \\\\\n& \\Gamma_{a2} = 1 \\\\\n& D_{a3} = \\begin{bmatrix} 0.1 & 0 & 0 & -0.6 & 0 \\\\ 1 & 0 & 0 & 0 & 0 \\\\ -1 & 0 & 0 & 0 & 0 \\\\ 0 & 0 & 0 & 1 & 0 \\\\ 0 & 0 & 0 & -1 & 0 \\end{bmatrix} \\\\\n& d_{a3} = [-0.01, 0.7, 0, 0.7, 0]^\\top \\\\\n& E_{a3} = \\begin{bmatrix} 0 & 1 & 0 & 0 & 0 \\\\ 0 & 0 & 1 & 0 & 0 \\\\ 0 & 0 & 0 & 0 & 1 \\end{bmatrix} \\\\\n& e_{a3} = [0, 0, 0]^\\top \\\\\n\\end{align*}",
+    "uncertainty_type": [
+      1,
+      3,
+      2,
+      3,
+      1,
+      0
+    ],
+    "solution": [
+      -7.002539823496208,
+      7.4,
+      1.5509542838654602,
+      7.4,
+      5.14186974240359
+    ],
+    "optimal_value": 153.27501585023336
+  }
+]
