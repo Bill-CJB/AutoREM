@@ -45,7 +45,7 @@ $env:AUTOREM_MODEL = "deepseek-v4-flash"
 $env:AUTOREM_CODER_MODEL = "deepseek-v4-pro"
 ```
 
-All training and evaluation stages use `https://api.deepseek.com/v1`:
+The released code uses `https://api.deepseek.com/v1` for all training and evaluation stages:
 
 | Role | Default model | Additional request fields |
 | --- | --- | --- |
@@ -53,6 +53,8 @@ All training and evaluation stages use `https://api.deepseek.com/v1`:
 | Coder | `deepseek-v4-pro` | No explicit token-limit or response-format fields |
 
 All roles use temperature 0, the same JSON-only system instruction, and the API's default reasoning setting. These are the Flash and Pro model roles used in the main experiments. No provider-specific thinking fields are added to the requests.
+
+The main experiments were conducted in late April and early May 2026, during the DeepSeek-V4 Preview release period. The primary memory was trained on May 1--2. Supplemental evaluations were conducted separately in July and August 2026. The API model names above are aliases rather than pinned snapshots, and the historical records do not retain immutable backend revision identifiers. DeepSeek has since updated the models served under these names, so current API calls can differ from the paper's results. See [model identity and experiment dates](REPRODUCIBILITY.md) for the phase-specific dates, evidence limits, and official release references.
 
 The coder shares `AUTOREM_API_KEY` and the base URL by default. Set `AUTOREM_CODER_API_KEY` only if you want to use a separate DeepSeek key for coding. Keep credentials in your environment; do not insert them into source files. See [.env.example](.env.example) for optional model, token-limit, and timeout settings. The example file is documentation and is not loaded automatically.
 
@@ -73,6 +75,8 @@ python -m autorem evaluate --dataset external --output outputs/external
 Evaluation defaults to `memory/autorem.json` and four worker threads. Use `--workers 1 --limit 1` for a small smoke run. `--memory PATH` loads a trained memory; `--data PATH` supplies a JSON dataset using the selected dataset's pipeline. The application pipeline first formulates the natural-language input, then reformulates and codes the robust counterpart. Other datasets begin with a mathematical model.
 
 Only the problem description is passed to the language models. Reference objective values and solutions are used for scoring. A sample is correct when execution produces a finite objective value with absolute error strictly smaller than `1e-4`. Invalid outputs and solver failures count as incorrect. API transport or configuration failures abort the run. Outputs include per-sample model responses and solver outcomes, plus aggregate accuracy and token counts in `metrics.json`. Token usage is the usage returned for the completion selected by each stage; retries can incur additional usage.
+
+New training and evaluation runs also save `run_metadata.json` and separate base/coder API metadata logs, recording UTC timestamps and returned model identifiers when available. These logs help track changes in hosted models; they do not make an API alias an immutable model snapshot.
 
 Generated solver code runs in a temporary directory with a timeout and common API credential environment variables removed. This subprocess is not a security sandbox. Use a suitably isolated execution environment for untrusted inputs or generated code.
 
