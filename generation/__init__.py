@@ -1,1 +1,1 @@
-"""Dataset generation tools for AutoREM."""
+"""Random training data generation for AutoREM."""

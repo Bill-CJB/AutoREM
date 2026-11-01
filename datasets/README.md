@@ -2,6 +2,8 @@
 
 The JSON files contain the fixed evaluation inputs and reference objective values used for AutoREM. The validation split is provided for offline adaptation.
 
+Test and validation data are distributed directly; the generation code in this repository is only for random training problems.
+
 | File | Instances | Task |
 | --- | ---: | --- |
 | `random.json` | 64 | Robust-model reformulation with 2--5 variables |

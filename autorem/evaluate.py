@@ -64,7 +64,7 @@ def evaluate(args) -> None:
     memory = ReformulationExperienceMemory.loads(Path(args.memory).read_text(encoding="utf-8"))
     if not memory.list_experience_ids():
         raise ValueError("The evaluation memory must contain AutoREM experiences.")
-    base = LLMClient.from_env(task="application" if args.dataset == "application" else "reformulation")
+    base = LLMClient.from_env()
     coder = Coder(LLMClient.from_env(coder=True))
     if args.dataset == "application":
         from .application import ApplicationReformulator

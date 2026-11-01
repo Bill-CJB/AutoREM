@@ -8,7 +8,7 @@ AutoREM learns a compact reformulation experience memory through offline adaptat
 
 ```text
 autorem/       AutoREM memory, prompts, adaptation, execution, and command-line tools
-generation/    Dataset generators and required numerical source fixtures
+generation/    Random robust optimization problem generation for offline training
 datasets/      Seven fixed test sets and the offline validation set
 memory/        Final learned AutoREM memory (eight experiences)
 ```
@@ -23,15 +23,15 @@ python -m venv .venv
 python -m pip install -e .
 ```
 
-The dependencies include NumPy, SciPy, RSOME, Gurobi, and tqdm. The LLM client uses the Python standard library and an OpenAI-compatible chat-completions endpoint. Dataset and memory paths in the commands below are relative to the repository root.
+The dependencies include NumPy, SciPy, RSOME, Gurobi, and tqdm. The LLM client uses the Python standard library and the DeepSeek chat-completions API. Dataset and memory paths in the commands below are relative to the repository root.
 
 ## API configuration
 
-Set API credentials in your environment. For Bash:
+Create a DeepSeek API key and set it in your shell before running training or evaluation. One key serves all roles. For Bash:
 
 ```bash
 export AUTOREM_API_KEY="your-api-key"
-export AUTOREM_CODER_API_KEY="your-coder-api-key"
+export AUTOREM_BASE_URL="https://api.deepseek.com/v1"
 export AUTOREM_MODEL="deepseek-v4-flash"
 export AUTOREM_CODER_MODEL="deepseek-v4-pro"
 ```
@@ -40,22 +40,23 @@ For PowerShell:
 
 ```powershell
 $env:AUTOREM_API_KEY = "your-api-key"
-$env:AUTOREM_CODER_API_KEY = "your-coder-api-key"
+$env:AUTOREM_BASE_URL = "https://api.deepseek.com/v1"
 $env:AUTOREM_MODEL = "deepseek-v4-flash"
 $env:AUTOREM_CODER_MODEL = "deepseek-v4-pro"
 ```
 
-The base model serves the reformulator, reflector, and application formulator. The coder uses its own model and credential. Default endpoints and request settings reproduce the role settings in the evaluation and training scripts:
+All training and evaluation stages use `https://api.deepseek.com/v1`:
 
-| Role/task | Default endpoint | Additional request fields |
+| Role | Default model | Additional request fields |
 | --- | --- | --- |
-| Mathematical-model evaluation, base model | `https://dashscope.aliyuncs.com/compatible-mode/v1` | Thinking enabled, high reasoning effort, 32,768 output-token limit, JSON-object format |
-| Offline training and application evaluation, base model | `https://api.deepseek.com/v1` | 32,768 output-token limit, JSON-object format |
-| Coder in all tasks | `https://api.deepseek.com/v1` | No explicit thinking, token-limit, or response-format fields |
+| Reformulator, reflector, and application formulator | `deepseek-v4-flash` | 32,768 output-token limit, JSON-object format |
+| Coder | `deepseek-v4-pro` | No explicit token-limit or response-format fields |
 
-All roles use temperature 0 and the same JSON-only system instruction. Set `AUTOREM_API_KEY` for the base endpoint used by your command, and `AUTOREM_CODER_API_KEY` for DeepSeek. When changing from mathematical-model evaluation to training or application evaluation, update the base credential accordingly. `AUTOREM_BASE_URL` and `AUTOREM_CODER_BASE_URL` override endpoints. A base credential is reused for the coder only if both roles explicitly target the same URL.
+All roles use temperature 0, the same JSON-only system instruction, and the API's default reasoning setting. These are the Flash and Pro model roles used in the main experiments. No provider-specific thinking fields are added to the requests.
 
-See [.env.example](.env.example) for API field overrides. The example file is documentation and is not loaded automatically. An alternative provider must support the configured request fields. Model availability, provider behavior, and stochastic inference can affect results. API calls incur charges according to your provider.
+The coder shares `AUTOREM_API_KEY` and the base URL by default. Set `AUTOREM_CODER_API_KEY` only if you want to use a separate DeepSeek key for coding. Keep credentials in your environment; do not insert them into source files. See [.env.example](.env.example) for optional model, token-limit, and timeout settings. The example file is documentation and is not loaded automatically.
+
+For a small configuration check, run `python -m autorem evaluate --dataset random --workers 1 --limit 1 --output outputs/smoke`. HTTP authentication or configuration errors stop the run with an error message. Model availability, API behavior, and stochastic inference can affect results. API calls incur charges according to DeepSeek's pricing.
 
 ## Evaluate the supplied memory
 
@@ -93,9 +94,11 @@ Use the actual epoch-checkpoint filename produced by your run. Training makes ma
 
 ## Data and generation
 
-The release contains 256 test instances: Random64, Hard32, Large32, Application32, General-P32, Coupled-Row32, and ExternalRO32. Validation64 is included for training. See [datasets/README.md](datasets/README.md) for the schema and [datasets/SOURCES.md](datasets/SOURCES.md) for source attribution and construction details.
+The release contains 256 test instances: Random64, Hard32, Large32, Application32, General-P32, Coupled-Row32, and ExternalRO32. Large32 contains sixteen six-variable and sixteen seven-variable problems, matching the fixed inputs in the main experiments. Validation64 is included for training. See [datasets/README.md](datasets/README.md) for the schema and [datasets/SOURCES.md](datasets/SOURCES.md) for source attribution and construction details.
 
-Generation commands and reproducibility limits are documented in [generation/README.md](generation/README.md). General-P, Coupled-Row, and ExternalRO32 are curated exploratory challenge sets whose construction or reporting involved inspection of model outputs. Evaluate all released cases and report all repeated runs; these sets should not be treated as untouched confirmation benchmarks. Exact regeneration of the curated natural-language Application32 cases is not claimed.
+The test and validation sets are distributed as fixed JSON files. The only generation code supplied is the random training-problem generator used during offline adaptation; see [generation/README.md](generation/README.md). Training generates samples as needed without saving a fixed training set first.
+
+General-P, Coupled-Row, and ExternalRO32 are curated exploratory challenge sets whose construction or reporting involved inspection of model outputs. Evaluate all released cases and report all repeated runs; these sets should not be treated as untouched confirmation benchmarks.
 
 ## Citation
 

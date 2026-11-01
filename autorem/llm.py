@@ -1,4 +1,4 @@
-"""OpenAI-compatible chat client configured exclusively through the environment."""
+"""DeepSeek chat client configured exclusively through the environment."""
 
 from __future__ import annotations
 
@@ -43,13 +43,12 @@ class LLMResponse:
 class LLMClient:
     """A stateless client, safe to share across evaluation worker threads.
 
-    Each role's request settings are selected by ``from_env``. API credentials
-    are never written to logs or checkpoints.
+    All roles use the DeepSeek API. API credentials are never written to logs
+    or checkpoints.
     """
 
     def __init__(self, *, model: str, api_key: str, base_url: str,
-                 timeout: float = 600.0, enable_thinking: bool | None = None,
-                 reasoning_effort: str | None = None, max_tokens: int | None = 32768,
+                 timeout: float = 600.0, max_tokens: int | None = 32768,
                  json_mode: bool = True):
         if not api_key or api_key == "YOUR_API_KEY":
             raise ValueError("Set AUTOREM_API_KEY to your API credential.")
@@ -66,32 +65,23 @@ class LLMClient:
         self._api_key = api_key
         self.url = base_url.rstrip("/") + "/chat/completions"
         self.timeout = timeout
-        self.enable_thinking = enable_thinking
-        self.reasoning_effort = reasoning_effort
         self.max_tokens = max_tokens
         self.json_mode = json_mode
 
     @classmethod
-    def from_env(cls, *, coder: bool = False, task: str = "reformulation") -> "LLMClient":
-        if task not in ("reformulation", "application", "training"):
-            raise ValueError("Unknown API task.")
+    def from_env(cls, *, coder: bool = False) -> "LLMClient":
         prefix = "AUTOREM_CODER_" if coder else "AUTOREM_"
         def setting(name: str, default: str = "") -> str:
             return os.environ.get(prefix + name, default)
-        uses_dashscope = not coder and task == "reformulation"
-        default_url = ("https://dashscope.aliyuncs.com/compatible-mode/v1" if uses_dashscope
-                       else "https://api.deepseek.com/v1")
-        base_url = setting("BASE_URL", default_url)
+        base_url = setting("BASE_URL", os.environ.get("AUTOREM_BASE_URL", "https://api.deepseek.com/v1"))
         api_key = setting("API_KEY")
-        # Reuse a credential only when both roles explicitly target the same URL.
-        if coder and not api_key and base_url.rstrip("/") == os.environ.get("AUTOREM_BASE_URL", "").rstrip("/"):
+        # A single DeepSeek key can serve both roles at the same endpoint.
+        base_endpoint = os.environ.get("AUTOREM_BASE_URL", "https://api.deepseek.com/v1")
+        if coder and not api_key and base_url.rstrip("/") == base_endpoint.rstrip("/"):
             api_key = os.environ.get("AUTOREM_API_KEY", "")
         if not api_key:
             raise ValueError(f"Set {prefix}API_KEY for the selected API endpoint.")
         model = os.environ.get(prefix + "MODEL", "deepseek-v4-pro" if coder else "deepseek-v4-flash")
-        thinking = setting("ENABLE_THINKING", "true" if uses_dashscope else "").lower()
-        if thinking not in ("true", "false", ""):
-            raise ValueError("ENABLE_THINKING must be true, false, or empty to omit the field.")
         max_tokens = setting("MAX_TOKENS", "" if coder else "32768")
         json_mode = setting("JSON_MODE", "false" if coder else "true").lower()
         if json_mode not in ("true", "false"):
@@ -101,8 +91,6 @@ class LLMClient:
             api_key=api_key,
             base_url=base_url,
             timeout=float(setting("TIMEOUT", "600")),
-            enable_thinking=None if thinking == "" else thinking == "true",
-            reasoning_effort=setting("REASONING_EFFORT", "high" if uses_dashscope else "") or None,
             max_tokens=int(max_tokens) if max_tokens else None,
             json_mode=json_mode == "true",
         )
@@ -117,13 +105,11 @@ class LLMClient:
             "stream": False,
             "temperature": 0,
         }
-        for name in ("max_tokens", "enable_thinking", "reasoning_effort"):
-            value = getattr(self, name)
-            if value is not None:
-                payload[name] = value
+        if self.max_tokens is not None:
+            payload["max_tokens"] = self.max_tokens
         if self.json_mode:
             payload["response_format"] = {"type": "json_object"}
-        allowed = {"temperature", "max_tokens", "reasoning_effort", "enable_thinking"}
+        allowed = {"temperature", "max_tokens"}
         if set(kwargs) - allowed:
             raise ValueError("Unsupported completion options.")
         payload.update(kwargs)

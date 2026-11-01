@@ -32,6 +32,3 @@ autorem = "autorem.__main__:main"
 
 [tool.setuptools]
 packages = ["autorem", "generation"]
-
-[tool.setuptools.package-data]
-generation = ["sources/*.json", "sources/netlib/*.mps", "sources/selection/*.dat"]

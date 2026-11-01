@@ -1,4 +1,4 @@
-"""Synthetic Box, Budgeted, and Polyhedral robust linear-program generation."""
+"""Generate random robust linear programs for AutoREM training."""
 
 import numpy as np
 import random
@@ -72,11 +72,8 @@ def generate_feasible_lp(n, x0, base_range=(-10, 10)):
     return A, b, directions, unmask_idx
 
 
-def generate_random_params(n_vars, uncertainty_family="mixed"):
+def generate_random_params(n_vars):
     """Sample a robust LP with exactly one deterministic objective or constraint row."""
-    if uncertainty_family not in {"mixed", "box", "budget", "polyhedral"}:
-        raise ValueError(f"Unsupported uncertainty family: {uncertainty_family}")
-    family_code = {"box": 1, "budget": 2, "polyhedral": 3}
 
     objective_coeffs = [round(random.uniform(-10, 10), 1) for _ in range(n_vars)]
 
@@ -119,7 +116,7 @@ def generate_random_params(n_vars, uncertainty_family="mixed"):
     if deterministic_row == 0:
         objective_uncertainty_type = 0
     else:
-        objective_uncertainty_type = random.randint(1, 3) if uncertainty_family == "mixed" else family_code[uncertainty_family]
+        objective_uncertainty_type = random.randint(1, 3)
 
     uncertain_idx = []
 
@@ -184,7 +181,7 @@ def generate_random_params(n_vars, uncertainty_family="mixed"):
 
             constraint_type = 0
         else:
-            constraint_type = random.randint(1, 3) if uncertainty_family == "mixed" else family_code[uncertainty_family]
+            constraint_type = random.randint(1, 3)
         constraint_types.append(constraint_type)
 
 
@@ -1871,7 +1868,7 @@ def generate_robust_description(params, template_param):
     return _TEMPLATE_MAP[key](params)
 
 
-def batch_generate_json(var_list, samples_per_n, template_list=None, seed=None, mode="all", uncertainty_family="mixed"):
+def batch_generate_json(var_list, samples_per_n, template_list=None, seed=None, mode="all"):
     """Generate solver-verified records; mode selects all templates or one random template per instance."""
     if template_list is None:
         template_list = [[0, 0, 0]]
@@ -1903,7 +1900,7 @@ def batch_generate_json(var_list, samples_per_n, template_list=None, seed=None, 
         with tqdm(total=samples_per_n, desc=f"{n_vars}d") as pbar:
             while valid_count < samples_per_n:
                 attempt_count += 1
-                params = generate_random_params(n_vars, uncertainty_family=uncertainty_family)
+                params = generate_random_params(n_vars)
 
 
                 all_uncertainty_types = [params["objective_uncertainty_type"]] + params["constraint_types"]
@@ -1969,7 +1966,7 @@ def batch_generate_json(var_list, samples_per_n, template_list=None, seed=None, 
 
 
 def main():
-    """Generate a JSON dataset from the command line."""
+    """Generate fresh training examples from the command line."""
     import argparse
     from pathlib import Path
 
@@ -1978,8 +1975,6 @@ def main():
     parser.add_argument("--samples-per-n", type=int, default=8)
     parser.add_argument("--seed", type=int, default=42)
     parser.add_argument("--templates", nargs="+", default=["000", "001", "010", "011", "100", "101", "110", "111"])
-    parser.add_argument("--mode", choices=("all", "random"), default="random")
-    parser.add_argument("--uncertainty-family", choices=("mixed", "box", "budget", "polyhedral"), default="mixed")
     parser.add_argument("--output", type=Path, required=True)
     args = parser.parse_args()
     if any(n < 2 for n in args.vars) or args.samples_per_n < 1:
@@ -1987,8 +1982,7 @@ def main():
     if any(len(t) != 3 or set(t) - {"0", "1"} for t in args.templates):
         parser.error("Templates must be three binary digits, for example 000 or 111.")
     records = batch_generate_json(args.vars, args.samples_per_n,
-        template_list=[[int(b) for b in t] for t in args.templates], seed=args.seed, mode=args.mode,
-        uncertainty_family=args.uncertainty_family)
+        template_list=[[int(b) for b in t] for t in args.templates], seed=args.seed, mode="random")
     args.output.parent.mkdir(parents=True, exist_ok=True)
     args.output.write_text(json.dumps(records, indent=2) + "\n", encoding="utf-8")
     print(f"Saved {len(records)} records to {args.output}")

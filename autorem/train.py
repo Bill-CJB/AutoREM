@@ -12,7 +12,7 @@ def train(args) -> None:
     from .robust_env import RobustTaskEnvironment
     from .roles import Coder, Reflector, Reformulator
 
-    base_client = LLMClient.from_env(task="training")
+    base_client = LLMClient.from_env()
     coder_client = LLMClient.from_env(coder=True)
     adapter = OfflineAdapter(
         rem=ReformulationExperienceMemory(),

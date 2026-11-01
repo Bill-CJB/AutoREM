@@ -2,7 +2,7 @@
 
 ## Generated reformulation data
 
-Random64, Hard32, Large32, and Validation64 use the robust linear-program generator distributed with this repository. The generator samples nominal models and box, budget, and polyhedral uncertainty, computes solver-based reference objectives, and renders the model descriptions. Hard32 stresses polyhedral constraints; the released Large32 contains 16 six-variable and 16 seven-variable instances. Validation64 supports validation-based acceptance during offline memory adaptation.
+Random64, Hard32, Large32, and Validation64 were constructed from the robust linear-program family used for training. The construction samples nominal models and box, budget, and polyhedral uncertainty, computes solver-based reference objectives, and renders the model descriptions. Hard32 stresses polyhedral constraints; the released Large32 contains 16 six-variable and 16 seven-variable instances. Validation64 supports validation-based acceptance during offline memory adaptation. All test and validation sets are distributed as fixed JSON files; this release includes only the random training-problem generator.
 
 General-P32 preserves the original uncertain supports while introducing non-diagonal, full-rank loading blocks in existing uncertain units. Deterministic units remain deterministic. Coupled-Row32 shares latent uncertainty across multiple uncertain rows. These are structural extensions of the same generator family.
 
