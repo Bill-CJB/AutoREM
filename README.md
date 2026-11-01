@@ -54,7 +54,7 @@ All training and evaluation stages use `https://api.deepseek.com/v1`:
 
 All roles use temperature 0, the same JSON-only system instruction, and the API's default reasoning setting. These are the Flash and Pro model roles used in the main experiments. No provider-specific thinking fields are added to the requests.
 
-The experiments used DeepSeek-V4-Flash and DeepSeek-V4-Pro from the DeepSeek-V4 Preview release.
+The experiments used DeepSeek-V4-Flash as the base LLM and DeepSeek-V4-Pro as the fixed coder.
 
 The coder shares `AUTOREM_API_KEY` and the base URL by default. Set `AUTOREM_CODER_API_KEY` only if you want to use a separate DeepSeek key for coding. Keep credentials in your environment; do not insert them into source files. See [.env.example](.env.example) for optional model, token-limit, and timeout settings. The example file is documentation and is not loaded automatically.
 
