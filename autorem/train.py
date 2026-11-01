@@ -9,7 +9,6 @@ def train(args) -> None:
     from .adaptation import OfflineAdapter
     from .llm import LLMClient
     from .memory import ReformulationExperienceMemory
-    from .provenance import RunMetadata
     from .robust_env import RobustTaskEnvironment
     from .roles import Coder, Reflector, Reformulator
 
@@ -27,8 +26,7 @@ def train(args) -> None:
         resume_from=str(args.resume) if args.resume else None,
     )
     try:
-        with RunMetadata(adapter.save_dir, base_client=base_client, coder_client=coder_client):
-            adapter.run(RobustTaskEnvironment())
+        adapter.run(RobustTaskEnvironment())
     finally:
         for name in ("train_log", "step_log", "failed_log", "metric_log"):
             getattr(adapter, name).close()

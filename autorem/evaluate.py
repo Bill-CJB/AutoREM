@@ -12,7 +12,6 @@ from pathlib import Path
 from .code_executor import execute_gurobi_code
 from .llm import LLMClient
 from .memory import ReformulationExperienceMemory
-from .provenance import RunMetadata
 from .roles import Coder, Reformulator
 
 
@@ -77,28 +76,27 @@ def evaluate(args) -> None:
     output = Path(args.output)
     output.mkdir(parents=True, exist_ok=True)
     results = [None] * len(samples)
-    with RunMetadata(output, base_client=base, coder_client=coder.client):
-        start = time.perf_counter()
-        with ThreadPoolExecutor(max_workers=args.workers) as pool:
-            pending = {pool.submit(evaluate_sample, sample, memory=memory,
-                                   reformulator=reformulator, coder=coder,
-                                   formulator_client=formulator): i for i, sample in enumerate(samples)}
-            for future in as_completed(pending):
-                i = pending[future]
-                # Infrastructure/API errors abort evaluation instead of becoming model errors.
-                results[i] = future.result()
-                (output / f"sample_{i + 1:04d}.json").write_text(
-                    json.dumps(results[i], indent=2, ensure_ascii=False), encoding="utf-8")
-                print(f"Completed {sum(r is not None for r in results)}/{len(samples)}", flush=True)
-        metrics = {
-            "dataset": dataset.name, "num_samples": len(samples),
-            "num_correct": sum(r["correct"] for r in results),
-            "accuracy": sum(r["correct"] for r in results) / len(samples),
-            "objective_tolerance": 1e-4, "comparison": "strict_absolute_error",
-            "base_model": base.model, "coder_model": coder.client.model,
-            "prompt_tokens": sum(r["usage"]["prompt_tokens"] for r in results),
-            "completion_tokens": sum(r["usage"]["completion_tokens"] for r in results),
-            "wall_time_seconds": time.perf_counter() - start,
-        }
-        (output / "metrics.json").write_text(json.dumps(metrics, indent=2), encoding="utf-8")
-        print(json.dumps(metrics, indent=2))
+    start = time.perf_counter()
+    with ThreadPoolExecutor(max_workers=args.workers) as pool:
+        pending = {pool.submit(evaluate_sample, sample, memory=memory,
+                               reformulator=reformulator, coder=coder,
+                               formulator_client=formulator): i for i, sample in enumerate(samples)}
+        for future in as_completed(pending):
+            i = pending[future]
+            # Infrastructure/API errors abort evaluation instead of becoming model errors.
+            results[i] = future.result()
+            (output / f"sample_{i + 1:04d}.json").write_text(
+                json.dumps(results[i], indent=2, ensure_ascii=False), encoding="utf-8")
+            print(f"Completed {sum(r is not None for r in results)}/{len(samples)}", flush=True)
+    metrics = {
+        "dataset": dataset.name, "num_samples": len(samples),
+        "num_correct": sum(r["correct"] for r in results),
+        "accuracy": sum(r["correct"] for r in results) / len(samples),
+        "objective_tolerance": 1e-4, "comparison": "strict_absolute_error",
+        "base_model": base.model, "coder_model": coder.client.model,
+        "prompt_tokens": sum(r["usage"]["prompt_tokens"] for r in results),
+        "completion_tokens": sum(r["usage"]["completion_tokens"] for r in results),
+        "wall_time_seconds": time.perf_counter() - start,
+    }
+    (output / "metrics.json").write_text(json.dumps(metrics, indent=2), encoding="utf-8")
+    print(json.dumps(metrics, indent=2))

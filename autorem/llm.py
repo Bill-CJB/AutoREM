@@ -11,8 +11,6 @@ from urllib.error import HTTPError, URLError
 from urllib.parse import urlsplit
 from urllib.request import Request, urlopen
 
-from .provenance import api_call_metadata, safe_identifier, utc_now
-
 
 class LLMNetworkError(RuntimeError):
     """A transient transport or API availability error."""
@@ -43,7 +41,7 @@ class LLMResponse:
 
 
 class LLMClient:
-    """A chat client, safe to share across evaluation worker threads.
+    """A stateless client, safe to share across evaluation worker threads.
 
     All roles use the DeepSeek API. API credentials are never written to logs
     or checkpoints.
@@ -69,26 +67,6 @@ class LLMClient:
         self.timeout = timeout
         self.max_tokens = max_tokens
         self.json_mode = json_mode
-        self._metadata_logger = None
-
-    def safe_model_identifier(self) -> str | None:
-        return safe_identifier(self.model, secret=self._api_key)
-
-    def safe_request_settings(self) -> dict:
-        """Return only non-sensitive settings, without endpoint or credentials."""
-        return {
-            "temperature": 0,
-            "stream": False,
-            "max_tokens": self.max_tokens,
-            "response_format": {"type": "json_object"} if self.json_mode else None,
-            "timeout_seconds": self.timeout,
-        }
-
-    def set_metadata_logger(self, logger):
-        """Set an optional successful-response logger and return the prior one."""
-        previous = self._metadata_logger
-        self._metadata_logger = logger
-        return previous
 
     @classmethod
     def from_env(cls, *, coder: bool = False) -> "LLMClient":
@@ -139,7 +117,6 @@ class LLMClient:
             "Authorization": "Bearer " + self._api_key,
             "Content-Type": "application/json",
         }, method="POST")
-        request_started_utc = utc_now()
         start = time.perf_counter()
         try:
             with urlopen(request, timeout=self.timeout) as response:
@@ -160,16 +137,8 @@ class LLMClient:
             content = choice["message"]["content"]
             if not isinstance(content, str):
                 raise TypeError
-            response_received_utc = utc_now()
-            result = LLMResponse(text=content, latency=time.perf_counter() - start,
-                                 finish_reason=choice.get("finish_reason"),
-                                 usage=data.get("usage") or {})
+            return LLMResponse(text=content, latency=time.perf_counter() - start,
+                               finish_reason=choice.get("finish_reason"),
+                               usage=data.get("usage") or {})
         except (KeyError, IndexError, TypeError):
             raise LLMAPIError("API response does not contain a text completion.") from None
-        if self._metadata_logger is not None:
-            self._metadata_logger(api_call_metadata(
-                request_started_utc=request_started_utc,
-                response_received_utc=response_received_utc,
-                requested_model=self.model, response=data, secret=self._api_key,
-            ))
-        return result
